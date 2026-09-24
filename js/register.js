@@ -35,12 +35,20 @@ registrationForm.addEventListener("submit", async function (event) {
     submitButton.disabled = true;
 
     submitButton.innerHTML = `
-        <span>Registering...</span>
+        <span>Creating your account...</span>
     `;
 
 
     // ========================================
-    // GET VALUES
+    // GET PASSWORD
+    // ========================================
+
+    const password =
+        document.getElementById("password").value;
+
+
+    // ========================================
+    // GET FORM VALUES
     // ========================================
 
     const studentData = {
@@ -95,33 +103,117 @@ registrationForm.addEventListener("submit", async function (event) {
     };
 
 
-    console.log("Student data:", studentData);
+    // ========================================
+    // CREATE SUPABASE AUTH ACCOUNT
+    // ========================================
+
+    const {
+        data: authData,
+        error: authError
+    } = await supabaseClient.auth.signUp({
+
+        email: studentData.email,
+
+        password: password,
+
+        options: {
+            data: {
+                full_name: studentData.full_name,
+                role: "student"
+            }
+        }
+
+    });
+
+
+    // ========================================
+    // AUTH ERROR
+    // ========================================
+
+    if (authError) {
+
+        console.error(
+            "Authentication error:",
+            authError
+        );
+
+        alert(
+            "Account creation failed.\n\n" +
+            authError.message
+        );
+
+        submitButton.disabled = false;
+
+        submitButton.innerHTML = `
+            <span>Complete Registration</span>
+            <strong>→</strong>
+        `;
+
+        return;
+    }
+
+
+    // ========================================
+    // GET AUTH USER ID
+    // ========================================
+
+    const authUser = authData.user;
+
+
+    if (!authUser) {
+
+        alert(
+            "Account creation could not be completed. Please try again."
+        );
+
+        submitButton.disabled = false;
+
+        submitButton.innerHTML = `
+            <span>Complete Registration</span>
+            <strong>→</strong>
+        `;
+
+        return;
+    }
+
+
+    // ========================================
+    // ADD AUTH ID TO STUDENT RECORD
+    // ========================================
+
+    studentData.auth_id = authUser.id;
 
 
     // ========================================
     // INSERT INTO STUDENT TABLE
     // ========================================
 
-    const { data, error } =
-        await supabaseClient
-            .from("Student")
-            .insert([studentData])
-            
+    submitButton.innerHTML = `
+        <span>Completing registration...</span>
+    `;
+
+
+    const {
+        data,
+        error
+    } = await supabaseClient
+        .from("Student")
+        .insert([studentData]);
 
 
     // ========================================
-    // ERROR
+    // STUDENT TABLE ERROR
     // ========================================
 
     if (error) {
 
         console.error(
-            "Registration error:",
+            "Student registration error:",
             error
         );
 
         alert(
-            "Registration failed.\n\n" +
+            "Your account was created, but your student registration could not be completed.\n\n" +
             error.message
         );
 
@@ -141,15 +233,19 @@ registrationForm.addEventListener("submit", async function (event) {
     // ========================================
 
     console.log(
-        "Registration successful:",
+        "Student registration successful:",
         data
     );
 
+
     alert(
-        "Registration successful! Welcome to As-Siyānah Institute."
+        "Registration successful!\n\n" +
+        "Your student account has been created successfully."
     );
 
+
     registrationForm.reset();
+
 
     submitButton.disabled = false;
 
@@ -157,5 +253,12 @@ registrationForm.addEventListener("submit", async function (event) {
         <span>Complete Registration</span>
         <strong>→</strong>
     `;
+
+
+    // ========================================
+    // GO TO LOGIN
+    // ========================================
+
+    window.location.href = "login.html";
 
 });

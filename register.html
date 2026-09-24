@@ -284,6 +284,7 @@
                                 We will use these details to communicate
                                 important information about your studies.
                             </p>
+
                         </div>
 
                     </div>
@@ -331,8 +332,44 @@
                                     id="email"
                                     name="email"
                                     placeholder="you@example.com"
+                                    autocomplete="email"
                                     required>
                             </div>
+
+                        </div>
+
+
+                        <!-- =========================
+                             PASSWORD
+                        ========================== -->
+
+                        <div class="form-group">
+
+                            <label for="password">
+                                Create Password
+                                <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">
+                                    🔒
+                                </span>
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    placeholder="Create a secure password"
+                                    autocomplete="new-password"
+                                    minlength="6"
+                                    required>
+
+                            </div>
+
+                            <small class="field-hint">
+                                Use at least 6 characters.
+                            </small>
 
                         </div>
 
@@ -364,6 +401,7 @@
                                 Choose the programme that best matches
                                 your learning goal.
                             </p>
+
                         </div>
 
                     </div>
@@ -577,7 +615,9 @@
 
                             <div class="input-wrapper">
 
-                                <span class="input-icon">◆</span>
+                                <span class="input-icon">
+                                    ◆
+                                </span>
 
                                 <select
                                     id="level"
@@ -665,6 +705,7 @@
                                 This information helps us organise
                                 suitable classes for you.
                             </p>
+
                         </div>
 
                     </div>
@@ -779,6 +820,7 @@
                                     <small>
                                         What device will you use?
                                     </small>
+
                                 </div>
 
                             </div>
@@ -865,6 +907,7 @@
                                 Help us understand how you discovered
                                 As-Siyānah Institute.
                             </p>
+
                         </div>
 
                     </div>
@@ -884,7 +927,9 @@
                                     ◇
                                 </span>
 
-                                <select id="source" name="source">
+                                <select
+                                    id="source"
+                                    name="source">
 
                                     <option value="">
                                         Select an option
@@ -990,6 +1035,7 @@
                         </span>
 
                         <div>
+
                             <strong>
                                 Your information is secure
                             </strong>
@@ -998,6 +1044,7 @@
                                 Your details will only be used for
                                 registration and academic purposes.
                             </small>
+
                         </div>
 
                     </div>
@@ -1107,8 +1154,8 @@
     </footer>
 
 
-   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/register.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/register.js"></script>
 
 </body>
 
