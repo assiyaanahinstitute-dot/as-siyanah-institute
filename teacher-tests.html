@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Manage Tests | As-Siyānah Institute
+    </title>
+
+
+    <!-- GLOBAL TEACHER PORTAL -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal-dark.css"
+    >
+
+
+    <!-- PAGE CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-tests.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="teacher-header">
+
+    <div class="teacher-header-inner">
+
+
+        <!-- BRAND -->
+
+        <a
+            href="teacher-dashboard.html"
+            class="teacher-brand"
+        >
+
+            <div class="teacher-brand-main">
+                AS-SIYĀNAH
+            </div>
+
+            <div class="teacher-brand-sub">
+                Teacher Portal
+            </div>
+
+        </a>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="teacher-nav">
+
+            <a href="teacher-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="teacher-students.html">
+                Students
+            </a>
+
+            <a href="teacher-lessons.html">
+                Lessons
+            </a>
+
+            <a href="teacher-results-list.html">
+                Results
+            </a>
+
+            <a href="teacher-assignment-submissions.html">
+                Assignments
+            </a>
+
+            <a
+                href="teacher-tests.html"
+                class="active"
+            >
+                Tests
+            </a>
+
+            <a href="teacher-attendance.html">
+                Attendance
+            </a>
+
+            <a href="teacher-announcements.html">
+                Announcements
+            </a>
+
+            <a href="teacher-profile.html">
+                Profile
+            </a>
+
+            <button
+                type="button"
+                class="teacher-theme-toggle"
+                aria-label="Switch to dark mode"
+            >
+                🌙 Dark Mode
+            </button>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="tests-main">
+
+    <div class="tests-container">
+
+
+        <!-- PAGE HEADER -->
+
+        <section class="page-header">
+
+            <div class="page-header-content">
+
+                <span class="eyebrow">
+                    ASSESSMENT CENTRE
+                </span>
+
+                <h1>
+                    Test Management
+                </h1>
+
+                <p>
+                    Create, manage and organize tests
+                    for your students.
+                </p>
+
+            </div>
+
+
+            <a
+                href="teacher-create-test.html"
+                class="create-btn"
+            >
+                <span class="create-icon">+</span>
+                Create New Test
+            </a>
+
+        </section>
+
+
+
+        <!-- =================================================
+             STATISTICS
+        ================================================== -->
+
+        <section class="stats-grid">
+
+
+            <!-- TOTAL TESTS -->
+
+            <article class="stat-card">
+
+                <div class="stat-icon">
+                    🧪
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Total Tests
+                    </span>
+
+                    <strong id="totalTests">
+                        0
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PUBLISHED -->
+
+            <article class="stat-card">
+
+                <div class="stat-icon published">
+                    ✓
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Published
+                    </span>
+
+                    <strong id="publishedTests">
+                        0
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- DRAFTS -->
+
+            <article class="stat-card">
+
+                <div class="stat-icon draft">
+                    📝
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Drafts
+                    </span>
+
+                    <strong id="draftTests">
+                        0
+                    </strong>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+
+        <!-- MESSAGE -->
+
+        <div
+            id="message"
+            class="message"
+        ></div>
+
+
+
+        <!-- =================================================
+             TEST LIBRARY
+        ================================================== -->
+
+        <section class="tests-section">
+
+
+            <div class="section-title">
+
+                <div>
+
+                    <span class="eyebrow">
+                        YOUR ASSESSMENTS
+                    </span>
+
+                    <h2>
+                        All Tests
+                    </h2>
+
+                    <p>
+                        Manage your assessments,
+                        questions and publication status.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="section-divider"></div>
+
+
+            <div
+                id="testsContainer"
+                class="tests-container-list"
+            >
+
+                <div class="loading">
+
+                    <div class="loading-spinner"></div>
+
+                    <span>
+                        Loading tests...
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="teacher-footer">
+
+    <div class="teacher-footer-inner">
+
+        <p>
+            © 2026 AS-SIYĀNAH INSTITUTE FOR ARABIC &
+            ISLAMIC STUDIES
+        </p>
+
+        <span>
+            Teacher Portal
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script>
+
+    const SUPABASE_URL =
+        "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+    const SUPABASE_ANON_KEY =
+        "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+    const supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_ANON_KEY
+        );
+
+</script>
+
+
+
+<!-- =====================================================
+     TEACHER THEME
+===================================================== -->
+
+<script src="js/teacher-theme.js"></script>
+
+
+
+<!-- =====================================================
+     PAGE JS
+===================================================== -->
+
+<script src="js/teacher-tests.js"></script>
+
+
+</body>
+
+</html>

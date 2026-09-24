@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Create Assignment | As-Siyānah Institute
+    </title>
+
+
+    <!-- =================================================
+         EXISTING ASSIGNMENT CSS
+    ================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-create-assignment.css"
+    >
+
+
+    <!-- =================================================
+         GLOBAL TEACHER DARK MODE
+    ================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal-dark.css"
+    >
+
+
+    <!-- =================================================
+         NEW PREMIUM UI CSS
+         Does not replace your existing CSS
+    ================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-create-assignment-ui.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="teacher-header">
+
+    <div class="teacher-header-inner">
+
+
+        <!-- =============================================
+             BRAND
+        ============================================== -->
+
+        <div class="teacher-brand">
+
+            <h1>
+                AS-SIYĀNAH INSTITUTE
+            </h1>
+
+            <span>
+                Teacher Portal
+            </span>
+
+        </div>
+
+
+
+        <!-- =============================================
+             NAVIGATION
+        ============================================== -->
+
+        <nav class="teacher-nav">
+
+            <a href="teacher-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="teacher-students.html">
+                Students
+            </a>
+
+            <a href="teacher-lessons.html">
+                Lessons
+            </a>
+
+            <a href="teacher-results-list.html">
+                Results
+            </a>
+
+            <a
+                href="teacher-assignment-submissions.html"
+                class="active"
+            >
+                Assignments
+            </a>
+
+            <a href="teacher-announcements.html">
+                Announcements
+            </a>
+
+        </nav>
+
+
+
+        <!-- =============================================
+             DARK MODE
+        ============================================== -->
+
+        <button
+            type="button"
+            class="teacher-theme-toggle"
+            aria-label="Switch to dark mode"
+        >
+            🌙 Dark Mode
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="assignment-main">
+
+
+    <!-- =================================================
+         PAGE HEADING
+    ================================================== -->
+
+    <div class="page-heading">
+
+
+        <div>
+
+            <span class="page-eyebrow">
+                TEACHER PORTAL
+            </span>
+
+
+            <h2>
+                Create Assignment
+            </h2>
+
+
+            <p>
+                Create an assignment for your students.
+            </p>
+
+        </div>
+
+
+
+        <!-- =============================================
+             BACK BUTTON
+        ============================================== -->
+
+        <a
+            href="teacher-assignment-submissions.html"
+            class="back-btn"
+        >
+            ← Assignments
+        </a>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         FORM CARD
+    ================================================== -->
+
+    <section class="assignment-card">
+
+
+        <form id="assignmentForm">
+
+
+            <!-- =========================================
+                 ASSIGNMENT TITLE
+            ========================================== -->
+
+            <div class="form-group">
+
+                <label for="title">
+                    Assignment Title
+                </label>
+
+
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    placeholder="e.g. Nahwu Assignment 2"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- =========================================
+                 DESCRIPTION / INSTRUCTIONS
+            ========================================== -->
+
+            <div class="form-group">
+
+                <label for="description">
+                    Instructions
+                </label>
+
+
+                <textarea
+                    id="description"
+                    name="description"
+                    rows="6"
+                    placeholder="Write the instructions for the students..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 CLASS
+            ========================================== -->
+
+            <div class="form-group">
+
+                <label for="classSelect">
+                    Class
+                </label>
+
+
+                <select
+                    id="classSelect"
+                    name="class_id"
+                    required
+                >
+
+                    <option value="">
+                        Loading classes...
+                    </option>
+
+                </select>
+
+
+                <small>
+                    Only classes assigned to you will appear here.
+                </small>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 SUBJECT + LEVEL
+            ========================================== -->
+
+            <div class="form-row">
+
+
+                <!-- SUBJECT -->
+
+                <div class="form-group">
+
+                    <label for="subject">
+                        Subject
+                    </label>
+
+
+                    <select
+                        id="subject"
+                        name="subject"
+                        required
+                    >
+
+                        <option value="">
+                            Select Subject
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- LEVEL -->
+
+                <div class="form-group">
+
+                    <label for="level">
+                        Student Level
+                    </label>
+
+
+                    <select
+                        id="level"
+                        name="level"
+                        required
+                    >
+
+                        <option value="">
+                            Select Level
+                        </option>
+
+
+                        <option value="elementary">
+                            Elementary
+                        </option>
+
+
+                        <option value="intermediate">
+                            Intermediate
+                        </option>
+
+
+                        <option value="advanced">
+                            Advanced
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =========================================
+                 DEADLINE
+            ========================================== -->
+
+            <div class="form-group">
+
+                <label for="deadline">
+
+                    Deadline
+
+                    <span class="optional">
+                        (Optional)
+                    </span>
+
+                </label>
+
+
+                <input
+                    type="datetime-local"
+                    id="deadline"
+                    name="deadline"
+                >
+
+            </div>
+
+
+
+            <!-- =========================================
+                 PUBLISH OPTION
+            ========================================== -->
+
+            <div class="publish-box">
+
+
+                <label class="checkbox-label">
+
+                    <input
+                        type="checkbox"
+                        id="published"
+                        name="published"
+                    >
+
+
+                    <span>
+                        Publish this assignment immediately
+                    </span>
+
+                </label>
+
+
+                <p>
+                    If unchecked, the assignment will remain
+                    unpublished until you are ready.
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =========================================
+                 FORM MESSAGE
+            ========================================== -->
+
+            <div
+                id="formMessage"
+                class="form-message"
+            ></div>
+
+
+
+            <!-- =========================================
+                 FORM ACTIONS
+            ========================================== -->
+
+            <div class="form-actions">
+
+
+                <!-- CANCEL -->
+
+                <a
+                    href="teacher-assignment-submissions.html"
+                    class="cancel-btn"
+                >
+                    Cancel
+                </a>
+
+
+
+                <!-- CREATE -->
+
+                <button
+                    type="submit"
+                    class="save-btn"
+                    id="saveAssignmentButton"
+                >
+                    Create Assignment
+                </button>
+
+
+            </div>
+
+
+        </form>
+
+    </section>
+
+</main>
+
+
+
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+
+
+<!-- =====================================================
+     SUPABASE CONFIGURATION
+===================================================== -->
+
+<script>
+
+    const SUPABASE_URL =
+        "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+
+    const SUPABASE_ANON_KEY =
+        "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+
+    const supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_ANON_KEY
+        );
+
+</script>
+
+
+
+<!-- =====================================================
+     GLOBAL TEACHER THEME
+===================================================== -->
+
+<script
+    src="js/teacher-theme.js"
+></script>
+
+
+
+<!-- =====================================================
+     ASSIGNMENT JAVASCRIPT
+     KEEP THIS UNCHANGED
+===================================================== -->
+
+<script
+    src="js/teacher-create-assignment.js"
+></script>
+
+
+</body>
+
+</html>

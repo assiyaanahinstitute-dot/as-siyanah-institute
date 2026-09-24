@@ -1,0 +1,1460 @@
+/* =========================================================
+   AS-SIYĀNAH INSTITUTE
+   TEACHER TEST REVIEW
+   Professional LMS UI + Dark Mode
+========================================================= */
+
+
+:root {
+
+    --review-bg: #f5f8f6;
+
+    --review-surface: #ffffff;
+
+    --review-soft: #f8faf9;
+
+    --review-green: #1d5e3c;
+
+    --review-green-dark: #0b3524;
+
+    --review-green-soft: #edf5f0;
+
+    --review-gold: #c9a227;
+
+    --review-gold-dark: #a78318;
+
+    --review-text: #17231d;
+
+    --review-muted: #6d7972;
+
+    --review-border: #e0e8e3;
+
+    --review-shadow:
+        0 12px 35px rgba(12, 45, 28, 0.07);
+
+}
+
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.teacher-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e2e9e4;
+
+    box-shadow:
+        0 4px 20px rgba(10, 40, 25, 0.05);
+
+}
+
+
+.teacher-header-inner {
+
+    width: min(100%, 1280px);
+
+    min-height: 76px;
+
+    margin: 0 auto;
+
+    padding: 0 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+}
+
+
+.teacher-brand {
+
+    min-width: 165px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    text-decoration: none;
+
+}
+
+
+.teacher-brand-main {
+
+    color: var(--review-green-dark);
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+
+}
+
+
+.teacher-brand-sub {
+
+    margin-top: 3px;
+
+    color: #7c8781;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+}
+
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.teacher-nav {
+
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 2px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+
+}
+
+
+.teacher-nav::-webkit-scrollbar {
+
+    display: none;
+
+}
+
+
+.teacher-nav a {
+
+    position: relative;
+
+    padding: 28px 10px 25px;
+
+    color: #5c6961;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    font-size: 13px;
+
+    font-weight: 650;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+
+}
+
+
+.teacher-nav a:hover {
+
+    color: var(--review-green);
+
+}
+
+
+.teacher-nav a.active {
+
+    color: var(--review-green-dark);
+
+}
+
+
+.teacher-nav a.active::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 10px;
+
+    right: 10px;
+
+    bottom: 0;
+
+    height: 3px;
+
+    border-radius: 3px 3px 0 0;
+
+    background: var(--review-gold);
+
+}
+
+
+
+/* =========================================================
+   THEME BUTTON
+========================================================= */
+
+.teacher-theme-toggle {
+
+    flex-shrink: 0;
+
+    border: 1px solid #dbe4de;
+
+    background: #f8faf9;
+
+    color: #35433b;
+
+    border-radius: 9px;
+
+    padding: 9px 12px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.teacher-theme-toggle:hover {
+
+    border-color: var(--review-green);
+
+    color: var(--review-green);
+
+}
+
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.test-review-main {
+
+    min-height: calc(100vh - 150px);
+
+    padding: 54px 24px 80px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f9fbfa 0%,
+            #f5f8f6 100%
+        );
+
+}
+
+
+.test-review-container {
+
+    width: min(100%, 1100px);
+
+    margin: 0 auto;
+
+}
+
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+#message {
+
+    margin-bottom: 20px;
+
+}
+
+
+#message:empty {
+
+    display: none;
+
+}
+
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading-card {
+
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    border: 1px solid var(--review-border);
+
+    border-radius: 16px;
+
+    background: var(--review-surface);
+
+    box-shadow: var(--review-shadow);
+
+}
+
+
+.loading-card p {
+
+    margin: 0;
+
+    color: var(--review-muted);
+
+    font-size: 13px;
+
+}
+
+
+.spinner {
+
+    width: 32px;
+
+    height: 32px;
+
+    border: 3px solid #dfe8e2;
+
+    border-top-color: var(--review-green);
+
+    border-radius: 50%;
+
+    animation:
+        review-spin 0.8s linear infinite;
+
+}
+
+
+@keyframes review-spin {
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.page-heading {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.page-heading-content {
+
+    min-width: 0;
+
+}
+
+
+.page-eyebrow,
+.section-eyebrow {
+
+    display: inline-block;
+
+    color: var(--review-gold-dark);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.7px;
+
+}
+
+
+.page-eyebrow {
+
+    margin-bottom: 9px;
+
+}
+
+
+.page-heading h1 {
+
+    margin: 0;
+
+    color: var(--review-text);
+
+    font-size: clamp(30px, 4vw, 43px);
+
+    line-height: 1.1;
+
+    letter-spacing: -1.3px;
+
+}
+
+
+.page-heading p {
+
+    max-width: 700px;
+
+    margin: 10px 0 0;
+
+    color: var(--review-muted);
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+}
+
+
+.back-button {
+
+    flex-shrink: 0;
+
+    padding: 11px 16px;
+
+    border: 1px solid var(--review-border);
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: var(--review-green-dark);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: 0.2s ease;
+
+}
+
+
+.back-button:hover {
+
+    border-color: var(--review-green);
+
+    background: var(--review-green-soft);
+
+}
+
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.summary-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    margin-bottom: 28px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--review-border);
+
+    border-radius: 14px;
+
+    background: var(--review-surface);
+
+    box-shadow: var(--review-shadow);
+
+}
+
+
+.info-card {
+
+    min-height: 120px;
+
+    padding: 24px;
+
+    border-right: 1px solid var(--review-border);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.info-card:last-child {
+
+    border-right: none;
+
+}
+
+
+.info-card-icon {
+
+    width: 44px;
+
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 10px;
+
+    background: var(--review-green-soft);
+
+    color: var(--review-green);
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+}
+
+
+.score-icon {
+
+    background: #f8f2dd;
+
+    color: var(--review-gold-dark);
+
+}
+
+
+.info-card-content {
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.card-label {
+
+    color: #89948d;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.info-card strong {
+
+    overflow: hidden;
+
+    color: var(--review-text);
+
+    font-size: 15px;
+
+    font-weight: 750;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+.info-card span:last-child {
+
+    color: var(--review-muted);
+
+    font-size: 12px;
+
+}
+
+
+.score-card strong {
+
+    color: var(--review-green);
+
+    font-size: 21px;
+
+}
+
+
+
+/* =========================================================
+   QUESTIONS
+========================================================= */
+
+.questions-section {
+
+    margin-bottom: 28px;
+
+    padding: 32px;
+
+    border: 1px solid var(--review-border);
+
+    border-radius: 16px;
+
+    background: var(--review-surface);
+
+    box-shadow: var(--review-shadow);
+
+}
+
+
+.section-heading {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+
+.section-heading h2 {
+
+    margin: 7px 0 0;
+
+    color: var(--review-text);
+
+    font-size: 21px;
+
+    letter-spacing: -0.4px;
+
+}
+
+
+.section-heading p {
+
+    margin: 5px 0 0;
+
+    color: var(--review-muted);
+
+    font-size: 13px;
+
+}
+
+
+.question-count {
+
+    flex-shrink: 0;
+
+    padding: 8px 11px;
+
+    border: 1px solid var(--review-border);
+
+    border-radius: 8px;
+
+    background: var(--review-soft);
+
+    color: var(--review-green);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+}
+
+
+.section-divider {
+
+    height: 1px;
+
+    margin: 25px 0;
+
+    background: var(--review-border);
+
+}
+
+
+
+/* =========================================================
+   DYNAMIC QUESTION CARDS
+========================================================= */
+
+.question-card,
+.question-item,
+.question-row {
+
+    margin-bottom: 15px;
+
+    padding: 22px;
+
+    border: 1px solid var(--review-border);
+
+    border-radius: 12px;
+
+    background: var(--review-soft);
+
+}
+
+
+.question-card:last-child,
+.question-item:last-child,
+.question-row:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+
+/* =========================================================
+   REVIEW SECTION
+========================================================= */
+
+.review-section {
+
+    padding: 32px;
+
+    border: 1px solid var(--review-border);
+
+    border-radius: 16px;
+
+    background: var(--review-surface);
+
+    box-shadow: var(--review-shadow);
+
+}
+
+
+.review-form {
+
+    width: 100%;
+
+}
+
+
+.form-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--review-text);
+
+    font-size: 13px;
+
+    font-weight: 750;
+
+}
+
+
+.form-group textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    min-height: 145px;
+
+    padding: 14px;
+
+    border: 1px solid #dbe4de;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    resize: vertical;
+
+    background: #ffffff;
+
+    color: var(--review-text);
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.form-group textarea::placeholder {
+
+    color: #9aa49e;
+
+}
+
+
+.form-group textarea:focus {
+
+    border-color: var(--review-green);
+
+    box-shadow:
+        0 0 0 3px rgba(29, 94, 60, 0.10);
+
+}
+
+
+.review-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    padding-top: 4px;
+
+}
+
+
+.save-button {
+
+    min-height: 45px;
+
+    padding: 0 22px;
+
+    border: 1px solid var(--review-green);
+
+    border-radius: 9px;
+
+    background: var(--review-green);
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 15px rgba(29, 94, 60, 0.15);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.save-button:hover {
+
+    background: var(--review-green-dark);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 18px rgba(29, 94, 60, 0.22);
+
+}
+
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.teacher-footer {
+
+    border-top: 1px solid #e2e9e4;
+
+    background: #ffffff;
+
+}
+
+
+.teacher-footer-inner {
+
+    width: min(100%, 1280px);
+
+    min-height: 70px;
+
+    margin: 0 auto;
+
+    padding: 0 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+
+.teacher-footer p {
+
+    margin: 0;
+
+    color: #7b857f;
+
+    font-size: 12px;
+
+}
+
+
+.teacher-footer span {
+
+    color: var(--review-green);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+}
+
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html.teacher-dark,
+html.teacher-dark body {
+
+    background: #08140e !important;
+
+    color: #edf5ef !important;
+
+}
+
+
+html.teacher-dark .teacher-header {
+
+    background: #0c1d14 !important;
+
+    border-bottom-color: #1e3929 !important;
+
+    box-shadow:
+        0 5px 22px rgba(0, 0, 0, 0.28) !important;
+
+}
+
+
+html.teacher-dark .teacher-brand-main {
+
+    color: #edf7ef !important;
+
+}
+
+
+html.teacher-dark .teacher-brand-sub {
+
+    color: #84968b !important;
+
+}
+
+
+html.teacher-dark .teacher-nav a {
+
+    color: #9aac9f !important;
+
+}
+
+
+html.teacher-dark .teacher-nav a:hover {
+
+    color: #e2eee5 !important;
+
+}
+
+
+html.teacher-dark .teacher-nav a.active {
+
+    color: #ffffff !important;
+
+}
+
+
+html.teacher-dark .teacher-theme-toggle {
+
+    background: #14291e !important;
+
+    border-color: #2a4937 !important;
+
+    color: #d9e9df !important;
+
+}
+
+
+html.teacher-dark .test-review-main {
+
+    background:
+        linear-gradient(
+            180deg,
+            #0a1911 0%,
+            #08140e 100%
+        ) !important;
+
+}
+
+
+html.teacher-dark .page-heading h1 {
+
+    color: #f0f7f2 !important;
+
+}
+
+
+html.teacher-dark .page-heading p {
+
+    color: #91a499 !important;
+
+}
+
+
+html.teacher-dark .back-button {
+
+    background: #102319 !important;
+
+    border-color: #2a4836 !important;
+
+    color: #d8e8de !important;
+
+}
+
+
+html.teacher-dark .back-button:hover {
+
+    background: #173124 !important;
+
+}
+
+
+html.teacher-dark .loading-card,
+html.teacher-dark .summary-grid,
+html.teacher-dark .questions-section,
+html.teacher-dark .review-section {
+
+    background: #0d2016 !important;
+
+    border-color: #213d2d !important;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.24) !important;
+
+}
+
+
+html.teacher-dark .info-card {
+
+    border-right-color: #213d2d !important;
+
+}
+
+
+html.teacher-dark .info-card-icon {
+
+    background: #173526 !important;
+
+    color: #9ed0ad !important;
+
+}
+
+
+html.teacher-dark .score-icon {
+
+    background: #332c15 !important;
+
+    color: #d5b94e !important;
+
+}
+
+
+html.teacher-dark .card-label {
+
+    color: #7f9487 !important;
+
+}
+
+
+html.teacher-dark .info-card strong {
+
+    color: #e6f0e8 !important;
+
+}
+
+
+html.teacher-dark .info-card span:last-child {
+
+    color: #82958a !important;
+
+}
+
+
+html.teacher-dark .score-card strong {
+
+    color: #a9d5b6 !important;
+
+}
+
+
+html.teacher-dark .section-heading h2 {
+
+    color: #edf6ef !important;
+
+}
+
+
+html.teacher-dark .section-heading p {
+
+    color: #8da195 !important;
+
+}
+
+
+html.teacher-dark .question-count {
+
+    background: #102319 !important;
+
+    border-color: #294837 !important;
+
+    color: #9dcaab !important;
+
+}
+
+
+html.teacher-dark .section-divider {
+
+    background: #213d2d !important;
+
+}
+
+
+html.teacher-dark .question-card,
+html.teacher-dark .question-item,
+html.teacher-dark .question-row {
+
+    background: #102319 !important;
+
+    border-color: #294837 !important;
+
+}
+
+
+html.teacher-dark .form-group label {
+
+    color: #dfebe2 !important;
+
+}
+
+
+html.teacher-dark .form-group textarea {
+
+    background: #0a1911 !important;
+
+    border-color: #2a4836 !important;
+
+    color: #edf5ef !important;
+
+}
+
+
+html.teacher-dark .form-group textarea::placeholder {
+
+    color: #65786c !important;
+
+}
+
+
+html.teacher-dark .form-group textarea:focus {
+
+    border-color: #5b9871 !important;
+
+    box-shadow:
+        0 0 0 3px rgba(91, 152, 113, 0.14) !important;
+
+}
+
+
+html.teacher-dark .loading-card p {
+
+    color: #82958a !important;
+
+}
+
+
+html.teacher-dark .spinner {
+
+    border-color: #284536 !important;
+
+    border-top-color: #6ca27f !important;
+
+}
+
+
+html.teacher-dark .teacher-footer {
+
+    background: #0a1911 !important;
+
+    border-top-color: #1e3929 !important;
+
+}
+
+
+html.teacher-dark .teacher-footer p {
+
+    color: #73867a !important;
+
+}
+
+
+html.teacher-dark .teacher-footer span {
+
+    color: #9bc6a7 !important;
+
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1150px) {
+
+    .teacher-header-inner {
+
+        gap: 18px;
+
+    }
+
+
+    .teacher-brand {
+
+        min-width: 145px;
+
+    }
+
+
+    .teacher-nav a {
+
+        padding-left: 8px;
+
+        padding-right: 8px;
+
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .teacher-header-inner {
+
+        flex-wrap: wrap;
+
+        padding-top: 14px;
+
+        padding-bottom: 10px;
+
+    }
+
+
+    .teacher-brand {
+
+        flex: 1;
+
+    }
+
+
+    .teacher-theme-toggle {
+
+        order: 2;
+
+    }
+
+
+    .teacher-nav {
+
+        order: 3;
+
+        flex-basis: 100%;
+
+        width: 100%;
+
+    }
+
+
+    .teacher-nav a {
+
+        padding-top: 12px;
+
+        padding-bottom: 14px;
+
+    }
+
+
+    .summary-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .info-card {
+
+        border-right: none;
+
+        border-bottom: 1px solid var(--review-border);
+
+    }
+
+
+    .info-card:last-child {
+
+        border-bottom: none;
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .test-review-main {
+
+        padding: 38px 16px 60px;
+
+    }
+
+
+    .page-heading {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .back-button {
+
+        text-align: center;
+
+    }
+
+
+    .page-heading h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .questions-section,
+    .review-section {
+
+        padding: 21px 17px;
+
+        border-radius: 13px;
+
+    }
+
+
+    .section-heading {
+
+        flex-direction: column;
+
+    }
+
+
+    .question-count {
+
+        align-self: flex-start;
+
+    }
+
+
+    .review-actions {
+
+        justify-content: stretch;
+
+    }
+
+
+    .save-button {
+
+        width: 100%;
+
+    }
+
+
+    .teacher-footer-inner {
+
+        min-height: 80px;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 15px 20px;
+
+    }
+
+}

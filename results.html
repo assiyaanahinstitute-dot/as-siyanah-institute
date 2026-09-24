@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        My Results | As-Siyānah Institute
+    </title>
+
+    <link rel="stylesheet"
+        href="css/style.css">
+
+    <style>
+
+        /* =====================================================
+           AS-SIYĀNAH — PREMIUM RESULTS PAGE
+        ===================================================== */
+
+        :root {
+            --green-dark: #0B3524;
+            --green-deep: #092A1D;
+            --green: #1D5E3C;
+            --green-soft: #EAF4EE;
+
+            --gold: #C9A227;
+            --gold-light: #E7CB69;
+            --gold-soft: #FBF6E6;
+
+            --white: #FFFFFF;
+            --background: #F5F7F5;
+
+            --text: #17251F;
+            --muted: #718078;
+
+            --border: #E2E9E4;
+
+            --shadow:
+                0 14px 38px rgba(11, 53, 36, 0.07);
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.96);
+
+            border-bottom: 1px solid var(--border);
+
+            backdrop-filter: blur(14px);
+        }
+
+
+        .site-header .container {
+            min-height: 74px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+
+        .logo {
+            color: var(--green-dark);
+
+            text-decoration: none;
+
+            font-size: 21px;
+            font-weight: 850;
+
+            letter-spacing: -0.6px;
+        }
+
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+
+            gap: 5px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .main-nav a {
+            color: var(--muted);
+
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: 650;
+
+            padding: 9px 12px;
+
+            border-radius: 10px;
+
+            transition: 0.25s ease;
+        }
+
+
+        .main-nav a:hover {
+            color: var(--green-dark);
+
+            background: var(--green-soft);
+        }
+
+
+        .main-nav a.active {
+            color: var(--green-dark);
+
+            background: var(--green-soft);
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .page-hero {
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 72px 0 80px;
+
+            color: white;
+
+            background:
+                radial-gradient(
+                    circle at 88% 20%,
+                    rgba(201, 162, 39, 0.19),
+                    transparent 29%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--green-dark),
+                    var(--green)
+                );
+        }
+
+
+        .page-hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 330px;
+            height: 330px;
+
+            right: -125px;
+            top: -170px;
+
+            border:
+                1px solid
+                rgba(201, 162, 39, 0.20);
+
+            border-radius: 50%;
+        }
+
+
+        .page-hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 210px;
+            height: 210px;
+
+            left: -115px;
+            bottom: -145px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.07);
+
+            border-radius: 50%;
+        }
+
+
+        .page-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .eyebrow {
+            margin: 0 0 13px;
+
+            color: var(--gold-light);
+
+            font-size: 11px;
+            font-weight: 850;
+
+            letter-spacing: 2.5px;
+        }
+
+
+        .page-hero h1 {
+            margin: 0 0 17px;
+
+            font-size:
+                clamp(36px, 6vw, 58px);
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+        }
+
+
+        .page-hero p:last-child {
+            max-width: 650px;
+
+            margin: 0;
+
+            color:
+                rgba(255,255,255,0.78);
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           MAIN SECTION
+        ===================================================== */
+
+        .section {
+            padding: 62px 0 85px;
+        }
+
+
+        /* =====================================================
+           STUDENT SUMMARY CARD
+        ===================================================== */
+
+        .student-summary {
+            position: relative;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.7fr)
+                repeat(2, minmax(150px, 0.7fr));
+
+            gap: 0;
+
+            overflow: hidden;
+
+            background: var(--white);
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 22px;
+
+            box-shadow: var(--shadow);
+
+            margin-bottom: 58px;
+        }
+
+
+        .student-main {
+            position: relative;
+
+            padding: 32px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #F9FCFA,
+                    #FFFFFF
+                );
+        }
+
+
+        .student-main::after {
+            content: "";
+
+            position: absolute;
+
+            width: 130px;
+            height: 130px;
+
+            right: -60px;
+            bottom: -70px;
+
+            border-radius: 50%;
+
+            background: var(--green-soft);
+        }
+
+
+        .student-main > * {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .student-main .eyebrow {
+            color: var(--gold);
+
+            margin-bottom: 8px;
+        }
+
+
+        .student-main h2 {
+            margin: 0 0 12px;
+
+            color: var(--green-dark);
+
+            font-size: 25px;
+
+            letter-spacing: -0.5px;
+        }
+
+
+        .student-id {
+            margin: 0;
+
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+
+        .student-id strong {
+            color: var(--green);
+
+            letter-spacing: 0.5px;
+        }
+
+
+        .student-detail {
+            padding: 28px 25px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            border-left:
+                1px solid
+                var(--border);
+        }
+
+
+        .student-detail span {
+            margin-bottom: 8px;
+
+            color: var(--muted);
+
+            font-size: 10px;
+            font-weight: 850;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.1px;
+        }
+
+
+        .student-detail strong {
+            color: var(--text);
+
+            font-size: 15px;
+
+            line-height: 1.5;
+
+            word-break: break-word;
+        }
+
+
+        /* =====================================================
+           SECTION HEADING
+        ===================================================== */
+
+        .section-heading {
+            margin-bottom: 24px;
+        }
+
+
+        .section-heading .eyebrow {
+            color: var(--gold);
+
+            margin-bottom: 8px;
+        }
+
+
+        .section-heading h2 {
+            margin: 0;
+
+            color: var(--green-dark);
+
+            font-size: 28px;
+
+            letter-spacing: -0.7px;
+        }
+
+
+        .section-heading::after {
+            content: "";
+
+            display: block;
+
+            width: 46px;
+            height: 3px;
+
+            margin-top: 13px;
+
+            border-radius: 10px;
+
+            background: var(--gold);
+        }
+
+
+        /* =====================================================
+           RESULTS CONTAINER
+        ===================================================== */
+
+        #resultsContainer {
+            width: 100%;
+        }
+
+
+        /* =====================================================
+           GENERATED RESULT CARDS
+           
+           Designed to complement cards produced by results.js.
+        ===================================================== */
+
+        #resultsContainer > div {
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+
+        #resultsContainer > div:hover {
+            transform: translateY(-3px);
+        }
+
+
+        #resultsContainer .result-card,
+        #resultsContainer .card {
+            background: var(--white);
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 9px 28px
+                rgba(11,53,36,0.06);
+
+            overflow: hidden;
+        }
+
+
+        /* =====================================================
+           COMMON CONTENT
+        ===================================================== */
+
+        #resultsContainer h3 {
+            color: var(--green-dark);
+        }
+
+
+        #resultsContainer h4 {
+            color: var(--green-dark);
+        }
+
+
+        #resultsContainer p {
+            color: var(--muted);
+
+            line-height: 1.7;
+        }
+
+
+        #resultsContainer strong {
+            color: var(--text);
+        }
+
+
+        #resultsContainer button,
+        #resultsContainer a {
+            transition: 0.25s ease;
+        }
+
+
+        #resultsContainer button:hover {
+            transform: translateY(-1px);
+        }
+
+
+        /* =====================================================
+           LOADING STATE
+        ===================================================== */
+
+        .results-loading {
+            padding: 65px 20px;
+
+            text-align: center;
+
+            background: var(--white);
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 20px;
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .loading-icon {
+            width: 58px;
+            height: 58px;
+
+            margin: 0 auto 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 17px;
+
+            background: var(--green-soft);
+
+            color: var(--green);
+
+            font-size: 24px;
+        }
+
+
+        .results-loading h3 {
+            margin: 0 0 7px;
+
+            font-size: 18px;
+        }
+
+
+        .results-loading p {
+            margin: 0;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .site-footer {
+            padding: 32px 0;
+
+            background: var(--green-dark);
+
+            color:
+                rgba(255,255,255,0.68);
+        }
+
+
+        .site-footer p {
+            margin: 5px 0;
+
+            font-size: 13px;
+        }
+
+
+        .site-footer p:last-child {
+            color: #D7C26A;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .site-header .container {
+                min-height: auto;
+
+                align-items: flex-start;
+
+                flex-direction: column;
+
+                padding-top: 16px;
+                padding-bottom: 16px;
+            }
+
+
+            .main-nav {
+                width: 100%;
+
+                overflow-x: auto;
+
+                flex-wrap: nowrap;
+
+                padding-bottom: 3px;
+            }
+
+
+            .main-nav a {
+                white-space: nowrap;
+            }
+
+
+            .page-hero {
+                padding: 58px 0 65px;
+            }
+
+
+            .section {
+                padding: 48px 0 65px;
+            }
+
+
+            .student-summary {
+                grid-template-columns: 1fr;
+            }
+
+
+            .student-detail {
+                border-left: 0;
+
+                border-top:
+                    1px solid
+                    var(--border);
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 560px) {
+
+            .page-hero h1 {
+                font-size: 39px;
+            }
+
+
+            .page-hero p:last-child {
+                font-size: 14px;
+            }
+
+
+            .student-main {
+                padding: 23px;
+            }
+
+
+            .student-main h2 {
+                font-size: 21px;
+            }
+
+
+            .student-detail {
+                padding: 21px 23px;
+            }
+
+
+            .section-heading h2 {
+                font-size: 24px;
+            }
+
+
+            .results-loading {
+                padding: 50px 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header class="site-header">
+
+        <div class="container">
+
+            <a href="dashboard.html"
+                class="logo">
+
+                As-Siyānah
+
+            </a>
+
+
+            <nav class="main-nav">
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="profile.html">
+                    My Profile
+                </a>
+
+                <a href="classes.html">
+                    My Classes
+                </a>
+
+                <a href="results.html"
+                    class="active">
+                    My Results
+                </a>
+
+                <a href="announcements.html">
+                    Announcements
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section class="page-hero">
+
+        <div class="container">
+
+            <p class="eyebrow">
+                STUDENT PORTAL
+            </p>
+
+
+            <h1>
+                My Results
+            </h1>
+
+
+            <p>
+                Track your academic progress,
+                review your results, and see the
+                feedback from your teachers.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ===================================================== -->
+
+    <section class="section">
+
+        <div class="container">
+
+
+            <!-- STUDENT SUMMARY -->
+
+            <div class="student-summary">
+
+
+                <div class="student-main">
+
+                    <p class="eyebrow">
+                        STUDENT
+                    </p>
+
+
+                    <h2 id="studentName">
+                        Loading...
+                    </h2>
+
+
+                    <p class="student-id">
+
+                        Student ID:
+
+                        <strong id="studentId">
+                            Loading...
+                        </strong>
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="student-detail">
+
+                    <span>
+                        Programme
+                    </span>
+
+
+                    <strong id="studentProgramme">
+                        Loading...
+                    </strong>
+
+                </div>
+
+
+
+                <div class="student-detail">
+
+                    <span>
+                        Level
+                    </span>
+
+
+                    <strong id="studentLevel">
+                        Loading...
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ACADEMIC PERFORMANCE -->
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    ACADEMIC PERFORMANCE
+                </p>
+
+
+                <h2>
+                    Academic Results
+                </h2>
+
+            </div>
+
+
+
+            <!-- RESULTS -->
+
+            <div id="resultsContainer">
+
+                <div class="results-loading">
+
+                    <div class="loading-icon">
+                        ✦
+                    </div>
+
+
+                    <h3>
+                        Loading your results...
+                    </h3>
+
+
+                    <p>
+                        Your academic records are being prepared.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 As-Siyānah Institute for Arabic
+                and Islamic Studies
+            </p>
+
+
+            <p>
+                Knowledge • Character • Excellence
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         SUPABASE
+    ===================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+    </script>
+
+
+    <script>
+
+        const SUPABASE_URL =
+            "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+
+        const SUPABASE_ANON_KEY =
+            "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+
+        const supabaseClient =
+            window.supabase.createClient(
+
+                SUPABASE_URL,
+
+                SUPABASE_ANON_KEY
+
+            );
+
+    </script>
+
+
+
+    <!-- RESULTS JAVASCRIPT -->
+
+    <script src="js/results.js"></script>
+
+
+<script src="js/theme.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        My Profile | As-Siyānah Institute
+    </title>
+
+    <link rel="stylesheet"
+        href="css/style.css">
+
+    <style>
+
+        /* =====================================================
+           AS-SIYĀNAH PREMIUM PROFILE
+        ===================================================== */
+
+        :root {
+            --green-dark: #0B3524;
+            --green: #1D5E3C;
+            --green-soft: #EAF4EE;
+
+            --gold: #C9A227;
+            --gold-soft: #FBF6E6;
+
+            --white: #FFFFFF;
+            --background: #F5F7F5;
+
+            --text: #17251F;
+            --muted: #718078;
+
+            --border: #E3EAE5;
+
+            --shadow:
+                0 15px 40px rgba(11, 53, 36, 0.07);
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .site-header {
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid var(--border);
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            backdrop-filter: blur(14px);
+        }
+
+
+        .nav-container {
+            min-height: 76px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+
+        .logo {
+            text-decoration: none;
+            color: var(--green-dark);
+
+            display: flex;
+            flex-direction: column;
+
+            line-height: 1;
+        }
+
+
+        .logo span {
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+
+        .logo small {
+            margin-top: 5px;
+
+            font-size: 9px;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            color: var(--gold);
+        }
+
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+
+        .main-nav a {
+            text-decoration: none;
+
+            color: var(--muted);
+
+            font-size: 14px;
+            font-weight: 650;
+
+            padding: 10px 13px;
+
+            border-radius: 10px;
+
+            transition: 0.25s ease;
+        }
+
+
+        .main-nav a:hover {
+            color: var(--green-dark);
+            background: var(--green-soft);
+        }
+
+
+        .main-nav a.active {
+            color: var(--green-dark);
+            background: var(--green-soft);
+        }
+
+
+        .nav-logout {
+            border: 1px solid var(--border);
+            background: white;
+
+            color: var(--green-dark);
+
+            padding: 10px 15px;
+
+            border-radius: 10px;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.25s ease;
+        }
+
+
+        .nav-logout:hover {
+            background: var(--green-dark);
+            color: white;
+            border-color: var(--green-dark);
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .profile-hero {
+            position: relative;
+            overflow: hidden;
+
+            padding: 75px 0 85px;
+
+            color: white;
+
+            background:
+                radial-gradient(
+                    circle at 85% 25%,
+                    rgba(201, 162, 39, 0.18),
+                    transparent 28%
+                ),
+                linear-gradient(
+                    135deg,
+                    #0B3524,
+                    #124B31
+                );
+        }
+
+
+        .profile-hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 320px;
+            height: 320px;
+
+            right: -120px;
+            top: -150px;
+
+            border: 1px solid rgba(201, 162, 39, 0.20);
+
+            border-radius: 50%;
+        }
+
+
+        .profile-hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 220px;
+            height: 220px;
+
+            left: -120px;
+            bottom: -150px;
+
+            border: 1px solid rgba(255,255,255,0.07);
+
+            border-radius: 50%;
+        }
+
+
+        .profile-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .eyebrow {
+            margin: 0 0 14px;
+
+            color: #E7CB69;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 2.5px;
+        }
+
+
+        .profile-hero h1 {
+            margin: 0 0 18px;
+
+            font-size: clamp(36px, 6vw, 58px);
+
+            line-height: 1.02;
+
+            letter-spacing: -2px;
+        }
+
+
+        .profile-hero p:last-child {
+            max-width: 650px;
+
+            margin: 0;
+
+            color: rgba(255,255,255,0.78);
+
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           PROFILE SECTION
+        ===================================================== */
+
+        .profile-section {
+            padding: 65px 0 85px;
+        }
+
+
+        /* =====================================================
+           PROFILE CARD
+        ===================================================== */
+
+        .profile-card {
+            position: relative;
+
+            background: var(--white);
+
+            border: 1px solid var(--border);
+
+            border-radius: 22px;
+
+            padding: 30px;
+
+            margin-bottom: 22px;
+
+            box-shadow: var(--shadow);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+
+        .profile-card:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 20px 45px rgba(11, 53, 36, 0.10);
+        }
+
+
+        .profile-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 90px;
+            height: 90px;
+
+            right: -45px;
+            top: -45px;
+
+            border-radius: 50%;
+
+            background: var(--gold-soft);
+
+            opacity: 0.8;
+        }
+
+
+        /* =====================================================
+           CARD HEADER
+        ===================================================== */
+
+        .profile-card-header {
+            position: relative;
+            z-index: 2;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding-bottom: 20px;
+
+            margin-bottom: 24px;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        .card-eyebrow {
+            margin: 0 0 5px;
+
+            color: var(--gold);
+
+            font-size: 11px;
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+
+        .profile-card h2 {
+            margin: 0;
+
+            color: var(--green-dark);
+
+            font-size: 21px;
+            letter-spacing: -0.3px;
+        }
+
+
+        /* =====================================================
+           PROFILE GRID
+        ===================================================== */
+
+        .profile-grid {
+            position: relative;
+            z-index: 2;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 14px;
+        }
+
+
+        .profile-item {
+            min-height: 88px;
+
+            padding: 18px 20px;
+
+            background: #FAFCFA;
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            transition: 0.25s ease;
+        }
+
+
+        .profile-item:hover {
+            background: var(--green-soft);
+
+            border-color: rgba(29, 94, 60, 0.18);
+
+            transform: translateY(-1px);
+        }
+
+
+        .profile-item span {
+            margin-bottom: 8px;
+
+            color: var(--muted);
+
+            font-size: 11px;
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.8px;
+        }
+
+
+        .profile-item strong {
+            color: var(--text);
+
+            font-size: 15px;
+
+            line-height: 1.45;
+
+            word-break: break-word;
+        }
+
+
+        /* =====================================================
+           STUDENT ID HIGHLIGHT
+        ===================================================== */
+
+        #profileStudentId {
+            color: var(--green-dark);
+
+            font-size: 18px;
+
+            letter-spacing: 0.5px;
+        }
+
+
+        /* =====================================================
+           BACK BUTTON
+        ===================================================== */
+
+        .profile-back {
+            padding-top: 12px;
+        }
+
+
+        .profile-back-button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 13px 19px;
+
+            border-radius: 12px;
+
+            background: var(--green-dark);
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: 750;
+
+            box-shadow:
+                0 8px 20px rgba(11, 53, 36, 0.14);
+
+            transition: 0.25s ease;
+        }
+
+
+        .profile-back-button:hover {
+            background: var(--green);
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 12px 25px rgba(11, 53, 36, 0.20);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .site-footer {
+            background: var(--green-dark);
+
+            color: rgba(255,255,255,0.70);
+
+            padding: 32px 0;
+        }
+
+
+        .site-footer p {
+            margin: 5px 0;
+
+            font-size: 13px;
+        }
+
+
+        .site-footer p:last-child {
+            color: #D7C26A;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 800px) {
+
+            .nav-container {
+                align-items: flex-start;
+
+                flex-direction: column;
+
+                padding-top: 16px;
+                padding-bottom: 16px;
+            }
+
+
+            .main-nav {
+                width: 100%;
+
+                overflow-x: auto;
+
+                flex-wrap: nowrap;
+
+                padding-bottom: 3px;
+            }
+
+
+            .main-nav a,
+            .nav-logout {
+                white-space: nowrap;
+            }
+
+
+            .profile-hero {
+                padding: 58px 0 65px;
+            }
+
+
+            .profile-section {
+                padding: 48px 0 65px;
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 560px) {
+
+            .profile-card {
+                padding: 21px;
+
+                border-radius: 18px;
+            }
+
+
+            .profile-card-header {
+                padding-bottom: 17px;
+
+                margin-bottom: 18px;
+            }
+
+
+            .profile-card h2 {
+                font-size: 19px;
+            }
+
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+
+                gap: 11px;
+            }
+
+
+            .profile-item {
+                min-height: 78px;
+
+                padding: 16px;
+            }
+
+
+            .profile-hero h1 {
+                font-size: 38px;
+            }
+
+
+            .profile-hero p:last-child {
+                font-size: 14px;
+            }
+
+
+            .profile-back-button {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header class="site-header">
+
+        <div class="container nav-container">
+
+            <a href="index.html"
+                class="logo">
+
+                <span>
+                    As-Siyānah
+                </span>
+
+                <small>
+                    Institute
+                </small>
+
+            </a>
+
+
+            <nav class="main-nav">
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="profile.html"
+                    class="active">
+                    My Profile
+                </a>
+
+                <button
+                    id="logoutButton"
+                    class="nav-logout">
+
+                    Logout
+
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section class="profile-hero">
+
+        <div class="container">
+
+            <p class="eyebrow">
+                STUDENT PORTAL
+            </p>
+
+
+            <h1>
+                My Profile
+            </h1>
+
+
+            <p>
+                Your student identity, academic information,
+                and account details — all in one place.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROFILE CONTENT
+    ===================================================== -->
+
+    <main class="profile-section">
+
+        <div class="container">
+
+
+            <!-- PERSONAL INFORMATION -->
+
+            <div class="profile-card">
+
+                <div class="profile-card-header">
+
+                    <div>
+
+                        <p class="card-eyebrow">
+                            01
+                        </p>
+
+                        <h2>
+                            Personal Information
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-grid">
+
+                    <div class="profile-item">
+
+                        <span>
+                            Full Name
+                        </span>
+
+                        <strong id="profileName">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-item">
+
+                        <span>
+                            Gender
+                        </span>
+
+                        <strong id="profileGender">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-item">
+
+                        <span>
+                            Date of Birth
+                        </span>
+
+                        <strong id="profileDob">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-item">
+
+                        <span>
+                            Country
+                        </span>
+
+                        <strong id="profileCountry">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-item">
+
+                        <span>
+                            City
+                        </span>
+
+                        <strong id="profileCity">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CONTACT INFORMATION -->
+
+            <div class="profile-card">
+
+                <div class="profile-card-header">
+
+                    <div>
+
+                        <p class="card-eyebrow">
+                            02
+                        </p>
+
+                        <h2>
+                            Contact Information
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-grid">
+
+                    <div class="profile-item">
+
+                        <span>
+                            WhatsApp Number
+                        </span>
+
+                        <strong id="profileWhatsapp">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-item">
+
+                        <span>
+                            Email Address
+                        </span>
+
+                        <strong id="profileEmail">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ACADEMIC INFORMATION -->
+
+            <div class="profile-card">
+
+                <div class="profile-card-header">
+
+                    <div>
+
+                        <p class="card-eyebrow">
+                            03
+                        </p>
+
+                        <h2>
+                            Academic Information
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-grid">
+
+                    <div class="profile-item">
+
+                        <span>
+                            Student ID
+                        </span>
+
+                        <strong id="profileStudentId">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-item">
+
+                        <span>
+                            Programme
+                        </span>
+
+                        <strong id="profileProgramme">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-item">
+
+                        <span>
+                            Level
+                        </span>
+
+                        <strong id="profileLevel">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-item">
+
+                        <span>
+                            Class Time
+                        </span>
+
+                        <strong id="profileClassTime">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-item">
+
+                        <span>
+                            Learning Device
+                        </span>
+
+                        <strong id="profileDevice">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ADDITIONAL INFORMATION -->
+
+            <div class="profile-card">
+
+                <div class="profile-card-header">
+
+                    <div>
+
+                        <p class="card-eyebrow">
+                            04
+                        </p>
+
+                        <h2>
+                            Additional Information
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-grid">
+
+                    <div class="profile-item">
+
+                        <span>
+                            Previous Education
+                        </span>
+
+                        <strong id="profileEducation">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-item">
+
+                        <span>
+                            How You Heard About Us
+                        </span>
+
+                        <strong id="profileSource">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BACK -->
+
+            <div class="profile-back">
+
+                <a href="dashboard.html"
+                    class="profile-back-button">
+
+                    ← Back to Dashboard
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 As-Siyānah Institute for Arabic and
+                Islamic Studies.
+            </p>
+
+            <p>
+                Knowledge • Character • Excellence
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         SUPABASE
+    ===================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+    </script>
+
+
+    <script>
+
+        const SUPABASE_URL =
+            "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+
+        const SUPABASE_ANON_KEY =
+            "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+
+        const supabaseClient =
+            window.supabase.createClient(
+
+                SUPABASE_URL,
+
+                SUPABASE_ANON_KEY
+
+            );
+
+    </script>
+
+
+    <script src="js/profile.js"></script>
+    <script src="js/theme.js"></script>
+
+</body>
+
+</html>

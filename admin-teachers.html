@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Teachers | As-Siyānah Institute</title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin-portal.css"
+    >
+
+</head>
+
+<body>
+
+<!-- ========================================
+     ADMIN HEADER
+======================================== -->
+
+<header class="admin-header">
+
+    <div class="admin-header-inner">
+
+        <a
+            href="admin-dashboard.html"
+            class="admin-brand"
+        >
+
+            <div class="admin-brand-mark">
+                AS
+            </div>
+
+            <div class="admin-brand-text">
+
+                <strong>
+                    AS-SIYĀNAH
+                </strong>
+
+                <span>
+                    Admin Portal
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <nav class="admin-nav">
+
+            <a href="admin-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="admin-students.html">
+                Students
+            </a>
+
+            <a
+                href="admin-teachers.html"
+                class="active"
+            >
+                Teachers
+            </a>
+
+            <a href="admin-classes.html">
+                Classes
+            </a>
+
+            <a href="admin-lessons.html">
+                Lessons
+            </a>
+
+            <a href="admin-results.html">
+                Results
+            </a>
+
+            <a href="admin-tests.html">
+                Tests & Exams
+            </a>
+
+            <a href="admin-announcements.html">
+                Announcements
+            </a>
+
+            <a href="admin-registrations.html">
+                Registrations
+            </a>
+
+            <a href="admin-profile.html">
+                Profile
+            </a>
+
+        </nav>
+
+
+        <button
+            type="button"
+            id="adminThemeToggle"
+            class="admin-theme-toggle"
+            aria-label="Toggle dark mode"
+        >
+
+            <span class="admin-theme-icon">
+                ☾
+            </span>
+
+            <span class="admin-theme-text">
+                Dark
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ========================================
+     MAIN
+======================================== -->
+
+<main class="admin-teachers-main">
+
+
+    <!-- PAGE INTRO -->
+
+    <section class="admin-teachers-hero">
+
+        <div>
+
+            <p class="admin-teachers-eyebrow">
+                ADMIN MANAGEMENT
+            </p>
+
+            <h1>
+                Teachers
+            </h1>
+
+            <p>
+                View and manage the teaching staff of
+                As-Siyānah Institute.
+            </p>
+
+        </div>
+
+
+        <div class="admin-teachers-badge">
+
+            <div class="admin-teachers-badge-icon">
+                👨‍🏫
+            </div>
+
+            <div>
+
+                <strong>
+                    Teacher Directory
+                </strong>
+
+                <span>
+                    Teaching staff
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- TEACHER DIRECTORY -->
+
+    <section class="admin-teachers-card">
+
+        <div class="admin-teachers-card-header">
+
+            <div>
+
+                <span>
+                    TEACHER DIRECTORY
+                </span>
+
+                <h2>
+                    All Teachers
+                </h2>
+
+                <p>
+                    Search and view registered teaching staff.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="admin-teachers-search">
+
+            <span>
+                ⌕
+            </span>
+
+            <input
+                type="search"
+                id="teacherSearch"
+                placeholder="Search by name or email..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <!-- STATUS -->
+
+        <div
+            id="teachersMessage"
+            class="admin-teachers-message"
+        >
+            Loading teachers...
+        </div>
+
+
+        <!-- TABLE -->
+
+        <div class="admin-teachers-table-wrapper">
+
+            <table class="admin-teachers-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            ID
+                        </th>
+
+                        <th>
+                            Teacher
+                        </th>
+
+                        <th>
+                            Email
+                        </th>
+
+                        <th>
+                            Role
+                        </th>
+
+                        <th>
+                            Date Joined
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="teachersTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- BOTTOM ACTION -->
+
+    <div class="admin-teachers-actions">
+
+        <a
+            href="admin-dashboard.html"
+            class="admin-teachers-dashboard-button"
+        >
+            ← Dashboard
+        </a>
+
+    </div>
+
+
+</main>
+
+
+<!-- ========================================
+     FOOTER
+======================================== -->
+
+<footer class="admin-footer">
+
+    <p>
+        © 2026 As-Siyānah Institute for Arabic & Islamic Studies
+    </p>
+
+</footer>
+
+
+<!-- ========================================
+     SUPABASE
+======================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+    const SUPABASE_URL =
+        "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+    const SUPABASE_ANON_KEY =
+        "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+    const supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_ANON_KEY
+        );
+
+</script>
+
+
+<!-- ADMIN TEACHERS -->
+
+<script src="js/admin-teachers.js"></script>
+
+<!-- GLOBAL ADMIN THEME -->
+
+<script src="js/admin-theme.js"></script>
+
+</body>
+
+</html>

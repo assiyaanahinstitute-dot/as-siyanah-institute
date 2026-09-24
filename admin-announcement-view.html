@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Announcement Details | As-Siyānah Institute
+    </title>
+
+    <!-- GLOBAL ADMIN PORTAL DESIGN -->
+    <link
+        rel="stylesheet"
+        href="css/admin-portal.css"
+    >
+    <link rel="stylesheet" href="admin-announcenent-view.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         ADMIN HEADER
+    ========================================= -->
+
+    <header class="admin-header">
+
+        <div class="admin-header-inner">
+
+
+            <!-- BRAND -->
+
+            <a
+                href="admin-dashboard.html"
+                class="admin-brand"
+            >
+
+                <div class="admin-brand-mark">
+                    AS
+                </div>
+
+                <div class="admin-brand-text">
+
+                    <strong>
+                        AS-SIYĀNAH
+                    </strong>
+
+                    <span>
+                        Admin Portal
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- THEME BUTTON -->
+
+            <button
+                type="button"
+                id="adminThemeToggle"
+                class="admin-theme-toggle"
+                aria-label="Switch to dark mode"
+            >
+
+                <span class="admin-theme-icon">
+                    ☾
+                </span>
+
+                <span class="admin-theme-text">
+                    Dark
+                </span>
+
+            </button>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ========================================
+         ADMIN NAVIGATION
+    ========================================= -->
+
+    <nav class="admin-nav">
+
+        <a href="admin-dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="admin-students.html">
+            Students
+        </a>
+
+        <a href="admin-teachers.html">
+            Teachers
+        </a>
+
+        <a href="admin-lessons.html">
+            Lessons
+        </a>
+
+        <a href="admin-results.html">
+            Results
+        </a>
+
+        <a
+            href="admin-announcements.html"
+            class="active"
+        >
+            Announcements
+        </a>
+
+        <a href="admin-registrations.html">
+            Registrations
+        </a>
+
+        <a href="admin-profile.html">
+            Profile
+        </a>
+
+    </nav>
+
+
+
+    <!-- ========================================
+         MAIN CONTENT
+    ========================================= -->
+
+    <main class="admin-main">
+
+
+        <!-- ====================================
+             PAGE HEADER
+        ==================================== -->
+
+        <section class="admin-page-header">
+
+            <div>
+
+                <p class="dashboard-label">
+                    ADMIN PORTAL
+                </p>
+
+                <h2 id="announcementName">
+                    Announcement
+                </h2>
+
+                <p id="announcementCategory">
+                    Loading...
+                </p>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="admin-view-actions">
+
+
+                <a
+                    href="admin-announcements.html"
+                    class="admin-back-button"
+                >
+                    ← Back to Announcements
+                </a>
+
+
+                <a
+                    href="#"
+                    id="editAnnouncementButton"
+                    class="admin-edit-button"
+                >
+                    ✏️ Edit Announcement
+                </a>
+
+
+                <button
+                    type="button"
+                    id="deleteAnnouncementButton"
+                    class="admin-delete-button"
+                >
+                    🗑 Delete Announcement
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ====================================
+             STATUS MESSAGE
+        ==================================== -->
+
+        <p
+            id="announcementMessage"
+            class="admin-message"
+        >
+            Loading announcement details...
+        </p>
+
+
+
+        <!-- ====================================
+             ANNOUNCEMENT DETAILS
+        ==================================== -->
+
+        <section
+            id="announcementDetails"
+            class="admin-details-card"
+            style="display: none;"
+        >
+
+
+            <!-- ID -->
+
+            <div class="admin-detail-row">
+
+                <div class="admin-detail-label">
+                    ID
+                </div>
+
+                <div
+                    id="announcementId"
+                    class="admin-detail-value"
+                >
+                    N/A
+                </div>
+
+            </div>
+
+
+
+            <!-- TITLE -->
+
+            <div class="admin-detail-row">
+
+                <div class="admin-detail-label">
+                    Title
+                </div>
+
+                <div
+                    id="announcementTitle"
+                    class="admin-detail-value"
+                >
+                    N/A
+                </div>
+
+            </div>
+
+
+
+            <!-- CATEGORY -->
+
+            <div class="admin-detail-row">
+
+                <div class="admin-detail-label">
+                    Category
+                </div>
+
+                <div
+                    id="announcementCategoryDetail"
+                    class="admin-detail-value"
+                >
+                    N/A
+                </div>
+
+            </div>
+
+
+
+            <!-- AUDIENCE -->
+
+            <div class="admin-detail-row">
+
+                <div class="admin-detail-label">
+                    Audience
+                </div>
+
+                <div
+                    id="announcementAudience"
+                    class="admin-detail-value"
+                >
+                    N/A
+                </div>
+
+            </div>
+
+
+
+            <!-- STATUS -->
+
+            <div class="admin-detail-row">
+
+                <div class="admin-detail-label">
+                    Status
+                </div>
+
+                <div
+                    id="announcementPublished"
+                    class="admin-detail-value"
+                >
+                    N/A
+                </div>
+
+            </div>
+
+
+
+            <!-- CREATED -->
+
+            <div class="admin-detail-row">
+
+                <div class="admin-detail-label">
+                    Created
+                </div>
+
+                <div
+                    id="announcementCreatedAt"
+                    class="admin-detail-value"
+                >
+                    N/A
+                </div>
+
+            </div>
+
+
+
+            <!-- MESSAGE -->
+
+            <div class="admin-detail-row">
+
+                <div class="admin-detail-label">
+                    Message
+                </div>
+
+                <div
+                    id="announcementFullMessage"
+                    class="admin-detail-value"
+                >
+                    N/A
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ========================================
+         FOOTER
+    ========================================= -->
+
+    <footer class="admin-footer">
+
+        <p>
+            © 2026 As-Siyānah Institute for Arabic & Islamic Studies
+        </p>
+
+    </footer>
+
+
+
+    <!-- ========================================
+         SUPABASE
+    ========================================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <script>
+
+        const SUPABASE_URL =
+            "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+        const SUPABASE_ANON_KEY =
+            "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+        const supabaseClient =
+            supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_ANON_KEY
+            );
+
+    </script>
+
+
+
+    <!-- ========================================
+         ANNOUNCEMENT VIEW
+    ========================================= -->
+
+    <script src="js/admin-announcement-view.js"></script>
+
+
+
+    <!-- ========================================
+         EDIT ANNOUNCEMENT
+    ========================================= -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const editButton =
+                    document.getElementById(
+                        "editAnnouncementButton"
+                    );
+
+
+                if (editButton) {
+
+                    editButton.onclick =
+                        function () {
+
+                            const params =
+                                new URLSearchParams(
+                                    window.location.search
+                                );
+
+
+                            const id =
+                                params.get("id");
+
+
+                            if (!id) {
+
+                                alert(
+                                    "Announcement ID is missing."
+                                );
+
+                                return;
+                            }
+
+
+                            window.location.href =
+                                "admin-edit-announcement.html?id=" +
+                                encodeURIComponent(id);
+
+                        };
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+
+    <!-- ========================================
+         DELETE ANNOUNCEMENT
+    ========================================= -->
+
+    <script>
+
+        const deleteButton =
+            document.getElementById(
+                "deleteAnnouncementButton"
+            );
+
+
+        if (deleteButton) {
+
+            deleteButton.onclick =
+                async function () {
+
+
+                    const params =
+                        new URLSearchParams(
+                            window.location.search
+                        );
+
+
+                    const id =
+                        params.get("id");
+
+
+                    if (!id) {
+
+                        alert(
+                            "Announcement ID is missing."
+                        );
+
+                        return;
+                    }
+
+
+                    const confirmed =
+                        confirm(
+                            "Are you sure you want to delete this announcement?"
+                        );
+
+
+                    if (!confirmed) {
+
+                        return;
+
+                    }
+
+
+                    deleteButton.disabled =
+                        true;
+
+                    deleteButton.textContent =
+                        "Deleting...";
+
+
+                    const { error } =
+                        await supabaseClient
+                            .from("Announcements")
+                            .delete()
+                            .eq("id", id);
+
+
+                    if (error) {
+
+                        console.error(
+                            "Announcement delete error:",
+                            error
+                        );
+
+
+                        alert(
+                            "Unable to delete announcement: " +
+                            error.message
+                        );
+
+
+                        deleteButton.disabled =
+                            false;
+
+                        deleteButton.textContent =
+                            "🗑 Delete Announcement";
+
+
+                        return;
+
+                    }
+
+
+                    alert(
+                        "Announcement deleted successfully."
+                    );
+
+
+                    window.location.href =
+                        "admin-announcements.html";
+
+                };
+
+        }
+
+    </script>
+
+
+
+    <!-- ========================================
+         GLOBAL ADMIN DARK MODE
+    ========================================= -->
+
+    <script src="js/admin-theme.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Review Test | As-Siyānah Institute
+    </title>
+
+
+    <!-- GLOBAL TEACHER PORTAL -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal-dark.css"
+    >
+
+
+    <!-- PAGE STYLES -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-test-review.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     TEACHER HEADER
+===================================================== -->
+
+<header class="teacher-header">
+
+    <div class="teacher-header-inner">
+
+
+        <a
+            href="index.html"
+            class="teacher-brand"
+        >
+
+            <span class="teacher-brand-main">
+                As-Siyānah
+            </span>
+
+            <span class="teacher-brand-sub">
+                Teacher Portal
+            </span>
+
+        </a>
+
+
+        <nav class="teacher-nav">
+
+            <a href="teacher-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="teacher-students.html">
+                Students
+            </a>
+
+            <a href="teacher-lessons.html">
+                Lessons
+            </a>
+
+            <a href="teacher-results.html">
+                Results
+            </a>
+
+            <a href="teacher-assignments.html">
+                Assignments
+            </a>
+
+            <a
+                href="teacher-tests.html"
+                class="active"
+            >
+                Tests
+            </a>
+
+            <a href="teacher-test-submissions.html">
+                Submissions
+            </a>
+
+            <a href="teacher-attendance.html">
+                Attendance
+            </a>
+
+            <a href="teacher-announcements.html">
+                Announcements
+            </a>
+
+            <a href="teacher-profile.html">
+                Profile
+            </a>
+
+        </nav>
+
+
+        <button
+            type="button"
+            class="teacher-theme-toggle"
+            aria-label="Switch to dark mode"
+            aria-pressed="false"
+        >
+            🌙 Dark Mode
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="test-review-main">
+
+
+    <div class="test-review-container">
+
+
+        <!-- MESSAGE -->
+
+        <div id="message"></div>
+
+
+
+        <!-- LOADING -->
+
+        <section
+            id="loading"
+            class="loading-card"
+        >
+
+            <div class="spinner"></div>
+
+            <p>
+                Loading test submission...
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             REVIEW CONTENT
+        ================================================= -->
+
+        <section
+            id="reviewContent"
+            class="review-content"
+            style="display:none;"
+        >
+
+
+            <!-- PAGE HEADER -->
+
+            <section class="page-heading">
+
+
+                <div class="page-heading-content">
+
+                    <span class="page-eyebrow">
+                        TEST REVIEW
+                    </span>
+
+                    <h1 id="testTitle">
+                        Test
+                    </h1>
+
+                    <p id="testDescription">
+                        Review the student's submission.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="teacher-test-submissions.html"
+                    class="back-button"
+                >
+                    ← Back to Submissions
+                </a>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 STUDENT / TEST SUMMARY
+            ================================================= -->
+
+            <section class="summary-grid">
+
+
+                <!-- STUDENT -->
+
+                <div class="info-card">
+
+
+                    <div class="info-card-icon">
+                        S
+                    </div>
+
+
+                    <div class="info-card-content">
+
+                        <span class="card-label">
+                            STUDENT
+                        </span>
+
+                        <strong id="studentName">
+                            —
+                        </strong>
+
+                        <span id="studentDetails">
+                            —
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- SUBJECT -->
+
+                <div class="info-card">
+
+
+                    <div class="info-card-icon">
+                        T
+                    </div>
+
+
+                    <div class="info-card-content">
+
+                        <span class="card-label">
+                            SUBJECT
+                        </span>
+
+                        <strong id="subjectName">
+                            —
+                        </strong>
+
+                        <span id="testLevel">
+                            —
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- SCORE -->
+
+                <div class="info-card score-card">
+
+
+                    <div class="info-card-icon score-icon">
+                        %
+                    </div>
+
+
+                    <div class="info-card-content">
+
+                        <span class="card-label">
+                            CURRENT SCORE
+                        </span>
+
+                        <strong id="currentScore">
+                            —
+                        </strong>
+
+                        <span id="attemptStatus">
+                            —
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 QUESTIONS
+            ================================================= -->
+
+            <section class="questions-section">
+
+
+                <div class="section-heading">
+
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            ANSWERS
+                        </span>
+
+                        <h2>
+                            Student Responses
+                        </h2>
+
+                        <p>
+                            Review each response and make any necessary assessment.
+                        </p>
+
+                    </div>
+
+
+                    <span
+                        id="questionCount"
+                        class="question-count"
+                    >
+                        0 Questions
+                    </span>
+
+
+                </div>
+
+
+                <div class="section-divider"></div>
+
+
+                <div id="questionsContainer">
+
+                    <!-- Questions appear here -->
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FINAL REVIEW
+            ================================================= -->
+
+            <section class="review-section">
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            TEACHER REVIEW
+                        </span>
+
+                        <h2>
+                            Final Review
+                        </h2>
+
+                        <p>
+                            Add feedback that will help guide the student's learning.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="section-divider"></div>
+
+
+                <div class="review-form">
+
+
+                    <div class="form-group">
+
+                        <label for="finalFeedback">
+                            Teacher Feedback
+                        </label>
+
+                        <textarea
+                            id="finalFeedback"
+                            rows="6"
+                            placeholder="Write feedback for the student..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="review-actions">
+
+                        <button
+                            type="button"
+                            id="saveReviewBtn"
+                            class="save-button"
+                        >
+                            Save Review
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+        </section>
+
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="teacher-footer">
+
+    <div class="teacher-footer-inner">
+
+        <p>
+            © 2026 As-Siyānah Institute for Arabic and Islamic Studies.
+        </p>
+
+        <span>
+            Teacher Portal
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<!-- =====================================================
+     TEACHER THEME
+===================================================== -->
+
+<script src="js/teacher-theme.js"></script>
+
+
+<!-- =====================================================
+     PAGE JAVASCRIPT
+===================================================== -->
+
+<script src="js/teacher-test-review.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Assignments | As-Siyānah Institute
+    </title>
+
+
+    <!-- GLOBAL TEACHER PORTAL -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal.css"
+    >
+
+
+    <!-- PAGE DESIGN -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-assignments.css"
+    >
+
+
+    <!-- GLOBAL DARK MODE -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal-dark.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<header class="teacher-header">
+
+    <div class="teacher-header-inner">
+
+
+        <!-- BRAND -->
+
+        <div class="teacher-brand">
+
+            <h1>
+                AS-SIYĀNAH INSTITUTE
+            </h1>
+
+            <span>
+                Teacher Portal
+            </span>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="teacher-nav">
+
+            <a href="teacher-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="teacher-students.html">
+                Students
+            </a>
+
+            <a href="teacher-lessons.html">
+                Lessons
+            </a>
+
+            <a href="teacher-results-list.html">
+                Results
+            </a>
+
+            <a
+                href="teacher-assignments.html"
+                class="active"
+            >
+                Assignments
+            </a>
+
+            <a href="teacher-announcements.html">
+                Announcements
+            </a>
+
+        </nav>
+
+
+        <!-- THEME -->
+
+        <button
+            type="button"
+            class="teacher-theme-toggle"
+            aria-label="Switch to dark mode"
+        >
+            🌙 Dark Mode
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+====================================================== -->
+
+<main class="assignments-main">
+
+
+    <!-- =================================================
+         HERO
+    ================================================== -->
+
+    <section class="assignments-hero">
+
+        <div class="hero-content">
+
+            <span class="page-eyebrow">
+                TEACHER PORTAL
+            </span>
+
+            <h2>
+                Assignments
+            </h2>
+
+            <p>
+                Create, manage and review student assignments
+                from one central workspace.
+            </p>
+
+        </div>
+
+
+        <a
+            href="teacher-create-assignment.html"
+            class="create-btn"
+        >
+            <span class="create-icon">+</span>
+
+            Create Assignment
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         STATISTICS
+    ================================================== -->
+
+    <section class="assignment-stats">
+
+
+        <!-- TOTAL -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📝
+            </div>
+
+            <div class="stat-content">
+
+                <p>
+                    Total Assignments
+                </p>
+
+                <h3 id="totalAssignments">
+                    —
+                </h3>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PUBLISHED -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon published-icon">
+                🌐
+            </div>
+
+            <div class="stat-content">
+
+                <p>
+                    Published
+                </p>
+
+                <h3 id="publishedAssignments">
+                    —
+                </h3>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DRAFTS -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon draft-icon">
+                📄
+            </div>
+
+            <div class="stat-content">
+
+                <p>
+                    Drafts
+                </p>
+
+                <h3 id="draftAssignments">
+                    —
+                </h3>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         ASSIGNMENTS SECTION
+    ================================================== -->
+
+    <section class="assignments-section">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-eyebrow">
+                    ACADEMIC WORK
+                </span>
+
+                <h3>
+                    All Assignments
+                </h3>
+
+                <p>
+                    Manage assignments created for your students.
+                </p>
+
+            </div>
+
+
+            <a
+                href="teacher-create-assignment.html"
+                class="secondary-create-btn"
+            >
+                + New Assignment
+            </a>
+
+        </div>
+
+
+
+        <!-- ASSIGNMENTS -->
+
+        <div
+            id="assignmentsContainer"
+            class="assignments-container"
+        >
+
+            <div class="loading-state">
+
+                <div class="loading-spinner"></div>
+
+                <p>
+                    Loading assignments...
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer class="teacher-footer">
+
+    <div class="teacher-footer-inner">
+
+        <div>
+
+            <strong>
+                AS-SIYĀNAH INSTITUTE
+            </strong>
+
+            <span>
+                Arabic & Islamic Studies
+            </span>
+
+        </div>
+
+
+        <p>
+            © 2026 As-Siyānah Institute for Arabic and Islamic Studies.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     SUPABASE
+====================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script>
+
+    const SUPABASE_URL =
+        "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+
+    const SUPABASE_ANON_KEY =
+        "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+
+    const supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_ANON_KEY
+        );
+
+</script>
+
+
+
+<!-- =====================================================
+     EXISTING ASSIGNMENTS JAVASCRIPT
+====================================================== -->
+
+<script src="js/teacher-assignments.js"></script>
+
+
+
+<!-- =====================================================
+     GLOBAL TEACHER DARK MODE
+====================================================== -->
+
+<script src="js/teacher-theme.js"></script>
+
+
+</body>
+
+</html>

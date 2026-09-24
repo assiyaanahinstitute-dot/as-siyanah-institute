@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assign Teacher Class | As-Siyānah Institute</title>
+
+    <link rel="stylesheet" href="css/admin-portal.css">
+</head>
+
+<body>
+
+<header class="admin-header">
+    <div class="admin-header-inner">
+
+        <a href="admin-dashboard.html" class="admin-brand">
+            <div class="admin-brand-mark">A</div>
+
+            <div class="admin-brand-text">
+                <strong>AS-SIYĀNAH</strong>
+                <span>ADMIN PORTAL</span>
+            </div>
+        </a>
+
+        <nav class="admin-nav">
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="admin-teachers.html" class="active">Teachers</a>
+        </nav>
+
+        <button id="adminThemeToggle" class="admin-theme-toggle">
+            <span class="admin-theme-icon">☾</span>
+            <span class="admin-theme-text">Dark</span>
+        </button>
+
+    </div>
+</header>
+
+
+<main class="admin-dashboard">
+
+    <section class="admin-welcome">
+
+        <div>
+            <p class="admin-eyebrow">TEACHER MANAGEMENT</p>
+
+            <h1>Assign Teacher Class</h1>
+
+            <p>
+                Assign a teacher to a subject, level and class.
+            </p>
+        </div>
+
+    </section>
+
+
+    <section class="admin-section">
+
+        <div class="admin-section-header">
+
+            <div>
+                <h2>Class Assignment</h2>
+
+                <p>
+                    Select the teacher and class information below.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="admin-card teacher-form-card">
+
+            <form id="assignClassForm">
+
+
+                <!-- Teacher -->
+
+                <div class="admin-form-group">
+
+                    <label for="teacher">
+                        Teacher
+                    </label>
+
+                    <select
+                        id="teacher"
+                        required
+                    >
+
+                        <option value="">
+                            Select teacher
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Subject -->
+
+                <div class="admin-form-group">
+
+                    <label for="subject">
+                        Subject
+                    </label>
+
+                    <select
+                        id="subject"
+                        required
+                    >
+
+                        <option value="">
+                            Select subject
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Level -->
+
+                <div class="admin-form-group">
+
+                    <label for="level">
+                        Level
+                    </label>
+
+                    <select
+                        id="level"
+                        required
+                    >
+
+                        <option value="">
+                            Select level
+                        </option>
+
+                        <option value="Beginner">
+                            Beginner
+                        </option>
+
+                        <option value="Elementary">
+                            Elementary
+                        </option>
+
+                        <option value="Intermediate">
+                            Intermediate
+                        </option>
+
+                        <option value="Advanced">
+                            Advanced
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Class -->
+
+                <div class="admin-form-group">
+
+                    <label for="className">
+                        Class Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="className"
+                        placeholder="e.g. Hifz Level 1"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Message -->
+
+                <div
+                    id="assignmentMessage"
+                    class="teacher-message"
+                ></div>
+
+
+                <!-- Actions -->
+
+                <div class="teacher-form-actions">
+
+                    <a
+                        href="admin-teachers.html"
+                        class="admin-btn admin-btn-secondary"
+                    >
+                        Cancel
+                    </a>
+
+                    <button
+                        type="submit"
+                        id="assignClassBtn"
+                        class="admin-btn admin-btn-primary"
+                    >
+                        Assign Class
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="admin-footer">
+
+    <p>
+        © 2026 AS-SIYĀNAH INSTITUTE FOR ARABIC & ISLAMIC STUDIES
+    </p>
+
+</footer>
+
+
+<script src="js/admin-theme.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script>
+
+const SUPABASE_URL =
+    "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+    );
+
+
+const teacherSelect =
+    document.getElementById("teacher");
+
+const subjectSelect =
+    document.getElementById("subject");
+
+const assignClassForm =
+    document.getElementById("assignClassForm");
+
+const assignClassBtn =
+    document.getElementById("assignClassBtn");
+
+const assignmentMessage =
+    document.getElementById("assignmentMessage");
+
+
+/* =========================================
+   LOAD TEACHERS
+========================================= */
+
+async function loadTeachers() {
+
+    const {
+        data,
+        error
+    } = await supabaseClient
+        .from("Teachers")
+        .select("id, full_name, email")
+        .eq("role", "teacher")
+        .order("full_name");
+
+
+    if (error) {
+
+        console.error(error);
+
+        assignmentMessage.textContent =
+            "Unable to load teachers.";
+
+        assignmentMessage.className =
+            "teacher-message error";
+
+        return;
+    }
+
+
+    data.forEach(function (teacher) {
+
+        const option =
+            document.createElement("option");
+
+        option.value = teacher.id;
+
+        option.textContent =
+            teacher.full_name +
+            " — " +
+            teacher.email;
+
+        teacherSelect.appendChild(option);
+
+    });
+
+}
+
+
+/* =========================================
+   LOAD SUBJECTS
+========================================= */
+
+async function loadSubjects() {
+
+    const {
+        data,
+        error
+    } = await supabaseClient
+        .from("Subjects")
+        .select("id, name, active")
+        .eq("active", true)
+        .order("name");
+
+
+    if (error) {
+
+        console.error(error);
+
+        assignmentMessage.textContent =
+            "Unable to load subjects.";
+
+        assignmentMessage.className =
+            "teacher-message error";
+
+        return;
+    }
+
+
+    data.forEach(function (subject) {
+
+        const option =
+            document.createElement("option");
+
+        option.value = subject.id;
+
+        option.textContent =
+            subject.name;
+
+        subjectSelect.appendChild(option);
+
+    });
+
+}
+
+
+/* =========================================
+   ASSIGN CLASS
+========================================= */
+
+assignClassForm.addEventListener(
+    "submit",
+    async function (event) {
+
+        event.preventDefault();
+
+
+        const teacherId =
+            teacherSelect.value;
+
+        const subjectId =
+            subjectSelect.value;
+
+        const level =
+            document.getElementById("level").value;
+
+        const className =
+            document
+                .getElementById("className")
+                .value
+                .trim();
+
+
+        assignmentMessage.textContent = "";
+
+        assignmentMessage.className =
+            "teacher-message";
+
+
+        assignClassBtn.disabled = true;
+
+        assignClassBtn.textContent =
+            "Assigning...";
+
+
+        try {
+
+            const {
+                error
+            } = await supabaseClient
+                .from("Teacher_Classes")
+                .insert({
+                    teacher_id: Number(teacherId),
+                    subject_id: Number(subjectId),
+                    level: level,
+                    class_name: className
+                });
+
+
+            if (error) {
+                throw error;
+            }
+
+
+            assignmentMessage.textContent =
+                "Class assigned successfully.";
+
+            assignmentMessage.className =
+                "teacher-message success";
+
+
+            assignClassForm.reset();
+
+
+        } catch (error) {
+
+            console.error(error);
+
+            assignmentMessage.textContent =
+                error.message ||
+                "Unable to assign class.";
+
+            assignmentMessage.className =
+                "teacher-message error";
+
+        } finally {
+
+            assignClassBtn.disabled = false;
+
+            assignClassBtn.textContent =
+                "Assign Class";
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   START
+========================================= */
+
+loadTeachers();
+loadSubjects();
+
+</script>
+
+</body>
+</html>

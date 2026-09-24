@@ -1,0 +1,1271 @@
+/* =========================================================
+   AS-SIYĀNAH INSTITUTE
+   TEACHER ASSIGNMENT REVIEW
+   PREMIUM DARK MODE
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+html.teacher-dark .assignment-review-page {
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(31, 94, 60, 0.14),
+            transparent 32%
+        ),
+        #07150f;
+
+    color: #edf5f0;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+html.teacher-dark .teacher-header {
+    background:
+        rgba(7, 21, 15, 0.94);
+
+    border-bottom: 1px solid #1a3528;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.20);
+}
+
+
+html.teacher-dark .teacher-brand-text strong {
+    color: #f3f7f4;
+}
+
+
+html.teacher-dark .teacher-brand-text span {
+    color: #81988c;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+html.teacher-dark .teacher-nav a {
+    color: #91a79b;
+
+    transition:
+        color .2s ease,
+        background .2s ease;
+}
+
+
+html.teacher-dark .teacher-nav a:hover {
+    background: #10291d;
+
+    color: #edf7f1;
+}
+
+
+html.teacher-dark .teacher-nav a.active {
+    background:
+        linear-gradient(
+            135deg,
+            #153b28,
+            #102e20
+        );
+
+    color: #d8b94c;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(212, 175, 55, 0.08);
+}
+
+
+/* =========================================================
+   THEME BUTTON
+========================================================= */
+
+html.teacher-dark .teacher-theme-toggle {
+    background: #0d251a;
+
+    border: 1px solid #284638;
+
+    color: #dce9e2;
+
+    box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+
+html.teacher-dark .teacher-theme-toggle:hover {
+    background: #143526;
+
+    border-color: #3b5c4a;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+html.teacher-dark .review-logout {
+    background: #211615;
+
+    border: 1px solid #4a2b29;
+
+    color: #e7aaa5;
+}
+
+
+html.teacher-dark .review-logout:hover {
+    background: #321d1c;
+
+    border-color: #69403c;
+
+    color: #f0c0bc;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+html.teacher-dark .review-hero {
+    background:
+        linear-gradient(
+            135deg,
+            #082419 0%,
+            #0d3926 48%,
+            #12472f 100%
+        );
+
+    border: 1px solid rgba(100, 157, 126, 0.12);
+
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.30);
+}
+
+
+html.teacher-dark .review-hero::before {
+    background:
+        radial-gradient(
+            circle,
+            rgba(212, 175, 55, 0.10),
+            transparent 65%
+        );
+}
+
+
+html.teacher-dark .review-hero h1,
+html.teacher-dark .review-hero h2 {
+    color: #f4f8f5;
+}
+
+
+html.teacher-dark .review-hero p {
+    color: rgba(231, 243, 236, 0.70);
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+html.teacher-dark .back-btn {
+    background: rgba(7, 25, 17, 0.72);
+
+    border: 1px solid #315141;
+
+    color: #9ad2b1;
+
+    box-shadow:
+        0 5px 16px rgba(0, 0, 0, 0.14);
+}
+
+
+html.teacher-dark .back-btn:hover {
+    background: #123124;
+
+    border-color: #48705a;
+
+    color: #c4e5d2;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   REVIEW CONTENT CARD
+========================================================= */
+
+html.teacher-dark .review-content-card {
+    background:
+        linear-gradient(
+            145deg,
+            #0d2419,
+            #0b2017
+        );
+
+    border: 1px solid #1c392b;
+
+    box-shadow:
+        0 16px 45px rgba(0, 0, 0, 0.22);
+}
+
+
+html.teacher-dark .review-content-card h3 {
+    color: #e9f2ed;
+}
+
+
+html.teacher-dark .review-content-card h4 {
+    color: #d8e7df;
+}
+
+
+html.teacher-dark .review-content-card p {
+    color: #8ea298;
+}
+
+
+/* =========================================================
+   INFORMATION / DETAILS
+========================================================= */
+
+html.teacher-dark .review-info,
+html.teacher-dark .submission-info,
+html.teacher-dark .student-info {
+    background: #0a1d14;
+
+    border-color: #203e2f;
+}
+
+
+html.teacher-dark .review-info strong,
+html.teacher-dark .submission-info strong,
+html.teacher-dark .student-info strong {
+    color: #dcebe3;
+}
+
+
+html.teacher-dark .review-info span,
+html.teacher-dark .submission-info span,
+html.teacher-dark .student-info span {
+    color: #82978d;
+}
+
+
+/* =========================================================
+   DIVIDERS
+========================================================= */
+
+html.teacher-dark .review-content-card hr {
+    border: 0;
+
+    border-top: 1px solid #203d2f;
+}
+
+
+/* =========================================================
+   FORM ELEMENTS
+========================================================= */
+
+html.teacher-dark .review-content-card input,
+html.teacher-dark .review-content-card textarea,
+html.teacher-dark .review-content-card select {
+    background: #091c13;
+
+    border: 1px solid #294739;
+
+    color: #e5efe9;
+}
+
+
+html.teacher-dark .review-content-card input::placeholder,
+html.teacher-dark .review-content-card textarea::placeholder {
+    color: #62786c;
+}
+
+
+html.teacher-dark .review-content-card input:focus,
+html.teacher-dark .review-content-card textarea:focus,
+html.teacher-dark .review-content-card select:focus {
+    outline: none;
+
+    border-color: #b9982d;
+
+    box-shadow:
+        0 0 0 3px rgba(201, 162, 39, 0.10);
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+html.teacher-dark .review-content-card label {
+    color: #b8cabe;
+}
+
+
+/* =========================================================
+   SUBMISSION TEXT
+========================================================= */
+
+html.teacher-dark .submission-text {
+    background: #091c13;
+
+    border: 1px solid #203d2f;
+
+    color: #d7e4dd;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+html.teacher-dark .status-badge {
+    border: 1px solid transparent;
+}
+
+
+html.teacher-dark .status-badge.pending {
+    background: #332b13;
+
+    border-color: #51451e;
+
+    color: #dfc66d;
+}
+
+
+html.teacher-dark .status-badge.submitted {
+    background: #122a3d;
+
+    border-color: #244761;
+
+    color: #9bc6e7;
+}
+
+
+html.teacher-dark .status-badge.reviewed {
+    background: #123322;
+
+    border-color: #28563b;
+
+    color: #91d1aa;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+html.teacher-dark .save-review-btn,
+html.teacher-dark .submit-review-btn {
+    background:
+        linear-gradient(
+            135deg,
+            #c5a02d,
+            #d4af37
+        );
+
+    color: #102016;
+
+    border: none;
+
+    box-shadow:
+        0 7px 20px rgba(212, 175, 55, 0.12);
+}
+
+
+html.teacher-dark .save-review-btn:hover,
+html.teacher-dark .submit-review-btn:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #e1bf4a
+        );
+
+    box-shadow:
+        0 10px 25px rgba(212, 175, 55, 0.18);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+html.teacher-dark .secondary-btn {
+    background: #10291d;
+
+    border: 1px solid #315141;
+
+    color: #a9c8b8;
+}
+
+
+html.teacher-dark .secondary-btn:hover {
+    background: #15382a;
+
+    border-color: #426651;
+
+    color: #d5e7dd;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+html.teacher-dark .loading-state {
+    background:
+        linear-gradient(
+            145deg,
+            #091d14,
+            #0b2419
+        );
+
+    border: 1px dashed #315141;
+}
+
+
+html.teacher-dark .loading-state p {
+    color: #879b91;
+}
+
+
+html.teacher-dark .loading-spinner {
+    border: 3px solid #294538;
+
+    border-top-color: #d4af37;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+html.teacher-dark .empty-state {
+    background: #091d14;
+
+    border-color: #294638;
+}
+
+
+html.teacher-dark .empty-state h3 {
+    color: #dcebe3;
+}
+
+
+html.teacher-dark .empty-state p {
+    color: #82968c;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+html.teacher-dark .review-footer {
+    background: #06140e;
+
+    border-top: 1px solid #193529;
+}
+
+
+html.teacher-dark .review-footer p {
+    color: #6f8479;
+}
+
+
+html.teacher-dark .review-footer span {
+    color: #d4af37;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+html.teacher-dark .assignment-review-page {
+    scrollbar-color: #315444 #081a12;
+
+    scrollbar-width: thin;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    html.teacher-dark .review-content-card {
+        box-shadow:
+            0 10px 30px rgba(0, 0, 0, 0.20);
+    }
+
+
+    html.teacher-dark .review-hero {
+        box-shadow:
+            0 14px 35px rgba(0, 0, 0, 0.25);
+    }
+
+}
+
+
+/* =========================================================
+   TEACHER LESSONS PAGE — DARK MODE
+========================================================= */
+
+html.teacher-dark body {
+    background: #071a12;
+    color: #f1f5f3;
+}
+
+
+/* HEADER */
+
+html.teacher-dark .site-header {
+    background: #0b2419 !important;
+    border-bottom-color: #1d4433 !important;
+}
+
+html.teacher-dark .logo span {
+    color: #ffffff !important;
+}
+
+html.teacher-dark .logo small {
+    color: #d4af37 !important;
+}
+
+html.teacher-dark .nav-menu a {
+    color: #c9d5cf !important;
+}
+
+html.teacher-dark .nav-menu a:hover,
+html.teacher-dark .nav-menu a.active {
+    background: #153b2b !important;
+    color: #ffffff !important;
+}
+
+
+/* DARK MODE BUTTON */
+
+html.teacher-dark .teacher-theme-toggle {
+    background: #153b2b !important;
+    color: #ffffff !important;
+    border: 1px solid #2c5a46 !important;
+}
+
+html.teacher-dark .teacher-theme-toggle:hover {
+    background: #1d5e3c !important;
+}
+
+
+/* PAGE HERO */
+
+html.teacher-dark .dashboard-welcome {
+    background:
+        linear-gradient(
+            135deg,
+            #071a12 0%,
+            #0d3b27 65%,
+            #145236 100%
+        ) !important;
+}
+
+html.teacher-dark .dashboard-welcome h1 {
+    color: #ffffff !important;
+}
+
+html.teacher-dark .dashboard-welcome p {
+    color: rgba(255,255,255,0.75) !important;
+}
+
+
+/* STATISTICS */
+
+html.teacher-dark
+.dashboard-section
+.container
+> div[style*="grid-template-columns"]
+> div {
+    background: #0d261b !important;
+    border-color: #234636 !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25) !important;
+}
+
+html.teacher-dark
+.dashboard-section
+.container
+> div[style*="grid-template-columns"]
+> div:hover {
+    border-color: #37654f !important;
+    background: #102d20 !important;
+}
+
+html.teacher-dark
+.dashboard-section
+.container
+> div[style*="grid-template-columns"]
+> div small {
+    color: #9eada5 !important;
+}
+
+html.teacher-dark
+.dashboard-section
+.container
+> div[style*="grid-template-columns"]
+> div h2 {
+    color: #d4af37 !important;
+}
+
+
+/* CREATE BUTTON */
+
+html.teacher-dark .btn-primary {
+    background: #1d6b45 !important;
+    color: #ffffff !important;
+}
+
+html.teacher-dark .btn-primary:hover {
+    background: #258255 !important;
+}
+
+
+/* LESSON LIST */
+
+html.teacher-dark #teacherLessonsList {
+    color: #f1f5f3;
+}
+
+
+/* LESSON CARDS */
+
+html.teacher-dark .lesson-card,
+html.teacher-dark .teacher-lesson-card,
+html.teacher-dark .lesson-item,
+html.teacher-dark .lesson {
+    background: #0d261b !important;
+    border-color: #234636 !important;
+    color: #e7eee9 !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25) !important;
+}
+
+html.teacher-dark .lesson-card:hover,
+html.teacher-dark .teacher-lesson-card:hover,
+html.teacher-dark .lesson-item:hover,
+html.teacher-dark .lesson:hover {
+    background: #102d20 !important;
+    border-color: #37654f !important;
+}
+
+
+/* LESSON TEXT */
+
+html.teacher-dark .lesson-card h3,
+html.teacher-dark .teacher-lesson-card h3,
+html.teacher-dark .lesson-item h3,
+html.teacher-dark .lesson h3 {
+    color: #ffffff !important;
+}
+
+html.teacher-dark .lesson-card p,
+html.teacher-dark .teacher-lesson-card p,
+html.teacher-dark .lesson-item p,
+html.teacher-dark .lesson p {
+    color: #aebbb4 !important;
+}
+
+
+/* LOADING / EMPTY */
+
+html.teacher-dark #teacherLessonsList > p {
+    background: #0d261b !important;
+    border-color: #234636 !important;
+    color: #9eada5 !important;
+}
+
+
+/* FOOTER */
+
+html.teacher-dark .site-footer {
+    background: #04110b !important;
+    border-top-color: #1d4433 !important;
+}
+
+html.teacher-dark .site-footer p {
+    color: #82928a !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    html.teacher-dark .nav-menu {
+        scrollbar-color: #315c48 #0b2419;
+    }
+
+}
+
+/* =========================================================
+   TEACHER ASSIGNMENTS — DARK MODE
+========================================================= */
+
+html.teacher-dark .assignments-main {
+    color: #edf4ef;
+}
+
+
+/* HERO */
+
+html.teacher-dark .assignments-hero {
+    background:
+        linear-gradient(
+            135deg,
+            #071a12 0%,
+            #0d3b27 60%,
+            #145236 100%
+        ) !important;
+}
+
+
+/* STATS */
+
+html.teacher-dark .stat-card {
+    background: #0d261b !important;
+    border-color: #234636 !important;
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.25) !important;
+}
+
+html.teacher-dark .stat-card:hover {
+    background: #102d20 !important;
+    border-color: #37654f !important;
+}
+
+html.teacher-dark .stat-content p {
+    color: #9eada5 !important;
+}
+
+html.teacher-dark .stat-content h3 {
+    color: #d4af37 !important;
+}
+
+html.teacher-dark .stat-icon {
+    background: #153b2b !important;
+}
+
+html.teacher-dark .published-icon {
+    background: #3b3217 !important;
+}
+
+html.teacher-dark .draft-icon {
+    background: #202a25 !important;
+}
+
+
+/* ASSIGNMENTS SECTION */
+
+html.teacher-dark .assignments-section {
+    background: #0b2419 !important;
+    border-color: #234636 !important;
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.25) !important;
+}
+
+
+/* SECTION HEADING */
+
+html.teacher-dark .section-heading {
+    border-bottom-color: #234636 !important;
+}
+
+html.teacher-dark .section-heading h3 {
+    color: #ffffff !important;
+}
+
+html.teacher-dark .section-heading p {
+    color: #9eada5 !important;
+}
+
+
+/* SECONDARY BUTTON */
+
+html.teacher-dark .secondary-create-btn {
+    background: #153b2b !important;
+    border-color: #37654f !important;
+    color: #dcebe3 !important;
+}
+
+html.teacher-dark .secondary-create-btn:hover {
+    background: #1d5e3c !important;
+    color: #ffffff !important;
+}
+
+
+/* ASSIGNMENT CARDS */
+
+html.teacher-dark .assignment-card,
+html.teacher-dark .assignments-card,
+html.teacher-dark .assignment-item,
+html.teacher-dark .teacher-assignment-card {
+    background: #0d261b !important;
+    border-color: #234636 !important;
+    color: #e7eee9 !important;
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.25) !important;
+}
+
+html.teacher-dark .assignment-card:hover,
+html.teacher-dark .assignments-card:hover,
+html.teacher-dark .assignment-item:hover,
+html.teacher-dark .teacher-assignment-card:hover {
+    background: #102d20 !important;
+    border-color: #37654f !important;
+}
+
+html.teacher-dark .assignment-card h3,
+html.teacher-dark .assignments-card h3,
+html.teacher-dark .assignment-item h3,
+html.teacher-dark .teacher-assignment-card h3 {
+    color: #ffffff !important;
+}
+
+html.teacher-dark .assignment-card p,
+html.teacher-dark .assignments-card p,
+html.teacher-dark .assignment-item p,
+html.teacher-dark .teacher-assignment-card p {
+    color: #aebbb4 !important;
+}
+
+
+/* LOADING */
+
+html.teacher-dark .loading-state {
+    color: #9eada5 !important;
+}
+
+html.teacher-dark .loading-spinner {
+    border-color: #294438 !important;
+    border-top-color: #4c9b70 !important;
+}
+
+
+/* EMPTY */
+
+html.teacher-dark .empty-state {
+    color: #9eada5 !important;
+}
+
+html.teacher-dark .empty-state h3 {
+    color: #ffffff !important;
+}
+
+
+/* FOOTER */
+
+html.teacher-dark .teacher-footer {
+    background: #04110b !important;
+    border-top-color: #1d4433 !important;
+}
+
+
+/* =========================================================
+   ATTENDANCE HISTORY — DARK MODE
+========================================================= */
+
+html.teacher-dark body {
+    background: #071a12 !important;
+    color: #e9f1ec !important;
+}
+
+
+/* HEADER */
+
+html.teacher-dark .teacher-header {
+    background: #0b2419 !important;
+    border-bottom-color: #234636 !important;
+}
+
+html.teacher-dark .teacher-brand h1 {
+    color: #ffffff !important;
+}
+
+html.teacher-dark .teacher-brand span {
+    color: #91a49a !important;
+}
+
+html.teacher-dark .brand-mark {
+    background: #1d5e3c !important;
+}
+
+html.teacher-dark .teacher-nav a {
+    color: #b8c8bf !important;
+}
+
+html.teacher-dark .teacher-nav a:hover,
+html.teacher-dark .teacher-nav a.active {
+    background: #153b2b !important;
+    color: #ffffff !important;
+}
+
+
+/* THEME BUTTON */
+
+html.teacher-dark .teacher-theme-toggle {
+    background: #153b2b !important;
+    border-color: #315c48 !important;
+    color: #ffffff !important;
+}
+
+
+/* HERO */
+
+html.teacher-dark .attendance-hero {
+    background:
+        linear-gradient(
+            135deg,
+            #071a12,
+            #0d3b27,
+            #145236
+        ) !important;
+}
+
+
+/* FILTERS */
+
+html.teacher-dark .attendance-controls {
+    background: #0b2419 !important;
+    border-color: #234636 !important;
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.25) !important;
+}
+
+html.teacher-dark .controls-heading {
+    border-bottom-color: #234636 !important;
+}
+
+html.teacher-dark .controls-heading h2 {
+    color: #ffffff !important;
+}
+
+html.teacher-dark .controls-heading > p {
+    color: #91a49a !important;
+}
+
+html.teacher-dark .form-group label {
+    color: #dce7e1 !important;
+}
+
+html.teacher-dark .form-group select,
+html.teacher-dark .form-group input {
+    background: #102d20 !important;
+    border-color: #315442 !important;
+    color: #ffffff !important;
+}
+
+html.teacher-dark .form-group select:focus,
+html.teacher-dark .form-group input:focus {
+    border-color: #4c9b70 !important;
+    box-shadow:
+        0 0 0 3px rgba(76,155,112,0.12) !important;
+}
+
+
+/* SECONDARY BUTTON */
+
+html.teacher-dark .btn-secondary {
+    background: #172c22 !important;
+    border-color: #315442 !important;
+    color: #dce7e1 !important;
+}
+
+html.teacher-dark .btn-secondary:hover {
+    background: #213b2d !important;
+}
+
+
+/* STATISTICS */
+
+html.teacher-dark .stat-card {
+    background: #0d261b !important;
+    border-color: #234636 !important;
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.25) !important;
+}
+
+html.teacher-dark .stat-card:hover {
+    background: #102d20 !important;
+    border-color: #37654f !important;
+}
+
+html.teacher-dark .stat-label {
+    color: #91a49a !important;
+}
+
+html.teacher-dark .stat-value {
+    color: #ffffff !important;
+}
+
+html.teacher-dark .total-icon,
+html.teacher-dark .present-icon {
+    background: #153b2b !important;
+}
+
+html.teacher-dark .late-icon {
+    background: #3b3217 !important;
+}
+
+html.teacher-dark .absent-icon {
+    background: #3a2020 !important;
+}
+
+
+/* RECORDS */
+
+html.teacher-dark .attendance-records {
+    background: #0b2419 !important;
+    border-color: #234636 !important;
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.25) !important;
+}
+
+html.teacher-dark .section-header {
+    border-bottom-color: #234636 !important;
+}
+
+html.teacher-dark .section-header h2 {
+    color: #ffffff !important;
+}
+
+html.teacher-dark .section-header p {
+    color: #91a49a !important;
+}
+
+
+/* TABLE */
+
+html.teacher-dark .table-container {
+    border-color: #234636 !important;
+}
+
+html.teacher-dark .attendance-table thead {
+    background: #102d20 !important;
+}
+
+html.teacher-dark .attendance-table th {
+    background: #102d20 !important;
+    color: #aebeb5 !important;
+    border-bottom-color: #315442 !important;
+}
+
+html.teacher-dark .attendance-table td {
+    color: #c4d0c9 !important;
+    border-bottom-color: #1c392b !important;
+}
+
+html.teacher-dark .attendance-table tbody tr:hover {
+    background: #102d20 !important;
+}
+
+html.teacher-dark .table-empty {
+    color: #91a49a !important;
+}
+
+
+/* MODAL */
+
+html.teacher-dark .attendance-modal-content {
+    background: #0b2419 !important;
+    border-color: #315442 !important;
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.55) !important;
+}
+
+html.teacher-dark .attendance-modal-header {
+    border-bottom-color: #234636 !important;
+}
+
+html.teacher-dark .attendance-modal-header h2 {
+    color: #ffffff !important;
+}
+
+html.teacher-dark .attendance-modal-header p {
+    color: #91a49a !important;
+}
+
+html.teacher-dark .modal-close {
+    background: #172c22 !important;
+    border-color: #315442 !important;
+    color: #dce7e1 !important;
+}
+
+html.teacher-dark .modal-close:hover {
+    background: #3a2020 !important;
+    color: #ffaaa8 !important;
+}
+
+html.teacher-dark .attendance-modal-footer {
+    background: #081b12 !important;
+    border-top-color: #234636 !important;
+}
+
+
+/* MESSAGE */
+
+html.teacher-dark .message {
+    background: #102d20 !important;
+    border-color: #315442 !important;
+    color: #dce7e1 !important;
+}
+
+/* =========================================================
+   ATTENDANCE PAGE — DARK MODE
+========================================================= */
+
+html.teacher-dark .attendance-brand-mark {
+    background:
+        linear-gradient(
+            145deg,
+            #1d6b45,
+            #08291c
+        );
+}
+
+
+html.teacher-dark .attendance-hero {
+    background:
+        linear-gradient(
+            135deg,
+            #071f15,
+            #0d3925,
+            #145436
+        );
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.30);
+}
+
+
+html.teacher-dark .attendance-controls-card,
+html.teacher-dark .attendance-students-card {
+    background: #101b16;
+
+    border-color: #24352d;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.22);
+}
+
+
+html.teacher-dark .card-heading h2,
+html.teacher-dark .section-header h2 {
+    color: #f1f5f2;
+}
+
+
+html.teacher-dark .card-heading p,
+html.teacher-dark .section-header p {
+    color: #91a098;
+}
+
+
+html.teacher-dark .heading-icon,
+html.teacher-dark .students-icon {
+    background: #172a20;
+}
+
+
+html.teacher-dark .form-group label {
+    color: #c9d4ce;
+}
+
+
+html.teacher-dark .form-group select,
+html.teacher-dark .form-group input {
+    background: #0c1511;
+
+    color: #edf3ef;
+
+    border-color: #2a3d33;
+}
+
+
+html.teacher-dark .form-group select:focus,
+html.teacher-dark .form-group input:focus {
+    background: #101c16;
+
+    border-color: #4d9b70;
+
+    box-shadow:
+        0 0 0 4px rgba(77, 155, 112, 0.12);
+}
+
+
+html.teacher-dark .btn-secondary {
+    background: #172a20;
+
+    color: #a8d2b8;
+
+    border-color: #2d493a;
+}
+
+
+html.teacher-dark .section-header {
+    border-bottom-color: #24352d;
+}
+
+
+html.teacher-dark .attendance-info-bar {
+    background: #0d1712;
+
+    border-bottom-color: #24352d;
+
+    color: #91a098;
+}
+
+
+html.teacher-dark .attendance-table th {
+    background: #0d1712;
+
+    color: #9eaca5;
+
+    border-bottom-color: #283a31;
+}
+
+
+html.teacher-dark .attendance-table td {
+    color: #d4ddd8;
+
+    border-bottom-color: #22332b;
+}
+
+
+html.teacher-dark .attendance-table tbody tr:hover {
+    background: #14221b;
+}
+
+
+html.teacher-dark .section-eyebrow {
+    color: #d4af37;
+}
+
+
+html.teacher-dark .attendance-footer strong {
+    color: #8fc4a4;
+}
+
+
+html.teacher-dark .attendance-footer {
+    color: #738279;
+}

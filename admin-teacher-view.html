@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Teacher Details | As-Siyānah Institute</title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin-portal.css"
+    >
+
+</head>
+
+<body>
+
+<!-- ========================================
+     ADMIN HEADER
+======================================== -->
+
+<header class="admin-header">
+
+    <div class="admin-header-inner">
+
+        <a
+            href="admin-dashboard.html"
+            class="admin-brand"
+        >
+
+            <div class="admin-brand-mark">
+                AS
+            </div>
+
+            <div class="admin-brand-text">
+
+                <strong>
+                    AS-SIYĀNAH
+                </strong>
+
+                <span>
+                    Admin Portal
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <nav class="admin-nav">
+
+            <a href="admin-dashboard.html">Dashboard</a>
+
+            <a href="admin-students.html">Students</a>
+
+            <a
+                href="admin-teachers.html"
+                class="active"
+            >
+                Teachers
+            </a>
+
+            <a href="admin-classes.html">Classes</a>
+
+            <a href="admin-lessons.html">Lessons</a>
+
+            <a href="admin-results.html">Results</a>
+
+            <a href="admin-tests.html">Tests & Exams</a>
+
+            <a href="admin-announcements.html">Announcements</a>
+
+            <a href="admin-registrations.html">Registrations</a>
+
+            <a href="admin-profile.html">Profile</a>
+
+        </nav>
+
+
+        <button
+            type="button"
+            id="adminThemeToggle"
+            class="admin-theme-toggle"
+            aria-label="Toggle dark mode"
+        >
+
+            <span class="admin-theme-icon">
+                ☾
+            </span>
+
+            <span class="admin-theme-text">
+                Dark
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ========================================
+     MAIN
+======================================== -->
+
+<main class="admin-teacher-view-main">
+
+    <section class="admin-teacher-view-hero">
+
+        <div>
+
+            <p class="admin-teacher-view-eyebrow">
+                TEACHER MANAGEMENT
+            </p>
+
+            <h1>
+                Teacher Details
+            </h1>
+
+            <p>
+                View account information and teaching staff details.
+            </p>
+
+        </div>
+
+
+        <a
+            href="admin-teachers.html"
+            class="admin-teacher-view-back"
+        >
+            ← All Teachers
+        </a>
+
+    </section>
+
+
+    <!-- ========================================
+         TEACHER CONTENT
+    ======================================== -->
+
+    <section class="admin-teacher-view-card">
+
+        <div
+            id="teacherMessage"
+            class="admin-teacher-view-message"
+        >
+            Loading teacher...
+        </div>
+
+
+        <div
+            id="teacherDetails"
+            style="display: none;"
+        >
+
+            <!-- PROFILE HEADER -->
+
+            <div class="admin-teacher-profile">
+
+                <div class="admin-teacher-profile-avatar">
+                    👨‍🏫
+                </div>
+
+                <div class="admin-teacher-profile-info">
+
+                    <p>
+                        TEACHER
+                    </p>
+
+                    <h2 id="teacherName">
+                        —
+                    </h2>
+
+                    <span id="teacherRole">
+                        —
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- DETAILS -->
+
+            <div class="admin-teacher-details-heading">
+
+                <div>
+
+                    <span>
+                        ACCOUNT INFORMATION
+                    </span>
+
+                    <h2>
+                        Teacher Information
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-teacher-details-grid">
+
+
+                <div class="admin-teacher-detail">
+
+                    <span>
+                        Teacher ID
+                    </span>
+
+                    <strong id="teacherId">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="admin-teacher-detail">
+
+                    <span>
+                        Full Name
+                    </span>
+
+                    <strong id="teacherFullName">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="admin-teacher-detail">
+
+                    <span>
+                        Email Address
+                    </span>
+
+                    <strong id="teacherEmail">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="admin-teacher-detail">
+
+                    <span>
+                        Role
+                    </span>
+
+                    <strong id="teacherRoleDetail">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="admin-teacher-detail">
+
+                    <span>
+                        Date Joined
+                    </span>
+
+                    <strong id="teacherCreatedAt">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="admin-teacher-detail admin-teacher-auth">
+
+                    <span>
+                        Authentication ID
+                    </span>
+
+                    <strong id="teacherAuthId">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         ACTIONS
+    ======================================== -->
+
+    <div class="admin-teacher-view-actions">
+
+        <a
+            href="admin-teachers.html"
+            class="admin-teacher-view-dashboard"
+        >
+            ← Back to Teachers
+        </a>
+
+    </div>
+
+</main>
+
+
+<!-- ========================================
+     FOOTER
+======================================== -->
+
+<footer class="admin-footer">
+
+    <p>
+        © 2026 As-Siyānah Institute for Arabic & Islamic Studies
+    </p>
+
+</footer>
+
+
+<!-- ========================================
+     SUPABASE
+======================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+    const SUPABASE_URL =
+        "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+    const SUPABASE_ANON_KEY =
+        "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+    const supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_ANON_KEY
+        );
+
+</script>
+
+
+<script src="js/admin-teacher-view.js"></script>
+
+<script src="js/admin-theme.js"></script>
+
+</body>
+
+</html>

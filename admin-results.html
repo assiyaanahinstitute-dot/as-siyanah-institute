@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Results | As-Siyānah Institute</title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin-portal.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     ADMIN HEADER
+===================================================== -->
+
+<header class="admin-header">
+
+    <div class="admin-header-inner">
+
+        <a
+            href="admin-dashboard.html"
+            class="admin-brand"
+        >
+
+            <div class="admin-brand-mark">
+                AS
+            </div>
+
+            <div class="admin-brand-text">
+
+                <strong>
+                    AS-SIYĀNAH
+                </strong>
+
+                <span>
+                    Admin Portal
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <nav class="admin-nav">
+
+            <a href="admin-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="admin-students.html">
+                Students
+            </a>
+
+            <a href="admin-teachers.html">
+                Teachers
+            </a>
+
+            <a href="admin-lessons.html">
+                Lessons
+            </a>
+
+            <a
+                href="admin-results.html"
+                class="active"
+            >
+                Results
+            </a>
+
+            <a href="admin-tests.html">
+                Tests & Exams
+            </a>
+
+            <a href="admin-announcements.html">
+                Announcements
+            </a>
+
+            <a href="admin-registrations.html">
+                Registrations
+            </a>
+
+            <a href="admin-profile.html">
+                Profile
+            </a>
+
+        </nav>
+
+
+        <button
+            type="button"
+            id="adminThemeToggle"
+            class="admin-theme-toggle"
+            aria-label="Toggle theme"
+        >
+
+            <span class="admin-theme-icon">
+                ☾
+            </span>
+
+            <span class="admin-theme-text">
+                Dark
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="admin-results-main">
+
+
+    <!-- =================================================
+         PAGE INTRO
+    ================================================== -->
+
+    <section class="admin-results-hero">
+
+        <div>
+
+            <p class="admin-results-eyebrow">
+                ACADEMIC MANAGEMENT
+            </p>
+
+            <h1>
+                Results
+            </h1>
+
+            <p>
+                Monitor academic performance, examination results,
+                online assessments and student submissions.
+            </p>
+
+        </div>
+
+
+        <div class="admin-results-hero-badge">
+
+            <span class="admin-results-hero-icon">
+                📊
+            </span>
+
+            <div>
+
+                <strong>
+                    Academic Records
+                </strong>
+
+                <span>
+                    Student performance overview
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ACADEMIC RESULTS
+    ================================================== -->
+
+    <section class="admin-results-section">
+
+
+        <div class="admin-results-section-heading">
+
+            <div>
+
+                <span>
+                    ACADEMIC RECORDS
+                </span>
+
+                <h2>
+                    Student Results
+                </h2>
+
+                <p>
+                    View and manage recorded academic results.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="admin-results-search">
+
+            <div class="admin-results-search-icon">
+                ⌕
+            </div>
+
+            <input
+                type="text"
+                id="resultSearch"
+                placeholder="Search student ID, subject, term or session..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <!-- STATUS -->
+
+        <p
+            id="resultsMessage"
+            class="admin-results-message"
+        >
+            Loading results...
+        </p>
+
+
+        <!-- TABLE -->
+
+        <div class="admin-results-table-card">
+
+            <div class="admin-results-table-wrapper">
+
+                <table class="admin-results-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Student ID
+                            </th>
+
+                            <th>
+                                Subject
+                            </th>
+
+                            <th>
+                                Test
+                            </th>
+
+                            <th>
+                                Exam
+                            </th>
+
+                            <th>
+                                Total
+                            </th>
+
+                            <th>
+                                Grade
+                            </th>
+
+                            <th>
+                                Term
+                            </th>
+
+                            <th>
+                                Session
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="resultsTableBody">
+
+                        <tr>
+
+                            <td colspan="9">
+                                Loading results...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ONLINE ASSESSMENTS
+    ================================================== -->
+
+    <section class="admin-online-section">
+
+
+        <div class="admin-online-heading">
+
+            <div>
+
+                <span>
+                    ONLINE ASSESSMENTS
+                </span>
+
+                <h2>
+                    Tests & Exams
+                </h2>
+
+                <p>
+                    Monitor online submissions, scores,
+                    review status and teacher feedback.
+                </p>
+
+            </div>
+
+
+            <div class="admin-online-heading-icon">
+                📝
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ONLINE STATS
+        ================================================== -->
+
+        <div class="admin-online-stats">
+
+
+            <div class="admin-online-stat">
+
+                <div class="admin-online-stat-icon">
+                    ◎
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Submissions
+                    </span>
+
+                    <strong id="onlineTotal">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-online-stat">
+
+                <div class="admin-online-stat-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <span>
+                        Reviewed
+                    </span>
+
+                    <strong id="onlineReviewed">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-online-stat">
+
+                <div class="admin-online-stat-icon">
+                    ◷
+                </div>
+
+                <div>
+
+                    <span>
+                        Awaiting Review
+                    </span>
+
+                    <strong id="onlineAwaiting">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-online-stat">
+
+                <div class="admin-online-stat-icon">
+                    ▣
+                </div>
+
+                <div>
+
+                    <span>
+                        Exams
+                    </span>
+
+                    <strong id="onlineExams">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FILTERS
+        ================================================== -->
+
+        <div class="admin-online-toolbar">
+
+
+            <div class="admin-online-search">
+
+                <span>
+                    ⌕
+                </span>
+
+                <input
+                    type="text"
+                    id="onlineResultSearch"
+                    placeholder="Search student, ID or assessment..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <select id="onlineResultType">
+
+                <option value="all">
+                    All Assessments
+                </option>
+
+                <option value="Test">
+                    Tests
+                </option>
+
+                <option value="Exam">
+                    Exams
+                </option>
+
+            </select>
+
+
+            <select id="onlineResultStatus">
+
+                <option value="all">
+                    All Status
+                </option>
+
+                <option value="Reviewed">
+                    Reviewed
+                </option>
+
+                <option value="Submitted">
+                    Awaiting Review
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ONLINE RESULTS TABLE
+        ================================================== -->
+
+        <div class="admin-online-table-card">
+
+            <div class="admin-online-table-title">
+
+                <div>
+
+                    <span>
+                        SUBMISSIONS
+                    </span>
+
+                    <h3>
+                        Online Assessment Records
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-online-table-wrapper">
+
+                <table class="admin-online-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Student
+                            </th>
+
+                            <th>
+                                Student ID
+                            </th>
+
+                            <th>
+                                Assessment
+                            </th>
+
+                            <th>
+                                Type
+                            </th>
+
+                            <th>
+                                Subject
+                            </th>
+
+                            <th>
+                                Score
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Feedback
+                            </th>
+
+                            <th>
+                                Submitted
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="onlineResultsTableBody">
+
+                        <tr>
+
+                            <td colspan="9">
+                                Loading online results...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="admin-footer">
+
+    <p>
+        © 2026 As-Siyānah Institute for Arabic & Islamic Studies
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+const SUPABASE_URL =
+    "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+const SUPABASE_ANON_KEY =
+    "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+const supabaseClient =
+    supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_ANON_KEY
+    );
+
+</script>
+
+
+
+<!-- EXISTING LOGIC -->
+
+<script src="js/admin-results.js"></script>
+
+<script src="js/admin-online-results.js"></script>
+
+
+<!-- GLOBAL ADMIN THEME -->
+
+<script src="js/admin-theme.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1268 @@
+/* =========================================================
+   AS-SIYĀNAH
+   TEACHER RESULTS — PREMIUM LMS UI
+========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --rl-bg: #f5f7f6;
+
+    --rl-surface: #ffffff;
+
+    --rl-surface-soft: #f8faf9;
+
+    --rl-green: #164d32;
+
+    --rl-green-dark: #0b3524;
+
+    --rl-green-light: #286b49;
+
+    --rl-gold: #c9a227;
+
+    --rl-text: #14271d;
+
+    --rl-text-soft: #65736b;
+
+    --rl-muted: #89948e;
+
+    --rl-border: #e1e8e4;
+
+    --rl-border-soft: #edf1ee;
+
+    --rl-radius: 16px;
+
+    --rl-shadow:
+        0 10px 35px rgba(9, 43, 28, 0.055);
+
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+body {
+
+    margin: 0;
+
+    background: var(--rl-bg);
+
+    color: var(--rl-text);
+
+}
+
+
+.results-main {
+
+    min-height: calc(100vh - 150px);
+
+    padding:
+        48px 24px
+        70px;
+
+    background: var(--rl-bg);
+
+}
+
+
+.results-container {
+
+    width: min(1120px, 100%);
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.teacher-header {
+
+    background:
+        rgba(255,255,255,0.97) !important;
+
+    border-bottom:
+        1px solid #e1e8e4 !important;
+
+    box-shadow:
+        0 4px 20px rgba(9,43,28,0.045) !important;
+
+}
+
+
+.teacher-header-inner {
+
+    width:
+        min(1240px, calc(100% - 40px));
+
+    min-height: 76px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 28px;
+
+}
+
+
+/* BRAND */
+
+.teacher-brand {
+
+    display: inline-flex !important;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    text-decoration: none !important;
+
+    flex-shrink: 0;
+
+}
+
+
+.teacher-brand-main {
+
+    color: #123d28 !important;
+
+    font-size: 21px !important;
+
+    font-weight: 800 !important;
+
+    letter-spacing: -0.45px;
+
+    line-height: 1;
+
+}
+
+
+.teacher-brand-sub {
+
+    color: #987514 !important;
+
+    font-size: 9px !important;
+
+    font-weight: 800 !important;
+
+    letter-spacing: 1.6px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* NAV */
+
+.teacher-nav {
+
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 4px !important;
+
+    margin-left: auto;
+
+}
+
+
+.teacher-nav a {
+
+    position: relative;
+
+    display: inline-flex !important;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 40px;
+
+    padding:
+        0 12px !important;
+
+    border-radius: 8px;
+
+    background: transparent !important;
+
+    color: #5d6a63 !important;
+
+    text-decoration: none !important;
+
+    font-size: 12px !important;
+
+    font-weight: 650 !important;
+
+    white-space: nowrap;
+
+    transition:
+        color .2s ease,
+        background .2s ease;
+
+}
+
+
+.teacher-nav a:hover {
+
+    background: #f0f5f2 !important;
+
+    color: var(--rl-green) !important;
+
+}
+
+
+.teacher-nav a.active {
+
+    background: #edf5f0 !important;
+
+    color: var(--rl-green) !important;
+
+}
+
+
+.teacher-nav a.active::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 12px;
+
+    right: 12px;
+
+    bottom: -18px;
+
+    height: 2px;
+
+    border-radius: 20px;
+
+    background: var(--rl-gold);
+
+}
+
+
+/* THEME BUTTON */
+
+.teacher-theme-toggle {
+
+    min-height: 38px !important;
+
+    margin-left: 8px !important;
+
+    padding:
+        0 13px !important;
+
+    border:
+        1px solid #d8e1dc !important;
+
+    border-radius: 9px !important;
+
+    background: #ffffff !important;
+
+    color: #30443a !important;
+
+    font-family: inherit !important;
+
+    font-size: 11px !important;
+
+    font-weight: 700 !important;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.results-heading {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.results-eyebrow {
+
+    display: inline-block;
+
+    margin-bottom: 9px;
+
+    color: #a27b14;
+
+    font-size: 10px;
+
+    font-weight: 850;
+
+    letter-spacing: 1.7px;
+
+}
+
+
+.results-heading h1 {
+
+    margin: 0;
+
+    color: var(--rl-text);
+
+    font-size:
+        clamp(30px, 4vw, 42px);
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+}
+
+
+.results-heading p {
+
+    margin: 10px 0 0;
+
+    color: var(--rl-text-soft);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   ADD RESULT BUTTON
+========================================================= */
+
+.add-result-button {
+
+    min-height: 45px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding:
+        0 17px;
+
+    border-radius: 10px;
+
+    background: var(--rl-green);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 750;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 6px 16px
+        rgba(22,77,50,0.14);
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.add-result-button span {
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+}
+
+
+.add-result-button:hover {
+
+    background:
+        var(--rl-green-dark);
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 9px 21px
+        rgba(22,77,50,0.2);
+
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.results-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+
+    margin-bottom: 26px;
+
+}
+
+
+.result-stat-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 22px;
+
+    background:
+        var(--rl-surface);
+
+    border:
+        1px solid var(--rl-border);
+
+    border-radius:
+        var(--rl-radius);
+
+    box-shadow:
+        var(--rl-shadow);
+
+}
+
+
+.stat-icon {
+
+    width: 44px;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    background:
+        #edf5f0;
+
+    color:
+        var(--rl-green);
+
+    font-size: 19px;
+
+}
+
+
+.stat-content {
+
+    min-width: 0;
+
+}
+
+
+.stat-content span {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--rl-muted);
+
+    font-size: 9px;
+
+    font-weight: 850;
+
+    letter-spacing: 1px;
+
+}
+
+
+.stat-content strong {
+
+    display: block;
+
+    color: var(--rl-green);
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+}
+
+
+/* =========================================================
+   RESULTS LIBRARY
+========================================================= */
+
+.results-library {
+
+    overflow: hidden;
+
+    background:
+        var(--rl-surface);
+
+    border:
+        1px solid var(--rl-border);
+
+    border-radius:
+        18px;
+
+    box-shadow:
+        var(--rl-shadow);
+
+}
+
+
+.library-header {
+
+    padding:
+        26px 28px 21px;
+
+}
+
+
+.library-eyebrow {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #a27b14;
+
+    font-size: 9px;
+
+    font-weight: 850;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.library-header h2 {
+
+    margin: 0;
+
+    color: #193526;
+
+    font-size: 19px;
+
+    font-weight: 750;
+
+}
+
+
+.library-divider {
+
+    height: 1px;
+
+    background:
+        var(--rl-border-soft);
+
+}
+
+
+/* =========================================================
+   RESULTS LIST
+========================================================= */
+
+.results-list {
+
+    padding: 22px 28px 28px;
+
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.results-loading {
+
+    min-height: 160px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+}
+
+
+.results-loading p {
+
+    margin: 0;
+
+    color: var(--rl-muted);
+
+    font-size: 12px;
+
+}
+
+
+.loading-spinner {
+
+    width: 25px;
+
+    height: 25px;
+
+    border:
+        2px solid #e1e9e4;
+
+    border-top-color:
+        var(--rl-green);
+
+    border-radius: 50%;
+
+    animation:
+        resultSpin .8s linear infinite;
+
+}
+
+
+@keyframes resultSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   JS-GENERATED RESULT CONTENT
+========================================================= */
+
+.results-list > * {
+
+    max-width: 100%;
+
+}
+
+
+/*
+   These generic rules help existing JS-generated
+   result cards inherit the professional page style.
+*/
+
+.results-list .result-card,
+.results-list .result-item,
+.results-list .result-row,
+.results-list .student-result {
+
+    background:
+        var(--rl-surface-soft);
+
+    border:
+        1px solid var(--rl-border);
+
+    border-radius: 12px;
+
+    padding: 18px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.results-list .result-card:last-child,
+.results-list .result-item:last-child,
+.results-list .result-row:last-child,
+.results-list .student-result:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+.results-list h2,
+.results-list h3,
+.results-list h4 {
+
+    color:
+        var(--rl-text);
+
+}
+
+
+.results-list p {
+
+    color:
+        var(--rl-text-soft);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.teacher-footer {
+
+    background:
+        #ffffff !important;
+
+    border-top:
+        1px solid #e1e8e4 !important;
+
+}
+
+
+.teacher-footer-inner {
+
+    width:
+        min(1120px, calc(100% - 48px));
+
+    margin: 0 auto;
+
+    padding:
+        24px 0;
+
+}
+
+
+.teacher-footer p {
+
+    margin: 0;
+
+    color:
+        #7d8982;
+
+    font-size:
+        11px;
+
+    text-align:
+        center;
+
+}
+
+
+/* =========================================================
+   DARK MODE — COMPLETE PAGE
+========================================================= */
+
+html.teacher-dark body {
+
+    background:
+        #06110b !important;
+
+    color:
+        #e9f1ec !important;
+
+}
+
+
+html.teacher-dark .teacher-header {
+
+    background:
+        rgba(7,20,13,0.98) !important;
+
+    border-bottom-color:
+        #1d3327 !important;
+
+    box-shadow:
+        0 4px 22px
+        rgba(0,0,0,0.25) !important;
+
+}
+
+
+html.teacher-dark .teacher-brand-main {
+
+    color:
+        #eaf2ed !important;
+
+}
+
+
+html.teacher-dark .teacher-brand-sub {
+
+    color:
+        #d3ae3b !important;
+
+}
+
+
+html.teacher-dark .teacher-nav a {
+
+    color:
+        #9aa9a0 !important;
+
+    background:
+        transparent !important;
+
+}
+
+
+html.teacher-dark .teacher-nav a:hover {
+
+    color:
+        #e5eee8 !important;
+
+    background:
+        #102219 !important;
+
+}
+
+
+html.teacher-dark .teacher-nav a.active {
+
+    color:
+        #dceae1 !important;
+
+    background:
+        #10271b !important;
+
+}
+
+
+html.teacher-dark .teacher-theme-toggle {
+
+    background:
+        #102219 !important;
+
+    border-color:
+        #2b4235 !important;
+
+    color:
+        #dbe7df !important;
+
+}
+
+
+html.teacher-dark .results-main {
+
+    background:
+        #06110b !important;
+
+}
+
+
+html.teacher-dark .results-heading h1 {
+
+    color:
+        #edf4ef !important;
+
+}
+
+
+html.teacher-dark .results-heading p {
+
+    color:
+        #99a89f !important;
+
+}
+
+
+html.teacher-dark .result-stat-card {
+
+    background:
+        #0c1c14 !important;
+
+    border-color:
+        #1e3529 !important;
+
+    box-shadow:
+        0 12px 30px
+        rgba(0,0,0,0.2) !important;
+
+}
+
+
+html.teacher-dark .stat-icon {
+
+    background:
+        #12291e !important;
+
+    color:
+        #8bc29e !important;
+
+}
+
+
+html.teacher-dark .stat-content span {
+
+    color:
+        #87978e !important;
+
+}
+
+
+html.teacher-dark .stat-content strong {
+
+    color:
+        #91caa4 !important;
+
+}
+
+
+html.teacher-dark .results-library {
+
+    background:
+        #0c1c14 !important;
+
+    border-color:
+        #1e3529 !important;
+
+    box-shadow:
+        0 12px 35px
+        rgba(0,0,0,0.24) !important;
+
+}
+
+
+html.teacher-dark .library-header h2 {
+
+    color:
+        #e9f1ec !important;
+
+}
+
+
+html.teacher-dark .library-divider {
+
+    background:
+        #20372a !important;
+
+}
+
+
+html.teacher-dark .results-loading p {
+
+    color:
+        #819188 !important;
+
+}
+
+
+html.teacher-dark .loading-spinner {
+
+    border-color:
+        #293e33 !important;
+
+    border-top-color:
+        #71ad89 !important;
+
+}
+
+
+html.teacher-dark .results-list .result-card,
+html.teacher-dark .results-list .result-item,
+html.teacher-dark .results-list .result-row,
+html.teacher-dark .results-list .student-result {
+
+    background:
+        #102319 !important;
+
+    border-color:
+        #22392d !important;
+
+}
+
+
+html.teacher-dark .results-list h2,
+html.teacher-dark .results-list h3,
+html.teacher-dark .results-list h4 {
+
+    color:
+        #e5eee9 !important;
+
+}
+
+
+html.teacher-dark .results-list p {
+
+    color:
+        #9aa9a1 !important;
+
+}
+
+
+html.teacher-dark .teacher-footer {
+
+    background:
+        #06110b !important;
+
+    border-top-color:
+        #1d3327 !important;
+
+}
+
+
+html.teacher-dark .teacher-footer p {
+
+    color:
+        #718078 !important;
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .teacher-header-inner {
+
+        gap: 15px;
+
+    }
+
+
+    .teacher-nav {
+
+        gap: 2px !important;
+
+    }
+
+
+    .teacher-nav a {
+
+        padding:
+            0 8px !important;
+
+        font-size:
+            11px !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE HEADER
+========================================================= */
+
+@media (max-width: 820px) {
+
+    .teacher-header {
+
+        position:
+            relative;
+
+    }
+
+
+    .teacher-header-inner {
+
+        width:
+            calc(100% - 28px);
+
+        min-height:
+            auto;
+
+        padding:
+            15px 0;
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        gap:
+            14px;
+
+    }
+
+
+    .teacher-nav {
+
+        width:
+            100%;
+
+        margin-left:
+            0;
+
+        overflow-x:
+            auto;
+
+        padding-bottom:
+            3px;
+
+        scrollbar-width:
+            none;
+
+    }
+
+
+    .teacher-nav::-webkit-scrollbar {
+
+        display:
+            none;
+
+    }
+
+
+    .teacher-nav a {
+
+        flex:
+            0 0 auto;
+
+        min-height:
+            38px;
+
+    }
+
+
+    .teacher-nav a.active::after {
+
+        display:
+            none;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE PAGE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .results-main {
+
+        padding:
+            32px 16px
+            55px;
+
+    }
+
+
+    .results-heading {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        gap:
+            20px;
+
+    }
+
+
+    .add-result-button {
+
+        width:
+            100%;
+
+    }
+
+
+    .results-stats {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .library-header {
+
+        padding:
+            23px 20px
+            19px;
+
+    }
+
+
+    .results-list {
+
+        padding:
+            20px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .teacher-brand-main {
+
+        font-size:
+            19px !important;
+
+    }
+
+
+    .results-heading h1 {
+
+        font-size:
+            30px;
+
+    }
+
+
+    .result-stat-card {
+
+        padding:
+            18px;
+
+    }
+
+
+    .stat-content strong {
+
+        font-size:
+            25px;
+
+    }
+
+}

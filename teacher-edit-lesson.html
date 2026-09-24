@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Edit Lesson | As-Siyānah Institute</title>
+
+
+    <!-- GLOBAL TEACHER PORTAL -->
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal-dark.css"
+    >
+
+
+    <!-- PAGE DESIGN -->
+    <link
+        rel="stylesheet"
+        href="css/teacher-edit-lesson.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         HEADER
+    ========================================= -->
+
+    <header class="teacher-header">
+
+        <div class="teacher-header-inner">
+
+
+            <!-- BRAND -->
+
+            <a
+                href="teacher-dashboard.html"
+                class="teacher-brand"
+            >
+
+                <span class="teacher-brand-main">
+                    AS-SIYĀNAH
+                </span>
+
+                <span class="teacher-brand-sub">
+                    Teacher Portal
+                </span>
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="teacher-nav">
+
+                <a
+                    href="teacher-dashboard.html"
+                >
+                    Dashboard
+                </a>
+
+
+                <a
+                    href="teacher-students.html"
+                >
+                    Students
+                </a>
+
+
+                <a
+                    href="teacher-lessons.html"
+                    class="active"
+                >
+                    Lessons
+                </a>
+
+
+                <a
+                    href="teacher-results-list.html"
+                >
+                    Results
+                </a>
+
+
+                <a
+                    href="teacher-announcements.html"
+                >
+                    Announcements
+                </a>
+
+
+                <button
+                    type="button"
+                    class="teacher-theme-toggle"
+                    aria-label="Switch to dark mode"
+                    aria-pressed="false"
+                >
+                    🌙 Dark Mode
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ========================================
+         MAIN
+    ========================================= -->
+
+    <main class="edit-lesson-main">
+
+        <div class="edit-lesson-container">
+
+
+            <!-- PAGE HEADING -->
+
+            <div class="edit-lesson-heading">
+
+                <div>
+
+                    <span class="lesson-eyebrow">
+                        TEACHER PORTAL • LESSONS
+                    </span>
+
+
+                    <h1>
+                        Edit Lesson
+                    </h1>
+
+
+                    <p>
+                        Update your lesson information, learning level,
+                        video content and publication status.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="teacher-lessons.html"
+                    class="lesson-back-btn"
+                >
+                    ← Back to Lessons
+                </a>
+
+            </div>
+
+
+
+            <!-- FORM CARD -->
+
+            <section class="edit-lesson-card">
+
+
+                <!-- CARD HEADER -->
+
+                <div class="lesson-card-header">
+
+                    <div class="lesson-card-icon">
+                        ✏️
+                    </div>
+
+
+                    <div>
+
+                        <span class="lesson-card-label">
+                            LESSON MANAGEMENT
+                        </span>
+
+
+                        <h2>
+                            Lesson Details
+                        </h2>
+
+
+                        <p>
+                            Make your changes below and save the updated lesson.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="lesson-card-divider"></div>
+
+
+
+                <!-- FORM MESSAGE -->
+
+                <div
+                    id="lessonFormMessage"
+                    class="lesson-form-message"
+                    aria-live="polite"
+                ></div>
+
+
+
+                <!-- FORM -->
+
+                <form id="editLessonForm">
+
+
+                    <!-- SUBJECT -->
+
+                    <div class="lesson-form-group">
+
+                        <label for="lessonSubject">
+                            Subject
+                        </label>
+
+
+                        <select
+                            id="lessonSubject"
+                            required
+                        >
+
+                            <option value="">
+                                Loading subjects...
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- LEVEL -->
+
+                    <div class="lesson-form-group">
+
+                        <label for="lessonLevel">
+                            Level
+                        </label>
+
+
+                        <select
+                            id="lessonLevel"
+                            required
+                        >
+
+                            <option value="">
+                                Select Level
+                            </option>
+
+
+                            <option value="Level 1 — Beginner">
+                                Level 1 — Beginner
+                            </option>
+
+
+                            <option value="Level 2 — Elementary / Intermediate">
+                                Level 2 — Elementary / Intermediate
+                            </option>
+
+
+                            <option value="Level 3 — Intermediate / Advanced">
+                                Level 3 — Intermediate / Advanced
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- TITLE -->
+
+                    <div class="lesson-form-group">
+
+                        <label for="lessonTitle">
+                            Lesson Title
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="lessonTitle"
+                            placeholder="e.g. Introduction to Nahwu"
+                            autocomplete="off"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- DESCRIPTION -->
+
+                    <div class="lesson-form-group">
+
+                        <label for="lessonDescription">
+                            Lesson Description
+                        </label>
+
+
+                        <textarea
+                            id="lessonDescription"
+                            rows="7"
+                            placeholder="Write a short description..."
+                        ></textarea>
+
+
+                        <small>
+                            Give students a clear overview of what they will learn.
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- VIDEO -->
+
+                    <div class="lesson-form-group">
+
+                        <label for="lessonVideo">
+                            Video URL
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="lessonVideo"
+                            placeholder="Enter video URL or leave blank"
+                        >
+
+
+                        <small>
+                            Add the video URL students should use for this lesson.
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- PUBLISH -->
+
+                    <div class="lesson-publish-box">
+
+                        <div class="lesson-publish-icon">
+                            ✓
+                        </div>
+
+
+                        <div class="lesson-publish-content">
+
+                            <strong>
+                                Publish this lesson
+                            </strong>
+
+
+                            <span>
+                                Published lessons will be visible to eligible students.
+                            </span>
+
+                        </div>
+
+
+                        <label class="lesson-switch">
+
+                            <input
+                                type="checkbox"
+                                id="lessonPublished"
+                            >
+
+                            <span class="lesson-switch-slider"></span>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <!-- ACTIONS -->
+
+                    <div class="lesson-form-actions">
+
+                        <a
+                            href="teacher-lessons.html"
+                            class="lesson-cancel-btn"
+                        >
+                            Cancel
+                        </a>
+
+
+                        <button
+                            type="submit"
+                            class="lesson-save-btn"
+                            id="updateLessonButton"
+                        >
+
+                            <span>
+                                ✓
+                            </span>
+
+                            <span>
+                                Save Changes
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ========================================
+         FOOTER
+    ========================================= -->
+
+    <footer class="teacher-footer">
+
+        <p>
+            © 2026 AS-SIYĀNAH INSTITUTE FOR ARABIC &amp; ISLAMIC STUDIES
+        </p>
+
+    </footer>
+
+
+
+    <!-- ========================================
+         SUPABASE
+    ========================================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <!-- ========================================
+         GLOBAL TEACHER THEME
+    ========================================= -->
+
+    <script src="js/teacher-theme.js"></script>
+
+
+    <!-- ========================================
+         EDIT LESSON
+    ========================================= -->
+
+    <script src="js/teacher-edit-lesson.js"></script>
+
+
+</body>
+
+</html>

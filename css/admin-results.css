@@ -1,0 +1,529 @@
+/* ========================================
+   AS-SIYĀNAH INSTITUTE
+   ADMIN RESULTS — PREMIUM ACADEMIC UI
+======================================== */
+
+:root {
+    --results-green: #1d5e3c;
+    --results-deep: #0f3826;
+    --results-gold: #c9a45c;
+    --results-text: #16241c;
+    --results-muted: #7b8780;
+    --results-border: #e5ebe7;
+    --results-soft: #f4f8f5;
+}
+
+
+/* ========================================
+   PAGE
+======================================== */
+
+.admin-main {
+    position: relative;
+}
+
+
+/* ========================================
+   PREMIUM PAGE HEADER
+======================================== */
+
+.admin-page-header {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 145px;
+
+    margin-bottom: 30px;
+    padding: 32px 36px;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(201, 164, 92, 0.18),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #0f3826,
+            #1d5e3c 60%,
+            #286b47
+        );
+
+    box-shadow:
+        0 18px 45px rgba(15, 56, 38, 0.18);
+}
+
+
+/* Decorative glow */
+
+.admin-page-header::before {
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    right: -70px;
+    top: -90px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.admin-page-header::after {
+    content: "";
+
+    position: absolute;
+
+    width: 140px;
+    height: 140px;
+
+    right: 90px;
+    bottom: -80px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(201, 164, 92, 0.18);
+}
+
+
+/* Header text */
+
+.admin-page-header > div {
+    position: relative;
+    z-index: 2;
+}
+
+.admin-page-header h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 32px;
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+.admin-page-header p {
+    margin: 9px 0 0;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   SEARCH AREA
+======================================== */
+
+.admin-search-box {
+    position: relative;
+
+    margin: 0 0 22px;
+}
+
+.admin-search-box::before {
+    content: "⌕";
+
+    position: absolute;
+
+    left: 20px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: var(--results-green);
+
+    font-size: 22px;
+
+    z-index: 2;
+}
+
+.admin-search-box input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 17px 20px 17px 52px;
+
+    border: 1px solid var(--results-border);
+
+    border-radius: 15px;
+
+    background: #ffffff;
+
+    color: var(--results-text);
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    box-shadow:
+        0 8px 25px rgba(20, 50, 35, 0.045);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.admin-search-box input:focus {
+    border-color: var(--results-green);
+
+    box-shadow:
+        0 0 0 4px rgba(29, 94, 60, 0.08),
+        0 12px 30px rgba(20, 50, 35, 0.08);
+
+    transform: translateY(-1px);
+}
+
+.admin-search-box input::placeholder {
+    color: #9aa49e;
+}
+
+
+/* ========================================
+   RESULT COUNT
+======================================== */
+
+#resultsMessage {
+    display: inline-flex;
+    align-items: center;
+
+    margin: 0 0 14px;
+    padding: 7px 12px;
+
+    border-radius: 999px;
+
+    background: #edf6f0;
+
+    color: var(--results-green);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* ========================================
+   TABLE CARD
+======================================== */
+
+.admin-table-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    border: 1px solid var(--results-border);
+
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 18px 50px rgba(20, 50, 35, 0.08);
+}
+
+
+/* Gold accent */
+
+.admin-table-wrapper::before {
+    content: "";
+
+    display: block;
+
+    height: 3px;
+
+    width: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--results-green),
+            var(--results-gold),
+            var(--results-green)
+        );
+}
+
+
+/* ========================================
+   TABLE
+======================================== */
+
+.admin-table {
+    width: 100%;
+
+    min-width: 1120px;
+
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+
+/* Header */
+
+.admin-table thead {
+    background:
+        linear-gradient(
+            180deg,
+            #f9fbfa,
+            #f3f7f4
+        );
+}
+
+.admin-table th {
+    padding: 17px 20px;
+
+    text-align: left;
+
+    color: #69766f;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    border-bottom: 1px solid var(--results-border);
+
+    white-space: nowrap;
+}
+
+
+/* Body */
+
+.admin-table td {
+    padding: 20px;
+
+    color: #35423a;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid #edf1ee;
+
+    vertical-align: middle;
+
+    white-space: nowrap;
+}
+
+.admin-table tbody tr {
+    background: #ffffff;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.admin-table tbody tr:hover {
+    background: #f8fbf9;
+}
+
+
+/* ========================================
+   STUDENT ID
+======================================== */
+
+.admin-table td:first-child {
+    color: var(--results-green);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* ========================================
+   SUBJECT
+======================================== */
+
+.admin-table td:nth-child(2) {
+    color: var(--results-text);
+
+    font-weight: 700;
+}
+
+
+/* ========================================
+   SCORES
+======================================== */
+
+.admin-table td:nth-child(3),
+.admin-table td:nth-child(4) {
+    color: #56635b;
+
+    font-weight: 600;
+}
+
+
+/* Total */
+
+.admin-table td:nth-child(5) {
+    color: var(--results-green);
+
+    font-size: 15px;
+
+    font-weight: 900;
+}
+
+
+/* ========================================
+   GRADE BADGE
+======================================== */
+
+.admin-table td:nth-child(6) {
+    color: var(--results-green);
+
+    font-size: 13px;
+
+    font-weight: 900;
+}
+
+.admin-table td:nth-child(6)::first-letter {
+    color: var(--results-green);
+}
+
+
+/* ========================================
+   TERM + SESSION
+======================================== */
+
+.admin-table td:nth-child(7),
+.admin-table td:nth-child(8) {
+    color: #69756e;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* ========================================
+   VIEW BUTTON
+======================================== */
+
+.result-view-button {
+    position: relative;
+
+    border: 1px solid #d4e2d9;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5faf7,
+            #edf6f0
+        );
+
+    color: var(--results-green);
+
+    padding: 10px 17px;
+
+    border-radius: 11px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        all 0.25s ease;
+}
+
+.result-view-button:hover {
+    background: var(--results-green);
+
+    border-color: var(--results-green);
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(29, 94, 60, 0.18);
+}
+
+.result-view-button:active {
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   EMPTY STATE
+======================================== */
+
+.admin-table td[colspan] {
+    padding: 65px 20px;
+
+    text-align: center;
+
+    color: #8c9791;
+
+    font-size: 14px;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .admin-page-header {
+        align-items: flex-start;
+
+        min-height: auto;
+
+        padding: 28px 24px;
+
+        flex-direction: column;
+
+        border-radius: 20px;
+    }
+
+    .admin-page-header h2 {
+        font-size: 26px;
+    }
+
+    .admin-page-header p {
+        font-size: 13px;
+    }
+
+    .admin-search-box input {
+        padding: 15px 16px 15px 48px;
+    }
+
+    .admin-table-wrapper {
+        border-radius: 18px;
+    }
+
+    .admin-table {
+        min-width: 1100px;
+    }
+
+    .admin-table th,
+    .admin-table td {
+        padding: 15px 16px;
+    }
+}

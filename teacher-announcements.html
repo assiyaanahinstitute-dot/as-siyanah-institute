@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Announcements | As-Siyānah Institute</title>
+
+    <!-- GLOBAL TEACHER PORTAL -->
+    <link rel="stylesheet" href="css/teacher-portal.css">
+
+    <!-- PAGE DESIGN -->
+    <link rel="stylesheet" href="css/teacher-announcements.css">
+
+    <!-- DARK MODE -->
+    <link rel="stylesheet" href="teacher-portal-dark.css">
+</head>
+
+<body>
+
+<div class="announcement-page">
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="announcement-header">
+
+        <div class="announcement-header-inner">
+
+            <a
+                href="teacher-dashboard.html"
+                class="announcement-brand"
+            >
+
+                <div class="announcement-brand-mark">
+                    AS
+                </div>
+
+                <div class="announcement-brand-text">
+
+                    <strong>
+                        AS-SIYĀNAH
+                    </strong>
+
+                    <span>
+                        Teacher Portal
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <nav class="announcement-nav">
+
+                <a href="teacher-dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="teacher-students.html">
+                    Students
+                </a>
+
+                <a href="teacher-lessons.html">
+                    Lessons
+                </a>
+
+                <a href="teacher-results-list.html">
+                    Results
+                </a>
+
+                <a
+                    href="teacher-announcements.html"
+                    class="active"
+                >
+                    Announcements
+                </a>
+
+            </nav>
+
+
+            <div class="announcement-header-actions">
+
+                <button
+                    class="announcement-theme-btn teacher-theme-toggle"
+                    type="button"
+                >
+                    🌙 Dark Mode
+                </button>
+
+                <button
+                    class="announcement-logout"
+                    id="logoutBtn"
+                    type="button"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="announcement-main">
+
+        <div class="announcement-container">
+
+
+            <!-- =================================================
+                 HERO
+            ================================================== -->
+
+            <section class="announcement-hero">
+
+                <div class="announcement-hero-content">
+
+                    <span class="announcement-kicker">
+                        TEACHER PORTAL • COMMUNICATION
+                    </span>
+
+                    <h1>
+                        Announcements
+                    </h1>
+
+                    <p>
+                        Create and manage important announcements
+                        for your students.
+                    </p>
+
+                </div>
+
+
+                <div class="announcement-hero-icon">
+                    📢
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CREATE ANNOUNCEMENT
+            ================================================== -->
+
+            <section class="announcement-card create-announcement-card">
+
+                <div class="announcement-card-heading">
+
+                    <div class="announcement-heading-icon">
+                        ✦
+                    </div>
+
+                    <div>
+
+                        <span>
+                            NEW ANNOUNCEMENT
+                        </span>
+
+                        <h2>
+                            Create Announcement
+                        </h2>
+
+                        <p>
+                            Publish an important notice for your students.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form id="announcementForm">
+
+
+                    <!-- TITLE -->
+
+                    <div class="announcement-form-group">
+
+                        <label for="announcementTitle">
+                            Announcement Title
+                        </label>
+
+                        <input
+                            type="text"
+                            id="announcementTitle"
+                            placeholder="e.g. First Term Examination"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- CATEGORY + AUDIENCE -->
+
+                    <div class="announcement-form-grid">
+
+                        <div class="announcement-form-group">
+
+                            <label for="announcementCategory">
+                                Category
+                            </label>
+
+                            <select
+                                id="announcementCategory"
+                                required
+                            >
+
+                                <option value="">
+                                    Select Category
+                                </option>
+
+                                <option value="General">
+                                    General
+                                </option>
+
+                                <option value="Academic">
+                                    Academic
+                                </option>
+
+                                <option value="Exam">
+                                    Examination
+                                </option>
+
+                                <option value="Class">
+                                    Class Information
+                                </option>
+
+                                <option value="Ramadan">
+                                    Ramadan Programme
+                                </option>
+
+                                <option value="Important">
+                                    Important Notice
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="announcement-form-group">
+
+                            <label for="announcementAudience">
+                                Audience
+                            </label>
+
+                            <select
+                                id="announcementAudience"
+                                required
+                            >
+
+                                <option value="All Students">
+                                    All Students
+                                </option>
+
+                                <option value="Level 1">
+                                    Level 1 Students
+                                </option>
+
+                                <option value="Level 2">
+                                    Level 2 Students
+                                </option>
+
+                                <option value="Level 3">
+                                    Level 3 Students
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MESSAGE -->
+
+                    <div class="announcement-form-group">
+
+                        <label for="announcementMessage">
+                            Announcement Message
+                        </label>
+
+                        <textarea
+                            id="announcementMessage"
+                            rows="8"
+                            placeholder="Write your announcement here..."
+                            required
+                        ></textarea>
+
+                        <small>
+                            Write a clear and helpful message for your students.
+                        </small>
+
+                    </div>
+
+
+                    <!-- PUBLISH SETTINGS -->
+
+                    <div class="announcement-publish-box">
+
+                        <div class="publish-icon">
+                            ✓
+                        </div>
+
+                        <div class="publish-content">
+
+                            <strong>
+                                Publish immediately
+                            </strong>
+
+                            <span>
+                                Make this announcement visible to students immediately.
+                            </span>
+
+                        </div>
+
+                        <label class="announcement-switch">
+
+                            <input
+                                type="checkbox"
+                                id="announcementPublished"
+                                checked
+                            >
+
+                            <span class="switch-slider"></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- SUBMIT -->
+
+                    <div class="announcement-form-actions">
+
+                        <button
+                            type="submit"
+                            id="saveAnnouncementButton"
+                            class="announcement-publish-btn"
+                        >
+                            <span>📢</span>
+                            Publish Announcement
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- =================================================
+                 EXISTING ANNOUNCEMENTS
+            ================================================== -->
+
+            <section class="announcement-card existing-announcements-card">
+
+                <div class="announcement-card-heading existing-heading">
+
+                    <div class="announcement-heading-icon">
+                        ◈
+                    </div>
+
+                    <div>
+
+                        <span>
+                            COMMUNICATION HISTORY
+                        </span>
+
+                        <h2>
+                            Existing Announcements
+                        </h2>
+
+                        <p>
+                            View announcements already created.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="teacherAnnouncementsList"
+                    class="teacher-announcements-list"
+                >
+
+                    <div class="announcement-loading">
+
+                        <div class="announcement-loader"></div>
+
+                        <p>
+                            Loading announcements...
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+
+            <footer class="announcement-footer">
+
+                <p>
+                    © 2026 AS-SIYĀNAH INSTITUTE FOR ARABIC &amp; ISLAMIC STUDIES
+                </p>
+
+                <span>
+                    Teacher Portal
+                </span>
+
+            </footer>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- GLOBAL TEACHER THEME -->
+
+<script src="js/teacher-theme.js"></script>
+
+<!-- EXISTING ANNOUNCEMENT FUNCTIONALITY -->
+
+<script src="js/teacher-announcement.js"></script>
+
+</body>
+
+</html>

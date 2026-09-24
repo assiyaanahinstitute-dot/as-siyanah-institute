@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Create Lesson | Teacher Portal | As-Siyānah Institute
+    </title>
+
+
+    <!-- EXISTING GLOBAL STYLES -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal-dark.css"
+    >
+
+
+    <!-- PAGE-SPECIFIC UI -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-create-lesson-ui.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <div class="container nav-container">
+
+
+            <a
+                href="teacher-dashboard.html"
+                class="logo"
+            >
+
+                <span>
+                    As-Siyānah
+                </span>
+
+                <small>
+                    Institute
+                </small>
+
+            </a>
+
+
+            <nav class="nav-menu">
+
+                <a href="teacher-dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="teacher-students.html">
+                    Students
+                </a>
+
+                <button
+                    id="teacherLogoutButton"
+                    class="nav-logout"
+                    type="button"
+                >
+                    Logout
+                </button>
+
+                <button
+                    type="button"
+                    class="teacher-theme-toggle"
+                    aria-label="Switch to dark mode"
+                >
+                    🌙 Dark Mode
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+        <section class="dashboard-section">
+
+            <div class="container">
+
+
+                <!-- PAGE INTRO -->
+
+                <div class="dashboard-welcome">
+
+                    <p class="eyebrow">
+                        TEACHER PORTAL
+                    </p>
+
+                    <h1>
+                        Create a Lesson
+                    </h1>
+
+                    <p>
+                        Create and publish learning
+                        materials for your students.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     LESSON FORM
+                ================================================== -->
+
+                <div class="dashboard-card">
+
+                    <form id="createLessonForm">
+
+
+                        <!-- SUBJECT -->
+
+                        <div class="form-group">
+
+                            <label for="lessonSubject">
+                                Subject
+                            </label>
+
+                            <select
+                                id="lessonSubject"
+                                name="subject"
+                                required
+                            >
+
+                                <option value="">
+                                    Loading subjects...
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- LEVEL -->
+
+                        <div class="form-group">
+
+                            <label for="lessonLevel">
+                                Level
+                            </label>
+
+                            <select
+                                id="lessonLevel"
+                                name="level"
+                                required
+                            >
+
+                                <option value="">
+                                    Select Level
+                                </option>
+
+                                <option value="Level 1 — Beginner">
+                                    Level 1 — Beginner
+                                </option>
+
+                                <option value="Level 2 — Elementary / Intermediate">
+                                    Level 2 — Elementary / Intermediate
+                                </option>
+
+                                <option value="Level 3 — Intermediate / Advanced">
+                                    Level 3 — Intermediate / Advanced
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- TITLE -->
+
+                        <div class="form-group">
+
+                            <label for="lessonTitle">
+                                Lesson Title
+                            </label>
+
+                            <input
+                                type="text"
+                                id="lessonTitle"
+                                name="title"
+                                placeholder="e.g. Introduction to Nahwu"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- DESCRIPTION -->
+
+                        <div class="form-group">
+
+                            <label for="lessonDescription">
+                                Lesson Description
+                            </label>
+
+                            <textarea
+                                id="lessonDescription"
+                                name="description"
+                                rows="6"
+                                placeholder="Write a short description of this lesson..."
+                            ></textarea>
+
+                        </div>
+
+
+
+                        <!-- VIDEO URL -->
+
+                        <div class="form-group">
+
+                            <label for="lessonVideo">
+
+                                Video URL
+
+                                <span style="font-weight:normal;">
+                                    (Optional)
+                                </span>
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="lessonVideo"
+                                name="video_url"
+                                placeholder="Enter video URL or leave blank"
+                            >
+
+                        </div>
+
+
+
+                        <!-- PUBLISH -->
+
+                        <div
+                            class="form-group"
+                            style="
+                                display:flex;
+                                align-items:center;
+                                gap:10px;
+                            "
+                        >
+
+                            <input
+                                type="checkbox"
+                                id="lessonPublished"
+                                name="published"
+                                style="width:auto;"
+                            >
+
+                            <label
+                                for="lessonPublished"
+                                style="margin:0;"
+                            >
+                                Publish this lesson immediately
+                            </label>
+
+                        </div>
+
+
+
+                        <!-- SUBMIT -->
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+                            Create Lesson
+                        </button>
+
+
+                    </form>
+
+                </div>
+
+
+
+                <!-- BACK BUTTON -->
+
+                <div style="margin-top:30px;">
+
+                    <a
+                        href="teacher-dashboard.html"
+                        class="btn btn-secondary"
+                    >
+                        ← Back to Teacher Dashboard
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 As-Siyānah Institute for Arabic
+                and Islamic Studies.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         SUPABASE
+    ====================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+
+    <script>
+
+        const SUPABASE_URL =
+            "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+        const SUPABASE_ANON_KEY =
+            "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+        const supabaseClient =
+            window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_ANON_KEY
+            );
+
+    </script>
+
+
+    <!-- GLOBAL TEACHER THEME -->
+
+    <script src="js/teacher-theme.js"></script>
+
+
+    <!-- EXISTING LESSON JAVASCRIPT -->
+
+    <script src="js/teacher-create-lessons.js"></script>
+
+
+</body>
+
+</html>

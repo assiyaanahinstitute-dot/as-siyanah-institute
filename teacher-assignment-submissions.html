@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Assignment Submissions | As-Siyānah Institute
+    </title>
+
+
+    <!-- GLOBAL TEACHER DESIGN -->
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal.css"
+    >
+
+
+    <!-- PAGE DESIGN -->
+    <link
+        rel="stylesheet"
+        href="css/teacher-assignment-submissions.css"
+    >
+
+
+    <!-- DARK MODE -->
+    <link
+        rel="stylesheet"
+        href="css/teacher-assignment-submissions-dark.css"
+    >
+
+</head>
+
+
+<body class="assignment-submissions-page">
+
+
+    <!-- =========================================
+         TEACHER HEADER
+    ========================================== -->
+
+    <header class="teacher-header">
+
+        <div class="teacher-header-inner">
+
+
+            <!-- BRAND -->
+
+            <div class="teacher-brand">
+
+                <div class="teacher-brand-mark">
+                    AS
+                </div>
+
+                <div>
+
+                    <h1>
+                        AS-SIYĀNAH INSTITUTE
+                    </h1>
+
+                    <span>
+                        Teacher Portal
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="teacher-nav">
+
+                <a href="teacher-dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="teacher-students.html">
+                    Students
+                </a>
+
+                <a href="teacher-lessons.html">
+                    Lessons
+                </a>
+
+                <a href="teacher-results.html">
+                    Results
+                </a>
+
+                <a
+                    href="teacher-assignment-submissions.html"
+                    class="active"
+                >
+                    Assignments
+                </a>
+
+            </nav>
+
+
+
+            <!-- HEADER ACTIONS -->
+
+            <div class="teacher-header-actions">
+
+
+                <!-- DARK MODE -->
+
+                <button
+                    type="button"
+                    class="teacher-theme-toggle"
+                    aria-label="Switch to dark mode"
+                >
+                    🌙 Dark Mode
+                </button>
+
+
+                <!-- LOGOUT -->
+
+                <button
+                    type="button"
+                    id="teacherLogoutButton"
+                    class="teacher-logout-button"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="teacher-main">
+
+
+        <!-- =====================================
+             PAGE HERO
+        ====================================== -->
+
+        <section class="submissions-hero">
+
+            <div class="submissions-hero-content">
+
+                <span class="eyebrow">
+                    TEACHER PORTAL
+                </span>
+
+                <h2>
+                    Assignment Submissions
+                </h2>
+
+                <p>
+                    Review assignments submitted by your students
+                    and provide academic feedback.
+                </p>
+
+            </div>
+
+
+            <div class="hero-icon">
+                📝
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             SUBMISSIONS SECTION
+        ====================================== -->
+
+        <section class="submissions-section">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        ACADEMIC WORK
+                    </span>
+
+                    <h3>
+                        Student Submissions
+                    </h3>
+
+                    <p>
+                        View and review assignments submitted by students.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 SUBMISSIONS CONTAINER
+            ================================== -->
+
+            <div
+                id="submissionsContainer"
+                class="submissions-container"
+            >
+
+                <div class="submissions-empty">
+
+                    <div class="empty-icon">
+                        ⏳
+                    </div>
+
+                    <h3>
+                        Loading submissions...
+                    </h3>
+
+                    <p>
+                        Please wait while we load student submissions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="teacher-footer">
+
+        <div class="teacher-footer-inner">
+
+
+            <div>
+
+                <strong>
+                    AS-SIYĀNAH INSTITUTE
+                </strong>
+
+                <p>
+                    Arabic & Islamic Studies
+                </p>
+
+            </div>
+
+
+            <p>
+                © 2026 As-Siyānah Institute.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         SUPABASE
+    ========================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+    </script>
+
+
+    <script>
+
+        const SUPABASE_URL =
+            "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+
+        const SUPABASE_ANON_KEY =
+            "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+
+        const supabaseClient =
+            window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_ANON_KEY
+            );
+
+    </script>
+
+
+
+    <!-- =========================================
+         GLOBAL TEACHER THEME
+    ========================================== -->
+
+    <script
+        src="js/teacher-theme.js">
+    </script>
+
+
+
+    <!-- =========================================
+         ASSIGNMENT SUBMISSIONS JAVASCRIPT
+    ========================================== -->
+
+    <script
+        src="js/teacher-assignment-submissions.js">
+    </script>
+
+<script src="js/teacher-theme.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Test Submissions | Admin Portal | As-Siyānah Institute
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin-portal.css"
+    >
+
+</head>
+
+<body>
+
+<!-- ========================================
+     ADMIN HEADER
+======================================== -->
+
+<header class="admin-header">
+
+    <div class="admin-header-inner">
+
+        <a
+            href="admin-dashboard.html"
+            class="admin-brand"
+        >
+
+            <div class="admin-brand-mark">
+                AS
+            </div>
+
+            <div class="admin-brand-text">
+
+                <strong>
+                    AS-SIYĀNAH
+                </strong>
+
+                <span>
+                    Admin Portal
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <nav class="admin-nav">
+
+            <a href="admin-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="admin-students.html">
+                Students
+            </a>
+
+            <a href="admin-teachers.html">
+                Teachers
+            </a>
+
+            <a href="admin-classes.html">
+                Classes
+            </a>
+
+            <a href="admin-lessons.html">
+                Lessons
+            </a>
+
+            <a href="admin-results.html">
+                Results
+            </a>
+
+            <a
+                href="admin-tests.html"
+                class="active"
+            >
+                Tests & Exams
+            </a>
+
+            <a href="admin-announcements.html">
+                Announcements
+            </a>
+
+            <a href="admin-registrations.html">
+                Registrations
+            </a>
+
+            <a href="admin-profile.html">
+                Profile
+            </a>
+
+        </nav>
+
+
+        <button
+            type="button"
+            id="adminThemeToggle"
+            class="admin-theme-toggle"
+            aria-label="Toggle dark mode"
+        >
+
+            <span class="admin-theme-icon">
+                ☾
+            </span>
+
+            <span class="admin-theme-text">
+                Dark
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ========================================
+     MAIN
+======================================== -->
+
+<main class="admin-submissions-main">
+
+
+    <!-- HERO -->
+
+    <section class="admin-submissions-hero">
+
+        <div>
+
+            <p class="admin-submissions-eyebrow">
+                ASSESSMENT CENTRE
+            </p>
+
+            <h1>
+                Test & Exam Submissions
+            </h1>
+
+            <p>
+                Monitor student submissions, review status,
+                scores and teacher feedback.
+            </p>
+
+        </div>
+
+
+        <a
+            href="admin-tests.html"
+            class="admin-submissions-back"
+        >
+            ← Tests & Exams
+        </a>
+
+    </section>
+
+
+    <!-- ========================================
+         STATISTICS
+    ======================================== -->
+
+    <section class="admin-submission-stats">
+
+
+        <div class="admin-submission-stat">
+
+            <div class="admin-submission-stat-icon">
+                📝
+            </div>
+
+            <div>
+
+                <span>
+                    Total Submissions
+                </span>
+
+                <strong id="totalSubmissions">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-submission-stat">
+
+            <div class="admin-submission-stat-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <span>
+                    Reviewed
+                </span>
+
+                <strong id="totalReviewed">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-submission-stat">
+
+            <div class="admin-submission-stat-icon">
+                ◷
+            </div>
+
+            <div>
+
+                <span>
+                    Awaiting Review
+                </span>
+
+                <strong id="totalPending">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-submission-stat">
+
+            <div class="admin-submission-stat-icon">
+                🎓
+            </div>
+
+            <div>
+
+                <span>
+                    Exams
+                </span>
+
+                <strong id="totalExamSubmissions">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         FILTER BAR
+    ======================================== -->
+
+    <section class="admin-submissions-filter-card">
+
+        <div class="admin-submissions-filter-heading">
+
+            <div>
+
+                <span>
+                    SUBMISSION FILTERS
+                </span>
+
+                <h2>
+                    Find a Submission
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-submissions-toolbar">
+
+            <div class="admin-submissions-search">
+
+                <span>
+                    ⌕
+                </span>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search student, ID or assessment..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <select id="typeFilter">
+
+                <option value="All">
+                    All Types
+                </option>
+
+                <option value="Test">
+                    Tests
+                </option>
+
+                <option value="Exam">
+                    Exams
+                </option>
+
+            </select>
+
+
+            <select id="statusFilter">
+
+                <option value="All">
+                    All Status
+                </option>
+
+                <option value="Reviewed">
+                    Reviewed
+                </option>
+
+                <option value="Submitted">
+                    Awaiting Review
+                </option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         SUBMISSIONS
+    ======================================== -->
+
+    <section class="admin-submissions-section">
+
+        <div class="admin-submissions-section-heading">
+
+            <div>
+
+                <p>
+                    STUDENT SUBMISSIONS
+                </p>
+
+                <h2>
+                    All Submissions
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="submissionList"
+            class="admin-submission-list"
+        >
+
+            <div class="admin-submission-loading">
+                Loading submissions...
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         BACK
+    ======================================== -->
+
+    <div class="admin-submissions-actions">
+
+        <a
+            href="admin-tests.html"
+            class="admin-submissions-dashboard-button"
+        >
+            ← Back to Tests & Exams
+        </a>
+
+    </div>
+
+</main>
+
+
+<!-- ========================================
+     FOOTER
+======================================== -->
+
+<footer class="admin-footer">
+
+    <p>
+        © 2026 As-Siyānah Institute for Arabic & Islamic Studies
+    </p>
+
+</footer>
+
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/admin-test-submissions.js"></script>
+
+<script src="js/admin-theme.js"></script>
+
+</body>
+
+</html>

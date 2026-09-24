@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Classes | As-Siyānah Institute</title>
+
+    <link rel="stylesheet" href="css/teacher-classes.css">
+    <link rel="stylesheet" href="css/teacher-portal.css">
+     <link rel="stylesheet" href="css/teacher-portal-dark.css">
+</head>
+
+<body>
+
+<div class="teacher-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <div class="brand-icon">AS</div>
+
+            <div>
+                <h2>AS-SIYĀNAH</h2>
+                <span>Teacher Portal</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="teacher-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="teacher-students.html">
+                Students
+            </a>
+
+            <a href="teacher-classes.html" class="active">
+                My Classes
+            </a>
+
+            <a href="teacher-lessons.html">
+                Lessons
+            </a>
+
+            <a href="teacher-results.html">
+                Results
+            </a>
+
+            <a href="teacher-tests.html">
+                Tests
+            </a>
+
+            <a href="teacher-assignments.html">
+                Assignments
+            </a>
+
+            <a href="teacher-announcements.html">
+                Announcements
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="teacher-profile.html">
+                My Profile
+            </a>
+
+            <button id="logoutBtn">
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="top-header">
+
+            <div>
+                <p class="eyebrow">
+                    TEACHER PORTAL
+                </p>
+
+                <h1>My Classes</h1>
+
+                <p class="header-description">
+                    View the classes assigned to you and the students enrolled in each class.
+                </p>
+            </div>
+
+            <div class="header-actions">
+
+                <button
+                    class="refresh-btn"
+                    id="refreshBtn"
+                    type="button"
+                >
+                    ↻ Refresh
+                </button>
+
+                <button
+                    class="teacher-theme-toggle"
+                    type="button"
+                >
+                    🌙 Dark Mode
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- STATS -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📚
+                </div>
+
+                <div>
+                    <span>Total Classes</span>
+                    <strong id="totalClasses">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    👨‍🎓
+                </div>
+
+                <div>
+                    <span>Total Students</span>
+                    <strong id="totalStudents">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📖
+                </div>
+
+                <div>
+                    <span>Subjects</span>
+                    <strong id="totalSubjects">0</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CLASSES -->
+        <section class="classes-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Assigned Classes</h2>
+
+                    <p>
+                        Classes assigned to your teacher account.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div
+                id="classesContainer"
+                class="classes-grid"
+            >
+
+                <div class="loading-card">
+
+                    <div class="loader"></div>
+
+                    <p>
+                        Loading your classes...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- SUPABASE -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- GLOBAL TEACHER THEME -->
+<script src="js/teacher-theme.js"></script>
+
+<!-- EXISTING PAGE FUNCTIONALITY -->
+<script src="js/teacher-classes.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Teacher | As-Siyānah Institute</title>
+
+    <link rel="stylesheet" href="css/admin-portal.css">
+</head>
+
+<body>
+
+<header class="admin-header">
+    <div class="admin-header-inner">
+
+        <a href="admin-dashboard.html" class="admin-brand">
+            <div class="admin-brand-mark">A</div>
+
+            <div class="admin-brand-text">
+                <strong>AS-SIYĀNAH</strong>
+                <span>ADMIN PORTAL</span>
+            </div>
+        </a>
+
+        <nav class="admin-nav">
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="admin-teachers.html" class="active">Teachers</a>
+        </nav>
+
+        <button id="adminThemeToggle" class="admin-theme-toggle">
+            <span class="admin-theme-icon">☾</span>
+            <span class="admin-theme-text">Dark</span>
+        </button>
+
+    </div>
+</header>
+
+
+<main class="admin-dashboard">
+
+    <section class="admin-welcome">
+        <div>
+            <p class="admin-eyebrow">TEACHER MANAGEMENT</p>
+            <h1>Add New Teacher</h1>
+            <p>
+                Create a teacher account and provide secure login credentials.
+            </p>
+        </div>
+    </section>
+
+
+    <section class="admin-section">
+
+        <div class="admin-section-header">
+            <div>
+                <h2>Teacher Account</h2>
+                <p>Enter the teacher's information below.</p>
+            </div>
+        </div>
+
+
+        <div class="admin-card teacher-form-card">
+
+            <form id="teacherForm">
+
+                <div class="admin-form-group">
+                    <label for="fullName">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="full_name"
+                        placeholder="Enter teacher's full name"
+                        required
+                    >
+                </div>
+
+
+                <div class="admin-form-group">
+                    <label for="email">Email / Gmail</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="teacher@gmail.com"
+                        required
+                    >
+                </div>
+
+
+                <div class="admin-form-group">
+                    <label for="password">Password</label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Create a secure password"
+                            minlength="6"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="password-toggle"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+                </div>
+
+
+                <div class="admin-form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Enter the password again"
+                        minlength="6"
+                        required
+                    >
+                </div>
+
+
+                <div id="teacherMessage" class="teacher-message"></div>
+
+
+                <div class="teacher-form-actions">
+
+                    <a
+                        href="admin-teachers.html"
+                        class="admin-btn admin-btn-secondary"
+                    >
+                        Cancel
+                    </a>
+
+                    <button
+                        type="submit"
+                        id="createTeacherBtn"
+                        class="admin-btn admin-btn-primary"
+                    >
+                        Create Teacher
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="admin-footer">
+    <p>
+        © 2026 AS-SIYĀNAH INSTITUTE FOR ARABIC & ISLAMIC STUDIES
+    </p>
+</footer>
+
+
+<script src="js/admin-theme.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+const SUPABASE_URL =
+    "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+    );
+
+
+const teacherForm =
+    document.getElementById("teacherForm");
+
+const createTeacherBtn =
+    document.getElementById("createTeacherBtn");
+
+const teacherMessage =
+    document.getElementById("teacherMessage");
+
+const passwordInput =
+    document.getElementById("password");
+
+const confirmPasswordInput =
+    document.getElementById("confirmPassword");
+
+const togglePassword =
+    document.getElementById("togglePassword");
+
+
+/* Show / hide password */
+
+togglePassword.addEventListener("click", function () {
+
+    if (passwordInput.type === "password") {
+
+        passwordInput.type = "text";
+        confirmPasswordInput.type = "text";
+
+        togglePassword.textContent = "Hide";
+
+    } else {
+
+        passwordInput.type = "password";
+        confirmPasswordInput.type = "password";
+
+        togglePassword.textContent = "Show";
+    }
+
+});
+
+
+/* Create teacher */
+
+teacherForm.addEventListener("submit", async function (event) {
+
+    event.preventDefault();
+
+
+    const fullName =
+        document.getElementById("fullName").value.trim();
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    const password =
+        passwordInput.value;
+
+    const confirmPassword =
+        confirmPasswordInput.value;
+
+
+    teacherMessage.textContent = "";
+    teacherMessage.className = "teacher-message";
+
+
+    if (password !== confirmPassword) {
+
+        teacherMessage.textContent =
+            "Passwords do not match.";
+
+        teacherMessage.classList.add("error");
+
+        return;
+    }
+
+
+    createTeacherBtn.disabled = true;
+    createTeacherBtn.textContent = "Creating Teacher...";
+
+
+    try {
+
+        /* Get current admin session */
+
+        const {
+            data: {
+                session
+            }
+        } = await supabaseClient.auth.getSession();
+
+
+        if (!session) {
+
+            throw new Error(
+                "Your admin session has expired. Please log in again."
+            );
+        }
+
+
+        /* Call secure Edge Function */
+
+        const response = await fetch(
+            `${SUPABASE_URL}/functions/v1/bright-action`,
+            {
+                method: "POST",
+
+                headers: {
+                    "Authorization":
+                        `Bearer ${session.access_token}`,
+
+                    "apikey":
+                        SUPABASE_PUBLISHABLE_KEY,
+
+                    "Content-Type":
+                        "application/json"
+                },
+
+                body: JSON.stringify({
+                    full_name: fullName,
+                    email: email,
+                    password: password
+                })
+            }
+        );
+
+
+        const result =
+            await response.json();
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                result.error ||
+                "Unable to create teacher account."
+            );
+        }
+
+
+        /* Success */
+
+        teacherMessage.textContent =
+            "Teacher account created successfully.";
+
+        teacherMessage.classList.add("success");
+
+
+        teacherForm.reset();
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        teacherMessage.textContent =
+            error.message ||
+            "Something went wrong.";
+
+        teacherMessage.classList.add("error");
+
+    } finally {
+
+        createTeacherBtn.disabled = false;
+
+        createTeacherBtn.textContent =
+            "Create Teacher";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

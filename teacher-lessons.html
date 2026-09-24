@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Manage Lessons | As-Siyānah Institute</title>
+
+    <!-- GLOBAL TEACHER PORTAL -->
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal-dark.css"
+    >
+
+    <!-- PAGE STYLE -->
+    <link
+        rel="stylesheet"
+        href="css/teacher-lessons.css"
+    >
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="teacher-header">
+
+        <div class="teacher-header-inner">
+
+            <a
+                href="teacher-dashboard.html"
+                class="teacher-brand"
+            >
+
+                <span class="teacher-brand-main">
+                    AS-SIYĀNAH
+                </span>
+
+                <span class="teacher-brand-sub">
+                    Teacher Portal
+                </span>
+
+            </a>
+
+
+            <nav class="teacher-nav">
+
+                <a href="teacher-dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="teacher-students.html">
+                    Students
+                </a>
+
+                <a
+                    href="teacher-lessons.html"
+                    class="active"
+                >
+                    Lessons
+                </a>
+
+                <a href="teacher-results-list.html">
+                    Results
+                </a>
+
+                <a href="teacher-announcements.html">
+                    Announcements
+                </a>
+
+                <button
+                    type="button"
+                    class="teacher-theme-toggle"
+                    aria-label="Switch theme"
+                    aria-pressed="false"
+                >
+                    🌙 Dark Mode
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="lessons-main">
+
+        <div class="lessons-container">
+
+
+            <!-- PAGE HEADING -->
+
+            <section class="lessons-heading">
+
+                <div>
+
+                    <span class="lessons-eyebrow">
+                        TEACHER PORTAL
+                    </span>
+
+                    <h1>
+                        Manage Lessons
+                    </h1>
+
+                    <p>
+                        Create, organize, edit and manage your learning materials.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="teacher-create-lesson.html"
+                    class="create-lesson-btn"
+                >
+                    <span class="create-icon">
+                        +
+                    </span>
+
+                    Create Lesson
+                </a>
+
+            </section>
+
+
+            <!-- =================================================
+                 STATISTICS
+            ================================================== -->
+
+            <section class="lesson-stats">
+
+
+                <div class="lesson-stat-card">
+
+                    <div class="stat-content">
+
+                        <span class="stat-label">
+                            TOTAL LESSONS
+                        </span>
+
+                        <strong
+                            id="totalLessons"
+                            class="stat-number"
+                        >
+                            0
+                        </strong>
+
+                        <span class="stat-description">
+                            All lessons
+                        </span>
+
+                    </div>
+
+                    <div class="stat-icon">
+                        ▦
+                    </div>
+
+                </div>
+
+
+                <div class="lesson-stat-card published-stat">
+
+                    <div class="stat-content">
+
+                        <span class="stat-label">
+                            PUBLISHED
+                        </span>
+
+                        <strong
+                            id="publishedLessons"
+                            class="stat-number"
+                        >
+                            0
+                        </strong>
+
+                        <span class="stat-description">
+                            Available to students
+                        </span>
+
+                    </div>
+
+                    <div class="stat-icon">
+                        ✓
+                    </div>
+
+                </div>
+
+
+                <div class="lesson-stat-card draft-stat">
+
+                    <div class="stat-content">
+
+                        <span class="stat-label">
+                            DRAFTS
+                        </span>
+
+                        <strong
+                            id="draftLessons"
+                            class="stat-number"
+                        >
+                            0
+                        </strong>
+
+                        <span class="stat-description">
+                            Not yet published
+                        </span>
+
+                    </div>
+
+                    <div class="stat-icon">
+                        ◷
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 LESSONS SECTION
+            ================================================== -->
+
+            <section class="lessons-section">
+
+                <div class="lessons-section-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            CONTENT LIBRARY
+                        </span>
+
+                        <h2>
+                            Your Lessons
+                        </h2>
+
+                    </div>
+
+                    <a
+                        href="teacher-create-lesson.html"
+                        class="section-create-btn"
+                    >
+                        + New Lesson
+                    </a>
+
+                </div>
+
+
+                <div class="section-divider"></div>
+
+
+                <!-- LESSONS ARE LOADED BY JS -->
+
+                <div
+                    id="teacherLessonsList"
+                    class="teacher-lessons-list"
+                >
+
+                    <div class="lessons-loading">
+
+                        <div class="loading-spinner"></div>
+
+                        <span>
+                            Loading lessons...
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="teacher-footer">
+
+        <div class="teacher-footer-inner">
+
+            <span>
+                © 2026 AS-SIYĀNAH INSTITUTE
+            </span>
+
+            <span>
+                Teacher Portal
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/teacher-theme.js"></script>
+
+    <script src="js/teacher-lessons.js"></script>
+
+</body>
+
+</html>

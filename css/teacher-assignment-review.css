@@ -1,0 +1,862 @@
+/* =========================================================
+   AS-SIYĀNAH
+   TEACHER ASSIGNMENT REVIEW
+   PROFESSIONAL UI / UX
+========================================================= */
+
+:root {
+
+    --review-green: #1D5E3C;
+    --review-deep-green: #0B3524;
+    --review-gold: #C9A227;
+
+    --review-bg: #f5f8f6;
+    --review-card: #ffffff;
+
+    --review-border: #e2ebe6;
+
+    --review-text: #17352a;
+    --review-muted: #718078;
+
+    --review-radius: 18px;
+
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.assignment-review-page {
+
+    min-height: 100vh;
+
+    background:
+        var(--review-bg);
+
+    color:
+        var(--review-text);
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.teacher-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    background:
+        rgba(255,255,255,.96);
+
+    border-bottom:
+        1px solid var(--review-border);
+
+    backdrop-filter:
+        blur(14px);
+
+}
+
+
+.teacher-header-inner {
+
+    width:
+        min(1400px, 94%);
+
+    min-height:
+        76px;
+
+    margin:
+        auto;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        28px;
+
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.teacher-brand {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+
+    flex-shrink:
+        0;
+
+    text-decoration:
+        none;
+
+    color:
+        inherit;
+
+}
+
+
+.teacher-brand-mark {
+
+    width:
+        43px;
+
+    height:
+        43px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1D5E3C,
+            #0B3524
+        );
+
+    color:
+        #ffffff;
+
+    font-size:
+        13px;
+
+    font-weight:
+        900;
+
+    box-shadow:
+        0 8px 18px rgba(11,53,36,.18);
+
+}
+
+
+.teacher-brand-text strong {
+
+    display:
+        block;
+
+    color:
+        var(--review-deep-green);
+
+    font-size:
+        13px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.teacher-brand-text span {
+
+    display:
+        block;
+
+    margin-top:
+        2px;
+
+    color:
+        var(--review-muted);
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        .8px;
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.teacher-nav {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+
+    flex:
+        1;
+
+}
+
+
+.teacher-nav a {
+
+    padding:
+        9px 12px;
+
+    border-radius:
+        9px;
+
+    color:
+        #63736a;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    text-decoration:
+        none;
+
+    transition:
+        .2s ease;
+
+}
+
+
+.teacher-nav a:hover {
+
+    background:
+        #f0f5f2;
+
+    color:
+        var(--review-green);
+
+}
+
+
+.teacher-nav a.active {
+
+    background:
+        #e9f2ed;
+
+    color:
+        var(--review-green);
+
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.review-header-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    flex-shrink:
+        0;
+
+}
+
+
+.teacher-theme-toggle,
+.review-logout {
+
+    border:
+        1px solid var(--review-border);
+
+    border-radius:
+        10px;
+
+    padding:
+        9px 12px;
+
+    background:
+        #ffffff;
+
+    font-family:
+        inherit;
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+
+    transition:
+        .2s ease;
+
+}
+
+
+.teacher-theme-toggle {
+
+    color:
+        var(--review-green);
+
+}
+
+
+.teacher-theme-toggle:hover {
+
+    background:
+        #f0f6f2;
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.review-logout {
+
+    color:
+        #934747;
+
+    border-color:
+        #ead8d8;
+
+}
+
+
+.review-logout:hover {
+
+    background:
+        #fff5f5;
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.review-main {
+
+    padding:
+        36px 0 50px;
+
+}
+
+
+.review-container {
+
+    width:
+        min(1180px, 92%);
+
+    margin:
+        auto;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.review-hero {
+
+    position:
+        relative;
+
+    min-height:
+        185px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    padding:
+        35px 40px;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        22px;
+
+    background:
+        linear-gradient(
+            125deg,
+            #0B3524,
+            #164b32,
+            #1D5E3C
+        );
+
+    box-shadow:
+        0 18px 45px rgba(11,53,36,.16);
+
+}
+
+
+.review-hero::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        300px;
+
+    height:
+        300px;
+
+    right:
+        -80px;
+
+    top:
+        -110px;
+
+    border:
+        1px solid rgba(212,175,55,.2);
+
+    border-radius:
+        50%;
+
+}
+
+
+.review-hero-content {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+}
+
+
+.review-eyebrow {
+
+    display:
+        block;
+
+    margin-bottom:
+        8px;
+
+    color:
+        #d9c16d;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.review-hero h1 {
+
+    margin:
+        0;
+
+    color:
+        #ffffff;
+
+    font-size:
+        clamp(30px,4vw,42px);
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        -.8px;
+
+}
+
+
+.review-hero p {
+
+    max-width:
+        600px;
+
+    margin:
+        9px 0 0;
+
+    color:
+        rgba(255,255,255,.72);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+
+}
+
+
+.review-hero-icon {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        88px;
+
+    height:
+        88px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    border-radius:
+        24px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    font-size:
+        39px;
+
+    backdrop-filter:
+        blur(10px);
+
+}
+
+
+/* =========================================================
+   BACK NAVIGATION
+========================================================= */
+
+.review-navigation {
+
+    margin-top:
+        20px;
+
+}
+
+
+.back-btn {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    padding:
+        10px 14px;
+
+    border:
+        1px solid var(--review-border);
+
+    border-radius:
+        10px;
+
+    background:
+        #ffffff;
+
+    color:
+        var(--review-green);
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+    text-decoration:
+        none;
+
+    transition:
+        .2s ease;
+
+}
+
+
+.back-btn:hover {
+
+    background:
+        #f0f6f2;
+
+    border-color:
+        #cbdcd2;
+
+    transform:
+        translateX(-2px);
+
+}
+
+
+/* =========================================================
+   CONTENT CARD
+========================================================= */
+
+.review-content-card {
+
+    margin-top:
+        20px;
+
+    padding:
+        30px;
+
+    border:
+        1px solid var(--review-border);
+
+    border-radius:
+        var(--review-radius);
+
+    background:
+        var(--review-card);
+
+    box-shadow:
+        0 12px 32px rgba(17,50,37,.055);
+
+}
+
+
+.review-container-content {
+
+    min-height:
+        260px;
+
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading-state {
+
+    min-height:
+        240px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        13px;
+
+    border:
+        1px dashed #d8e4de;
+
+    border-radius:
+        14px;
+
+    background:
+        #fafcfb;
+
+}
+
+
+.loading-state p {
+
+    margin:
+        0;
+
+    color:
+        var(--review-muted);
+
+    font-size:
+        11px;
+
+}
+
+
+.loading-spinner {
+
+    width:
+        30px;
+
+    height:
+        30px;
+
+    border:
+        3px solid #dce8e1;
+
+    border-top-color:
+        var(--review-green);
+
+    border-radius:
+        50%;
+
+    animation:
+        reviewSpin .8s linear infinite;
+
+}
+
+
+@keyframes reviewSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.review-footer {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    margin-top:
+        35px;
+
+    padding:
+        20px 4px;
+
+    border-top:
+        1px solid var(--review-border);
+
+}
+
+
+.review-footer p,
+.review-footer span {
+
+    margin:
+        0;
+
+    color:
+        var(--review-muted);
+
+    font-size:
+        9px;
+
+}
+
+
+.review-footer span {
+
+    color:
+        var(--review-gold);
+
+    font-weight:
+        800;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .teacher-nav {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .teacher-header-inner {
+        min-height: 68px;
+    }
+
+    .review-main {
+        padding-top: 22px;
+    }
+
+    .review-hero {
+        min-height: auto;
+        padding: 28px 24px;
+    }
+
+    .review-hero-icon {
+        display: none;
+    }
+
+    .review-content-card {
+        padding: 20px;
+    }
+
+    .teacher-theme-toggle {
+        font-size: 0;
+        padding: 9px 10px;
+    }
+
+    .teacher-theme-toggle::before {
+        content: "🌙";
+        font-size: 13px;
+    }
+
+    .review-logout {
+        font-size: 9px;
+        padding: 9px 10px;
+    }
+
+    .review-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 7px;
+    }
+
+}

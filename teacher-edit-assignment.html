@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Edit Assignment | As-Siyānah Institute</title>
+
+
+    <!-- GLOBAL TEACHER PORTAL -->
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal-dark.css"
+    >
+
+
+    <!-- PAGE DESIGN -->
+    <link
+        rel="stylesheet"
+        href="css/teacher-edit-assignment.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         HEADER
+    ========================================= -->
+
+    <header class="teacher-header">
+
+        <div class="teacher-header-inner">
+
+
+            <!-- BRAND -->
+
+            <a
+                href="teacher-dashboard.html"
+                class="teacher-brand"
+            >
+
+                <span class="teacher-brand-main">
+                    AS-SIYĀNAH
+                </span>
+
+                <span class="teacher-brand-sub">
+                    Teacher Portal
+                </span>
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="teacher-nav">
+
+                <a
+                    href="teacher-dashboard.html"
+                >
+                    Dashboard
+                </a>
+
+
+                <a
+                    href="teacher-students.html"
+                >
+                    Students
+                </a>
+
+
+                <a
+                    href="teacher-lessons.html"
+                >
+                    Lessons
+                </a>
+
+
+                <a
+                    href="teacher-results-list.html"
+                >
+                    Results
+                </a>
+
+
+                <a
+                    href="teacher-assignment-submissions.html"
+                >
+                    Submissions
+                </a>
+
+
+                <a
+                    href="teacher-assignments.html"
+                    class="active"
+                >
+                    Assignments
+                </a>
+
+
+                <!-- DARK MODE -->
+
+                <button
+                    type="button"
+                    class="teacher-theme-toggle"
+                    aria-label="Switch to dark mode"
+                    aria-pressed="false"
+                >
+                    🌙 Dark Mode
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ========================================
+         MAIN
+    ========================================= -->
+
+    <main class="edit-assignment-main">
+
+        <div class="edit-assignment-container">
+
+
+            <!-- PAGE HEADING -->
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="page-eyebrow">
+                        TEACHER PORTAL • ASSIGNMENTS
+                    </span>
+
+
+                    <h1>
+                        Edit Assignment
+                    </h1>
+
+
+                    <p>
+                        Update the assignment details, student level,
+                        deadline and publication status.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="teacher-assignments.html"
+                    class="back-btn"
+                >
+                    ← Back to Assignments
+                </a>
+
+            </div>
+
+
+
+            <!-- FORM CARD -->
+
+            <section class="form-card">
+
+
+                <!-- CARD HEADER -->
+
+                <div class="form-card-header">
+
+                    <div class="form-card-icon">
+                        ✏️
+                    </div>
+
+
+                    <div>
+
+                        <span class="form-card-label">
+                            ASSIGNMENT MANAGEMENT
+                        </span>
+
+
+                        <h2>
+                            Assignment Details
+                        </h2>
+
+
+                        <p>
+                            Make your changes below and save the updated assignment.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-card-divider"></div>
+
+
+
+                <!-- MESSAGE -->
+
+                <div
+                    id="message"
+                    class="assignment-message"
+                    aria-live="polite"
+                ></div>
+
+
+
+                <!-- FORM -->
+
+                <form
+                    id="editAssignmentForm"
+                >
+
+
+                    <!-- TITLE -->
+
+                    <div class="form-group">
+
+                        <label for="title">
+                            Assignment Title
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="title"
+                            placeholder="Enter assignment title"
+                            autocomplete="off"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- DESCRIPTION -->
+
+                    <div class="form-group">
+
+                        <label for="description">
+                            Instructions
+                        </label>
+
+
+                        <textarea
+                            id="description"
+                            rows="7"
+                            placeholder="Write the assignment instructions..."
+                            required
+                        ></textarea>
+
+
+                        <small>
+                            Give students clear instructions about what they need to complete.
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- SUBJECT + LEVEL -->
+
+                    <div class="form-grid">
+
+
+                        <!-- SUBJECT -->
+
+                        <div class="form-group">
+
+                            <label for="subject">
+                                Subject
+                            </label>
+
+
+                            <select
+                                id="subject"
+                                required
+                            >
+
+                                <option value="">
+                                    Select subject
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- LEVEL -->
+
+                        <div class="form-group">
+
+                            <label for="level">
+                                Student Level
+                            </label>
+
+
+                            <select
+                                id="level"
+                                required
+                            >
+
+                                <option value="">
+                                    Select level
+                                </option>
+
+
+                                <option value="elementary">
+                                    Elementary
+                                </option>
+
+
+                                <option value="intermediate">
+                                    Intermediate
+                                </option>
+
+
+                                <option value="advanced">
+                                    Advanced
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- DEADLINE -->
+
+                    <div class="form-group">
+
+                        <label for="deadline">
+                            Deadline
+                        </label>
+
+
+                        <input
+                            type="datetime-local"
+                            id="deadline"
+                        >
+
+
+                        <small>
+                            Leave blank if there is no deadline.
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- PUBLISH BOX -->
+
+                    <div class="publish-box">
+
+                        <div class="publish-icon">
+                            ✓
+                        </div>
+
+
+                        <div class="publish-content">
+
+                            <strong>
+                                Publish this assignment
+                            </strong>
+
+
+                            <span>
+                                Published assignments can be seen by eligible students.
+                            </span>
+
+                        </div>
+
+
+                        <label class="assignment-switch">
+
+                            <input
+                                type="checkbox"
+                                id="published"
+                            >
+
+                            <span class="switch-slider"></span>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <!-- ACTIONS -->
+
+                    <div class="form-actions">
+
+                        <a
+                            href="teacher-assignments.html"
+                            class="cancel-btn"
+                        >
+                            Cancel
+                        </a>
+
+
+                        <button
+                            type="submit"
+                            class="save-btn"
+                            id="saveBtn"
+                        >
+
+                            <span>
+                                ✓
+                            </span>
+
+                            <span>
+                                Save Changes
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ========================================
+         FOOTER
+    ========================================= -->
+
+    <footer class="teacher-footer">
+
+        <p>
+            © 2026 AS-SIYĀNAH INSTITUTE FOR ARABIC &amp; ISLAMIC STUDIES
+        </p>
+
+    </footer>
+
+
+
+    <!-- ========================================
+         SUPABASE
+    ========================================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <script>
+
+        const SUPABASE_URL =
+            "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+
+        const SUPABASE_ANON_KEY =
+            "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+
+        const supabaseClient =
+            window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_ANON_KEY
+            );
+
+    </script>
+
+
+
+    <!-- ========================================
+         GLOBAL TEACHER THEME
+    ========================================= -->
+
+    <script src="js/teacher-theme.js"></script>
+
+
+
+    <!-- ========================================
+         EDIT ASSIGNMENT
+    ========================================= -->
+
+    <script src="js/teacher-edit-assignment.js"></script>
+
+
+</body>
+
+</html>

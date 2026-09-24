@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Teacher Dashboard | As-Siyānah Institute
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="site-header">
+
+    <div class="container nav-container">
+
+
+        <!-- BRAND -->
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+
+            <span>
+                As-Siyānah
+            </span>
+
+            <small>
+                Teacher Portal
+            </small>
+
+        </a>
+
+
+        <!-- NAVIGATION -->
+
+        <nav
+            class="nav-menu"
+            aria-label="Teacher navigation"
+        >
+
+            <a
+                href="teacher-dashboard.html"
+                class="active"
+            >
+                Dashboard
+            </a>
+
+            <a href="teacher-students.html">
+                Students
+            </a>
+
+            <a href="teacher-classes.html">
+                My Classes
+            </a>
+
+            <a href="teacher-lessons.html">
+                Lessons
+            </a>
+
+            <a href="teacher-results-list.html">
+                Results
+            </a>
+
+            <a href="teacher-assignment-submissions.html">
+                Assignments
+            </a>
+
+            <a href="teacher-tests.html">
+                Tests
+            </a>
+
+            <a href="teacher-test-submissions.html">
+                Test Submissions
+            </a>
+
+            <a href="teacher-create-assignment.html">
+                Create Assignment
+            </a>
+
+            <a href="teacher-attendance.html">
+                Attendance
+            </a>
+
+            <a href="teacher-announcements.html">
+                Announcements
+            </a>
+
+        </nav>
+
+
+        <!-- THEME -->
+
+        <button
+            type="button"
+            class="teacher-theme-toggle"
+            aria-label="Switch to dark mode"
+        >
+            🌙 Dark Mode
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
+<section class="dashboard-section">
+
+<div class="container">
+
+
+    <!-- =================================================
+         WELCOME HERO
+    ================================================== -->
+
+    <div class="dashboard-welcome">
+
+        <div class="welcome-content">
+
+            <p class="eyebrow">
+                AS-SIYĀNAH • TEACHER PORTAL
+            </p>
+
+            <h1>
+                Welcome, Teacher 👋
+            </h1>
+
+            <p>
+                Manage your students, lessons, results,
+                assessments and academic activities
+                from one place.
+            </p>
+
+        </div>
+
+
+        <div class="welcome-decoration">
+
+            <span>✦</span>
+            <span>۞</span>
+            <span>✦</span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         DASHBOARD OVERVIEW
+    ================================================== -->
+
+    <div class="dashboard-heading">
+
+        <div>
+
+            <span class="section-label">
+                OVERVIEW
+            </span>
+
+            <h2>
+                Academic Overview
+            </h2>
+
+            <p>
+                A quick look at your teaching activities.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         MAIN STATISTICS
+    ================================================== -->
+
+    <div class="teacher-stat-grid">
+
+
+        <!-- STUDENTS -->
+
+        <a
+            href="teacher-students.html"
+            class="teacher-stat-card"
+        >
+
+            <div class="stat-icon">
+                👨‍🎓
+            </div>
+
+            <div class="stat-content">
+
+                <span>
+                    Total Students
+                </span>
+
+                <strong id="totalStudents">
+                    —
+                </strong>
+
+            </div>
+
+            <div class="stat-arrow">
+                →
+            </div>
+
+        </a>
+
+
+
+        <!-- LESSONS -->
+
+        <a
+            href="teacher-lessons.html"
+            class="teacher-stat-card"
+        >
+
+            <div class="stat-icon">
+                📚
+            </div>
+
+            <div class="stat-content">
+
+                <span>
+                    Total Lessons
+                </span>
+
+                <strong id="totalLessons">
+                    —
+                </strong>
+
+            </div>
+
+            <div class="stat-arrow">
+                →
+            </div>
+
+        </a>
+
+
+
+        <!-- RESULTS -->
+
+        <a
+            href="teacher-results-list.html"
+            class="teacher-stat-card"
+        >
+
+            <div class="stat-icon">
+                📊
+            </div>
+
+            <div class="stat-content">
+
+                <span>
+                    Total Results
+                </span>
+
+                <strong id="totalResults">
+                    —
+                </strong>
+
+            </div>
+
+            <div class="stat-arrow">
+                →
+            </div>
+
+        </a>
+
+
+
+        <!-- ASSIGNMENTS -->
+
+        <a
+            href="teacher-assignment-submissions.html"
+            class="teacher-stat-card"
+        >
+
+            <div class="stat-icon">
+                📝
+            </div>
+
+            <div class="stat-content">
+
+                <span>
+                    Assignment Submissions
+                </span>
+
+                <strong id="totalSubmissions">
+                    —
+                </strong>
+
+            </div>
+
+            <div class="stat-arrow">
+                →
+            </div>
+
+        </a>
+
+
+
+        <!-- ANNOUNCEMENTS -->
+
+        <a
+            href="teacher-announcements.html"
+            class="teacher-stat-card"
+        >
+
+            <div class="stat-icon">
+                📢
+            </div>
+
+            <div class="stat-content">
+
+                <span>
+                    Total Announcements
+                </span>
+
+                <strong id="totalAnnouncements">
+                    —
+                </strong>
+
+            </div>
+
+            <div class="stat-arrow">
+                →
+            </div>
+
+        </a>
+
+
+
+        <!-- TEST SUBMISSIONS -->
+
+        <a
+            href="teacher-test-submissions.html"
+            class="teacher-stat-card"
+        >
+
+            <div class="stat-icon">
+                📥
+            </div>
+
+            <div class="stat-content">
+
+                <span>
+                    Test Submissions
+                </span>
+
+                <strong class="stat-action">
+                    Review Tests
+                </strong>
+
+            </div>
+
+            <div class="stat-arrow">
+                →
+            </div>
+
+        </a>
+
+
+
+        <!-- TESTS -->
+
+        <a
+            href="teacher-tests.html"
+            class="teacher-stat-card"
+        >
+
+            <div class="stat-icon">
+                🧪
+            </div>
+
+            <div class="stat-content">
+
+                <span>
+                    Tests & Exams
+                </span>
+
+                <strong class="stat-action">
+                    Manage Assessments
+                </strong>
+
+            </div>
+
+            <div class="stat-arrow">
+                →
+            </div>
+
+        </a>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         SECONDARY STATISTICS
+    ================================================== -->
+
+    <div class="secondary-stat-grid">
+
+
+        <div class="secondary-stat-card">
+
+            <div>
+
+                <span>
+                    Published Lessons
+                </span>
+
+                <strong id="publishedLessons">
+                    —
+                </strong>
+
+            </div>
+
+            <div class="secondary-icon">
+                📖
+            </div>
+
+        </div>
+
+
+
+        <div class="secondary-stat-card">
+
+            <div>
+
+                <span>
+                    Published Announcements
+                </span>
+
+                <strong id="publishedAnnouncements">
+                    —
+                </strong>
+
+            </div>
+
+            <div class="secondary-icon">
+                📣
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         QUICK ACTIONS
+    ================================================== -->
+
+    <section class="dashboard-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span class="section-label">
+                    TOOLS
+                </span>
+
+                <h2>
+                    Quick Actions
+                </h2>
+
+                <p>
+                    Frequently used teacher tools.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="quick-actions">
+
+
+            <a
+                href="teacher-results.html"
+                class="quick-action primary"
+            >
+
+                <span>📝</span>
+
+                <div>
+
+                    <strong>
+                        Add Result
+                    </strong>
+
+                    <small>
+                        Record student performance
+                    </small>
+
+                </div>
+
+                <b>→</b>
+
+            </a>
+
+
+
+            <a
+                href="teacher-create-lesson.html"
+                class="quick-action primary"
+            >
+
+                <span>📚</span>
+
+                <div>
+
+                    <strong>
+                        Create Lesson
+                    </strong>
+
+                    <small>
+                        Publish new learning content
+                    </small>
+
+                </div>
+
+                <b>→</b>
+
+            </a>
+
+
+
+            <a
+                href="teacher-assignments.html"
+                class="quick-action"
+            >
+
+                <span>📋</span>
+
+                <div>
+
+                    <strong>
+                        View Assignments
+                    </strong>
+
+                    <small>
+                        Manage student assignments
+                    </small>
+
+                </div>
+
+                <b>→</b>
+
+            </a>
+
+
+
+            <a
+                href="teacher-create-test.html"
+                class="quick-action primary"
+            >
+
+                <span>🧪</span>
+
+                <div>
+
+                    <strong>
+                        Create Test / Exam
+                    </strong>
+
+                    <small>
+                        Build an assessment
+                    </small>
+
+                </div>
+
+                <b>→</b>
+
+            </a>
+
+
+
+            <a
+                href="teacher-test-submissions.html"
+                class="quick-action"
+            >
+
+                <span>📥</span>
+
+                <div>
+
+                    <strong>
+                        Test Submissions
+                    </strong>
+
+                    <small>
+                        Review submitted assessments
+                    </small>
+
+                </div>
+
+                <b>→</b>
+
+            </a>
+
+
+
+            <a
+                href="teacher-create-assignment.html"
+                class="quick-action"
+            >
+
+                <span>➕</span>
+
+                <div>
+
+                    <strong>
+                        Create Assignment
+                    </strong>
+
+                    <small>
+                        Give students new work
+                    </small>
+
+                </div>
+
+                <b>→</b>
+
+            </a>
+
+
+
+            <a
+                href="teacher-announcements.html"
+                class="quick-action"
+            >
+
+                <span>📢</span>
+
+                <div>
+
+                    <strong>
+                        Announcement
+                    </strong>
+
+                    <small>
+                        Communicate with students
+                    </small>
+
+                </div>
+
+                <b>→</b>
+
+            </a>
+
+
+
+            <a
+                href="teacher-students.html"
+                class="quick-action"
+            >
+
+                <span>👨‍🎓</span>
+
+                <div>
+
+                    <strong>
+                        View Students
+                    </strong>
+
+                    <small>
+                        Manage registered students
+                    </small>
+
+                </div>
+
+                <b>→</b>
+
+            </a>
+
+
+
+            <a
+                href="teacher-profile.html"
+                class="quick-action"
+            >
+
+                <span>👤</span>
+
+                <div>
+
+                    <strong>
+                        My Profile
+                    </strong>
+
+                    <small>
+                        View teacher information
+                    </small>
+
+                </div>
+
+                <b>→</b>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         RECENT ANNOUNCEMENTS
+    ================================================== -->
+
+    <section class="dashboard-panel announcements-panel">
+
+        <div class="panel-header announcement-panel-header">
+
+            <div>
+
+                <span class="section-label">
+                    COMMUNICATION
+                </span>
+
+                <h2>
+                    Recent Announcements
+                </h2>
+
+                <p>
+                    Latest messages published by teachers.
+                </p>
+
+            </div>
+
+
+            <a
+                href="teacher-announcements.html"
+                class="btn"
+            >
+                View All
+                <span>→</span>
+            </a>
+
+        </div>
+
+
+        <div
+            id="recentAnnouncements"
+            class="recent-announcements"
+        >
+
+            <div class="announcement-loading">
+
+                <span class="loading-dot"></span>
+
+                <span>
+                    Loading announcements...
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         LOGOUT
+    ================================================== -->
+
+    <div class="dashboard-logout">
+
+        <button
+            type="button"
+            id="teacherLogoutButton"
+            class="logout-button"
+        >
+
+            <span>
+                ↪
+            </span>
+
+            Log Out
+
+        </button>
+
+    </div>
+
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="footer-brand">
+            AS-SIYĀNAH
+        </div>
+
+        <p>
+            © 2026 As-Siyānah Institute for Arabic and Islamic Studies.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+
+
+<!-- =====================================================
+     GLOBAL TEACHER THEME
+===================================================== -->
+
+<script src="js/teacher-theme.js"></script>
+
+
+
+<!-- =====================================================
+     DASHBOARD JAVASCRIPT
+===================================================== -->
+
+<script src="js/teacher-dashboard.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Registrations | As-Siyānah Institute
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin-portal.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     ADMIN HEADER
+     ===================================================== -->
+
+<header class="admin-header">
+
+    <div class="admin-header-inner">
+
+
+        <a
+            href="admin-dashboard.html"
+            class="admin-brand"
+        >
+
+            <div class="admin-brand-mark">
+                AS
+            </div>
+
+            <div class="admin-brand-text">
+
+                <strong>
+                    AS-SIYĀNAH
+                </strong>
+
+                <span>
+                    Admin Portal
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <button
+            type="button"
+            id="adminThemeToggle"
+            class="admin-theme-toggle"
+            aria-label="Switch to dark mode"
+        >
+
+            <span class="admin-theme-icon">
+                ☾
+            </span>
+
+            <span class="admin-theme-text">
+                Dark
+            </span>
+
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     NAVIGATION
+     ===================================================== -->
+
+<nav class="admin-nav">
+
+    <a href="admin-dashboard.html">
+        Dashboard
+    </a>
+
+    <a href="admin-students.html">
+        Students
+    </a>
+
+    <a href="admin-teachers.html">
+        Teachers
+    </a>
+
+    <a href="admin-lessons.html">
+        Lessons
+    </a>
+
+    <a href="admin-results.html">
+        Results
+    </a>
+
+    <a href="admin-announcements.html">
+        Announcements
+    </a>
+
+    <a
+        href="admin-registrations.html"
+        class="active"
+    >
+        Registrations
+    </a>
+
+    <a href="admin-profile.html">
+        Profile
+    </a>
+
+</nav>
+
+
+
+<!-- =====================================================
+     MAIN
+     ===================================================== -->
+
+<main class="admin-registrations-main">
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="admin-registrations-header">
+
+        <div>
+
+            <p class="admin-registrations-eyebrow">
+                ADMISSIONS MANAGEMENT
+            </p>
+
+            <h1>
+                Student Registrations
+            </h1>
+
+            <p>
+                Review and manage student registration submissions.
+            </p>
+
+        </div>
+
+
+        <div class="admin-registration-header-badge">
+
+            <span class="admin-registration-header-icon">
+                📝
+            </span>
+
+            <div>
+
+                <strong>
+                    Applications
+                </strong>
+
+                <span>
+                    Registration records
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         TOOLBAR
+         ================================================= -->
+
+    <section class="admin-registrations-toolbar">
+
+        <div class="admin-registration-search">
+
+            <span class="admin-search-icon">
+                ⌕
+            </span>
+
+            <input
+                type="search"
+                id="registrationSearch"
+                placeholder="Search by name, email, programme..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <div class="admin-registration-toolbar-label">
+            Student Applications
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         MESSAGE
+         ================================================= -->
+
+    <p
+        id="registrationsMessage"
+        class="admin-registrations-message"
+    >
+        Loading registrations...
+    </p>
+
+
+
+    <!-- =================================================
+         TABLE
+         ================================================= -->
+
+    <section class="admin-registrations-table-card">
+
+
+        <div class="admin-registrations-table-header">
+
+            <div>
+
+                <span>
+                    REGISTRATION RECORDS
+                </span>
+
+                <h2>
+                    Applicants
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-registrations-table-wrapper">
+
+            <table class="admin-registrations-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Applicant
+                        </th>
+
+                        <th>
+                            Gender
+                        </th>
+
+                        <th>
+                            Programme
+                        </th>
+
+                        <th>
+                            Level
+                        </th>
+
+                        <th>
+                            Email
+                        </th>
+
+                        <th>
+                            WhatsApp
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody
+                    id="registrationsTableBody"
+                >
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="admin-footer">
+
+    <p>
+        © 2026 As-Siyānah Institute for Arabic & Islamic Studies
+    </p>
+
+</footer>
+
+
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script>
+
+const SUPABASE_URL =
+    "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+const SUPABASE_ANON_KEY =
+    "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+const supabaseClient =
+    supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_ANON_KEY
+    );
+
+</script>
+
+
+
+<!-- EXISTING REGISTRATIONS JS -->
+
+<script src="js/admin-registrations.js"></script>
+
+
+<!-- GLOBAL ADMIN THEME -->
+
+<script src="js/admin-theme.js"></script>
+
+
+</body>
+
+</html>

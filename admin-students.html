@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Students | As-Siyānah Institute</title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin-portal.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     ADMIN HEADER
+===================================================== -->
+
+<header class="admin-header">
+
+    <div class="admin-header-inner">
+
+        <a
+            href="admin-dashboard.html"
+            class="admin-brand"
+        >
+
+            <div class="admin-brand-mark">
+                AS
+            </div>
+
+            <div class="admin-brand-text">
+
+                <strong>
+                    AS-SIYĀNAH
+                </strong>
+
+                <span>
+                    Admin Portal
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <nav class="admin-nav">
+
+            <a href="admin-dashboard.html">
+                Dashboard
+            </a>
+
+            <a
+                href="admin-students.html"
+                class="active"
+            >
+                Students
+            </a>
+
+            <a href="admin-teachers.html">
+                Teachers
+            </a>
+
+            <a href="admin-lessons.html">
+                Lessons
+            </a>
+
+            <a href="admin-results.html">
+                Results
+            </a>
+
+            <a href="admin-announcements.html">
+                Announcements
+            </a>
+
+            <a href="admin-registrations.html">
+                Registrations
+            </a>
+
+            <a href="admin-profile.html">
+                Profile
+            </a>
+
+        </nav>
+
+
+        <button
+            type="button"
+            id="adminThemeToggle"
+            class="admin-theme-toggle"
+            aria-label="Toggle theme"
+        >
+
+            <span class="admin-theme-icon">
+                ☾
+            </span>
+
+            <span class="admin-theme-text">
+                Dark
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="admin-students-main">
+
+
+    <!-- PAGE INTRO -->
+
+    <section class="admin-students-hero">
+
+        <div>
+
+            <p class="admin-students-eyebrow">
+                ADMIN MANAGEMENT
+            </p>
+
+            <h1>
+                Students
+            </h1>
+
+            <p>
+                View, search and manage all registered students
+                in the institute.
+            </p>
+
+        </div>
+
+
+        <div class="admin-students-badge">
+
+            <div class="admin-students-badge-icon">
+                👨‍🎓
+            </div>
+
+            <div>
+
+                <strong>
+                    Student Directory
+                </strong>
+
+                <span>
+                    Registered learners
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- STUDENT DIRECTORY -->
+
+    <section class="admin-students-card">
+
+
+        <div class="admin-students-card-header">
+
+            <div>
+
+                <span>
+                    STUDENT DIRECTORY
+                </span>
+
+                <h2>
+                    All Students
+                </h2>
+
+                <p>
+                    Search and manage registered student records.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SEARCH -->
+
+        <div class="admin-students-search">
+
+            <span>
+                ⌕
+            </span>
+
+            <input
+                type="search"
+                id="studentSearch"
+                placeholder="Search by name, email, programme or level..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+
+        <!-- STATUS -->
+
+        <div
+            id="studentsMessage"
+            class="admin-students-message"
+        >
+            Loading students...
+        </div>
+
+
+
+        <!-- TABLE -->
+
+        <div class="admin-students-table-wrapper">
+
+            <table class="admin-students-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Student ID
+                        </th>
+
+                        <th>
+                            Student
+                        </th>
+
+                        <th>
+                            Programme
+                        </th>
+
+                        <th>
+                            Level
+                        </th>
+
+                        <th>
+                            Email
+                        </th>
+
+                        <th>
+                            WhatsApp
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="studentsTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ACCOUNT ACTIONS -->
+
+    <section class="admin-students-actions">
+
+        <a
+            href="admin-dashboard.html"
+            class="admin-students-dashboard-button"
+        >
+            <span>←</span>
+            Dashboard
+        </a>
+
+
+        <button
+            type="button"
+            id="adminLogoutButton"
+            class="admin-students-logout"
+        >
+            <span>↪</span>
+            Logout
+        </button>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="admin-footer">
+
+    <p>
+        © 2026 As-Siyānah Institute for Arabic & Islamic Studies
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+const SUPABASE_URL =
+    "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+const SUPABASE_ANON_KEY =
+    "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_ANON_KEY
+    );
+
+</script>
+
+
+
+<!-- EXISTING STUDENTS LOGIC -->
+
+<script src="js/admin-students.js"></script>
+
+<!-- GLOBAL ADMIN THEME -->
+
+<script src="js/admin-theme.js"></script>
+
+
+</body>
+
+</html>

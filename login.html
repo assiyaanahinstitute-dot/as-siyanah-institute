@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Student Login | As-Siyānah Institute
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <style>
+
+        /* =====================================================
+           AS-SIYĀNAH STUDENT LOGIN
+           PREMIUM UI / UX
+        ===================================================== */
+
+        :root {
+
+            --login-green-dark: #0b3524;
+            --login-green: #1d5e3c;
+            --login-green-soft: #edf5f0;
+
+            --login-gold: #d4af37;
+
+            --login-bg: #f5f8f6;
+            --login-card: #ffffff;
+
+            --login-text: #10251b;
+            --login-muted: #718078;
+
+            --login-border:
+                rgba(11, 53, 36, 0.10);
+
+            --login-shadow:
+                0 25px 70px
+                rgba(11, 53, 36, 0.10);
+        }
+
+
+        /* =====================================================
+           PAGE
+        ===================================================== */
+
+        .student-login-page {
+
+            min-height: calc(100vh - 150px);
+
+            display: flex;
+            align-items: center;
+
+            padding: 65px 0 75px;
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(212, 175, 55, 0.09),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 90%,
+                    rgba(29, 94, 60, 0.08),
+                    transparent 35%
+                ),
+                var(--login-bg);
+        }
+
+
+        .student-login-wrapper {
+
+            width: min(1050px, 92%);
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1fr)
+                minmax(390px, 0.82fr);
+
+            min-height: 570px;
+
+            overflow: hidden;
+
+            border-radius: 28px;
+
+            background: var(--login-card);
+
+            box-shadow: var(--login-shadow);
+
+            border:
+                1px solid var(--login-border);
+        }
+
+
+        /* =====================================================
+           LEFT BRAND PANEL
+        ===================================================== */
+
+        .login-brand-panel {
+
+            position: relative;
+
+            overflow: hidden;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            padding: 50px;
+
+            color: #ffffff;
+
+            background:
+                radial-gradient(
+                    circle at 80% 15%,
+                    rgba(212, 175, 55, 0.18),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    145deg,
+                    #0b3524,
+                    #154d35 58%,
+                    #1d5e3c
+                );
+        }
+
+
+        .login-brand-panel::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 390px;
+            height: 390px;
+
+            right: -190px;
+            top: -160px;
+
+            border:
+                1px solid
+                rgba(212, 175, 55, 0.25);
+
+            border-radius: 50%;
+        }
+
+
+        .login-brand-panel::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            right: 20px;
+            bottom: -170px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            border-radius: 50%;
+        }
+
+
+        .login-brand-content,
+        .login-brand-bottom {
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* =====================================================
+           BRAND
+        ===================================================== */
+
+        .login-brand-logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+        }
+
+
+        .login-brand-mark {
+
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 15px;
+
+            color: #d4af37;
+
+            font-size: 18px;
+            font-weight: 900;
+
+            background:
+                rgba(255,255,255,0.09);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+        }
+
+
+        .login-brand-name {
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        .login-brand-name strong {
+
+            font-size: 17px;
+
+            letter-spacing: 1.2px;
+        }
+
+
+        .login-brand-name span {
+
+            margin-top: 4px;
+
+            color:
+                rgba(255,255,255,0.60);
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+            letter-spacing: 1.6px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =====================================================
+           BRAND MESSAGE
+        ===================================================== */
+
+        .login-brand-message {
+
+            max-width: 430px;
+        }
+
+
+        .login-brand-message .mini-label {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-bottom: 16px;
+
+            color: #dfc55c;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.8px;
+
+            text-transform: uppercase;
+        }
+
+
+        .login-brand-message .mini-label::before {
+
+            content: "";
+
+            width: 25px;
+            height: 2px;
+
+            border-radius: 99px;
+
+            background: #d4af37;
+        }
+
+
+        .login-brand-message h2 {
+
+            margin: 0;
+
+            color: #ffffff;
+
+            font-size:
+                clamp(32px, 4vw, 48px);
+
+            line-height: 1.08;
+
+            letter-spacing: -1.5px;
+        }
+
+
+        .login-brand-message p {
+
+            max-width: 400px;
+
+            margin: 18px 0 0;
+
+            color:
+                rgba(255,255,255,0.70);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           BRAND FEATURES
+        ===================================================== */
+
+        .login-features {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 10px;
+
+            margin-top: 30px;
+        }
+
+
+        .login-feature {
+
+            padding: 13px 12px;
+
+            border-radius: 12px;
+
+            background:
+                rgba(255,255,255,0.055);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.07);
+        }
+
+
+        .login-feature strong {
+
+            display: block;
+
+            margin-bottom: 4px;
+
+            color: #ffffff;
+
+            font-size: 11px;
+        }
+
+
+        .login-feature span {
+
+            color:
+                rgba(255,255,255,0.50);
+
+            font-size: 9px;
+
+            line-height: 1.4;
+        }
+
+
+        .login-brand-bottom {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color:
+                rgba(255,255,255,0.42);
+
+            font-size: 10px;
+        }
+
+
+        .login-brand-bottom span {
+
+            color: #d4af37;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           LOGIN FORM PANEL
+        ===================================================== */
+
+        .login-form-panel {
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 50px;
+        }
+
+
+        .login-form-inner {
+
+            width: 100%;
+
+            max-width: 390px;
+
+            margin: 0 auto;
+        }
+
+
+        .login-heading {
+
+            margin-bottom: 30px;
+        }
+
+
+        .login-heading .eyebrow {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            color: var(--login-green);
+
+            font-size: 10px;
+
+            font-weight: 850;
+
+            letter-spacing: 1.6px;
+
+            text-transform: uppercase;
+        }
+
+
+        .login-heading .eyebrow::before {
+
+            content: "";
+
+            width: 20px;
+            height: 2px;
+
+            border-radius: 99px;
+
+            background: var(--login-gold);
+        }
+
+
+        .login-heading h1 {
+
+            margin: 10px 0 8px;
+
+            color: var(--login-text);
+
+            font-size: 32px;
+
+            line-height: 1.1;
+
+            letter-spacing: -1px;
+        }
+
+
+        .login-heading p {
+
+            margin: 0;
+
+            color: var(--login-muted);
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        #loginForm {
+
+            width: 100%;
+        }
+
+
+        .login-form-group {
+
+            margin-bottom: 19px;
+        }
+
+
+        .login-form-group label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: var(--login-text);
+
+            font-size: 12px;
+
+            font-weight: 750;
+        }
+
+
+        .login-input-wrapper {
+
+            position: relative;
+        }
+
+
+        .login-input-icon {
+
+            position: absolute;
+
+            left: 15px;
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            color: #839088;
+
+            font-size: 15px;
+
+            pointer-events: none;
+        }
+
+
+        .login-form-group input {
+
+            width: 100%;
+
+            height: 51px;
+
+            padding:
+                0 15px 0 43px;
+
+            border:
+                1px solid
+                var(--login-border);
+
+            border-radius: 12px;
+
+            outline: none;
+
+            background: #fafcfb;
+
+            color: var(--login-text);
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            transition:
+                border-color .2s ease,
+                box-shadow .2s ease,
+                background .2s ease;
+        }
+
+
+        .login-form-group input::placeholder {
+
+            color: #a1aca6;
+        }
+
+
+        .login-form-group input:hover {
+
+            border-color:
+                rgba(29, 94, 60, 0.20);
+        }
+
+
+        .login-form-group input:focus {
+
+            background: #ffffff;
+
+            border-color:
+                var(--login-green);
+
+            box-shadow:
+                0 0 0 4px
+                rgba(29,94,60,0.09);
+        }
+
+
+        /* =====================================================
+           PASSWORD TOGGLE
+        ===================================================== */
+
+        .password-toggle {
+
+            position: absolute;
+
+            right: 12px;
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            width: 32px;
+            height: 32px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: transparent;
+
+            color: #7b8881;
+
+            cursor: pointer;
+
+            font-size: 14px;
+        }
+
+
+        .password-toggle:hover {
+
+            background: var(--login-green-soft);
+
+            color: var(--login-green);
+        }
+
+
+        #password {
+
+            padding-right: 48px;
+        }
+
+
+        /* =====================================================
+           FORGOT PASSWORD
+        ===================================================== */
+
+        .login-options {
+
+            display: flex;
+
+            justify-content: flex-end;
+
+            margin-top: -5px;
+
+            margin-bottom: 23px;
+        }
+
+
+        .login-options a {
+
+            color: var(--login-green);
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            font-weight: 750;
+        }
+
+
+        .login-options a:hover {
+
+            color: var(--login-gold);
+
+            text-decoration: underline;
+        }
+
+
+        /* =====================================================
+           LOGIN BUTTON
+        ===================================================== */
+
+        .login-submit {
+
+            width: 100%;
+
+            height: 52px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #1d5e3c,
+                    #0b3524
+                );
+
+            color: #ffffff;
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 22px
+                rgba(11,53,36,0.17);
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease;
+        }
+
+
+        .login-submit:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 15px 30px
+                rgba(11,53,36,0.23);
+        }
+
+
+        .login-submit:active {
+
+            transform:
+                translateY(0);
+        }
+
+
+        .login-submit .arrow {
+
+            color: #d4af37;
+
+            font-size: 16px;
+        }
+
+
+        /* =====================================================
+           DIVIDER
+        ===================================================== */
+
+        .login-divider {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin: 25px 0;
+        }
+
+
+        .login-divider::before,
+        .login-divider::after {
+
+            content: "";
+
+            flex: 1;
+
+            height: 1px;
+
+            background:
+                var(--login-border);
+        }
+
+
+        .login-divider span {
+
+            color: #9aa59f;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =====================================================
+           REGISTER
+        ===================================================== */
+
+        .login-register {
+
+            text-align: center;
+
+            color: var(--login-muted);
+
+            font-size: 12px;
+        }
+
+
+        .login-register a {
+
+            color: var(--login-green);
+
+            font-weight: 800;
+
+            text-decoration: none;
+        }
+
+
+        .login-register a:hover {
+
+            color: var(--login-gold);
+
+            text-decoration: underline;
+        }
+
+
+        /* =====================================================
+           SECURITY NOTE
+        ===================================================== */
+
+        .login-security {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 9px;
+
+            margin-top: 25px;
+
+            padding: 12px 13px;
+
+            border-radius: 11px;
+
+            background: var(--login-green-soft);
+
+            color: #6d7b73;
+
+            font-size: 9px;
+
+            line-height: 1.55;
+        }
+
+
+        .login-security-icon {
+
+            color: var(--login-green);
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .student-login-footer {
+
+            padding: 24px 0 28px;
+
+            border-top:
+                1px solid
+                rgba(11,53,36,0.07);
+
+            background: #ffffff;
+
+            text-align: center;
+        }
+
+
+        .student-login-footer p {
+
+            margin: 0;
+
+            color: #89958e;
+
+            font-size: 10px;
+        }
+
+
+        .student-login-footer strong {
+
+            color: var(--login-green);
+
+            font-weight: 750;
+        }
+
+
+        /* =====================================================
+           DARK MODE
+        ===================================================== */
+
+        html.dark-mode {
+
+            --login-bg: #071810;
+            --login-card: #10271d;
+
+            --login-text: #f2f6f3;
+            --login-muted: #99a9a1;
+
+            --login-border:
+                rgba(255,255,255,0.08);
+        }
+
+
+        html.dark-mode .student-login-page {
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(212,175,55,0.06),
+                    transparent 30%
+                ),
+                #071810;
+        }
+
+
+        html.dark-mode .student-login-wrapper {
+
+            background: #10271d;
+
+            border-color:
+                rgba(255,255,255,0.07);
+
+            box-shadow:
+                0 25px 70px
+                rgba(0,0,0,0.25);
+        }
+
+
+        html.dark-mode .login-heading h1 {
+
+            color: #ffffff;
+        }
+
+
+        html.dark-mode .login-form-group label {
+
+            color: #e4ebe7;
+        }
+
+
+        html.dark-mode .login-form-group input {
+
+            background: #0b2017;
+
+            color: #ffffff;
+
+            border-color:
+                rgba(255,255,255,0.08);
+        }
+
+
+        html.dark-mode .login-form-group input::placeholder {
+
+            color: #65766d;
+        }
+
+
+        html.dark-mode .login-form-group input:focus {
+
+            background: #0d241a;
+
+            border-color:
+                #3b795b;
+
+            box-shadow:
+                0 0 0 4px
+                rgba(59,121,91,0.12);
+        }
+
+
+        html.dark-mode .password-toggle:hover {
+
+            background:
+                rgba(255,255,255,0.06);
+
+            color: #d4af37;
+        }
+
+
+        html.dark-mode .login-options a {
+
+            color: #b7d5c5;
+        }
+
+
+        html.dark-mode .login-divider::before,
+        html.dark-mode .login-divider::after {
+
+            background:
+                rgba(255,255,255,0.08);
+        }
+
+
+        html.dark-mode .login-register {
+
+            color: #899a91;
+        }
+
+
+        html.dark-mode .login-register a {
+
+            color: #b7d5c5;
+        }
+
+
+        html.dark-mode .login-security {
+
+            background:
+                rgba(255,255,255,0.045);
+
+            color: #899a91;
+        }
+
+
+        html.dark-mode .student-login-footer {
+
+            background: #071810;
+
+            border-top-color:
+                rgba(255,255,255,0.07);
+        }
+
+
+        html.dark-mode .student-login-footer p {
+
+            color: #718078;
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .student-login-wrapper {
+
+                grid-template-columns: 1fr;
+
+                min-height: auto;
+
+                max-width: 520px;
+            }
+
+
+            .login-brand-panel {
+
+                min-height: 310px;
+
+                padding: 35px;
+            }
+
+
+            .login-brand-message {
+
+                margin-top: 35px;
+            }
+
+
+            .login-brand-message h2 {
+
+                font-size: 32px;
+            }
+
+
+            .login-features {
+
+                display: none;
+            }
+
+
+            .login-brand-bottom {
+
+                margin-top: 30px;
+            }
+
+
+            .login-form-panel {
+
+                padding: 40px 35px;
+            }
+
+        }
+
+
+        @media (max-width: 520px) {
+
+            .student-login-page {
+
+                padding: 25px 0 40px;
+            }
+
+
+            .student-login-wrapper {
+
+                width: 94%;
+
+                border-radius: 21px;
+            }
+
+
+            .login-brand-panel {
+
+                padding: 28px 25px;
+
+                min-height: 275px;
+            }
+
+
+            .login-brand-message {
+
+                margin-top: 28px;
+            }
+
+
+            .login-brand-message h2 {
+
+                font-size: 29px;
+            }
+
+
+            .login-brand-message p {
+
+                font-size: 12px;
+            }
+
+
+            .login-form-panel {
+
+                padding: 35px 25px;
+            }
+
+
+            .login-heading h1 {
+
+                font-size: 28px;
+            }
+
+
+            .student-login-footer {
+
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header class="site-header">
+
+        <div class="container nav-container">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+
+                <span>
+                    As-Siyānah
+                </span>
+
+                <small>
+                    Institute
+                </small>
+
+            </a>
+
+
+            <nav class="nav-menu">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="register.html">
+                    Register
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         LOGIN
+    ===================================================== -->
+
+    <main>
+
+        <section class="student-login-page">
+
+            <div class="student-login-wrapper">
+
+
+                <!-- =================================================
+                     BRAND PANEL
+                ================================================= -->
+
+                <div class="login-brand-panel">
+
+                    <div class="login-brand-content">
+
+                        <div class="login-brand-logo">
+
+                            <div class="login-brand-mark">
+                                AS
+                            </div>
+
+
+                            <div class="login-brand-name">
+
+                                <strong>
+                                    AS-SIYĀNAH
+                                </strong>
+
+                                <span>
+                                    Arabic & Islamic Studies
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="login-brand-message">
+
+                            <div class="mini-label">
+                                Student Portal
+                            </div>
+
+
+                            <h2>
+                                Your learning
+                                journey continues here.
+                            </h2>
+
+
+                            <p>
+                                Access your classes, assignments,
+                                assessments, results and important
+                                institute updates from one secure
+                                student portal.
+                            </p>
+
+
+                            <div class="login-features">
+
+                                <div class="login-feature">
+
+                                    <strong>
+                                        Classes
+                                    </strong>
+
+                                    <span>
+                                        Access your learning
+                                    </span>
+
+                                </div>
+
+
+                                <div class="login-feature">
+
+                                    <strong>
+                                        Assessments
+                                    </strong>
+
+                                    <span>
+                                        Tests & examinations
+                                    </span>
+
+                                </div>
+
+
+                                <div class="login-feature">
+
+                                    <strong>
+                                        Progress
+                                    </strong>
+
+                                    <span>
+                                        Track your results
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="login-brand-bottom">
+
+                        <span>
+                            ✦
+                        </span>
+
+                        Knowledge • Character • Excellence
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     FORM PANEL
+                ================================================= -->
+
+                <div class="login-form-panel">
+
+                    <div class="login-form-inner">
+
+
+                        <div class="login-heading">
+
+                            <p class="eyebrow">
+                                STUDENT PORTAL
+                            </p>
+
+
+                            <h1>
+                                Welcome Back
+                            </h1>
+
+
+                            <p>
+                                Sign in to continue to your
+                                student dashboard.
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- =================================================
+                             LOGIN FORM
+                        ================================================= -->
+
+                        <form id="loginForm">
+
+
+                            <div class="login-form-group">
+
+                                <label for="studentId">
+                                    Student ID
+                                </label>
+
+
+                                <div class="login-input-wrapper">
+
+                                    <span
+                                        class="login-input-icon"
+                                        aria-hidden="true"
+                                    >
+                                        ◉
+                                    </span>
+
+
+                                    <input
+                                        type="text"
+                                        id="studentId"
+                                        name="studentId"
+                                        placeholder="e.g. ASI-2026-0001"
+                                        autocomplete="username"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="login-form-group">
+
+                                <label for="password">
+                                    Password
+                                </label>
+
+
+                                <div class="login-input-wrapper">
+
+                                    <span
+                                        class="login-input-icon"
+                                        aria-hidden="true"
+                                    >
+                                        ◆
+                                    </span>
+
+
+                                    <input
+                                        type="password"
+                                        id="password"
+                                        name="password"
+                                        placeholder="Enter your password"
+                                        autocomplete="current-password"
+                                        required
+                                    >
+
+
+                                    <button
+                                        type="button"
+                                        class="password-toggle"
+                                        id="passwordToggle"
+                                        aria-label="Show password"
+                                    >
+                                        ◉
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="login-options">
+
+                                <a
+                                    href="forgot-password.html"
+                                >
+                                    Forgot Password?
+                                </a>
+
+                            </div>
+
+
+
+                            <button
+                                type="submit"
+                                class="login-submit"
+                            >
+
+                                <span>
+                                    Login to Student Portal
+                                </span>
+
+                                <span class="arrow">
+                                    →
+                                </span>
+
+                            </button>
+
+                        </form>
+
+
+
+                        <div class="login-divider">
+
+                            <span>
+                                New student?
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="login-register">
+
+                            Don't have an account?
+
+                            <a href="register.html">
+                                Register here
+                            </a>
+
+                        </div>
+
+
+
+                        <div class="login-security">
+
+                            <span
+                                class="login-security-icon"
+                            >
+                                🔒
+                            </span>
+
+                            <span>
+                                Your student account is protected.
+                                Never share your password with anyone.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="student-login-footer">
+
+        <p>
+            © 2026
+            <strong>
+                As-Siyānah Institute
+            </strong>
+            for Arabic and Islamic Studies.
+        </p>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         SUPABASE
+    ===================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+    </script>
+
+
+    <script>
+
+        const SUPABASE_URL =
+            "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+
+        const SUPABASE_ANON_KEY =
+            "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+
+        const supabaseClient =
+            window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_ANON_KEY
+            );
+
+    </script>
+
+
+
+    <!-- EXISTING LOGIN FUNCTIONALITY -->
+
+    <script src="js/login.js"></script>
+
+
+    <!-- GLOBAL THEME -->
+
+    <script src="js/theme.js"></script>
+
+
+    <!-- PASSWORD VISIBILITY -->
+
+    <script>
+
+        const passwordInput =
+            document.getElementById("password");
+
+        const passwordToggle =
+            document.getElementById("passwordToggle");
+
+
+        if (passwordToggle && passwordInput) {
+
+            passwordToggle.addEventListener(
+                "click",
+                function () {
+
+                    const isPassword =
+                        passwordInput.type === "password";
+
+
+                    passwordInput.type =
+                        isPassword
+                            ? "text"
+                            : "password";
+
+
+                    passwordToggle.textContent =
+                        isPassword
+                            ? "◉"
+                            : "◉";
+
+
+                    passwordToggle.setAttribute(
+                        "aria-label",
+                        isPassword
+                            ? "Hide password"
+                            : "Show password"
+                    );
+
+                }
+            );
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

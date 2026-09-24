@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login | As-Siyānah Institute</title>
+
+    <link rel="stylesheet" href="css/admin-portal.css">
+    <link rel="stylesheet" href="admin-login.css">
+</head>
+
+<body>
+
+<main class="admin-login-page">
+
+    <div class="admin-login-shell">
+
+        <section class="admin-login-visual">
+
+            <div class="admin-login-brand">
+                <span>AS-SIYĀNAH</span>
+                <small>INSTITUTE FOR ARABIC & ISLAMIC STUDIES</small>
+            </div>
+
+            <div class="admin-login-visual-content">
+
+                <span class="admin-badge">
+                    ADMINISTRATION PORTAL
+                </span>
+
+                <h1>
+                    Manage your
+                    <strong>Institute</strong>
+                    with confidence.
+                </h1>
+
+                <p>
+                    A secure administration space for managing
+                    students, teachers, lessons, results and
+                    academic activities.
+                </p>
+
+            </div>
+
+            <div class="admin-login-visual-footer">
+                <span>Secure access</span>
+                <span>•</span>
+                <span>As-Siyānah Institute</span>
+            </div>
+
+        </section>
+
+
+        <section class="admin-login-form-area">
+
+            <div class="admin-login-card">
+
+                <div class="admin-login-heading">
+
+                    <div class="admin-login-icon">
+                        <span>⌘</span>
+                    </div>
+
+                    <div>
+                        <span class="admin-section-label">
+                            ADMIN LOGIN
+                        </span>
+
+                        <h2>
+                            Welcome back
+                        </h2>
+
+                        <p>
+                            Sign in to access your administration dashboard.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <form id="adminLoginForm">
+
+                    <div class="admin-input-group">
+
+                        <label for="adminEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="adminEmail"
+                            placeholder="admin@example.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="admin-input-group">
+
+                        <label for="adminPassword">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="adminPassword"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        id="adminLoginButton"
+                        class="admin-login-btn"
+                    >
+                        <span>Sign in to dashboard</span>
+                        <span class="admin-login-arrow">→</span>
+                    </button>
+
+                </form>
+
+
+                <p
+                    id="adminLoginMessage"
+                    class="admin-login-message"
+                ></p>
+
+
+                <div class="admin-login-security">
+
+                    <span class="security-icon">✓</span>
+
+                    <div>
+                        <strong>Protected administration</strong>
+                        <small>Your credentials are securely processed.</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/admin-login.js"></script>
+
+<script src="js/admin-theme.js"></script>
+
+</body>
+
+</html>

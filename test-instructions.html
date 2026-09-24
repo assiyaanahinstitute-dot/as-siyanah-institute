@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Test Instructions | As-Siyānah Institute
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="css/test-instructions.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="student-header">
+
+    <div class="student-header-inner">
+
+
+        <!-- BRAND -->
+
+        <a
+            href="dashboard.html"
+            class="student-brand"
+        >
+
+            <div class="student-brand-main">
+                AS-SIYĀNAH
+            </div>
+
+            <div class="student-brand-sub">
+                Student Portal
+            </div>
+
+        </a>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="student-nav">
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="classes.html">
+                Classes
+            </a>
+
+            <a href="assignments.html">
+                Assignments
+            </a>
+
+            <a
+                href="tests.html"
+                class="active"
+            >
+                Tests
+            </a>
+
+            <a href="results.html">
+                Results
+            </a>
+
+        </nav>
+
+
+        <!-- THEME -->
+
+        <button
+            type="button"
+            id="themeToggle"
+            class="theme-toggle"
+            aria-label="Toggle dark mode"
+        >
+            <span class="theme-icon">🌙</span>
+            <span class="theme-text">Dark Mode</span>
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="test-instructions-main">
+
+    <div class="test-instructions-container">
+
+
+        <!-- PAGE HEADER -->
+
+        <section class="page-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    ASSESSMENT CENTRE
+                </span>
+
+                <h1>
+                    Test Instructions
+                </h1>
+
+                <p>
+                    Review the test information carefully
+                    before beginning your assessment.
+                </p>
+
+            </div>
+
+
+            <a
+                href="tests.html"
+                class="header-back-btn"
+            >
+                ← Back to Tests
+            </a>
+
+        </section>
+
+
+
+        <!-- MESSAGE -->
+
+        <div
+            id="message"
+            class="message"
+        ></div>
+
+
+
+        <!-- LOADING -->
+
+        <div
+            id="loading"
+            class="loading"
+        >
+
+            <div class="loading-spinner"></div>
+
+            <span>
+                Loading test information...
+            </span>
+
+        </div>
+
+
+
+        <!-- =================================================
+             TEST CONTENT
+        ================================================== -->
+
+        <section
+            id="testContent"
+            class="test-content"
+            style="display:none;"
+        >
+
+
+            <!-- TEST HERO -->
+
+            <section class="test-hero">
+
+                <div class="hero-top">
+
+                    <span class="test-badge">
+                        ONLINE TEST
+                    </span>
+
+                    <span class="hero-status">
+                        Ready to begin
+                    </span>
+
+                </div>
+
+
+                <h2 id="testTitle">
+                    Test Title
+                </h2>
+
+
+                <p id="testDescription">
+                    Test instructions will appear here.
+                </p>
+
+            </section>
+
+
+
+            <!-- TEST INFORMATION -->
+
+            <section class="test-details">
+
+
+                <article class="detail-card">
+
+                    <div class="detail-icon">
+                        📚
+                    </div>
+
+                    <div class="detail-content">
+
+                        <span>
+                            Subject
+                        </span>
+
+                        <strong id="testSubject">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="detail-card">
+
+                    <div class="detail-icon">
+                        🎓
+                    </div>
+
+                    <div class="detail-content">
+
+                        <span>
+                            Level
+                        </span>
+
+                        <strong id="testLevel">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="detail-card">
+
+                    <div class="detail-icon">
+                        ⏱
+                    </div>
+
+                    <div class="detail-content">
+
+                        <span>
+                            Duration
+                        </span>
+
+                        <strong id="testDuration">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="detail-card">
+
+                    <div class="detail-icon">
+                        📝
+                    </div>
+
+                    <div class="detail-content">
+
+                        <span>
+                            Assessment
+                        </span>
+
+                        <strong>
+                            Online Test
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 INSTRUCTIONS
+            ================================================== -->
+
+            <section class="instructions-card">
+
+                <div class="section-heading">
+
+                    <div class="section-heading-icon">
+                        📋
+                    </div>
+
+                    <div>
+
+                        <span>
+                            TEST GUIDELINES
+                        </span>
+
+                        <h3>
+                            Instructions
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="instructions"
+                    class="instructions"
+                >
+
+                    No additional instructions provided.
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 WARNING
+            ================================================== -->
+
+            <section class="warning-card">
+
+                <div class="warning-icon">
+                    ⚠
+                </div>
+
+
+                <div class="warning-content">
+
+                    <span class="warning-label">
+                        IMPORTANT
+                    </span>
+
+                    <h3>
+                        Before You Start
+                    </h3>
+
+
+                    <ul>
+
+                        <li>
+                            Make sure you have a stable
+                            internet connection.
+                        </li>
+
+                        <li>
+                            Do not refresh or close the
+                            page while taking the test.
+                        </li>
+
+                        <li>
+                            Make sure you have enough time
+                            to complete the test.
+                        </li>
+
+                        <li>
+                            Once submitted, your answers
+                            may not be editable.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ACTIONS
+            ================================================== -->
+
+            <section class="test-actions">
+
+                <a
+                    href="tests.html"
+                    class="back-btn"
+                >
+                    ← Back to Tests
+                </a>
+
+
+                <button
+                    type="button"
+                    id="startTestButton"
+                    class="start-btn"
+                >
+
+                    <span>
+                        Start Test
+                    </span>
+
+                    <strong>
+                        →
+                    </strong>
+
+                </button>
+
+            </section>
+
+
+        </section>
+
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="student-footer">
+
+    <div class="student-footer-inner">
+
+        <p>
+            © 2026 AS-SIYĀNAH INSTITUTE FOR ARABIC &
+            ISLAMIC STUDIES
+        </p>
+
+        <span>
+            Student Portal
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script>
+
+    const SUPABASE_URL =
+        "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+    const SUPABASE_ANON_KEY =
+        "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+    const supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_ANON_KEY
+        );
+
+</script>
+
+
+
+<!-- =====================================================
+     PAGE JAVASCRIPT
+===================================================== -->
+
+<script src="js/test-instructions.js"></script>
+
+<script src="js/theme.js"></script>
+
+
+</body>
+
+</html>

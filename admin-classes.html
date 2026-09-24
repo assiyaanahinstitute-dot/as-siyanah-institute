@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Classes | As-Siyānah Admin</title>
+
+    <link rel="stylesheet" href="css/admin-classes.css">
+    <link rel="stylesheet" href="css/admin-portal.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+    <!-- ========================================
+         SIDEBAR
+    ========================================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-mark">AS</div>
+
+            <div>
+                <h2>AS-SIYĀNAH</h2>
+                <span>Admin Portal</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="admin-dashboard.html">
+                <span>▦</span>
+                Dashboard
+            </a>
+
+            <a href="admin-students.html">
+                <span>👨‍🎓</span>
+                Students
+            </a>
+
+            <a href="admin-teachers.html">
+                <span>👨‍🏫</span>
+                Teachers
+            </a>
+
+            <a href="admin-classes.html" class="active">
+                <span>🏫</span>
+                Classes
+            </a>
+
+            <a href="admin-lessons.html">
+                <span>📚</span>
+                Lessons
+            </a>
+
+            <a href="admin-results.html">
+                <span>📊</span>
+                Results
+            </a>
+
+            <a href="admin-announcements.html">
+                <span>📢</span>
+                Announcements
+            </a>
+
+            <a href="admin-registrations.html">
+                <span>📝</span>
+                Registrations
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="admin-profile.html">
+                <span>👤</span>
+                My Profile
+            </a>
+
+            <button id="logoutBtn">
+                <span>🚪</span>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ========================================
+         MAIN
+    ========================================= -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+                <p class="eyebrow">ADMINISTRATION</p>
+
+                <h1>Class Management</h1>
+
+                <p class="subtitle">
+                    Organize teachers, subjects, levels and assigned students.
+                </p>
+            </div>
+
+            <div class="admin-badge">
+                <span>●</span>
+                Administrator
+            </div>
+
+        </header>
+
+
+        <!-- ========================================
+             MESSAGE
+        ========================================= -->
+
+        <div id="message" class="message"></div>
+
+
+        <!-- ========================================
+             CREATE CLASS
+        ========================================= -->
+
+        <section class="panel">
+
+            <div class="panel-heading">
+
+                <div>
+                    <p class="section-label">NEW CLASS</p>
+
+                    <h2>Create a Class</h2>
+
+                    <p>
+                        Assign a teacher and students to a specific subject and level.
+                    </p>
+                </div>
+
+                <div class="panel-icon">
+                    🏫
+                </div>
+
+            </div>
+
+
+            <form id="classForm">
+
+                <div class="form-grid">
+
+                    <!-- CLASS NAME -->
+
+                    <div class="form-group full-width">
+
+                        <label for="className">
+                            Class Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="className"
+                            placeholder="e.g. Hifẓ Level 1 — Class A"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- TEACHER -->
+
+                    <div class="form-group">
+
+                        <label for="teacherSelect">
+                            Teacher
+                        </label>
+
+                        <select id="teacherSelect" required>
+
+                            <option value="">
+                                Select teacher
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- SUBJECT -->
+
+                    <div class="form-group">
+
+                        <label for="subjectSelect">
+                            Subject
+                        </label>
+
+                        <select id="subjectSelect" required>
+
+                            <option value="">
+                                Select subject
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- LEVEL -->
+
+                    <div class="form-group">
+
+                        <label for="levelSelect">
+                            Level
+                        </label>
+
+                        <select id="levelSelect" required>
+
+                            <option value="">
+                                Select level
+                            </option>
+
+                            <option value="Elementary">
+                                Elementary
+                            </option>
+
+                            <option value="Intermediate">
+                                Intermediate
+                            </option>
+
+                            <option value="Advanced">
+                                Advanced
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- STUDENTS -->
+
+                    <div class="form-group full-width">
+
+                        <label for="studentSelect">
+                            Assign Students
+                        </label>
+
+                        <select
+                            id="studentSelect"
+                            multiple
+                            size="7"
+                            required
+                        >
+                        </select>
+
+                        <small>
+                            Hold Ctrl/Cmd to select multiple students.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="reset"
+                        class="btn btn-secondary"
+                    >
+                        Clear
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="createClassBtn"
+                    >
+                        <span>＋</span>
+                        Create Class
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- ========================================
+             CLASS STATISTICS
+        ========================================= -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    🏫
+                </div>
+
+                <div>
+                    <span>Total Classes</span>
+                    <strong id="totalClasses">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon gold">
+                    👨‍🏫
+                </div>
+
+                <div>
+                    <span>Teachers Assigned</span>
+                    <strong id="teachersAssigned">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    👨‍🎓
+                </div>
+
+                <div>
+                    <span>Student Assignments</span>
+                    <strong id="studentAssignments">0</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             CLASSES
+        ========================================= -->
+
+        <section class="classes-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="section-label">
+                        CURRENT CLASSES
+                    </p>
+
+                    <h2>Your Classes</h2>
+
+                </div>
+
+                <button
+                    class="refresh-btn"
+                    id="refreshBtn"
+                >
+                    ↻ Refresh
+                </button>
+
+            </div>
+
+
+            <div id="classesContainer">
+
+                <div class="loading-state">
+                    <div class="spinner"></div>
+                    <p>Loading classes...</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/admin-classes.js"></script>
+    <script src="js/admin-theme.js"></script>
+
+</body>
+</html>

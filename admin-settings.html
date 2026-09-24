@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Settings | As-Siyānah Institute</title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin-portal.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     ADMIN HEADER
+===================================================== -->
+
+<header class="admin-header">
+
+    <div class="admin-header-inner">
+
+        <a
+            href="admin-dashboard.html"
+            class="admin-brand"
+        >
+
+            <div class="admin-brand-mark">
+                AS
+            </div>
+
+            <div class="admin-brand-text">
+
+                <strong>
+                    AS-SIYĀNAH
+                </strong>
+
+                <span>
+                    Admin Portal
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <nav class="admin-nav">
+
+            <a href="admin-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="admin-students.html">
+                Students
+            </a>
+
+            <a href="admin-teachers.html">
+                Teachers
+            </a>
+
+            <a href="admin-lessons.html">
+                Lessons
+            </a>
+
+            <a href="admin-results.html">
+                Results
+            </a>
+
+            <a href="admin-announcements.html">
+                Announcements
+            </a>
+
+            <a href="admin-registrations.html">
+                Registrations
+            </a>
+
+            <a href="admin-profile.html">
+                Profile
+            </a>
+
+            <a
+                href="admin-settings.html"
+                class="active"
+            >
+                Settings
+            </a>
+
+        </nav>
+
+
+        <button
+            type="button"
+            id="adminThemeToggle"
+            class="admin-theme-toggle"
+            aria-label="Toggle theme"
+        >
+
+            <span class="admin-theme-icon">
+                ☾
+            </span>
+
+            <span class="admin-theme-text">
+                Dark
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="admin-settings-main">
+
+
+    <!-- PAGE INTRO -->
+
+    <section class="admin-settings-intro">
+
+        <div>
+
+            <p class="admin-settings-eyebrow">
+                SYSTEM CONFIGURATION
+            </p>
+
+            <h1>
+                Admin Settings
+            </h1>
+
+            <p>
+                Manage your institute information and academic configuration
+                from one central place.
+            </p>
+
+        </div>
+
+
+        <div class="admin-settings-status">
+
+            <span class="admin-settings-status-dot"></span>
+
+            <div>
+
+                <strong>
+                    Institute Configuration
+                </strong>
+
+                <span>
+                    System settings
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         INSTITUTE INFORMATION
+    ================================================== -->
+
+    <section class="admin-settings-card">
+
+        <div class="admin-settings-card-header">
+
+            <div class="admin-settings-card-icon">
+                🏛
+            </div>
+
+            <div>
+
+                <span>
+                    INSTITUTE
+                </span>
+
+                <h2>
+                    Institute Information
+                </h2>
+
+                <p>
+                    Basic information displayed across the institute system.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-settings-grid">
+
+
+            <div class="admin-settings-field">
+
+                <label for="instituteName">
+                    Institute Name
+                </label>
+
+                <input
+                    type="text"
+                    id="instituteName"
+                    value="AS-SIYĀNAH INSTITUTE"
+                >
+
+            </div>
+
+
+            <div class="admin-settings-field">
+
+                <label for="instituteEmail">
+                    Institute Email
+                </label>
+
+                <input
+                    type="email"
+                    id="instituteEmail"
+                    placeholder="Enter institute email"
+                >
+
+            </div>
+
+
+            <div class="admin-settings-field">
+
+                <label for="institutePhone">
+                    Phone / WhatsApp
+                </label>
+
+                <input
+                    type="text"
+                    id="institutePhone"
+                    placeholder="Enter phone number"
+                >
+
+            </div>
+
+
+            <div class="admin-settings-field">
+
+                <label for="instituteCountry">
+                    Country
+                </label>
+
+                <input
+                    type="text"
+                    id="instituteCountry"
+                    value="Nigeria"
+                >
+
+            </div>
+
+
+            <div class="admin-settings-field admin-settings-field-full">
+
+                <label for="instituteAddress">
+                    Address
+                </label>
+
+                <textarea
+                    id="instituteAddress"
+                    placeholder="Enter institute address"
+                ></textarea>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ACADEMIC SETTINGS
+    ================================================== -->
+
+    <section class="admin-settings-card">
+
+        <div class="admin-settings-card-header">
+
+            <div class="admin-settings-card-icon">
+                📚
+            </div>
+
+            <div>
+
+                <span>
+                    ACADEMIC
+                </span>
+
+                <h2>
+                    Academic Settings
+                </h2>
+
+                <p>
+                    Configure the current academic session and term.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-settings-grid">
+
+
+            <div class="admin-settings-field">
+
+                <label for="academicSession">
+                    Academic Session
+                </label>
+
+                <input
+                    type="text"
+                    id="academicSession"
+                    placeholder="e.g. 2026/2027"
+                >
+
+            </div>
+
+
+            <div class="admin-settings-field">
+
+                <label for="currentTerm">
+                    Current Term
+                </label>
+
+                <select id="currentTerm">
+
+                    <option value="">
+                        Select term
+                    </option>
+
+                    <option value="First Term">
+                        First Term
+                    </option>
+
+                    <option value="Second Term">
+                        Second Term
+                    </option>
+
+                    <option value="Third Term">
+                        Third Term
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SAVE SETTINGS
+    ================================================== -->
+
+    <section class="admin-settings-save-card">
+
+        <div>
+
+            <span>
+                CONFIGURATION
+            </span>
+
+            <h2>
+                Save Changes
+            </h2>
+
+            <p>
+                Apply your latest institute settings to the system.
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="saveSettingsButton"
+            class="admin-settings-save-button"
+        >
+
+            <span>
+                ✓
+            </span>
+
+            Save Settings
+
+        </button>
+
+
+        <div
+            id="settingsMessage"
+            class="admin-settings-message"
+        ></div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="admin-footer">
+
+    <p>
+        © 2026 As-Siyānah Institute for Arabic & Islamic Studies
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/admin-settings.js"></script>
+
+<script src="js/admin-theme.js"></script>
+
+
+</body>
+
+</html>

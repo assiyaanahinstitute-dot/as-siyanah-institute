@@ -1,0 +1,1036 @@
+/* =========================================================
+   AS-SIYĀNAH INSTITUTE
+   PREMIUM VISUAL UPGRADE
+   ---------------------------------------------------------
+   This file ONLY upgrades appearance.
+   Your existing CSS remains untouched.
+   ========================================================= */
+
+
+/* =========================================================
+   PREMIUM VARIABLES
+   ========================================================= */
+
+:root {
+    --premium-green: #0b3524;
+    --premium-green-2: #1d5e3c;
+    --premium-gold: #c9a227;
+    --premium-gold-light: #d9bd5a;
+
+    --premium-white: #ffffff;
+    --premium-bg: #f7f9f7;
+    --premium-soft: #eef4f0;
+
+    --premium-text: #17231d;
+    --premium-muted: #68756e;
+
+    --premium-border: rgba(11, 53, 36, 0.10);
+
+    --premium-shadow-sm:
+        0 4px 16px rgba(11, 53, 36, 0.06);
+
+    --premium-shadow:
+        0 12px 35px rgba(11, 53, 36, 0.10);
+
+    --premium-shadow-lg:
+        0 20px 55px rgba(11, 53, 36, 0.14);
+
+    --premium-radius: 18px;
+    --premium-radius-lg: 24px;
+
+    --premium-transition:
+        0.25s cubic-bezier(.4, 0, .2, 1);
+}
+
+
+/* =========================================================
+   BODY REFINEMENT
+   ========================================================= */
+
+body {
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f8faf8 45%,
+            #f4f8f5 100%
+        );
+
+    color: var(--premium-text);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.container {
+    position: relative;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(11, 53, 36, 0.08);
+
+    box-shadow:
+        0 4px 22px rgba(11, 53, 36, 0.05);
+
+    transition:
+        background var(--premium-transition),
+        box-shadow var(--premium-transition);
+}
+
+.site-header .container {
+    min-height: 74px;
+}
+
+.site-header .logo {
+    transition:
+        transform var(--premium-transition),
+        opacity var(--premium-transition);
+}
+
+.site-header .logo:hover {
+    transform: translateY(-1px);
+    opacity: 0.92;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.navigation a,
+.site-header .main-nav a {
+    position: relative;
+    transition:
+        color var(--premium-transition),
+        opacity var(--premium-transition);
+}
+
+.navigation a::after,
+.site-header .main-nav a::after {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        var(--premium-gold),
+        var(--premium-gold-light)
+    );
+
+    border-radius: 10px;
+
+    transform: translateX(-50%);
+    transition: width var(--premium-transition);
+}
+
+.navigation a:hover::after,
+.site-header .main-nav a:hover::after {
+    width: 65%;
+}
+
+
+/* =========================================================
+   REGISTER NAV BUTTON
+   ========================================================= */
+
+.nav-register {
+    transition:
+        transform var(--premium-transition),
+        box-shadow var(--premium-transition);
+}
+
+.nav-register:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(11, 53, 36, 0.16);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(201, 162, 39, 0.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 10% 85%,
+            rgba(29, 94, 60, 0.08),
+            transparent 30%
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.hero h1 {
+    letter-spacing: -0.025em;
+    line-height: 1.08;
+}
+
+.hero-description {
+    color: var(--premium-muted);
+    line-height: 1.8;
+}
+
+.motto {
+    position: relative;
+    padding-left: 18px;
+}
+
+.motto::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 8%;
+
+    width: 3px;
+    height: 84%;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--premium-gold),
+            var(--premium-green-2)
+        );
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.button,
+.button-primary,
+.button-outline,
+.btn {
+    transition:
+        transform var(--premium-transition),
+        box-shadow var(--premium-transition),
+        background var(--premium-transition),
+        border-color var(--premium-transition);
+}
+
+.button:hover,
+.button-primary:hover,
+.btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 24px rgba(11, 53, 36, 0.14);
+}
+
+.button:active,
+.button-primary:active,
+.button-outline:active,
+.btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+   ========================================================= */
+
+.section-heading {
+    position: relative;
+}
+
+.section-label {
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   ABOUT SECTION
+   ========================================================= */
+
+.about-highlight {
+    border: 1px solid var(--premium-border);
+
+    box-shadow: var(--premium-shadow-sm);
+
+    transition:
+        transform var(--premium-transition),
+        box-shadow var(--premium-transition),
+        border-color var(--premium-transition);
+}
+
+.about-highlight:hover {
+    transform: translateY(-4px);
+
+    box-shadow: var(--premium-shadow);
+
+    border-color:
+        rgba(201, 162, 39, 0.25);
+}
+
+.highlight-item {
+    transition:
+        transform var(--premium-transition);
+}
+
+.highlight-item:hover {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   PROGRAMMES
+   ========================================================= */
+
+.programme-grid {
+    align-items: stretch;
+}
+
+.programme-card {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.98),
+            rgba(247,250,248,0.98)
+        );
+
+    border: 1px solid var(--premium-border);
+
+    border-radius: var(--premium-radius-lg);
+
+    box-shadow: var(--premium-shadow-sm);
+
+    transition:
+        transform var(--premium-transition),
+        box-shadow var(--premium-transition),
+        border-color var(--premium-transition);
+}
+
+.programme-card::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--premium-green),
+            var(--premium-gold)
+        );
+
+    opacity: 0;
+
+    transition: opacity var(--premium-transition);
+}
+
+.programme-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: var(--premium-shadow-lg);
+
+    border-color:
+        rgba(29, 94, 60, 0.18);
+}
+
+.programme-card:hover::before {
+    opacity: 1;
+}
+
+.programme-icon,
+.arabic-icon {
+    transition:
+        transform var(--premium-transition),
+        background var(--premium-transition);
+}
+
+.programme-card:hover .programme-icon,
+.programme-card:hover .arabic-icon {
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   WHY US / FEATURES
+   ========================================================= */
+
+.features-grid {
+    align-items: stretch;
+}
+
+.feature-card {
+    position: relative;
+
+    border: 1px solid var(--premium-border);
+
+    border-radius: var(--premium-radius);
+
+    box-shadow: var(--premium-shadow-sm);
+
+    transition:
+        transform var(--premium-transition),
+        box-shadow var(--premium-transition),
+        border-color var(--premium-transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--premium-shadow);
+
+    border-color:
+        rgba(201, 162, 39, 0.25);
+}
+
+.feature-number {
+    transition:
+        transform var(--premium-transition);
+}
+
+.feature-card:hover .feature-number {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   HOW IT WORKS
+   ========================================================= */
+
+.steps-grid {
+    position: relative;
+}
+
+.step {
+    transition:
+        transform var(--premium-transition);
+}
+
+.step:hover {
+    transform: translateY(-4px);
+}
+
+.step-number {
+    box-shadow:
+        0 8px 20px rgba(11, 53, 36, 0.12);
+
+    transition:
+        transform var(--premium-transition),
+        box-shadow var(--premium-transition);
+}
+
+.step:hover .step-number {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 26px rgba(11, 53, 36, 0.17);
+}
+
+
+/* =========================================================
+   REGISTRATION CTA
+   ========================================================= */
+
+.register-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.register-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   CONTACT CARDS
+   ========================================================= */
+
+.contact-card {
+    border: 1px solid var(--premium-border);
+
+    box-shadow: var(--premium-shadow-sm);
+
+    transition:
+        transform var(--premium-transition),
+        box-shadow var(--premium-transition),
+        border-color var(--premium-transition);
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: var(--premium-shadow);
+
+    border-color:
+        rgba(201, 162, 39, 0.25);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+    position: relative;
+
+    border-top:
+        1px solid rgba(201, 162, 39, 0.12);
+}
+
+.footer-links a {
+    transition:
+        color var(--premium-transition),
+        transform var(--premium-transition);
+}
+
+.footer-links a:hover {
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   LOGIN PAGE
+   ========================================================= */
+
+.login-section {
+    position: relative;
+}
+
+.login-card {
+    border:
+        1px solid rgba(11, 53, 36, 0.10);
+
+    border-radius:
+        var(--premium-radius-lg);
+
+    box-shadow:
+        0 20px 55px rgba(11, 53, 36, 0.10);
+
+    transition:
+        box-shadow var(--premium-transition);
+}
+
+.login-card:hover {
+    box-shadow:
+        0 24px 65px rgba(11, 53, 36, 0.14);
+}
+
+.login-heading {
+    letter-spacing: -0.02em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    transition:
+        border-color var(--premium-transition),
+        box-shadow var(--premium-transition),
+        background var(--premium-transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color:
+        var(--premium-green-2);
+
+    box-shadow:
+        0 0 0 4px rgba(29, 94, 60, 0.08);
+
+    outline: none;
+}
+
+
+/* =========================================================
+   STUDENT DASHBOARD
+   ========================================================= */
+
+.dashboard-welcome {
+    position: relative;
+    overflow: hidden;
+
+    box-shadow: var(--premium-shadow);
+}
+
+.student-info-grid {
+    align-items: stretch;
+}
+
+.student-info-card,
+.dashboard-panel {
+    border: 1px solid var(--premium-border);
+
+    box-shadow: var(--premium-shadow-sm);
+
+    transition:
+        transform var(--premium-transition),
+        box-shadow var(--premium-transition),
+        border-color var(--premium-transition);
+}
+
+.student-info-card:hover,
+.dashboard-panel:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--premium-shadow);
+
+    border-color:
+        rgba(29, 94, 60, 0.15);
+}
+
+.dashboard-logout {
+    transition:
+        transform var(--premium-transition),
+        box-shadow var(--premium-transition);
+}
+
+.dashboard-logout:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+.profile-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-card {
+    border:
+        1px solid var(--premium-border);
+
+    border-radius:
+        var(--premium-radius-lg);
+
+    box-shadow:
+        var(--premium-shadow);
+
+    overflow: hidden;
+}
+
+.profile-card-header {
+    position: relative;
+}
+
+.profile-item {
+    transition:
+        background var(--premium-transition),
+        transform var(--premium-transition);
+}
+
+.profile-item:hover {
+    background: rgba(29, 94, 60, 0.025);
+}
+
+.profile-back-button,
+.profile-link-button,
+.results-link-button {
+    transition:
+        transform var(--premium-transition),
+        box-shadow var(--premium-transition);
+}
+
+.profile-back-button:hover,
+.profile-link-button:hover,
+.results-link-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(11, 53, 36, 0.12);
+}
+
+
+/* =========================================================
+   RESULTS
+   ========================================================= */
+
+.results-student-card,
+.results-card,
+.online-test-result-card {
+    border: 1px solid var(--premium-border);
+
+    border-radius: var(--premium-radius);
+
+    box-shadow: var(--premium-shadow-sm);
+
+    transition:
+        transform var(--premium-transition),
+        box-shadow var(--premium-transition),
+        border-color var(--premium-transition);
+}
+
+.results-card:hover,
+.online-test-result-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--premium-shadow);
+
+    border-color:
+        rgba(29, 94, 60, 0.15);
+}
+
+.results-table-wrapper,
+.results-table {
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.results-table th {
+    letter-spacing: 0.03em;
+}
+
+
+/* =========================================================
+   ATTENDANCE
+   ========================================================= */
+
+.stat-card {
+    border: 1px solid var(--premium-border);
+
+    box-shadow: var(--premium-shadow-sm);
+
+    transition:
+        transform var(--premium-transition),
+        box-shadow var(--premium-transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: var(--premium-shadow);
+}
+
+.attendance-history-section {
+    border-radius: var(--premium-radius);
+}
+
+.table-container {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--premium-shadow-sm);
+}
+
+.attendance-badge {
+    transition:
+        transform var(--premium-transition);
+}
+
+.attendance-badge:hover {
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   ANNOUNCEMENTS
+   ========================================================= */
+
+.announcement-card {
+    border: 1px solid var(--premium-border);
+
+    box-shadow: var(--premium-shadow-sm);
+
+    transition:
+        transform var(--premium-transition),
+        box-shadow var(--premium-transition),
+        border-color var(--premium-transition);
+}
+
+.announcement-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--premium-shadow);
+
+    border-color:
+        rgba(201, 162, 39, 0.20);
+}
+
+
+/* =========================================================
+   TEST / ASSIGNMENT STATUS
+   ========================================================= */
+
+.status-reviewed,
+.status-pending,
+.status-submitted,
+.status-default {
+    border-radius: 999px;
+
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+
+/* =========================================================
+   PAGE HEADERS
+   ========================================================= */
+
+.page-header {
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header h1 {
+    letter-spacing: -0.02em;
+}
+
+
+/* =========================================================
+   ASSIGNMENT HEADER
+   ========================================================= */
+
+.site-header .main-nav a[href="assignments.html"] {
+    transition:
+        color var(--premium-transition);
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid rgba(201, 162, 39, 0.35);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   DARK MODE
+   ---------------------------------------------------------
+   Works with your existing html.dark-mode system.
+   ========================================================= */
+
+html.dark-mode body {
+    background:
+        linear-gradient(
+            180deg,
+            #071d14 0%,
+            #0a2419 50%,
+            #071b13 100%
+        );
+
+    color: #edf4ef;
+}
+
+html.dark-mode .site-header {
+    background: rgba(7, 29, 20, 0.94);
+
+    border-bottom-color:
+        rgba(255, 255, 255, 0.07);
+
+    box-shadow:
+        0 6px 25px rgba(0, 0, 0, 0.20);
+}
+
+html.dark-mode .hero {
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(201, 162, 39, 0.09),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 10% 85%,
+            rgba(29, 94, 60, 0.12),
+            transparent 30%
+        );
+}
+
+html.dark-mode .hero-description,
+html.dark-mode .about-text,
+html.dark-mode .section-heading p {
+    color: #b9c8c0;
+}
+
+html.dark-mode .programme-card,
+html.dark-mode .feature-card,
+html.dark-mode .contact-card,
+html.dark-mode .about-highlight,
+html.dark-mode .student-info-card,
+html.dark-mode .dashboard-panel,
+html.dark-mode .profile-card,
+html.dark-mode .results-student-card,
+html.dark-mode .results-card,
+html.dark-mode .online-test-result-card,
+html.dark-mode .stat-card,
+html.dark-mode .announcement-card,
+html.dark-mode .login-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18, 53, 39, 0.96),
+            rgba(10, 39, 27, 0.98)
+        );
+
+    border-color:
+        rgba(255, 255, 255, 0.07);
+
+    box-shadow:
+        0 14px 40px rgba(0, 0, 0, 0.18);
+}
+
+html.dark-mode .programme-card:hover,
+html.dark-mode .feature-card:hover,
+html.dark-mode .contact-card:hover,
+html.dark-mode .about-highlight:hover,
+html.dark-mode .student-info-card:hover,
+html.dark-mode .dashboard-panel:hover,
+html.dark-mode .results-card:hover,
+html.dark-mode .online-test-result-card:hover,
+html.dark-mode .stat-card:hover,
+html.dark-mode .announcement-card:hover {
+    border-color:
+        rgba(201, 162, 39, 0.22);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+html.dark-mode .form-group input,
+html.dark-mode .form-group select,
+html.dark-mode .form-group textarea {
+    background: #0b2a1d;
+    color: #edf4ef;
+
+    border-color:
+        rgba(255, 255, 255, 0.10);
+}
+
+html.dark-mode .form-group input::placeholder,
+html.dark-mode .form-group textarea::placeholder {
+    color: #84978d;
+}
+
+html.dark-mode .form-group input:focus,
+html.dark-mode .form-group select:focus,
+html.dark-mode .form-group textarea:focus {
+    border-color:
+        var(--premium-gold);
+
+    box-shadow:
+        0 0 0 4px rgba(201, 162, 39, 0.10);
+}
+
+html.dark-mode .profile-item:hover {
+    background:
+        rgba(255, 255, 255, 0.025);
+}
+
+html.dark-mode .site-footer {
+    border-top-color:
+        rgba(201, 162, 39, 0.14);
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE REFINEMENT
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+    .programme-card:hover,
+    .feature-card:hover,
+    .contact-card:hover,
+    .about-highlight:hover,
+    .student-info-card:hover,
+    .dashboard-panel:hover,
+    .results-card:hover,
+    .online-test-result-card:hover,
+    .stat-card:hover,
+    .announcement-card:hover {
+        transform: translateY(-2px);
+    }
+
+    .hero h1 {
+        letter-spacing: -0.018em;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    .site-header {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .programme-card,
+    .feature-card,
+    .contact-card,
+    .login-card,
+    .profile-card,
+    .results-card,
+    .online-test-result-card {
+        border-radius: 16px;
+    }
+}

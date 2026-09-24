@@ -1,0 +1,557 @@
+/* =========================================================
+   AS-SIYĀNAH INSTITUTE
+   CREATE LESSON — PREMIUM TEACHER UI
+========================================================= */
+
+:root {
+    --lesson-green: #0b3524;
+    --lesson-green-2: #1d5e3c;
+    --lesson-gold: #c9a227;
+
+    --lesson-bg: #f6f8f7;
+    --lesson-card: #ffffff;
+    --lesson-border: #e4e9e6;
+
+    --lesson-text: #17221c;
+    --lesson-muted: #718078;
+
+    --lesson-radius: 18px;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.dashboard-section {
+    min-height: calc(100vh - 150px);
+    padding: 48px 0 70px;
+    background: var(--lesson-bg);
+}
+
+.dashboard-section .container {
+    width: min(100% - 40px, 960px);
+    margin-inline: auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.94);
+    border-bottom: 1px solid #e8ece9;
+    backdrop-filter: blur(18px);
+}
+
+.nav-container {
+    min-height: 72px;
+}
+
+.logo {
+    text-decoration: none;
+}
+
+.logo span {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--lesson-green);
+}
+
+.logo small {
+    display: block;
+    margin-top: 3px;
+    color: var(--lesson-muted);
+    font-size: 0.63rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #59675f;
+    font-size: 0.86rem;
+    font-weight: 650;
+    padding: 9px 12px;
+    border-radius: 9px;
+}
+
+.nav-menu a:hover {
+    color: var(--lesson-green);
+    background: #f0f5f2;
+}
+
+.nav-logout {
+    border: 1px solid #dfe6e1;
+    background: #ffffff;
+    color: #56635b;
+    padding: 9px 13px;
+    border-radius: 9px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.dashboard-welcome {
+    margin-bottom: 28px;
+}
+
+.dashboard-welcome .eyebrow {
+    margin: 0 0 8px;
+    color: var(--lesson-green-2);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.17em;
+}
+
+.dashboard-welcome h1 {
+    margin: 0;
+    color: var(--lesson-text);
+    font-size: clamp(2rem, 4vw, 2.65rem);
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+}
+
+.dashboard-welcome > p:last-child {
+    margin: 10px 0 0;
+    max-width: 650px;
+    color: var(--lesson-muted);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   MAIN FORM CARD
+========================================================= */
+
+.dashboard-card {
+    background: var(--lesson-card);
+    border: 1px solid var(--lesson-border);
+    border-radius: var(--lesson-radius);
+    box-shadow:
+        0 8px 30px rgba(18, 37, 27, 0.055);
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#createLessonForm {
+    padding: 36px;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #25342c;
+    font-size: 0.84rem;
+    font-weight: 750;
+}
+
+.form-group label span {
+    color: #87928c;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.form-group input[type="text"],
+.form-group input[type="url"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    border: 1px solid #dce3df;
+    border-radius: 11px;
+
+    background: #fbfcfb;
+    color: #1c2821;
+
+    padding: 13px 14px;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.form-group input[type="text"],
+.form-group input[type="url"],
+.form-group input[type="email"],
+.form-group select {
+    min-height: 49px;
+}
+
+.form-group textarea {
+    min-height: 145px;
+    resize: vertical;
+    line-height: 1.65;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9aa59f;
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color: #c8d2cc;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--lesson-green-2);
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(29,94,60,0.08);
+}
+
+
+/* =========================================================
+   PUBLISH AREA
+========================================================= */
+
+.form-group:has(#lessonPublished) {
+    margin-top: 8px;
+    margin-bottom: 28px;
+
+    padding: 17px 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: #f7faf8;
+    border: 1px solid #e1e8e3;
+    border-radius: 12px;
+}
+
+#lessonPublished {
+    width: 18px !important;
+    height: 18px;
+
+    margin: 0;
+
+    accent-color: var(--lesson-green-2);
+
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.form-group:has(#lessonPublished) label {
+    margin: 0 !important;
+    cursor: pointer;
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   CREATE BUTTON
+========================================================= */
+
+.btn.btn-primary {
+    width: 100%;
+    min-height: 52px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: var(--lesson-green);
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 750;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 16px rgba(11,53,36,0.14);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn.btn-primary:hover {
+    background: #124a32;
+    transform: translateY(-1px);
+    box-shadow:
+        0 9px 20px rgba(11,53,36,0.19);
+}
+
+.btn.btn-primary:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.dashboard-section > .container > div:last-child {
+    margin-top: 20px !important;
+}
+
+.dashboard-section .btn.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 44px;
+    padding: 0 16px;
+
+    border: 1px solid #dce3df;
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #536159;
+
+    text-decoration: none;
+
+    font-size: 0.82rem;
+    font-weight: 700;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.dashboard-section .btn.btn-secondary:hover {
+    background: #f3f7f4;
+    border-color: #bfcac3;
+    color: var(--lesson-green);
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html.teacher-dark {
+    --lesson-bg: #07120d;
+    --lesson-card: #0d1c14;
+    --lesson-border: #23382d;
+
+    --lesson-text: #edf4ef;
+    --lesson-muted: #8fa197;
+}
+
+html.teacher-dark .dashboard-section {
+    background: var(--lesson-bg);
+}
+
+html.teacher-dark .site-header {
+    background: rgba(8, 21, 14, 0.94);
+    border-bottom-color: #21372b;
+}
+
+html.teacher-dark .logo span {
+    color: #e8f0eb;
+}
+
+html.teacher-dark .logo small {
+    color: #82958a;
+}
+
+html.teacher-dark .nav-menu a {
+    color: #9caca3;
+}
+
+html.teacher-dark .nav-menu a:hover {
+    color: #dce9e1;
+    background: #12251b;
+}
+
+html.teacher-dark .nav-logout {
+    background: #0d1c14;
+    border-color: #2b4035;
+    color: #a9b8af;
+}
+
+html.teacher-dark .dashboard-welcome .eyebrow {
+    color: #d4af37;
+}
+
+html.teacher-dark .dashboard-welcome h1 {
+    color: #f0f5f2;
+}
+
+html.teacher-dark .dashboard-welcome > p:last-child {
+    color: #8fa197;
+}
+
+html.teacher-dark .dashboard-card {
+    background: var(--lesson-card);
+    border-color: var(--lesson-border);
+    box-shadow:
+        0 12px 40px rgba(0,0,0,0.22);
+}
+
+html.teacher-dark .form-group label {
+    color: #d9e5de;
+}
+
+html.teacher-dark .form-group label span {
+    color: #7f9187;
+}
+
+html.teacher-dark .form-group input[type="text"],
+html.teacher-dark .form-group input[type="url"],
+html.teacher-dark .form-group input[type="email"],
+html.teacher-dark .form-group select,
+html.teacher-dark .form-group textarea {
+    background: #091710;
+    border-color: #294136;
+    color: #edf4ef;
+}
+
+html.teacher-dark .form-group input::placeholder,
+html.teacher-dark .form-group textarea::placeholder {
+    color: #64766c;
+}
+
+html.teacher-dark .form-group input:hover,
+html.teacher-dark .form-group select:hover,
+html.teacher-dark .form-group textarea:hover {
+    border-color: #3b5548;
+}
+
+html.teacher-dark .form-group input:focus,
+html.teacher-dark .form-group select:focus,
+html.teacher-dark .form-group textarea:focus {
+    background: #0b1b13;
+    border-color: #4a8967;
+    box-shadow:
+        0 0 0 3px rgba(74,137,103,0.12);
+}
+
+html.teacher-dark .form-group:has(#lessonPublished) {
+    background: #0a1911;
+    border-color: #294136;
+}
+
+html.teacher-dark .dashboard-section .btn.btn-secondary {
+    background: #0d1c14;
+    border-color: #2c4237;
+    color: #b4c6bc;
+}
+
+html.teacher-dark .dashboard-section .btn.btn-secondary:hover {
+    background: #12261b;
+    border-color: #3c614e;
+    color: #e0ebe4;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .dashboard-section {
+        padding: 32px 0 50px;
+    }
+
+    .dashboard-section .container {
+        width: min(100% - 28px, 960px);
+    }
+
+    #createLessonForm {
+        padding: 25px 20px;
+    }
+
+    .dashboard-welcome {
+        margin-bottom: 22px;
+    }
+
+    .dashboard-welcome h1 {
+        font-size: 2rem;
+    }
+
+    .dashboard-card {
+        border-radius: 15px;
+    }
+
+    .nav-menu a {
+        display: none;
+    }
+
+    .nav-menu {
+        gap: 5px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+}
+
+
+@media (max-width: 430px) {
+
+    .dashboard-section {
+        padding-top: 24px;
+    }
+
+    .dashboard-welcome h1 {
+        font-size: 1.75rem;
+    }
+
+    .dashboard-welcome > p:last-child {
+        font-size: 0.88rem;
+    }
+
+    #createLessonForm {
+        padding: 22px 16px;
+    }
+
+    .dashboard-section .btn.btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+}

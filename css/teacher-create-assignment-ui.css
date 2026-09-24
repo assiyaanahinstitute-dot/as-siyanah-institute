@@ -1,0 +1,955 @@
+/* =========================================================
+   AS-SIYĀNAH INSTITUTE
+   CREATE ASSIGNMENT
+   PREMIUM UI + DARK MODE
+   Separate visual stylesheet
+========================================================= */
+
+
+/* =========================================================
+   PAGE FOUNDATION
+========================================================= */
+
+.assignment-main {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 42px 28px 70px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.teacher-header {
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid #e7eee9;
+
+    box-shadow:
+        0 5px 25px rgba(15, 45, 30, 0.06);
+
+    backdrop-filter: blur(14px);
+}
+
+
+.teacher-header-inner {
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    padding: 18px 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.teacher-brand h1 {
+    margin: 0;
+
+    color: #123d29;
+
+    font-size: 17px;
+
+    font-weight: 850;
+
+    letter-spacing: 1px;
+}
+
+
+.teacher-brand span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #829087;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: .5px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.teacher-nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+
+.teacher-nav::-webkit-scrollbar {
+    display: none;
+}
+
+
+.teacher-nav a {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 38px;
+
+    padding: 0 13px;
+
+    border-radius: 10px;
+
+    color: #68786e;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    font-size: 12px;
+
+    font-weight: 650;
+
+    transition: all .2s ease;
+}
+
+
+.teacher-nav a:hover {
+    color: #1d5e3c;
+
+    background: #eff6f1;
+}
+
+
+.teacher-nav a.active {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1d5e3c,
+            #0b3524
+        );
+
+    box-shadow:
+        0 7px 18px rgba(11, 53, 36, .16);
+}
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.page-heading {
+    position: relative;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 30px;
+
+    padding: 34px 38px;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b3524 0%,
+            #174f34 58%,
+            #216845 100%
+        );
+
+    box-shadow:
+        0 20px 45px rgba(11, 53, 36, .18);
+}
+
+
+/* Decorative glow */
+
+.page-heading::before {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    right: 60px;
+    top: -210px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(212, 175, 55, .10);
+}
+
+
+.page-heading::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -70px;
+    bottom: -110px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.12);
+}
+
+
+.page-heading > div {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.page-eyebrow {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 10px;
+
+    color: #d5b33e;
+
+    font-size: 10px;
+
+    font-weight: 850;
+
+    letter-spacing: 2px;
+}
+
+
+.page-eyebrow::before {
+    content: "";
+
+    width: 25px;
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: #d4af37;
+}
+
+
+.page-heading h2 {
+    margin: 0 0 9px;
+
+    color: #ffffff;
+
+    font-size: clamp(30px, 4vw, 42px);
+
+    line-height: 1.08;
+
+    font-weight: 850;
+
+    letter-spacing: -1px;
+}
+
+
+.page-heading p {
+    margin: 0;
+
+    color: rgba(255,255,255,.72);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-btn {
+    position: relative;
+
+    z-index: 3;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 44px;
+
+    padding: 0 17px;
+
+    border-radius: 11px;
+
+    color: #ffffff;
+
+    background:
+        rgba(255,255,255,.09);
+
+    border:
+        1px solid rgba(255,255,255,.17);
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    backdrop-filter: blur(10px);
+
+    transition: all .2s ease;
+}
+
+
+.back-btn:hover {
+    background:
+        rgba(255,255,255,.16);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   ASSIGNMENT CARD
+========================================================= */
+
+.assignment-card {
+    position: relative;
+
+    padding: 38px;
+
+    border-radius: 23px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5ece7;
+
+    box-shadow:
+        0 15px 45px rgba(20, 45, 32, .07);
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#assignmentForm {
+    width: 100%;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
+    margin-bottom: 23px;
+}
+
+
+.form-group label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 9px;
+
+    color: #30473a;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+
+.form-group small {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #8a978f;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+.optional {
+    color: #9aa59f;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #dce6df;
+
+    border-radius: 13px;
+
+    outline: none;
+
+    background: #fafcfb;
+
+    color: #24392e;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        background .2s ease,
+        transform .2s ease;
+}
+
+
+.form-group input,
+.form-group select {
+    min-height: 52px;
+
+    padding: 0 15px;
+}
+
+
+.form-group textarea {
+    min-height: 145px;
+
+    padding: 15px;
+
+    line-height: 1.65;
+
+    resize: vertical;
+}
+
+
+.form-group input:hover,
+.form-group textarea:hover,
+.form-group select:hover {
+    border-color: #c8d7ce;
+
+    background: #ffffff;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #1d5e3c;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px rgba(29,94,60,.08);
+}
+
+
+/* =========================================================
+   FORM ROW
+========================================================= */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   PUBLISH BOX
+========================================================= */
+
+.publish-box {
+    margin-top: 5px;
+
+    margin-bottom: 25px;
+
+    padding: 20px 21px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5faf7,
+            #edf6f0
+        );
+
+    border: 1px solid #dcebe1;
+}
+
+
+.checkbox-label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    color: #244b36;
+
+    font-size: 13px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+}
+
+
+.checkbox-label input {
+    width: 18px;
+    height: 18px;
+
+    margin: 0;
+
+    accent-color: #1d5e3c;
+
+    cursor: pointer;
+}
+
+
+.publish-box p {
+    margin: 9px 0 0 29px;
+
+    color: #78877e;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.form-message {
+    min-height: 0;
+
+    margin-bottom: 20px;
+
+    border-radius: 12px;
+
+    font-size: 12px;
+
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.form-actions {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 11px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #edf1ee;
+}
+
+
+.cancel-btn,
+.save-btn {
+    min-height: 49px;
+
+    padding: 0 21px;
+
+    border-radius: 12px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+        all .2s ease;
+}
+
+
+.cancel-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #607067;
+
+    background: #f5f7f6;
+
+    border: 1px solid #e0e7e2;
+
+    text-decoration: none;
+}
+
+
+.cancel-btn:hover {
+    background: #edf1ee;
+
+    transform: translateY(-2px);
+}
+
+
+.save-btn {
+    min-width: 175px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1d5e3c,
+            #0b3524
+        );
+
+    border: 1px solid transparent;
+
+    box-shadow:
+        0 9px 22px rgba(11,53,36,.17);
+}
+
+
+.save-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 13px 28px rgba(11,53,36,.24);
+}
+
+
+.save-btn:active,
+.cancel-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html.teacher-dark .teacher-header {
+    background: rgba(10, 20, 15, .96);
+
+    border-bottom-color: #24362c;
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,.22);
+}
+
+
+html.teacher-dark .teacher-brand h1 {
+    color: #edf4ef;
+}
+
+
+html.teacher-dark .teacher-brand span {
+    color: #87978d;
+}
+
+
+html.teacher-dark .teacher-nav {
+    background: #0b1510;
+
+    border-bottom-color: #24362c;
+}
+
+
+html.teacher-dark .teacher-nav a {
+    color: #8f9e96;
+}
+
+
+html.teacher-dark .teacher-nav a:hover {
+    color: #b5d9c2;
+
+    background: #15261c;
+}
+
+
+html.teacher-dark .teacher-nav a.active {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1d6540,
+            #0b3524
+        );
+}
+
+
+html.teacher-dark .assignment-main {
+    background: transparent;
+}
+
+
+html.teacher-dark .assignment-card {
+    background: #101b15;
+
+    border-color: #26392f;
+
+    box-shadow:
+        0 18px 50px rgba(0,0,0,.23);
+}
+
+
+html.teacher-dark .form-group label {
+    color: #d1dcd5;
+}
+
+
+html.teacher-dark .form-group small {
+    color: #7e9085;
+}
+
+
+html.teacher-dark .optional {
+    color: #718078;
+}
+
+
+html.teacher-dark .form-group input,
+html.teacher-dark .form-group textarea,
+html.teacher-dark .form-group select {
+    background: #0b1510;
+
+    color: #e5eee8;
+
+    border-color: #2b4034;
+}
+
+
+html.teacher-dark .form-group input:hover,
+html.teacher-dark .form-group textarea:hover,
+html.teacher-dark .form-group select:hover {
+    background: #101c16;
+
+    border-color: #385544;
+}
+
+
+html.teacher-dark .form-group input:focus,
+html.teacher-dark .form-group textarea:focus,
+html.teacher-dark .form-group select:focus {
+    background: #101c16;
+
+    border-color: #5a9c74;
+
+    box-shadow:
+        0 0 0 4px rgba(90,156,116,.12);
+}
+
+
+html.teacher-dark .publish-box {
+    background:
+        linear-gradient(
+            135deg,
+            #122219,
+            #172a20
+        );
+
+    border-color: #2b4436;
+}
+
+
+html.teacher-dark .checkbox-label {
+    color: #c6d9cd;
+}
+
+
+html.teacher-dark .publish-box p {
+    color: #83958b;
+}
+
+
+html.teacher-dark .form-actions {
+    border-top-color: #27392f;
+}
+
+
+html.teacher-dark .cancel-btn {
+    color: #b2c0b8;
+
+    background: #17221c;
+
+    border-color: #2a3d32;
+}
+
+
+html.teacher-dark .cancel-btn:hover {
+    background: #1c2c23;
+}
+
+
+html.teacher-dark .save-btn {
+    background:
+        linear-gradient(
+            135deg,
+            #27724a,
+            #10412a
+        );
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.28);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .teacher-header-inner {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        padding: 18px 20px;
+    }
+
+    .teacher-nav {
+        width: 100%;
+    }
+
+    .page-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .back-btn {
+        align-self: flex-start;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .assignment-main {
+        padding: 24px 15px 50px;
+    }
+
+    .page-heading {
+        padding: 28px 23px;
+
+        border-radius: 19px;
+    }
+
+    .page-heading h2 {
+        font-size: 30px;
+    }
+
+    .assignment-card {
+        padding: 24px 19px;
+
+        border-radius: 18px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+    }
+
+    .cancel-btn,
+    .save-btn {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .teacher-brand h1 {
+        font-size: 14px;
+    }
+
+    .teacher-nav a {
+        padding: 0 11px;
+
+        font-size: 11px;
+    }
+
+    .page-heading {
+        padding: 25px 19px;
+    }
+
+    .page-heading h2 {
+        font-size: 27px;
+    }
+
+    .assignment-card {
+        padding: 21px 16px;
+    }
+
+    .publish-box {
+        padding: 17px;
+    }
+
+    .publish-box p {
+        margin-left: 29px;
+    }
+
+}

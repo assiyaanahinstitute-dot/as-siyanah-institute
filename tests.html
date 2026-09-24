@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Tests | As-Siyānah Institute</title>
+
+    <link
+        rel="stylesheet"
+        href="css/tests.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="student-header">
+
+    <div class="student-header-inner">
+
+
+        <!-- BRAND -->
+
+        <a
+            href="dashboard.html"
+            class="student-brand"
+        >
+
+            <div class="student-brand-main">
+                AS-SIYĀNAH
+            </div>
+
+            <div class="student-brand-sub">
+                Student Portal
+            </div>
+
+        </a>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="student-nav">
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="classes.html">
+                Classes
+            </a>
+
+            <a href="assignments.html">
+                Assignments
+            </a>
+
+            <a
+                href="tests.html"
+                class="active"
+            >
+                Tests
+            </a>
+
+            <a href="results.html">
+                Results
+            </a>
+
+        </nav>
+
+
+        <!-- THEME -->
+
+        <button
+            type="button"
+            id="themeToggle"
+            class="theme-toggle"
+            aria-label="Toggle dark mode"
+        >
+
+            <span class="theme-icon">
+                🌙
+            </span>
+
+            <span class="theme-text">
+                Dark Mode
+            </span>
+
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="tests-main">
+
+    <div class="tests-container">
+
+
+        <!-- =================================================
+             PAGE HEADER
+        ================================================== -->
+
+        <section class="page-header">
+
+            <div class="page-header-content">
+
+                <span class="eyebrow">
+                    ASSESSMENT CENTRE
+                </span>
+
+
+                <h1>
+                    My Tests
+                </h1>
+
+
+                <p>
+                    View and take available tests and examinations
+                    assigned to your level.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MESSAGE
+        ================================================== -->
+
+        <div
+            id="message"
+            class="message"
+        ></div>
+
+
+
+        <!-- =================================================
+             TESTS SECTION
+        ================================================== -->
+
+        <section class="tests-section">
+
+
+            <div class="section-title">
+
+                <div>
+
+                    <span class="section-eyebrow">
+                        AVAILABLE ASSESSMENTS
+                    </span>
+
+                    <h2>
+                        Tests &amp; Examinations
+                    </h2>
+
+                    <p>
+                        Select an assessment below to view its
+                        instructions and begin.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TESTS CONTAINER -->
+
+            <div
+                id="testsContainer"
+                class="tests-list"
+            >
+
+                <div class="loading-card">
+
+                    <div class="loading-spinner"></div>
+
+                    <div>
+
+                        <strong>
+                            Loading available tests
+                        </strong>
+
+                        <span>
+                            Please wait while we retrieve your assessments.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="student-footer">
+
+    <div class="student-footer-inner">
+
+        <div>
+
+            <strong>
+                AS-SIYĀNAH
+            </strong>
+
+            <span>
+                Student Portal
+            </span>
+
+        </div>
+
+
+        <p>
+            © 2026 AS-SIYĀNAH INSTITUTE FOR ARABIC &amp;
+            ISLAMIC STUDIES
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+</script>
+
+
+<script>
+
+    const SUPABASE_URL =
+        "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+
+    const SUPABASE_ANON_KEY =
+        "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+
+    const supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_ANON_KEY
+        );
+
+</script>
+
+
+
+<!-- =====================================================
+     EXISTING TEST FUNCTIONALITY
+===================================================== -->
+
+<script src="js/tests.js"></script>
+
+
+<!-- =====================================================
+     EXISTING GLOBAL THEME
+===================================================== -->
+
+<script src="js/theme.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1272 @@
+/* =========================================================
+   AS-SIYĀNAH — TEACHER PROFILE
+   Premium LMS / SaaS UI
+========================================================= */
+
+
+/* =========================================================
+   PAGE VARIABLES
+========================================================= */
+
+:root {
+    --profile-bg: #f5f7f6;
+    --profile-surface: #ffffff;
+    --profile-surface-soft: #f8faf9;
+
+    --profile-green: #164d32;
+    --profile-green-dark: #0b3524;
+    --profile-green-light: #236b47;
+
+    --profile-gold: #c9a227;
+    --profile-gold-light: #f4ecd0;
+
+    --profile-text: #14261c;
+    --profile-text-soft: #66746c;
+    --profile-muted: #87928c;
+
+    --profile-border: #e2e8e4;
+    --profile-border-soft: #edf1ee;
+
+    --profile-danger: #a84747;
+
+    --profile-radius: 16px;
+
+    --profile-shadow:
+        0 10px 35px rgba(10, 45, 29, 0.055);
+
+    --profile-shadow-hover:
+        0 15px 40px rgba(10, 45, 29, 0.09);
+}
+
+
+/* =========================================================
+   PAGE BACKGROUND
+========================================================= */
+
+body {
+    background: var(--profile-bg);
+}
+
+
+.teacher-profile-main {
+    min-height: calc(100vh - 150px);
+    padding: 48px 24px 70px;
+    background: var(--profile-bg);
+}
+
+
+.teacher-profile-container {
+    width: min(1080px, 100%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER — PREMIUM TEACHER NAV
+========================================================= */
+
+.teacher-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.97) !important;
+
+    border-bottom: 1px solid #e3e9e5 !important;
+
+    box-shadow:
+        0 4px 20px rgba(12, 43, 29, 0.045) !important;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+
+.teacher-header-inner {
+    width: min(1240px, calc(100% - 40px));
+
+    min-height: 76px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 28px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.teacher-brand {
+    display: inline-flex !important;
+    flex-direction: column;
+
+    flex-shrink: 0;
+
+    gap: 2px;
+
+    text-decoration: none !important;
+
+    padding: 7px 0;
+}
+
+
+.teacher-brand-main {
+    color: #123d28 !important;
+
+    font-size: 21px !important;
+    font-weight: 800 !important;
+
+    line-height: 1.05;
+
+    letter-spacing: -0.45px;
+}
+
+
+.teacher-brand-sub {
+    color: #8a6811 !important;
+
+    font-size: 9px !important;
+    font-weight: 800 !important;
+
+    letter-spacing: 1.6px;
+
+    text-transform: uppercase;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.teacher-nav {
+    display: flex !important;
+    align-items: center;
+
+    gap: 4px !important;
+
+    margin-left: auto;
+}
+
+
+.teacher-nav a {
+    position: relative;
+
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+
+    padding: 0 12px !important;
+
+    border-radius: 8px;
+
+    color: #5c6961 !important;
+
+    background: transparent !important;
+
+    text-decoration: none !important;
+
+    font-size: 12.5px !important;
+    font-weight: 650 !important;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.teacher-nav a:hover {
+    color: #164d32 !important;
+
+    background: #f1f6f3 !important;
+}
+
+
+.teacher-nav a.active {
+    color: #164d32 !important;
+
+    background: #edf5f0 !important;
+}
+
+
+/* GOLD ACTIVE INDICATOR */
+
+.teacher-nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 12px;
+    right: 12px;
+    bottom: -18px;
+
+    height: 2px;
+
+    background: var(--profile-gold);
+
+    border-radius: 99px;
+}
+
+
+/* =========================================================
+   THEME BUTTON
+========================================================= */
+
+.teacher-theme-toggle {
+    min-height: 38px !important;
+
+    margin-left: 8px !important;
+
+    padding: 0 13px !important;
+
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #dce4df !important;
+    border-radius: 9px !important;
+
+    background: #ffffff !important;
+
+    color: #30443a !important;
+
+    font-family: inherit !important;
+
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.035);
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.teacher-theme-toggle:hover {
+    background: #f5f8f6 !important;
+
+    border-color: #c7d4cc !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.teacher-profile-heading {
+    margin-bottom: 30px;
+}
+
+
+.profile-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 9px;
+
+    color: #a98217;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.7px;
+}
+
+
+.teacher-profile-heading h1 {
+    margin: 0;
+
+    color: var(--profile-text);
+
+    font-size: clamp(30px, 4vw, 42px);
+
+    line-height: 1.12;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+
+.teacher-profile-heading p {
+    margin: 10px 0 0;
+
+    color: var(--profile-text-soft);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   PROFILE CARD
+========================================================= */
+
+.profile-card {
+    overflow: hidden;
+
+    background: var(--profile-surface);
+
+    border: 1px solid var(--profile-border);
+
+    border-radius: 20px;
+
+    box-shadow: var(--profile-shadow);
+
+    transition:
+        box-shadow 0.25s ease;
+}
+
+
+.profile-card:hover {
+    box-shadow: var(--profile-shadow-hover);
+}
+
+
+/* =========================================================
+   PROFILE INTRO
+========================================================= */
+
+.profile-intro {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 32px;
+}
+
+
+.teacher-avatar {
+    width: 76px;
+    height: 76px;
+
+    flex: 0 0 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1d5e3c,
+            #0b3524
+        );
+
+    color: #ffffff;
+
+    font-size: 29px;
+
+    box-shadow:
+        0 10px 22px rgba(11, 53, 36, 0.18);
+}
+
+
+.profile-intro-content h2 {
+    margin: 0 0 5px;
+
+    color: #142f21;
+
+    font-size: 24px;
+    font-weight: 800;
+
+    letter-spacing: -0.4px;
+}
+
+
+.profile-intro-content p {
+    margin: 0;
+
+    color: #718078;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.profile-divider {
+    height: 1px;
+
+    background: var(--profile-border-soft);
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.profile-section-heading {
+    padding: 30px 32px 20px;
+}
+
+
+.section-label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #a98217;
+
+    font-size: 9px;
+    font-weight: 850;
+
+    letter-spacing: 1.5px;
+}
+
+
+.profile-section-heading h3 {
+    margin: 0;
+
+    color: #193426;
+
+    font-size: 18px;
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   INFORMATION GRID
+========================================================= */
+
+.profile-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+
+    padding: 0 32px 30px;
+}
+
+
+.profile-info-item {
+    min-width: 0;
+
+    padding: 19px 20px;
+
+    background: var(--profile-surface-soft);
+
+    border: 1px solid #e4ebe6;
+
+    border-radius: 12px;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.profile-info-item:hover {
+    background: #ffffff;
+
+    border-color: #d1ddd5;
+
+    transform: translateY(-1px);
+}
+
+
+.info-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #7d8982;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.7px;
+
+    text-transform: uppercase;
+}
+
+
+.profile-info-item strong {
+    display: block;
+
+    color: #183728;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+
+
+.profile-info-item .role-value {
+    color: #1d6744;
+}
+
+
+.break-email {
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   ACTION BAR
+========================================================= */
+
+.profile-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    padding: 23px 32px;
+
+    border-top: 1px solid var(--profile-border-soft);
+}
+
+
+.profile-primary-btn,
+.profile-secondary-btn,
+.profile-danger-btn {
+    min-height: 43px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 0 16px;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.profile-primary-btn {
+    border: 1px solid #164d32;
+
+    background: #164d32;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 5px 14px rgba(22, 77, 50, 0.15);
+}
+
+
+.profile-primary-btn:hover {
+    background: #0d3b26;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 18px rgba(22, 77, 50, 0.2);
+}
+
+
+.profile-secondary-btn {
+    border: 1px solid #d5dfd9;
+
+    background: #ffffff;
+
+    color: #294337;
+}
+
+
+.profile-secondary-btn:hover {
+    background: #f5f8f6;
+
+    border-color: #bdccc2;
+
+    transform: translateY(-1px);
+}
+
+
+.profile-danger-btn {
+    border: 1px solid #ead8d8;
+
+    background: #ffffff;
+
+    color: var(--profile-danger);
+}
+
+
+.profile-danger-btn:hover {
+    background: #fff7f7;
+
+    border-color: #dcbcbc;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   EDIT PROFILE PANEL
+========================================================= */
+
+.edit-profile-panel {
+    display: none;
+
+    margin: 0 32px 32px;
+
+    padding: 26px;
+
+    background: #f8faf9;
+
+    border: 1px solid #dfe7e2;
+
+    border-radius: 15px;
+}
+
+
+.edit-panel-header {
+    margin-bottom: 23px;
+}
+
+
+.edit-panel-header h3 {
+    margin: 0;
+
+    color: #173728;
+
+    font-size: 20px;
+    font-weight: 750;
+}
+
+
+.edit-panel-header p {
+    margin: 7px 0 0;
+
+    color: #718078;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   EDIT FIELDS
+========================================================= */
+
+.edit-profile-fields {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+.profile-field label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #294337;
+
+    font-size: 12px;
+    font-weight: 750;
+}
+
+
+.profile-field input {
+    width: 100%;
+
+    min-height: 46px;
+
+    box-sizing: border-box;
+
+    padding: 0 13px;
+
+    border: 1px solid #d4ded8;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #172d21;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.profile-field input::placeholder {
+    color: #9ba59f;
+}
+
+
+.profile-field input:focus {
+    border-color: #2b704d;
+
+    box-shadow:
+        0 0 0 3px rgba(43, 112, 77, 0.10);
+}
+
+
+/* =========================================================
+   EDIT ACTIONS
+========================================================= */
+
+.edit-profile-actions {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-top: 22px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.teacher-footer {
+    background: #ffffff !important;
+
+    border-top: 1px solid #e1e7e3 !important;
+}
+
+
+.teacher-footer-inner {
+    width: min(1080px, calc(100% - 48px));
+
+    margin: 0 auto;
+
+    padding: 24px 0;
+}
+
+
+.teacher-footer p {
+    margin: 0;
+
+    color: #7c8881;
+
+    font-size: 11px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   DARK MODE — HEADER
+========================================================= */
+
+html.teacher-dark body {
+    background: #07130d !important;
+}
+
+
+html.teacher-dark .teacher-header {
+    background: rgba(7, 20, 13, 0.97) !important;
+
+    border-bottom-color: #1d3327 !important;
+
+    box-shadow:
+        0 4px 22px rgba(0, 0, 0, 0.22) !important;
+}
+
+
+html.teacher-dark .teacher-brand-main {
+    color: #e9f1ec !important;
+}
+
+
+html.teacher-dark .teacher-brand-sub {
+    color: #d2ad39 !important;
+}
+
+
+html.teacher-dark .teacher-nav a {
+    color: #9baaa1 !important;
+
+    background: transparent !important;
+}
+
+
+html.teacher-dark .teacher-nav a:hover {
+    color: #e4eee8 !important;
+
+    background: #102219 !important;
+}
+
+
+html.teacher-dark .teacher-nav a.active {
+    color: #dcebe2 !important;
+
+    background: #10271b !important;
+}
+
+
+html.teacher-dark .teacher-theme-toggle {
+    background: #102219 !important;
+
+    border-color: #2b4235 !important;
+
+    color: #d9e5de !important;
+
+    box-shadow: none !important;
+}
+
+
+html.teacher-dark .teacher-theme-toggle:hover {
+    background: #162d21 !important;
+
+    border-color: #3a5747 !important;
+}
+
+
+/* =========================================================
+   DARK MODE — PAGE
+========================================================= */
+
+html.teacher-dark .teacher-profile-main {
+    background: #07130d !important;
+}
+
+
+html.teacher-dark .teacher-profile-heading h1 {
+    color: #edf4ef !important;
+}
+
+
+html.teacher-dark .teacher-profile-heading p {
+    color: #9aa9a1 !important;
+}
+
+
+html.teacher-dark .profile-card {
+    background: #0c1c14 !important;
+
+    border-color: #1e3529 !important;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.25) !important;
+}
+
+
+html.teacher-dark .profile-intro-content h2 {
+    color: #edf4ef !important;
+}
+
+
+html.teacher-dark .profile-intro-content p {
+    color: #9baaa2 !important;
+}
+
+
+html.teacher-dark .profile-divider {
+    background: #20372a !important;
+}
+
+
+html.teacher-dark .profile-section-heading h3 {
+    color: #e8f0eb !important;
+}
+
+
+html.teacher-dark .profile-info-item {
+    background: #102319 !important;
+
+    border-color: #21382c !important;
+}
+
+
+html.teacher-dark .profile-info-item:hover {
+    background: #142a20 !important;
+
+    border-color: #2e4b3b !important;
+}
+
+
+html.teacher-dark .info-label {
+    color: #899990 !important;
+}
+
+
+html.teacher-dark .profile-info-item strong {
+    color: #e1ebe5 !important;
+}
+
+
+html.teacher-dark .profile-info-item .role-value {
+    color: #7fc49c !important;
+}
+
+
+html.teacher-dark .profile-actions {
+    border-top-color: #20372a !important;
+}
+
+
+html.teacher-dark .profile-secondary-btn {
+    background: #102219 !important;
+
+    border-color: #2b4235 !important;
+
+    color: #d9e5de !important;
+}
+
+
+html.teacher-dark .profile-secondary-btn:hover {
+    background: #162d21 !important;
+}
+
+
+html.teacher-dark .profile-danger-btn {
+    background: #111b16 !important;
+
+    border-color: #493030 !important;
+
+    color: #df9999 !important;
+}
+
+
+html.teacher-dark .profile-danger-btn:hover {
+    background: #251719 !important;
+}
+
+
+html.teacher-dark .edit-profile-panel {
+    background: #101f17 !important;
+
+    border-color: #253d30 !important;
+}
+
+
+html.teacher-dark .edit-panel-header h3 {
+    color: #edf4ef !important;
+}
+
+
+html.teacher-dark .edit-panel-header p {
+    color: #9baaa1 !important;
+}
+
+
+html.teacher-dark .profile-field label {
+    color: #d7e2db !important;
+}
+
+
+html.teacher-dark .profile-field input {
+    background: #09170f !important;
+
+    border-color: #2b4235 !important;
+
+    color: #edf5ef !important;
+}
+
+
+html.teacher-dark .profile-field input::placeholder {
+    color: #6f7f76 !important;
+}
+
+
+html.teacher-dark .profile-field input:focus {
+    background: #0d1c13 !important;
+
+    border-color: #4d956d !important;
+
+    box-shadow:
+        0 0 0 3px rgba(77, 149, 109, 0.15) !important;
+}
+
+
+html.teacher-dark .teacher-footer {
+    background: #07130d !important;
+
+    border-top-color: #1d3327 !important;
+}
+
+
+html.teacher-dark .teacher-footer p {
+    color: #718078 !important;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .teacher-header-inner {
+        gap: 15px;
+    }
+
+
+    .teacher-nav {
+        gap: 2px !important;
+    }
+
+
+    .teacher-nav a {
+        padding: 0 8px !important;
+
+        font-size: 11.5px !important;
+    }
+
+
+    .teacher-theme-toggle {
+        margin-left: 4px !important;
+
+        padding: 0 10px !important;
+
+        font-size: 10.5px !important;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE HEADER
+========================================================= */
+
+@media (max-width: 820px) {
+
+    .teacher-header {
+        position: relative;
+    }
+
+
+    .teacher-header-inner {
+        width: calc(100% - 28px);
+
+        min-height: auto;
+
+        padding: 15px 0;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+
+    .teacher-brand {
+        padding: 0;
+    }
+
+
+    .teacher-nav {
+        width: 100%;
+
+        margin-left: 0;
+
+        display: flex !important;
+
+        overflow-x: auto;
+
+        padding-bottom: 3px;
+
+        scrollbar-width: none;
+    }
+
+
+    .teacher-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .teacher-nav a {
+        flex: 0 0 auto;
+
+        min-height: 38px;
+
+        padding: 0 11px !important;
+    }
+
+
+    .teacher-nav a.active::after {
+        display: none;
+    }
+
+
+    .teacher-theme-toggle {
+        flex: 0 0 auto;
+
+        margin-left: 3px !important;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / MOBILE PAGE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .teacher-profile-main {
+        padding:
+            32px 16px
+            55px;
+    }
+
+
+    .teacher-profile-heading h1 {
+        font-size: 31px;
+    }
+
+
+    .profile-intro {
+        padding: 25px 22px;
+    }
+
+
+    .profile-section-heading {
+        padding:
+            25px 22px
+            18px;
+    }
+
+
+    .profile-info-grid {
+        grid-template-columns: 1fr;
+
+        padding:
+            0 22px
+            25px;
+    }
+
+
+    .profile-actions {
+        padding:
+            20px 22px;
+    }
+
+
+    .edit-profile-panel {
+        margin:
+            0 22px
+            22px;
+
+        padding: 20px;
+    }
+
+
+    .edit-profile-fields {
+        grid-template-columns: 1fr;
+    }
+
+
+    .profile-primary-btn,
+    .profile-secondary-btn,
+    .profile-danger-btn {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .teacher-brand-main {
+        font-size: 19px !important;
+    }
+
+
+    .profile-intro {
+        align-items: flex-start;
+
+        padding: 22px 18px;
+    }
+
+
+    .teacher-avatar {
+        width: 62px;
+        height: 62px;
+
+        flex-basis: 62px;
+
+        border-radius: 15px;
+
+        font-size: 24px;
+    }
+
+
+    .profile-intro-content h2 {
+        font-size: 20px;
+    }
+
+
+    .profile-info-grid {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    .profile-section-heading {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    .profile-actions {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    .edit-profile-panel {
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+
+}

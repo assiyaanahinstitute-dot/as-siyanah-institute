@@ -1,0 +1,1212 @@
+/* =========================================================
+   AS-SIYĀNAH — EDIT TEST
+   Premium Teacher Portal
+========================================================= */
+
+:root {
+    --green-dark: #082a1b;
+    --green: #0f5132;
+    --green-light: #1d6b43;
+    --gold: #c9a227;
+
+    --page-bg: #f4f7f5;
+    --card-bg: #ffffff;
+
+    --text: #17231d;
+    --muted: #718078;
+
+    --border: #e2e9e4;
+
+    --shadow:
+        0 18px 45px rgba(8, 42, 27, 0.08);
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--page-bg);
+    color: var(--text);
+}
+
+
+/* =========================================================
+   PROFESSIONAL HEADER
+========================================================= */
+
+.teacher-header {
+    position: relative;
+    z-index: 1000;
+
+    width: 100%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #071f14 0%,
+            #0b3524 48%,
+            #10482e 100%
+        );
+
+    border-bottom: 1px solid rgba(201, 162, 39, 0.28);
+
+    box-shadow:
+        0 8px 28px rgba(4, 25, 16, 0.16);
+}
+
+
+/* subtle gold line */
+
+.teacher-header::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(201, 162, 39, 0.75),
+            transparent
+        );
+
+    opacity: 0.65;
+}
+
+
+.teacher-header-inner {
+    width: min(100% - 48px, 1180px);
+
+    min-height: 78px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.teacher-brand {
+    display: flex;
+    flex-direction: column;
+
+    min-width: max-content;
+}
+
+
+.teacher-brand-main {
+    color: #ffffff;
+
+    font-size: 20px;
+    font-weight: 850;
+
+    letter-spacing: 0.12em;
+
+    line-height: 1.1;
+}
+
+
+.teacher-brand-sub {
+    margin-top: 5px;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.teacher-nav {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+.teacher-nav a {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+
+    padding: 0 15px;
+
+    border-radius: 9px;
+
+    color: rgba(255, 255, 255, 0.70);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.teacher-nav a:hover {
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.075);
+
+    transform: translateY(-1px);
+}
+
+
+/* active page */
+
+.teacher-nav a.active {
+    color: #ffffff;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+}
+
+
+.teacher-nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 15px;
+    right: 15px;
+    bottom: 4px;
+
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: var(--gold);
+}
+
+
+/* =========================================================
+   THEME BUTTON
+========================================================= */
+
+.teacher-theme-toggle {
+    min-height: 40px;
+
+    margin-left: 7px;
+    padding: 0 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 9px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.teacher-theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.11);
+
+    border-color:
+        rgba(201, 162, 39, 0.45);
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   MAIN AREA
+========================================================= */
+
+.edit-test-main {
+    min-height: calc(100vh - 150px);
+
+    padding: 48px 24px 70px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f7f9f8 0%,
+            #f4f7f5 100%
+        );
+}
+
+
+.edit-test-container {
+    width: min(100%, 940px);
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.edit-test-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+}
+
+
+.test-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 10px;
+
+    color: var(--gold);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+
+.test-eyebrow::before {
+    content: "";
+
+    width: 24px;
+    height: 2px;
+
+    border-radius: 20px;
+
+    background: var(--gold);
+}
+
+
+.edit-test-heading h1 {
+    margin: 0;
+
+    color: var(--green-dark);
+
+    font-size: clamp(31px, 4vw, 42px);
+    font-weight: 800;
+
+    letter-spacing: -0.04em;
+}
+
+
+.edit-test-heading p {
+    max-width: 620px;
+
+    margin: 10px 0 0;
+
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.test-back-btn {
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    height: 44px;
+
+    padding: 0 16px;
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: var(--text);
+
+    font-size: 12px;
+    font-weight: 750;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 3px 12px rgba(8, 42, 27, 0.04);
+
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.test-back-btn:hover {
+    color: var(--green);
+
+    border-color: #b8cbbf;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.edit-test-card {
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    background: var(--card-bg);
+
+    box-shadow: var(--shadow);
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.test-card-header {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 24px 30px;
+}
+
+
+.test-card-icon {
+    width: 44px;
+    height: 44px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 11px;
+
+    background: var(--green);
+
+    color: #ffffff;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+
+.test-card-header span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--gold);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+}
+
+
+.test-card-header h2 {
+    margin: 0;
+
+    color: var(--green-dark);
+
+    font-size: 18px;
+}
+
+
+.test-card-divider {
+    height: 1px;
+
+    background: var(--border);
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#editTestForm {
+    padding: 30px;
+}
+
+
+.test-form-group {
+    margin-bottom: 24px;
+}
+
+
+.test-form-group label,
+.publish-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #26372e;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+.test-form-group input,
+.test-form-group select,
+.test-form-group textarea {
+    box-sizing: border-box;
+
+    width: 100%;
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    background: #fbfcfb;
+
+    color: var(--text);
+
+    font-family: inherit;
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.test-form-group input,
+.test-form-group select {
+    height: 47px;
+
+    padding: 0 13px;
+}
+
+
+.test-form-group textarea {
+    min-height: 135px;
+
+    padding: 13px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+
+.test-form-group input::placeholder,
+.test-form-group textarea::placeholder {
+    color: #a0aaa4;
+}
+
+
+.test-form-group input:focus,
+.test-form-group select:focus,
+.test-form-group textarea:focus {
+    border-color: var(--green-light);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px rgba(29, 107, 67, 0.08);
+}
+
+
+.test-form-group small {
+    display: block;
+
+    margin-top: 7px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.test-form-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   DURATION
+========================================================= */
+
+.duration-input {
+    position: relative;
+}
+
+
+.duration-input input {
+    padding-right: 82px !important;
+}
+
+
+.duration-input span {
+    position: absolute;
+
+    top: 50%;
+    right: 13px;
+
+    transform: translateY(-50%);
+
+    color: var(--muted);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PUBLISH
+========================================================= */
+
+.publish-box {
+    min-height: 47px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 13px;
+
+    box-sizing: border-box;
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    background: #fbfcfb;
+}
+
+
+.publish-switch {
+    display: flex !important;
+    align-items: center;
+
+    gap: 11px;
+
+    margin: 0 !important;
+
+    cursor: pointer;
+}
+
+
+.publish-switch input {
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+.switch-slider {
+    position: relative;
+
+    flex-shrink: 0;
+
+    width: 38px;
+    height: 21px;
+
+    border-radius: 30px;
+
+    background: #c9d1cc;
+
+    transition: background 0.2s ease;
+}
+
+
+.switch-slider::after {
+    content: "";
+
+    position: absolute;
+
+    top: 3px;
+    left: 3px;
+
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.15);
+
+    transition: transform 0.2s ease;
+}
+
+
+.publish-switch input:checked + .switch-slider {
+    background: var(--green-light);
+}
+
+
+.publish-switch input:checked + .switch-slider::after {
+    transform: translateX(17px);
+}
+
+
+.switch-text {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+
+.switch-text strong {
+    color: var(--text);
+
+    font-size: 11px;
+}
+
+
+.switch-text small {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.test-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 30px;
+    padding-top: 24px;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.test-cancel-btn,
+.test-save-btn {
+    min-height: 45px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 0 19px;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.test-cancel-btn {
+    border: 1px solid var(--border);
+
+    background: #ffffff;
+
+    color: var(--text);
+}
+
+
+.test-cancel-btn:hover {
+    background: #f6f8f7;
+
+    transform: translateY(-1px);
+}
+
+
+.test-save-btn {
+    border: 1px solid var(--green);
+
+    background: var(--green);
+
+    color: #ffffff;
+
+    box-shadow:
+        0 7px 18px rgba(8, 42, 27, 0.16);
+}
+
+
+.test-save-btn:hover {
+    background: var(--green-light);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 10px 24px rgba(8, 42, 27, 0.20);
+}
+
+
+.test-save-btn:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.test-form-message {
+    display: none;
+
+    margin: 24px 30px 0;
+
+    padding: 12px 14px;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+.test-form-message:not(:empty) {
+    display: block;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.teacher-footer {
+    border-top: 1px solid var(--border);
+
+    background: #ffffff;
+}
+
+
+.teacher-footer-inner {
+    width: min(100% - 48px, 1180px);
+
+    min-height: 68px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html.teacher-dark,
+html.teacher-dark body {
+    background: #07130d;
+
+    color: #edf4ef;
+}
+
+
+/* HEADER */
+
+html.teacher-dark .teacher-header {
+    background:
+        linear-gradient(
+            135deg,
+            #04150d,
+            #08291a,
+            #0b3923
+        );
+
+    border-bottom-color:
+        rgba(201, 162, 39, 0.25);
+}
+
+
+html.teacher-dark .teacher-nav a {
+    color: rgba(255, 255, 255, 0.67);
+}
+
+
+html.teacher-dark .teacher-nav a:hover,
+html.teacher-dark .teacher-nav a.active {
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* MAIN */
+
+html.teacher-dark .edit-test-main {
+    background:
+        linear-gradient(
+            180deg,
+            #08160f,
+            #07130d
+        );
+}
+
+
+html.teacher-dark .edit-test-heading h1 {
+    color: #f0f5f2;
+}
+
+
+html.teacher-dark .edit-test-heading p {
+    color: #8fa198;
+}
+
+
+/* BACK */
+
+html.teacher-dark .test-back-btn {
+    border-color: #294735;
+
+    background: #0d2116;
+
+    color: #e8f0eb;
+}
+
+
+html.teacher-dark .test-back-btn:hover {
+    border-color: #4b8061;
+
+    color: #a9d4b8;
+}
+
+
+/* CARD */
+
+html.teacher-dark .edit-test-card {
+    border-color: #223d2d;
+
+    background: #0c1d14;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.24);
+}
+
+
+html.teacher-dark .test-card-divider,
+html.teacher-dark .test-form-actions {
+    background: #223d2d;
+
+    border-color: #223d2d;
+}
+
+
+html.teacher-dark .test-card-header h2 {
+    color: #edf4ef;
+}
+
+
+/* INPUTS */
+
+html.teacher-dark .test-form-group label,
+html.teacher-dark .publish-label {
+    color: #dce8e1;
+}
+
+
+html.teacher-dark .test-form-group input,
+html.teacher-dark .test-form-group select,
+html.teacher-dark .test-form-group textarea {
+    border-color: #294735;
+
+    background: #091810;
+
+    color: #edf4ef;
+}
+
+
+html.teacher-dark .test-form-group input::placeholder,
+html.teacher-dark .test-form-group textarea::placeholder {
+    color: #65786d;
+}
+
+
+html.teacher-dark .test-form-group input:focus,
+html.teacher-dark .test-form-group select:focus,
+html.teacher-dark .test-form-group textarea:focus {
+    border-color: #4c8d68;
+
+    background: #0b1d13;
+
+    box-shadow:
+        0 0 0 3px rgba(76, 141, 104, 0.12);
+}
+
+
+html.teacher-dark .test-form-group small,
+html.teacher-dark .switch-text small {
+    color: #82968a;
+}
+
+
+/* PUBLISH */
+
+html.teacher-dark .publish-box {
+    border-color: #294735;
+
+    background: #091810;
+}
+
+
+html.teacher-dark .switch-text strong {
+    color: #e5eee8;
+}
+
+
+/* BUTTON */
+
+html.teacher-dark .test-cancel-btn {
+    border-color: #294735;
+
+    background: transparent;
+
+    color: #e7efe9;
+}
+
+
+html.teacher-dark .test-cancel-btn:hover {
+    background: #11261a;
+}
+
+
+/* FOOTER */
+
+html.teacher-dark .teacher-footer {
+    border-color: #223d2d;
+
+    background: #06110b;
+}
+
+
+html.teacher-dark .teacher-footer-inner {
+    color: #74877c;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .teacher-header-inner {
+        width: min(100% - 32px, 1180px);
+
+        min-height: auto;
+
+        padding: 15px 0;
+
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+
+    .teacher-nav {
+        width: 100%;
+
+        overflow-x: auto;
+
+        padding-bottom: 2px;
+    }
+
+
+    .teacher-nav a {
+        flex-shrink: 0;
+    }
+
+
+    .teacher-theme-toggle {
+        flex-shrink: 0;
+    }
+
+
+    .edit-test-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .test-back-btn {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .edit-test-main {
+        padding: 32px 16px 50px;
+    }
+
+
+    .test-form-grid {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+
+    .test-card-header {
+        padding: 21px;
+    }
+
+
+    #editTestForm {
+        padding: 21px;
+    }
+
+
+    .test-form-actions {
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+    }
+
+
+    .test-cancel-btn,
+    .test-save-btn {
+        width: 100%;
+    }
+
+
+    .teacher-footer-inner {
+        width: min(100% - 32px, 1180px);
+
+        min-height: 75px;
+
+        align-items: flex-start;
+        justify-content: center;
+
+        flex-direction: column;
+
+        gap: 4px;
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .teacher-brand-main {
+        font-size: 18px;
+    }
+
+
+    .teacher-brand-sub {
+        font-size: 9px;
+    }
+
+
+    .edit-test-heading h1 {
+        font-size: 30px;
+    }
+
+
+    .test-card-header {
+        gap: 11px;
+    }
+
+
+    .test-card-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+}

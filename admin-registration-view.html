@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Registration Details | As-Siyānah Institute
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin-portal.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     ADMIN HEADER
+     ===================================================== -->
+
+<header class="admin-header">
+
+    <div class="admin-header-inner">
+
+        <a
+            href="admin-dashboard.html"
+            class="admin-brand"
+        >
+
+            <div class="admin-brand-mark">
+                AS
+            </div>
+
+            <div class="admin-brand-text">
+
+                <strong>
+                    AS-SIYĀNAH
+                </strong>
+
+                <span>
+                    Admin Portal
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <button
+            type="button"
+            id="adminThemeToggle"
+            class="admin-theme-toggle"
+            aria-label="Switch to dark mode"
+        >
+
+            <span class="admin-theme-icon">
+                ☾
+            </span>
+
+            <span class="admin-theme-text">
+                Dark
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     ADMIN NAVIGATION
+     ===================================================== -->
+
+<nav class="admin-nav">
+
+    <a href="admin-dashboard.html">
+        Dashboard
+    </a>
+
+    <a href="admin-students.html">
+        Students
+    </a>
+
+    <a href="admin-teachers.html">
+        Teachers
+    </a>
+
+    <a href="admin-lessons.html">
+        Lessons
+    </a>
+
+    <a href="admin-results.html">
+        Results
+    </a>
+
+    <a href="admin-announcements.html">
+        Announcements
+    </a>
+
+    <a
+        href="admin-registrations.html"
+        class="active"
+    >
+        Registrations
+    </a>
+
+    <a href="admin-profile.html">
+        Profile
+    </a>
+
+</nav>
+
+
+
+<!-- =====================================================
+     MAIN
+     ===================================================== -->
+
+<main class="admin-registration-main">
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="admin-registration-header">
+
+        <div>
+
+            <p class="admin-registration-eyebrow">
+                REGISTRATION MANAGEMENT
+            </p>
+
+            <h1>
+                Registration Details
+            </h1>
+
+            <p>
+                Review and manage the complete student registration.
+            </p>
+
+        </div>
+
+
+        <a
+            href="admin-registrations.html"
+            class="admin-registration-back"
+        >
+            <span>←</span>
+            Back to Registrations
+        </a>
+
+    </section>
+
+
+
+    <!-- MESSAGE -->
+
+    <p
+        id="registrationMessage"
+        class="admin-registration-message"
+    >
+        Loading registration...
+    </p>
+
+
+
+    <!-- =================================================
+         REGISTRATION CARD
+         ================================================= -->
+
+    <section
+        id="registrationDetails"
+        class="admin-registration-card"
+        style="display: none;"
+    >
+
+
+        <!-- CARD HEADER -->
+
+        <div class="admin-registration-card-header">
+
+            <div>
+
+                <span class="admin-registration-card-label">
+                    STUDENT REGISTRATION
+                </span>
+
+                <h2>
+                    Applicant Information
+                </h2>
+
+            </div>
+
+            <div class="admin-registration-card-icon">
+                📝
+            </div>
+
+        </div>
+
+
+
+        <!-- DETAILS -->
+
+        <div class="admin-registration-grid">
+
+
+            <!-- REGISTRATION ID -->
+
+            <div class="admin-registration-field">
+
+                <span>
+                    Registration ID
+                </span>
+
+                <strong
+                    id="registrationId"
+                >
+                    N/A
+                </strong>
+
+            </div>
+
+
+            <!-- FULL NAME -->
+
+            <div class="admin-registration-field">
+
+                <span>
+                    Full Name
+                </span>
+
+                <strong
+                    id="registrationName"
+                >
+                    N/A
+                </strong>
+
+            </div>
+
+
+            <!-- GENDER -->
+
+            <div class="admin-registration-field">
+
+                <span>
+                    Gender
+                </span>
+
+                <strong
+                    id="registrationGender"
+                >
+                    N/A
+                </strong>
+
+            </div>
+
+
+            <!-- DATE OF BIRTH -->
+
+            <div class="admin-registration-field">
+
+                <span>
+                    Date of Birth
+                </span>
+
+                <strong
+                    id="registrationDateOfBirth"
+                >
+                    N/A
+                </strong>
+
+            </div>
+
+
+            <!-- COUNTRY -->
+
+            <div class="admin-registration-field">
+
+                <span>
+                    Country
+                </span>
+
+                <strong
+                    id="registrationCountry"
+                >
+                    N/A
+                </strong>
+
+            </div>
+
+
+            <!-- CITY -->
+
+            <div class="admin-registration-field">
+
+                <span>
+                    City
+                </span>
+
+                <strong
+                    id="registrationCity"
+                >
+                    N/A
+                </strong>
+
+            </div>
+
+
+            <!-- WHATSAPP -->
+
+            <div class="admin-registration-field">
+
+                <span>
+                    WhatsApp
+                </span>
+
+                <strong
+                    id="registrationWhatsApp"
+                >
+                    N/A
+                </strong>
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="admin-registration-field">
+
+                <span>
+                    Email Address
+                </span>
+
+                <strong
+                    id="registrationEmail"
+                >
+                    N/A
+                </strong>
+
+            </div>
+
+
+            <!-- PROGRAMME -->
+
+            <div class="admin-registration-field">
+
+                <span>
+                    Programme
+                </span>
+
+                <strong
+                    id="registrationProgramme"
+                >
+                    N/A
+                </strong>
+
+            </div>
+
+
+            <!-- LEVEL -->
+
+            <div class="admin-registration-field">
+
+                <span>
+                    Level
+                </span>
+
+                <strong
+                    id="registrationLevel"
+                >
+                    N/A
+                </strong>
+
+            </div>
+
+
+            <!-- EDUCATION -->
+
+            <div class="admin-registration-field">
+
+                <span>
+                    Education
+                </span>
+
+                <strong
+                    id="registrationEducation"
+                >
+                    N/A
+                </strong>
+
+            </div>
+
+
+            <!-- CLASS TIME -->
+
+            <div class="admin-registration-field">
+
+                <span>
+                    Class Time
+                </span>
+
+                <strong
+                    id="registrationClassTime"
+                >
+                    N/A
+                </strong>
+
+            </div>
+
+
+            <!-- DEVICE -->
+
+            <div class="admin-registration-field">
+
+                <span>
+                    Device
+                </span>
+
+                <strong
+                    id="registrationDevice"
+                >
+                    N/A
+                </strong>
+
+            </div>
+
+
+            <!-- SOURCE -->
+
+            <div class="admin-registration-field">
+
+                <span>
+                    How They Heard About Us
+                </span>
+
+                <strong
+                    id="registrationSource"
+                >
+                    N/A
+                </strong>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div class="admin-registration-field admin-registration-message-field">
+
+                <span>
+                    Applicant Message
+                </span>
+
+                <strong
+                    id="registrationFullMessage"
+                >
+                    N/A
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             STATUS MANAGEMENT
+             ================================================= -->
+
+        <div class="admin-registration-status-section">
+
+            <div class="admin-registration-status-heading">
+
+                <div>
+
+                    <span>
+                        REGISTRATION STATUS
+                    </span>
+
+                    <h3>
+                        Application Decision
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-registration-status-controls">
+
+                <select
+                    id="registrationStatus"
+                    class="admin-status-select"
+                >
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                    <option value="Approved">
+                        Approved
+                    </option>
+
+                    <option value="Rejected">
+                        Rejected
+                    </option>
+
+                </select>
+
+
+                <button
+                    type="button"
+                    id="saveRegistrationStatus"
+                    class="admin-primary-button"
+                >
+                    Save Status
+                </button>
+
+
+                <button
+                    type="button"
+                    id="convertToStudentButton"
+                    class="admin-convert-button"
+                >
+                    Convert to Student
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="admin-footer">
+
+    <p>
+        © 2026 As-Siyānah Institute for Arabic & Islamic Studies
+    </p>
+
+</footer>
+
+
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script>
+
+const SUPABASE_URL =
+    "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+const SUPABASE_ANON_KEY =
+    "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+const supabaseClient =
+    supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_ANON_KEY
+    );
+
+</script>
+
+
+<!-- EXISTING REGISTRATION JAVASCRIPT -->
+
+<script src="js/admin-registration-view.js"></script>
+
+
+<!-- GLOBAL ADMIN DARK MODE -->
+
+<script src="js/admin-theme.js"></script>
+
+
+</body>
+
+</html>

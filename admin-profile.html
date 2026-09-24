@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Profile | As-Siyānah Institute</title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin-portal.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="admin-header">
+
+    <div class="admin-header-inner">
+
+        <a
+            href="admin-dashboard.html"
+            class="admin-brand"
+        >
+
+            <div class="admin-brand-mark">
+                AS
+            </div>
+
+            <div class="admin-brand-text">
+
+                <strong>
+                    AS-SIYĀNAH
+                </strong>
+
+                <span>
+                    Admin Portal
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <button
+            type="button"
+            id="adminThemeToggle"
+            class="admin-theme-toggle"
+            aria-label="Switch to dark mode"
+        >
+
+            <span class="admin-theme-icon">
+                ☾
+            </span>
+
+            <span class="admin-theme-text">
+                Dark
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<nav class="admin-nav">
+
+    <a href="admin-dashboard.html">
+        Dashboard
+    </a>
+
+    <a href="admin-students.html">
+        Students
+    </a>
+
+    <a href="admin-teachers.html">
+        Teachers
+    </a>
+
+    <a href="admin-lessons.html">
+        Lessons
+    </a>
+
+    <a href="admin-results.html">
+        Results
+    </a>
+
+    <a href="admin-announcements.html">
+        Announcements
+    </a>
+
+    <a href="admin-registrations.html">
+        Registrations
+    </a>
+
+    <a
+        href="admin-profile.html"
+        class="active"
+    >
+        Profile
+    </a>
+
+</nav>
+
+
+<main class="admin-profile-main">
+
+
+    <!-- PAGE INTRO -->
+
+    <section class="admin-profile-intro">
+
+        <p class="admin-profile-eyebrow">
+            ACCOUNT
+        </p>
+
+        <h1>
+            Admin Profile
+        </h1>
+
+        <p>
+            View your administrator account information.
+        </p>
+
+    </section>
+
+
+    <!-- PROFILE CARD -->
+
+    <section class="admin-profile-card">
+
+
+        <div class="admin-profile-top">
+
+            <div
+                class="admin-profile-avatar"
+                id="profileAvatar"
+            >
+                A
+            </div>
+
+
+            <div class="admin-profile-heading">
+
+                <span class="admin-profile-badge">
+                    ADMINISTRATOR
+                </span>
+
+                <h2 id="profileName">
+                    Loading...
+                </h2>
+
+                <p>
+                    As-Siyānah Institute Administrator
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-profile-divider"></div>
+
+
+        <div class="admin-profile-info">
+
+
+            <div class="admin-profile-item">
+
+                <div class="admin-profile-item-icon">
+                    👤
+                </div>
+
+                <div>
+
+                    <span>
+                        Full Name
+                    </span>
+
+                    <strong id="profileFullName">
+                        Loading...
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-profile-item">
+
+                <div class="admin-profile-item-icon">
+                    ✉
+                </div>
+
+                <div>
+
+                    <span>
+                        Email Address
+                    </span>
+
+                    <strong id="profileEmail">
+                        Loading...
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-profile-item">
+
+                <div class="admin-profile-item-icon">
+                    🛡
+                </div>
+
+                <div>
+
+                    <span>
+                        Account Role
+                    </span>
+
+                    <strong>
+                        Administrator
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="admin-profile-actions">
+
+            <button
+                class="admin-profile-logout"
+                id="logoutButton"
+            >
+                <span>
+                    ↪
+                </span>
+
+                Logout
+            </button>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+<footer class="admin-footer">
+
+    <p>
+        © 2026 As-Siyānah Institute for Arabic & Islamic Studies
+    </p>
+
+</footer>
+
+
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script>
+
+const SUPABASE_URL =
+    "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+const SUPABASE_ANON_KEY =
+    "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+
+const supabaseClient =
+    supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_ANON_KEY
+    );
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    async function () {
+
+        const {
+            data: sessionData,
+            error: sessionError
+        } =
+            await supabaseClient.auth.getSession();
+
+
+        if (
+            sessionError ||
+            !sessionData.session
+        ) {
+
+            window.location.href =
+                "admin-login.html";
+
+            return;
+        }
+
+
+        const user =
+            sessionData.session.user;
+
+
+        // ========================================
+        // LOAD ADMIN PROFILE
+        // ========================================
+
+        const {
+            data: admin,
+            error: adminError
+        } =
+            await supabaseClient
+                .from("Admin")
+                .select(`
+                    full_name,
+                    email,
+                    role
+                `)
+                .eq(
+                    "auth_id",
+                    user.id
+                )
+                .single();
+
+
+        if (adminError) {
+
+            console.error(
+                "Admin profile error:",
+                adminError
+            );
+
+
+            document.getElementById(
+                "profileName"
+            ).textContent =
+                "Administrator";
+
+
+            document.getElementById(
+                "profileFullName"
+            ).textContent =
+                "Administrator";
+
+
+            document.getElementById(
+                "profileEmail"
+            ).textContent =
+                user.email || "N/A";
+
+
+            return;
+        }
+
+
+        const fullName =
+            admin.full_name ||
+            "Administrator";
+
+
+        const email =
+            admin.email ||
+            user.email ||
+            "N/A";
+
+
+        // ========================================
+        // DISPLAY ADMIN INFORMATION
+        // ========================================
+
+        document.getElementById(
+            "profileName"
+        ).textContent =
+            fullName;
+
+
+        document.getElementById(
+            "profileFullName"
+        ).textContent =
+            fullName;
+
+
+        document.getElementById(
+            "profileEmail"
+        ).textContent =
+            email;
+
+
+        document.getElementById(
+            "profileAvatar"
+        ).textContent =
+            fullName
+                .charAt(0)
+                .toUpperCase();
+
+    });
+
+
+// ========================================
+// LOGOUT
+// ========================================
+
+document.getElementById(
+    "logoutButton"
+).addEventListener(
+    "click",
+    async function () {
+
+        await supabaseClient.auth.signOut();
+
+        window.location.href =
+            "admin-login.html";
+
+    }
+);
+
+</script>
+
+
+<!-- GLOBAL ADMIN THEME -->
+
+<script src="js/admin-theme.js"></script>
+
+
+</body>
+
+</html>

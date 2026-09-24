@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Teacher Login | As-Siyānah Institute
+    </title>
+
+
+    <style>
+
+        /* =====================================================
+           ROOT
+        ===================================================== */
+
+        :root {
+
+            --green: #164d32;
+            --green-dark: #0b3524;
+            --green-light: #246b47;
+
+            --gold: #c9a227;
+
+            --bg: #f4f7f5;
+            --surface: #ffffff;
+
+            --text: #15291e;
+            --muted: #718078;
+
+            --border: #dfe7e2;
+
+            --danger: #b44b4b;
+
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            min-height: 100%;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            background: var(--bg);
+
+            color: var(--text);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px 18px;
+
+            transition:
+                background 0.25s ease,
+                color 0.25s ease;
+
+        }
+
+
+        /* =====================================================
+           LOGIN WRAPPER
+        ===================================================== */
+
+        .login-page {
+
+            width: 100%;
+            max-width: 1080px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 430px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 60px rgba(10, 48, 31, 0.09);
+
+        }
+
+
+        /* =====================================================
+           BRAND PANEL
+        ===================================================== */
+
+        .brand-panel {
+
+            position: relative;
+
+            min-height: 620px;
+
+            padding: 55px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #0b3524 0%,
+                    #164d32 55%,
+                    #1d5e3c 100%
+                );
+
+            color: white;
+
+            overflow: hidden;
+
+        }
+
+
+        .brand-panel::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 420px;
+            height: 420px;
+
+            right: -180px;
+            bottom: -190px;
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 50%;
+
+        }
+
+
+        .brand-panel::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 260px;
+            height: 260px;
+
+            right: -100px;
+            bottom: -110px;
+
+            border: 1px solid rgba(255,255,255,0.07);
+
+            border-radius: 50%;
+
+        }
+
+
+        .brand-content {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* =====================================================
+           LOGO
+        ===================================================== */
+
+        .brand-logo {
+
+            display: inline-flex;
+
+            flex-direction: column;
+
+            gap: 4px;
+
+            text-decoration: none;
+
+            margin-bottom: 70px;
+
+        }
+
+
+        .brand-logo-main {
+
+            font-size: 25px;
+
+            font-weight: 800;
+
+            letter-spacing: -0.5px;
+
+            color: #ffffff;
+
+        }
+
+
+        .brand-logo-sub {
+
+            color: #d8b84a;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.8px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =====================================================
+           BRAND CONTENT
+        ===================================================== */
+
+        .brand-eyebrow {
+
+            display: inline-block;
+
+            margin-bottom: 15px;
+
+            color: #d8b84a;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.8px;
+
+        }
+
+
+        .brand-panel h1 {
+
+            max-width: 500px;
+
+            margin: 0 0 18px;
+
+            font-size: clamp(34px, 4vw, 52px);
+
+            line-height: 1.08;
+
+            letter-spacing: -1.4px;
+
+            font-weight: 800;
+
+        }
+
+
+        .brand-description {
+
+            max-width: 480px;
+
+            margin: 0;
+
+            color: rgba(255,255,255,0.72);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =====================================================
+           BRAND FOOTER
+        ===================================================== */
+
+        .brand-footer {
+
+            position: relative;
+
+            z-index: 2;
+
+            padding-top: 30px;
+
+            border-top:
+                1px solid rgba(255,255,255,0.12);
+
+        }
+
+
+        .brand-footer p {
+
+            margin: 0;
+
+            color: rgba(255,255,255,0.55);
+
+            font-size: 11px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           LOGIN PANEL
+        ===================================================== */
+
+        .login-panel {
+
+            padding: 50px 42px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+        }
+
+
+        .login-heading {
+
+            margin-bottom: 32px;
+
+        }
+
+
+        .login-heading h2 {
+
+            margin: 0 0 8px;
+
+            color: var(--text);
+
+            font-size: 28px;
+
+            font-weight: 800;
+
+            letter-spacing: -0.6px;
+
+        }
+
+
+        .login-heading p {
+
+            margin: 0;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        .login-form {
+
+            width: 100%;
+
+        }
+
+
+        .form-group {
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: var(--text);
+
+            font-size: 12px;
+
+            font-weight: 750;
+
+        }
+
+
+        .input-wrapper {
+
+            position: relative;
+
+        }
+
+
+        .input-icon {
+
+            position: absolute;
+
+            left: 14px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            font-size: 15px;
+
+            opacity: 0.65;
+
+            pointer-events: none;
+
+        }
+
+
+        .form-group input {
+
+            width: 100%;
+
+            height: 48px;
+
+            padding:
+                0 14px 0 43px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 10px;
+
+            outline: none;
+
+            background: #ffffff;
+
+            color: var(--text);
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            transition:
+                border-color 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+
+        }
+
+
+        .form-group input::placeholder {
+
+            color: #9ba69f;
+
+        }
+
+
+        .form-group input:focus {
+
+            border-color: var(--green-light);
+
+            box-shadow:
+                0 0 0 3px
+                rgba(29, 94, 60, 0.10);
+
+        }
+
+
+        /* =====================================================
+           FORGOT PASSWORD
+        ===================================================== */
+
+        .forgot-row {
+
+            display: flex;
+
+            justify-content: flex-end;
+
+            margin-top: -7px;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .forgot-row a {
+
+            color: var(--green);
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+        }
+
+
+        .forgot-row a:hover {
+
+            color: var(--gold);
+
+        }
+
+
+        /* =====================================================
+           LOGIN BUTTON
+        ===================================================== */
+
+        .login-button {
+
+            width: 100%;
+
+            min-height: 48px;
+
+            border: 0;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #164d32,
+                    #0d3b26
+                );
+
+            color: #ffffff;
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            font-weight: 750;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 7px 18px
+                rgba(22, 77, 50, 0.17);
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                opacity 0.2s ease;
+
+        }
+
+
+        .login-button:hover {
+
+            transform: translateY(-1px);
+
+            box-shadow:
+                0 10px 23px
+                rgba(22, 77, 50, 0.23);
+
+        }
+
+
+        .login-button:active {
+
+            transform: translateY(0);
+
+        }
+
+
+        /* =====================================================
+           SECONDARY LINKS
+        ===================================================== */
+
+        .login-links {
+
+            margin-top: 28px;
+
+            padding-top: 22px;
+
+            border-top:
+                1px solid var(--border);
+
+            text-align: center;
+
+        }
+
+
+        .login-links p {
+
+            margin: 8px 0;
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            line-height: 1.6;
+
+        }
+
+
+        .login-links a {
+
+            color: var(--green);
+
+            font-weight: 750;
+
+            text-decoration: none;
+
+        }
+
+
+        .login-links a:hover {
+
+            color: var(--gold);
+
+        }
+
+
+        /* =====================================================
+           THEME TOGGLE
+        ===================================================== */
+
+        .theme-toggle {
+
+            position: fixed;
+
+            top: 20px;
+
+            right: 20px;
+
+            z-index: 100;
+
+            min-height: 38px;
+
+            padding: 0 13px;
+
+            border:
+                1px solid #d8e1db;
+
+            border-radius: 9px;
+
+            background: #ffffff;
+
+            color: #30453a;
+
+            font-family: inherit;
+
+            font-size: 11px;
+
+            font-weight: 750;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.06);
+
+            transition:
+                background 0.2s ease,
+                border-color 0.2s ease;
+
+        }
+
+
+        .theme-toggle:hover {
+
+            background: #f5f8f6;
+
+            border-color: #c3d0c8;
+
+        }
+
+
+        /* =====================================================
+           DARK MODE
+        ===================================================== */
+
+        html.dark-mode body {
+
+            background: #050e09;
+
+            color: #e8f0eb;
+
+        }
+
+
+        html.dark-mode .login-page {
+
+            background: #0c1b13;
+
+            border-color: #1d3327;
+
+            box-shadow:
+                0 20px 60px
+                rgba(0,0,0,0.30);
+
+        }
+
+
+        html.dark-mode .login-panel {
+
+            background: #0c1b13;
+
+        }
+
+
+        html.dark-mode .login-heading h2 {
+
+            color: #edf4ef;
+
+        }
+
+
+        html.dark-mode .login-heading p {
+
+            color: #99a89f;
+
+        }
+
+
+        html.dark-mode .form-group label {
+
+            color: #dce8e0;
+
+        }
+
+
+        html.dark-mode .form-group input {
+
+            background: #09150f;
+
+            border-color: #2a4034;
+
+            color: #edf5ef;
+
+        }
+
+
+        html.dark-mode .form-group input::placeholder {
+
+            color: #697970;
+
+        }
+
+
+        html.dark-mode .form-group input:focus {
+
+            border-color: #4d956d;
+
+            background: #0b1811;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(77,149,109,0.15);
+
+        }
+
+
+        html.dark-mode .forgot-row a {
+
+            color: #8cc39f;
+
+        }
+
+
+        html.dark-mode .login-links {
+
+            border-color: #20372a;
+
+        }
+
+
+        html.dark-mode .login-links p {
+
+            color: #85958c;
+
+        }
+
+
+        html.dark-mode .login-links a {
+
+            color: #8fc8a3;
+
+        }
+
+
+        html.dark-mode .theme-toggle {
+
+            background: #102219;
+
+            border-color: #2b4235;
+
+            color: #dbe7df;
+
+            box-shadow: none;
+
+        }
+
+
+        html.dark-mode .theme-toggle:hover {
+
+            background: #162d21;
+
+            border-color: #3a5747;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            body {
+
+                padding: 75px 16px 25px;
+
+                align-items: flex-start;
+
+            }
+
+
+            .login-page {
+
+                grid-template-columns: 1fr;
+
+                max-width: 500px;
+
+            }
+
+
+            .brand-panel {
+
+                min-height: auto;
+
+                padding: 35px;
+
+            }
+
+
+            .brand-logo {
+
+                margin-bottom: 45px;
+
+            }
+
+
+            .brand-panel h1 {
+
+                font-size: 34px;
+
+            }
+
+
+            .brand-footer {
+
+                margin-top: 50px;
+
+            }
+
+
+            .login-panel {
+
+                padding: 40px 30px;
+
+            }
+
+        }
+
+
+        @media (max-width: 480px) {
+
+            body {
+
+                padding:
+                    70px 12px
+                    20px;
+
+            }
+
+
+            .theme-toggle {
+
+                top: 14px;
+
+                right: 14px;
+
+            }
+
+
+            .brand-panel {
+
+                padding: 28px 24px;
+
+            }
+
+
+            .brand-logo-main {
+
+                font-size: 22px;
+
+            }
+
+
+            .brand-panel h1 {
+
+                font-size: 30px;
+
+            }
+
+
+            .brand-description {
+
+                font-size: 13px;
+
+            }
+
+
+            .login-panel {
+
+                padding:
+                    32px 22px;
+
+            }
+
+
+            .login-heading h2 {
+
+                font-size: 25px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     DARK MODE BUTTON
+===================================================== -->
+
+<button
+    type="button"
+    id="themeToggle"
+    class="theme-toggle"
+    aria-label="Toggle dark mode"
+>
+    🌙 Dark Mode
+</button>
+
+
+
+<!-- =====================================================
+     LOGIN PAGE
+===================================================== -->
+
+<div class="login-page">
+
+
+    <!-- =================================================
+         BRAND PANEL
+    ================================================== -->
+
+    <section class="brand-panel">
+
+
+        <div class="brand-content">
+
+
+            <a
+                href="index.html"
+                class="brand-logo"
+            >
+
+                <span class="brand-logo-main">
+                    As-Siyānah
+                </span>
+
+                <span class="brand-logo-sub">
+                    Institute for Arabic & Islamic Studies
+                </span>
+
+            </a>
+
+
+            <span class="brand-eyebrow">
+                TEACHER PORTAL
+            </span>
+
+
+            <h1>
+                Teach. Guide. Inspire.
+            </h1>
+
+
+            <p class="brand-description">
+                Access your teaching workspace, manage students,
+                publish lessons, record results and communicate
+                with your learners from one secure portal.
+            </p>
+
+
+        </div>
+
+
+
+        <div class="brand-footer">
+
+            <p>
+                AS-SIYĀNAH INSTITUTE FOR ARABIC & ISLAMIC STUDIES
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         LOGIN PANEL
+    ================================================== -->
+
+    <section class="login-panel">
+
+
+        <div class="login-heading">
+
+            <h2>
+                Welcome back
+            </h2>
+
+            <p>
+                Sign in to continue to your Teacher Portal.
+            </p>
+
+        </div>
+
+
+
+        <form
+            id="teacherLoginForm"
+            class="login-form"
+        >
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label for="teacherEmail">
+                    Email Address
+                </label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        ✉
+                    </span>
+
+                    <input
+                        type="email"
+                        id="teacherEmail"
+                        placeholder="Enter your email address"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PASSWORD -->
+
+            <div class="form-group">
+
+                <label for="teacherPassword">
+                    Password
+                </label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        🔒
+                    </span>
+
+                    <input
+                        type="password"
+                        id="teacherPassword"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FORGOT PASSWORD -->
+
+            <div class="forgot-row">
+
+                <a href="forget-password.html">
+                    Forgot Password?
+                </a>
+
+            </div>
+
+
+
+            <!-- LOGIN -->
+
+            <button
+                type="submit"
+                class="login-button"
+            >
+                Login to Teacher Portal
+            </button>
+
+
+        </form>
+
+
+
+        <!-- LINKS -->
+
+        <div class="login-links">
+
+            <p>
+
+                Student?
+
+                <a href="login.html">
+                    Student Login
+                </a>
+
+            </p>
+
+
+            <p>
+
+                <a href="index.html">
+                    ← Back to Homepage
+                </a>
+
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<!-- YOUR EXISTING LOGIN JAVASCRIPT -->
+
+<script src="js/teacher-login.js"></script>
+
+
+
+<!-- =====================================================
+     DARK MODE
+===================================================== -->
+
+<script>
+
+(function () {
+
+    const STORAGE_KEY =
+        "as-siyanah-teacher-login-theme";
+
+    const html =
+        document.documentElement;
+
+    const button =
+        document.getElementById("themeToggle");
+
+
+    function applyTheme() {
+
+        const saved =
+            localStorage.getItem(STORAGE_KEY);
+
+        if (saved === "dark") {
+
+            html.classList.add("dark-mode");
+
+        } else {
+
+            html.classList.remove("dark-mode");
+
+        }
+
+        updateButton();
+
+    }
+
+
+    function updateButton() {
+
+        const isDark =
+            html.classList.contains("dark-mode");
+
+        button.textContent =
+            isDark
+                ? "☀️ Light Mode"
+                : "🌙 Dark Mode";
+
+        button.setAttribute(
+            "aria-pressed",
+            isDark ? "true" : "false"
+        );
+
+    }
+
+
+    button.addEventListener(
+        "click",
+        function () {
+
+            const isDark =
+                html.classList.toggle("dark-mode");
+
+            localStorage.setItem(
+                STORAGE_KEY,
+                isDark ? "dark" : "light"
+            );
+
+            updateButton();
+
+        }
+    );
+
+
+    applyTheme();
+
+})();
+
+</script>
+
+
+</body>
+
+</html>

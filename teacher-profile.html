@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Teacher Profile | As-Siyānah Institute</title>
+
+    <!-- GLOBAL TEACHER STYLES -->
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal-dark.css"
+    >
+
+    <!-- PAGE-SPECIFIC STYLES -->
+    <link
+        rel="stylesheet"
+        href="css/teacher-profile.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="teacher-header">
+
+    <div class="teacher-header-inner">
+
+
+        <!-- BRAND -->
+
+        <a
+            href="teacher-dashboard.html"
+            class="teacher-brand"
+        >
+
+            <span class="teacher-brand-main">
+                As-Siyānah
+            </span>
+
+            <span class="teacher-brand-sub">
+                Teacher Portal
+            </span>
+
+        </a>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="teacher-nav">
+
+            <a href="teacher-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="teacher-students.html">
+                Students
+            </a>
+
+            <a href="teacher-lessons.html">
+                Lessons
+            </a>
+
+            <a href="teacher-results-list.html">
+                Results
+            </a>
+
+            <a href="teacher-announcements.html">
+                Announcements
+            </a>
+
+            <a
+                href="teacher-profile.html"
+                class="active"
+            >
+                Profile
+            </a>
+
+            <button
+                type="button"
+                class="teacher-theme-toggle"
+            >
+                🌙 Dark Mode
+            </button>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main class="teacher-profile-main">
+
+
+    <div class="teacher-profile-container">
+
+
+        <!-- PAGE HEADING -->
+
+        <section class="teacher-profile-heading">
+
+            <div>
+
+                <span class="profile-eyebrow">
+                    TEACHER ACCOUNT
+                </span>
+
+                <h1>
+                    My Profile
+                </h1>
+
+                <p>
+                    View and manage your teacher account information.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PROFILE CARD
+        ========================= -->
+
+        <section class="profile-card">
+
+
+            <!-- PROFILE INTRO -->
+
+            <div class="profile-intro">
+
+
+                <div
+                    class="teacher-avatar"
+                    id="teacherInitial"
+                >
+                    👤
+                </div>
+
+
+                <div class="profile-intro-content">
+
+                    <h2 id="teacherName">
+                        Loading...
+                    </h2>
+
+                    <p id="teacherRole">
+                        Teacher
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- DIVIDER -->
+
+            <div class="profile-divider"></div>
+
+
+
+            <!-- ACCOUNT INFORMATION -->
+
+            <div class="profile-section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        ACCOUNT INFORMATION
+                    </span>
+
+                    <h3>
+                        Personal & account details
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="profile-info-grid">
+
+
+                <!-- TEACHER ID -->
+
+                <div class="profile-info-item">
+
+                    <span class="info-label">
+                        Teacher ID
+                    </span>
+
+                    <strong id="teacherId">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <!-- FULL NAME -->
+
+                <div class="profile-info-item">
+
+                    <span class="info-label">
+                        Full Name
+                    </span>
+
+                    <strong id="teacherFullName">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="profile-info-item">
+
+                    <span class="info-label">
+                        Email Address
+                    </span>
+
+                    <strong
+                        id="teacherEmail"
+                        class="break-email"
+                    >
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <!-- ROLE -->
+
+                <div class="profile-info-item">
+
+                    <span class="info-label">
+                        Account Role
+                    </span>
+
+                    <strong
+                        id="teacherRoleCard"
+                        class="role-value"
+                    >
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <!-- CREATED -->
+
+                <div class="profile-info-item">
+
+                    <span class="info-label">
+                        Account Created
+                    </span>
+
+                    <strong id="teacherCreatedAt">
+                        —
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 ACTIONS
+            ========================= -->
+
+            <div class="profile-actions">
+
+
+                <button
+                    type="button"
+                    id="editProfileButton"
+                    class="profile-primary-btn"
+                >
+                    <span>✏️</span>
+                    Edit Profile
+                </button>
+
+
+                <button
+                    type="button"
+                    id="changePasswordButton"
+                    class="profile-secondary-btn"
+                >
+                    <span>🔐</span>
+                    Change Password
+                </button>
+
+
+                <button
+                    type="button"
+                    id="teacherLogoutButton"
+                    class="profile-danger-btn"
+                >
+                    <span>↪</span>
+                    Log Out
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 EDIT PROFILE
+            ========================= -->
+
+            <div
+                id="editProfileForm"
+                class="edit-profile-panel"
+            >
+
+
+                <div class="edit-panel-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            PROFILE SETTINGS
+                        </span>
+
+                        <h3>
+                            Edit Profile
+                        </h3>
+
+                        <p>
+                            Update your teacher account information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="edit-profile-fields">
+
+
+                    <!-- FULL NAME -->
+
+                    <div class="profile-field">
+
+                        <label for="editFullName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editFullName"
+                            placeholder="Enter your full name"
+                        >
+
+                    </div>
+
+
+
+                    <!-- EMAIL -->
+
+                    <div class="profile-field">
+
+                        <label for="editEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="editEmail"
+                            placeholder="Enter your email"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- FORM BUTTONS -->
+
+                <div class="edit-profile-actions">
+
+
+                    <button
+                        type="button"
+                        id="saveProfileButton"
+                        class="profile-primary-btn"
+                    >
+                        <span>💾</span>
+                        Save Changes
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="cancelEditButton"
+                        class="profile-secondary-btn"
+                    >
+                        Cancel
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="teacher-footer">
+
+    <div class="teacher-footer-inner">
+
+        <p>
+            © 2026 As-Siyānah Institute for Arabic and Islamic Studies.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<!-- THEME -->
+
+<script src="js/teacher-theme.js"></script>
+
+
+<!-- EXISTING PROFILE FUNCTIONALITY -->
+
+<script src="js/teacher-profile.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Test Questions | As-Siyānah Institute
+    </title>
+
+
+    <!-- GLOBAL TEACHER PORTAL -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal-dark.css"
+    >
+
+
+    <!-- PAGE STYLES -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-test-questions.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="teacher-header">
+
+    <div class="teacher-header-inner">
+
+
+        <a
+            href="index.html"
+            class="teacher-brand"
+        >
+
+            <span class="teacher-brand-main">
+                As-Siyānah
+            </span>
+
+            <span class="teacher-brand-sub">
+                Teacher Portal
+            </span>
+
+        </a>
+
+
+        <nav class="teacher-nav">
+
+            <a href="teacher-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="teacher-students.html">
+                Students
+            </a>
+
+            <a href="teacher-lessons.html">
+                Lessons
+            </a>
+
+            <a href="teacher-results.html">
+                Results
+            </a>
+
+            <a href="teacher-assignment-submissions.html">
+                Assignments
+            </a>
+
+            <a
+                href="teacher-tests.html"
+                class="active"
+            >
+                Tests
+            </a>
+
+            <a href="teacher-attendance.html">
+                Attendance
+            </a>
+
+            <a href="teacher-announcements.html">
+                Announcements
+            </a>
+
+            <a href="teacher-profile.html">
+                Profile
+            </a>
+
+        </nav>
+
+
+        <button
+            type="button"
+            class="teacher-theme-toggle"
+            aria-label="Switch to dark mode"
+            aria-pressed="false"
+        >
+            🌙 Dark Mode
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="test-questions-main">
+
+
+    <div class="test-questions-container">
+
+
+        <!-- =================================================
+             PAGE HEADING
+        ================================================= -->
+
+        <div class="page-heading">
+
+
+            <div class="page-heading-content">
+
+                <span class="page-eyebrow">
+                    TEST BUILDER
+                </span>
+
+                <h1 id="testTitle">
+                    Loading Test...
+                </h1>
+
+                <p id="testDescription">
+                    Loading test details...
+                </p>
+
+            </div>
+
+
+            <a
+                href="teacher-tests.html"
+                class="back-btn"
+            >
+                ← Back to Tests
+            </a>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             TEST INFORMATION
+        ================================================= -->
+
+        <section class="test-info-card">
+
+
+            <div class="info-item">
+
+                <span class="info-label">
+                    SUBJECT
+                </span>
+
+                <strong id="testSubject">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <span class="info-label">
+                    LEVEL
+                </span>
+
+                <strong id="testLevel">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <span class="info-label">
+                    DURATION
+                </span>
+
+                <strong id="testDuration">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <span class="info-label">
+                    QUESTIONS
+                </span>
+
+                <strong id="questionCount">
+                    0
+                </strong>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             MESSAGE
+        ================================================= -->
+
+        <div id="message"></div>
+
+
+
+        <!-- =================================================
+             QUESTION BUILDER
+        ================================================= -->
+
+        <section class="question-form-card">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-eyebrow">
+                        QUESTION BUILDER
+                    </span>
+
+                    <h2>
+                        Add Question
+                    </h2>
+
+                    <p>
+                        Create a question and define its correct answer.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="section-divider"></div>
+
+
+
+            <form id="questionForm">
+
+
+                <!-- QUESTION -->
+
+                <div class="form-group">
+
+                    <label for="questionText">
+                        Question
+                    </label>
+
+                    <textarea
+                        id="questionText"
+                        rows="4"
+                        placeholder="Write your question here..."
+                        required
+                    ></textarea>
+
+                    <small>
+                        Write a clear question for your students.
+                    </small>
+
+                </div>
+
+
+
+                <!-- QUESTION TYPE -->
+
+                <div class="form-group">
+
+                    <label for="questionType">
+                        Question Type
+                    </label>
+
+                    <select id="questionType">
+
+                        <option value="multiple_choice">
+                            Multiple Choice
+                        </option>
+
+                        <option value="true_false">
+                            True / False
+                        </option>
+
+                        <option value="short_answer">
+                            Short Answer
+                        </option>
+
+                        <option value="essay">
+                            Essay
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- MULTIPLE CHOICE -->
+
+                <div
+                    id="multipleChoiceSection"
+                    class="options-section"
+                >
+
+
+                    <div class="options-heading">
+
+                        <div>
+
+                            <span class="section-eyebrow">
+                                ANSWER OPTIONS
+                            </span>
+
+                            <h3>
+                                Multiple Choice Answers
+                            </h3>
+
+                            <p>
+                                Select the correct option.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="option-row">
+
+                        <input
+                            type="radio"
+                            name="correctAnswer"
+                            value="A"
+                            checked
+                        >
+
+                        <span class="option-letter">
+                            A
+                        </span>
+
+                        <input
+                            type="text"
+                            id="optionA"
+                            placeholder="Enter option A"
+                        >
+
+                    </div>
+
+
+
+                    <div class="option-row">
+
+                        <input
+                            type="radio"
+                            name="correctAnswer"
+                            value="B"
+                        >
+
+                        <span class="option-letter">
+                            B
+                        </span>
+
+                        <input
+                            type="text"
+                            id="optionB"
+                            placeholder="Enter option B"
+                        >
+
+                    </div>
+
+
+
+                    <div class="option-row">
+
+                        <input
+                            type="radio"
+                            name="correctAnswer"
+                            value="C"
+                        >
+
+                        <span class="option-letter">
+                            C
+                        </span>
+
+                        <input
+                            type="text"
+                            id="optionC"
+                            placeholder="Enter option C"
+                        >
+
+                    </div>
+
+
+
+                    <div class="option-row">
+
+                        <input
+                            type="radio"
+                            name="correctAnswer"
+                            value="D"
+                        >
+
+                        <span class="option-letter">
+                            D
+                        </span>
+
+                        <input
+                            type="text"
+                            id="optionD"
+                            placeholder="Enter option D"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- TRUE / FALSE -->
+
+                <div
+                    id="trueFalseSection"
+                    class="answer-section"
+                >
+
+                    <label for="trueFalseAnswer">
+                        Correct Answer
+                    </label>
+
+                    <select id="trueFalseAnswer">
+
+                        <option value="True">
+                            True
+                        </option>
+
+                        <option value="False">
+                            False
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- SHORT ANSWER / ESSAY -->
+
+                <div
+                    id="textAnswerSection"
+                    class="answer-section"
+                >
+
+                    <label for="correctTextAnswer">
+                        Expected Answer
+                    </label>
+
+                    <textarea
+                        id="correctTextAnswer"
+                        rows="3"
+                        placeholder="Enter the expected answer..."
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- MARKS -->
+
+                <div class="form-group marks-group">
+
+                    <label for="marks">
+                        Marks
+                    </label>
+
+                    <div class="marks-input">
+
+                        <input
+                            type="number"
+                            id="marks"
+                            min="1"
+                            value="1"
+                            required
+                        >
+
+                        <span>
+                            mark(s)
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- BUTTON -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        class="add-question-btn"
+                        id="addQuestionBtn"
+                    >
+                        <span>
+                            +
+                        </span>
+
+                        Add Question
+                    </button>
+
+                </div>
+
+
+            </form>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             QUESTIONS
+        ================================================= -->
+
+        <section class="questions-section">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-eyebrow">
+                        TEST CONTENT
+                    </span>
+
+                    <h2>
+                        Questions
+                    </h2>
+
+                    <p>
+                        Review the questions currently added to this test.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="section-divider"></div>
+
+
+
+            <div id="questionsContainer">
+
+                <div class="loading-state">
+
+                    <div class="loading-spinner"></div>
+
+                    <p>
+                        Loading questions...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             FINISH
+        ================================================= -->
+
+        <div class="finish-section">
+
+            <a
+                href="teacher-tests.html"
+                class="finish-btn"
+            >
+                Finish Test Setup
+                <span>→</span>
+            </a>
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="teacher-footer">
+
+    <div class="teacher-footer-inner">
+
+        <p>
+            © 2026 As-Siyānah Institute for Arabic and Islamic Studies.
+        </p>
+
+        <span>
+            Teacher Portal
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script>
+
+    const SUPABASE_URL =
+        "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+    const SUPABASE_ANON_KEY =
+        "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+    const supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_ANON_KEY
+        );
+
+</script>
+
+
+
+<!-- =====================================================
+     TEACHER THEME
+===================================================== -->
+
+<script src="js/teacher-theme.js"></script>
+
+
+
+<!-- =====================================================
+     PAGE JAVASCRIPT
+===================================================== -->
+
+<script src="js/teacher-test-questions.js"></script>
+
+
+</body>
+
+</html>

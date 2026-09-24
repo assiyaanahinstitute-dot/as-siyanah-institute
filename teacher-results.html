@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Add Student Result | As-Siyānah Institute
+    </title>
+
+
+    <!-- Teacher Portal Global Styles -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal-dark.css"
+    >
+
+
+    <!-- Page Specific Styles -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-results.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     TEACHER HEADER
+===================================================== -->
+
+<header class="teacher-header">
+
+    <div class="teacher-header-inner">
+
+
+        <a
+            href="index.html"
+            class="teacher-brand"
+        >
+
+            <span class="teacher-brand-main">
+                As-Siyānah
+            </span>
+
+            <span class="teacher-brand-sub">
+                Teacher Portal
+            </span>
+
+        </a>
+
+
+        <nav class="teacher-nav">
+
+            <a href="teacher-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="teacher-students.html">
+                Students
+            </a>
+
+            <a href="teacher-lessons.html">
+                Lessons
+            </a>
+
+            <a
+                href="teacher-results-list.html"
+                class="active"
+            >
+                Results
+            </a>
+
+            <a href="teacher-assignments.html">
+                Assignments
+            </a>
+
+            <a href="teacher-tests.html">
+                Tests
+            </a>
+
+            <a href="teacher-attendance.html">
+                Attendance
+            </a>
+
+            <a href="teacher-announcements.html">
+                Announcements
+            </a>
+
+            <a href="teacher-profile.html">
+                Profile
+            </a>
+
+        </nav>
+
+
+        <button
+            type="button"
+            class="teacher-theme-toggle"
+            aria-label="Switch to dark mode"
+            aria-pressed="false"
+        >
+            🌙 Dark Mode
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="teacher-results-main">
+
+
+    <div class="teacher-results-container">
+
+
+        <!-- PAGE HEADING -->
+
+        <div class="teacher-results-heading">
+
+            <div>
+
+                <span class="results-eyebrow">
+                    ACADEMIC MANAGEMENT
+                </span>
+
+                <h1>
+                    Add Student Result
+                </h1>
+
+                <p>
+                    Enter and manage academic results for your students.
+                </p>
+
+            </div>
+
+
+            <a
+                href="teacher-results-list.html"
+                class="results-back-btn"
+            >
+                ← Manage Results
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             RESULT FORM CARD
+        ================================================= -->
+
+        <section class="result-form-card">
+
+
+            <div class="result-card-header">
+
+                <div class="result-card-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <span class="result-card-label">
+                        RESULT ENTRY
+                    </span>
+
+                    <h2>
+                        Student Academic Result
+                    </h2>
+
+                    <p>
+                        Complete the fields below to record a student's result.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="result-card-divider"></div>
+
+
+
+            <form id="teacherResultForm">
+
+
+                <!-- STUDENT -->
+
+                <div class="result-form-group">
+
+                    <label for="resultStudent">
+                        Student
+                    </label>
+
+                    <select
+                        id="resultStudent"
+                        required
+                    >
+
+                        <option value="">
+                            Loading students...
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- SUBJECT -->
+
+                <div class="result-form-group">
+
+                    <label for="resultSubject">
+                        Subject
+                    </label>
+
+                    <input
+                        type="text"
+                        id="resultSubject"
+                        placeholder="e.g. Arabic Language"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- SCORE GRID -->
+
+                <div class="result-score-grid">
+
+
+                    <!-- TEST -->
+
+                    <div class="result-form-group">
+
+                        <label for="testScore">
+                            Test Score
+                        </label>
+
+                        <div class="score-input">
+
+                            <input
+                                type="number"
+                                id="testScore"
+                                min="0"
+                                max="40"
+                                step="1"
+                                placeholder="0"
+                                required
+                            >
+
+                            <span>
+                                / 40
+                            </span>
+
+                        </div>
+
+                        <small>
+                            Enter the student's test score out of 40.
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- EXAM -->
+
+                    <div class="result-form-group">
+
+                        <label for="examScore">
+                            Exam Score
+                        </label>
+
+                        <div class="score-input">
+
+                            <input
+                                type="number"
+                                id="examScore"
+                                min="0"
+                                max="60"
+                                step="1"
+                                placeholder="0"
+                                required
+                            >
+
+                            <span>
+                                / 60
+                            </span>
+
+                        </div>
+
+                        <small>
+                            Enter the examination score out of 60.
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     TOTAL PREVIEW
+                ================================================= -->
+
+                <div class="result-total-preview">
+
+
+                    <div class="total-preview-top">
+
+                        <div>
+
+                            <span class="total-label">
+                                TOTAL SCORE
+                            </span>
+
+                            <p>
+                                Combined test and examination score
+                            </p>
+
+                        </div>
+
+
+                        <div class="total-score">
+
+                            <strong id="resultTotalPreview">
+                                0
+                            </strong>
+
+                            <span>
+                                / 100
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="total-preview-grade">
+
+                        <span>
+                            Current Grade
+                        </span>
+
+                        <strong id="resultGradePreview">
+                            Grade: —
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- TERM + SESSION -->
+
+                <div class="result-form-grid">
+
+
+                    <!-- TERM -->
+
+                    <div class="result-form-group">
+
+                        <label for="resultTerm">
+                            Term
+                        </label>
+
+                        <select
+                            id="resultTerm"
+                            required
+                        >
+
+                            <option value="">
+                                Select Term
+                            </option>
+
+                            <option value="First Term">
+                                First Term
+                            </option>
+
+                            <option value="Second Term">
+                                Second Term
+                            </option>
+
+                            <option value="Third Term">
+                                Third Term
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- SESSION -->
+
+                    <div class="result-form-group">
+
+                        <label for="resultSession">
+                            Academic Session
+                        </label>
+
+                        <input
+                            type="text"
+                            id="resultSession"
+                            placeholder="e.g. 2026/2027"
+                            required
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- SUBMIT -->
+
+                <div class="result-form-actions">
+
+                    <a
+                        href="teacher-results-list.html"
+                        class="result-cancel-btn"
+                    >
+                        Cancel
+                    </a>
+
+
+                    <button
+                        type="submit"
+                        class="result-save-btn"
+                        id="saveResultButton"
+                    >
+                        Save Result
+                    </button>
+
+                </div>
+
+
+            </form>
+
+
+        </section>
+
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="teacher-footer">
+
+    <div class="teacher-footer-inner">
+
+        <p>
+            © 2026 As-Siyānah Institute for Arabic and Islamic Studies.
+        </p>
+
+        <span>
+            Teacher Portal
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     SCRIPTS
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/teacher-theme.js"></script>
+
+<script src="js/teacher-results.js"></script>
+
+
+</body>
+
+</html>

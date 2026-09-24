@@ -1,0 +1,521 @@
+/* =========================================
+   AS-SIYĀNAH SUBJECT PAGE
+========================================= */
+
+.subject-page {
+    min-height: 100vh;
+    background: #f6f8f6;
+    padding-bottom: 70px;
+}
+
+
+/* TOP BAR */
+
+.subject-topbar {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 25px 20px 10px;
+}
+
+.subject-back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 11px 18px;
+
+    background: #ffffff;
+
+    color: #174d36;
+
+    text-decoration: none;
+
+    border: 1px solid #dce7df;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+}
+
+.subject-back-button:hover {
+    background: #174d36;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+
+/* SUBJECT HERO */
+
+.subject-hero {
+    max-width: 1100px;
+
+    margin: 15px auto 0;
+
+    padding: 0 20px;
+}
+
+.subject-hero-content {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 55px 45px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #174d36,
+            #0b3021
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 15px 40px rgba(15, 60, 40, 0.18);
+}
+
+
+/* Decorative circle */
+
+.subject-hero-content::after {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    right: -90px;
+    top: -100px;
+
+    background: rgba(255,255,255,0.06);
+}
+
+
+/* Small label */
+
+.subject-label {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+
+    color: #d8b96a;
+}
+
+
+/* Subject title */
+
+.subject-hero h1 {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    font-size: clamp(32px, 5vw, 52px);
+
+    line-height: 1.1;
+
+    font-weight: 700;
+}
+
+
+/* Arabic title */
+
+.subject-arabic {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 12px 0 18px;
+
+    font-size: 25px;
+
+    color: #e6d09a;
+
+    font-weight: 500;
+
+    direction: rtl;
+}
+
+
+/* Intro */
+
+.subject-intro {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 650px;
+
+    margin: 0;
+
+    color: rgba(255,255,255,0.82);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* LESSON SECTION */
+
+.subject-lessons-section {
+    max-width: 1100px;
+
+    margin: 45px auto 0;
+
+    padding: 0 20px;
+}
+
+
+/* Section heading */
+
+.subject-section-header {
+    margin-bottom: 22px;
+}
+
+.subject-section-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #8b6d28;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    font-weight: 800;
+}
+
+.subject-section-header h2 {
+    margin: 0;
+
+    color: #173f2e;
+
+    font-size: 28px;
+}
+
+
+/* LESSON GRID */
+
+#lessonsContainer {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(280px, 1fr)
+        );
+
+    gap: 18px;
+}
+
+
+/* LESSON CARD */
+
+.lesson-card {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    min-height: 120px;
+
+    padding: 22px;
+
+    background: #ffffff;
+
+    border: 1px solid #e3ebe5;
+
+    border-radius: 17px;
+
+    color: #173f2e;
+
+    box-shadow:
+        0 6px 20px rgba(15, 50, 35, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.lesson-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #b9cdbf;
+
+    box-shadow:
+        0 12px 28px rgba(15, 50, 35, 0.10);
+}
+
+
+/* LESSON NUMBER */
+
+.lesson-number {
+    flex-shrink: 0;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #edf4ef;
+
+    color: #174d36;
+
+    font-size: 15px;
+
+    font-weight: 800;
+}
+
+
+/* LESSON INFORMATION */
+
+.lesson-info {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.lesson-info h3 {
+    margin: 0 0 7px;
+
+    color: #173f2e;
+
+    font-size: 17px;
+}
+
+.lesson-info p {
+    margin: 0;
+
+    color: #718078;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* ARROW */
+
+.lesson-arrow {
+    flex-shrink: 0;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #174d36;
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    transition:
+        transform 0.25s ease;
+}
+
+.lesson-card:hover .lesson-arrow {
+    transform: translateX(4px);
+}
+
+
+/* LOADING */
+
+.subject-loading {
+    grid-column: 1 / -1;
+
+    padding: 60px 20px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 1px solid #e3ebe5;
+
+    border-radius: 18px;
+}
+
+.loading-spinner {
+    margin-bottom: 10px;
+
+    font-size: 35px;
+
+    color: #174d36;
+
+    animation:
+        subjectSpin 1.2s linear infinite;
+}
+
+.subject-loading p {
+    margin: 0;
+
+    color: #718078;
+}
+
+
+/* EMPTY STATE */
+
+.subject-empty {
+    grid-column: 1 / -1;
+
+    padding: 65px 25px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 1px solid #e3ebe5;
+
+    border-radius: 20px;
+}
+
+.subject-empty-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 18px;
+
+    border-radius: 18px;
+
+    background: #edf4ef;
+
+    font-size: 30px;
+}
+
+.subject-empty h3 {
+    margin: 0 0 10px;
+
+    color: #173f2e;
+
+    font-size: 20px;
+}
+
+.subject-empty p {
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    color: #718078;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+
+/* LOADING ANIMATION */
+
+@keyframes subjectSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .subject-topbar {
+        padding:
+            18px
+            15px
+            8px;
+    }
+
+
+    .subject-hero {
+        padding: 0 15px;
+    }
+
+
+    .subject-hero-content {
+        padding: 38px 25px;
+
+        border-radius: 20px;
+    }
+
+
+    .subject-hero h1 {
+        font-size: 35px;
+    }
+
+
+    .subject-arabic {
+        font-size: 22px;
+    }
+
+
+    .subject-intro {
+        font-size: 14px;
+    }
+
+
+    .subject-lessons-section {
+        padding: 0 15px;
+
+        margin-top: 35px;
+    }
+
+
+    .subject-section-header h2 {
+        font-size: 24px;
+    }
+
+
+    #lessonsContainer {
+        grid-template-columns: 1fr;
+    }
+
+
+    .lesson-card {
+        padding: 18px;
+
+        min-height: 105px;
+    }
+
+}

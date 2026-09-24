@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Create Announcement | As-Siyānah Institute
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin-portal.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- ADMIN HEADER -->
+
+    <header class="admin-header">
+
+        <div class="admin-header-inner">
+
+            <a
+                href="admin-dashboard.html"
+                class="admin-brand"
+            >
+
+                <div class="admin-brand-mark">
+                    AS
+                </div>
+
+                <div class="admin-brand-text">
+
+                    <strong>
+                        AS-SIYĀNAH
+                    </strong>
+
+                    <span>
+                        Admin Portal
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <nav class="admin-nav">
+
+                <a href="admin-dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="admin-students.html">
+                    Students
+                </a>
+
+                <a href="admin-teachers.html">
+                    Teachers
+                </a>
+
+                <a href="admin-lessons.html">
+                    Lessons
+                </a>
+
+                <a href="admin-results.html">
+                    Results
+                </a>
+
+                <a
+                    href="admin-announcements.html"
+                    class="active"
+                >
+                    Announcements
+                </a>
+
+                <a href="admin-registrations.html">
+                    Registrations
+                </a>
+
+                <a href="admin-profile.html">
+                    Profile
+                </a>
+
+            </nav>
+
+
+            <button
+                type="button"
+                id="adminThemeToggle"
+                class="admin-theme-toggle"
+                aria-label="Switch to dark mode"
+            >
+
+                <span class="admin-theme-icon">
+                    ☾
+                </span>
+
+                <span class="admin-theme-text">
+                    Dark
+                </span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="admin-main">
+
+        <div class="admin-page-header">
+
+            <div>
+
+                <p class="dashboard-label">
+                    ANNOUNCEMENTS
+                </p>
+
+                <h2>
+                    Create Announcement
+                </h2>
+
+                <p>
+                    Publish an important message to your students.
+                </p>
+
+            </div>
+
+            <a
+                href="admin-announcements.html"
+                class="admin-back-button"
+            >
+                ← Back to Announcements
+            </a>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <section class="admin-form-card">
+
+            <div class="admin-form-header">
+
+                <div class="admin-form-icon">
+                    📢
+                </div>
+
+                <div>
+
+                    <h3>
+                        New Announcement
+                    </h3>
+
+                    <p>
+                        Fill in the details below to create your announcement.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form id="announcementForm">
+
+
+                <div class="admin-form-group">
+
+                    <label for="announcementTitle">
+                        Announcement Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="announcementTitle"
+                        placeholder="Enter announcement title"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="admin-form-grid">
+
+                    <div class="admin-form-group">
+
+                        <label for="announcementCategory">
+                            Category
+                        </label>
+
+                        <select
+                            id="announcementCategory"
+                            required
+                        >
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                            <option value="General">
+                                General
+                            </option>
+
+                            <option value="Exam">
+                                Exam
+                            </option>
+
+                            <option value="Class">
+                                Class
+                            </option>
+
+                            <option value="Notice">
+                                Notice
+                            </option>
+
+                            <option value="Important">
+                                Important
+                            </option>
+
+                            <option value="Event">
+                                Event
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="admin-form-group">
+
+                        <label for="announcementAudience">
+                            Audience
+                        </label>
+
+                        <select
+                            id="announcementAudience"
+                            required
+                        >
+
+                            <option value="">
+                                Select audience
+                            </option>
+
+                            <option value="All">
+                                All Students
+                            </option>
+
+                            <option value="Elementary">
+                                Elementary
+                            </option>
+
+                            <option value="Intermediate">
+                                Intermediate
+                            </option>
+
+                            <option value="Advanced">
+                                Advanced
+                            </option>
+
+                            <option value="Teachers">
+                                Teachers
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-form-group">
+
+                    <label for="announcementMessage">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="announcementMessage"
+                        rows="8"
+                        placeholder="Write your announcement..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <div class="admin-form-group">
+
+                    <label class="admin-checkbox-label">
+
+                        <input
+                            type="checkbox"
+                            id="announcementPublished"
+                        >
+
+                        <span>
+                            Publish this announcement immediately
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <p
+                    id="announcementFormMessage"
+                    class="admin-form-message"
+                ></p>
+
+
+                <div class="admin-form-actions">
+
+                    <a
+                        href="admin-announcements.html"
+                        class="admin-secondary-button"
+                    >
+                        Cancel
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="admin-primary-button"
+                    >
+                        Create Announcement
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer class="admin-footer">
+
+        <p>
+            © 2026 As-Siyānah Institute for Arabic & Islamic Studies
+        </p>
+
+    </footer>
+
+
+    <!-- SUPABASE -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script>
+
+        const SUPABASE_URL =
+            "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+        const SUPABASE_ANON_KEY =
+            "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+        const supabaseClient =
+            supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_ANON_KEY
+            );
+
+    </script>
+
+
+    <script src="js/admin-create-announcement.js"></script>
+
+    <script src="js/admin-theme.js"></script>
+
+</body>
+
+</html>

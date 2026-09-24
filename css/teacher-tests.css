@@ -1,0 +1,2788 @@
+/* =========================================================
+   AS-SIYĀNAH INSTITUTE
+   TEACHER PORTAL — TEST MANAGEMENT
+   PREMIUM LMS / ADMIN DASHBOARD STYLE
+========================================================= */
+
+
+/* =========================================================
+   1. DESIGN TOKENS
+========================================================= */
+
+:root {
+
+    --tm-bg: #f4f7f5;
+    --tm-surface: #ffffff;
+    --tm-surface-2: #f8faf9;
+    --tm-surface-3: #eef3f0;
+
+    --tm-primary: #0f5132;
+    --tm-primary-dark: #093b25;
+    --tm-primary-light: #e7f2eb;
+
+    --tm-gold: #c9a227;
+    --tm-gold-light: #f8f1d9;
+
+    --tm-text: #17221c;
+    --tm-text-2: #34433b;
+    --tm-muted: #728078;
+    --tm-muted-2: #8c9891;
+
+    --tm-border: #dfe7e2;
+    --tm-border-dark: #cdd8d1;
+
+    --tm-success: #19734a;
+    --tm-success-bg: #e8f5ed;
+
+    --tm-warning: #9b7513;
+    --tm-warning-bg: #fff7dc;
+
+    --tm-danger: #b13b3b;
+    --tm-danger-bg: #fbecec;
+
+    --tm-info: #356b8f;
+    --tm-info-bg: #eaf3f8;
+
+    --tm-shadow-sm:
+        0 2px 8px rgba(15, 81, 50, 0.05);
+
+    --tm-shadow:
+        0 10px 30px rgba(15, 81, 50, 0.07);
+
+    --tm-shadow-lg:
+        0 18px 50px rgba(15, 81, 50, 0.10);
+
+    --tm-radius-sm: 8px;
+    --tm-radius: 12px;
+    --tm-radius-lg: 16px;
+}
+
+
+
+/* =========================================================
+   2. GLOBAL PAGE FOUNDATION
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    background:
+        var(--tm-bg);
+
+    color:
+        var(--tm-text);
+
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+
+    text-rendering: optimizeLegibility;
+}
+
+
+button,
+input,
+textarea,
+select {
+
+    font: inherit;
+}
+
+
+a {
+
+    color: inherit;
+}
+
+
+button {
+
+    cursor: pointer;
+}
+
+
+
+/* =========================================================
+   3. HEADER
+========================================================= */
+
+.teacher-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    background:
+        rgba(255, 255, 255, 0.98);
+
+    border-bottom:
+        1px solid var(--tm-border);
+
+    box-shadow:
+        0 3px 18px rgba(0, 0, 0, 0.045);
+}
+
+
+.teacher-header-inner {
+
+    width: min(1440px, 100%);
+
+    min-height: 78px;
+
+    margin: 0 auto;
+
+    padding:
+        0 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+}
+
+
+
+/* =========================================================
+   4. BRAND
+========================================================= */
+
+.teacher-brand {
+
+    flex: 0 0 auto;
+
+    min-width: 175px;
+
+    text-decoration: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.teacher-brand-main {
+
+    color:
+        var(--tm-primary-dark);
+
+    font-size: 19px;
+
+    font-weight: 850;
+
+    line-height: 1;
+
+    letter-spacing: 0.075em;
+}
+
+
+.teacher-brand-sub {
+
+    color:
+        var(--tm-muted);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    letter-spacing: 0.13em;
+
+    text-transform: uppercase;
+}
+
+
+
+/* =========================================================
+   5. NAVIGATION
+========================================================= */
+
+.teacher-nav {
+
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 2px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+
+.teacher-nav::-webkit-scrollbar {
+    display: none;
+}
+
+
+.teacher-nav a {
+
+    position: relative;
+
+    height: 78px;
+
+    padding:
+        0 12px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color:
+        #5c6962;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 650;
+
+    white-space: nowrap;
+
+    transition:
+        color .2s ease;
+}
+
+
+.teacher-nav a::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 11px;
+
+    right: 11px;
+
+    bottom: 0;
+
+    height: 3px;
+
+    background:
+        var(--tm-gold);
+
+    border-radius:
+        3px 3px 0 0;
+
+    transform:
+        scaleX(0);
+
+    transition:
+        transform .2s ease;
+}
+
+
+.teacher-nav a:hover {
+
+    color:
+        var(--tm-primary);
+}
+
+
+.teacher-nav a.active {
+
+    color:
+        var(--tm-primary);
+
+    font-weight: 800;
+}
+
+
+.teacher-nav a.active::before {
+
+    transform:
+        scaleX(1);
+}
+
+
+
+/* =========================================================
+   6. THEME TOGGLE
+========================================================= */
+
+.teacher-theme-toggle {
+
+    flex: 0 0 auto;
+
+    min-height: 38px;
+
+    padding:
+        0 13px;
+
+    border:
+        1px solid var(--tm-border);
+
+    border-radius:
+        9px;
+
+    background:
+        #ffffff;
+
+    color:
+        var(--tm-text-2);
+
+    font-size: 11px;
+
+    font-weight: 750;
+
+    white-space: nowrap;
+
+    transition:
+        border-color .2s ease,
+        color .2s ease,
+        background .2s ease;
+}
+
+
+.teacher-theme-toggle:hover {
+
+    border-color:
+        var(--tm-primary);
+
+    color:
+        var(--tm-primary);
+
+    background:
+        var(--tm-primary-light);
+}
+
+
+
+/* =========================================================
+   7. MAIN
+========================================================= */
+
+.tests-main {
+
+    width: 100%;
+
+    min-height:
+        calc(100vh - 142px);
+
+    padding:
+        48px 24px 70px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8faf9 0%,
+            #f4f7f5 55%,
+            #f2f6f3 100%
+        );
+}
+
+
+.tests-container {
+
+    width: min(1240px, 100%);
+
+    margin: 0 auto;
+}
+
+
+
+/* =========================================================
+   8. PAGE HEADER
+========================================================= */
+
+.page-header {
+
+    min-height: 150px;
+
+    margin-bottom: 28px;
+
+    padding:
+        30px 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    background:
+        var(--tm-surface);
+
+    border:
+        1px solid var(--tm-border);
+
+    border-radius:
+        var(--tm-radius-lg);
+
+    box-shadow:
+        var(--tm-shadow);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.page-header::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+
+    top: 0;
+
+    width: 4px;
+
+    height: 100%;
+
+    background:
+        var(--tm-gold);
+}
+
+
+.page-header-content {
+
+    min-width: 0;
+}
+
+
+.eyebrow {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    color:
+        var(--tm-primary);
+
+    font-size: 10px;
+
+    font-weight: 850;
+
+    letter-spacing: .17em;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+}
+
+
+.page-header h1 {
+
+    margin: 0;
+
+    color:
+        var(--tm-text);
+
+    font-size:
+        clamp(28px, 4vw, 40px);
+
+    font-weight: 850;
+
+    line-height: 1.08;
+
+    letter-spacing:
+        -.035em;
+}
+
+
+.page-header p {
+
+    margin:
+        10px 0 0;
+
+    color:
+        var(--tm-muted);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+
+/* =========================================================
+   9. CREATE TEST BUTTON
+========================================================= */
+
+.create-btn {
+
+    flex-shrink: 0;
+
+    min-height: 46px;
+
+    padding:
+        0 19px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    border:
+        1px solid var(--tm-primary);
+
+    border-radius:
+        10px;
+
+    background:
+        var(--tm-primary);
+
+    color:
+        #ffffff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 7px 18px rgba(15, 81, 50, .18);
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.create-btn:hover {
+
+    background:
+        var(--tm-primary-dark);
+
+    border-color:
+        var(--tm-primary-dark);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 24px rgba(15, 81, 50, .22);
+}
+
+
+.create-icon {
+
+    width: 20px;
+
+    height: 20px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 6px;
+
+    background:
+        rgba(255,255,255,.14);
+
+    font-size: 17px;
+
+    line-height: 1;
+}
+
+
+
+/* =========================================================
+   10. STATISTICS
+========================================================= */
+
+.stats-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+
+.stat-card {
+
+    min-height: 122px;
+
+    padding:
+        22px 23px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    background:
+        var(--tm-surface);
+
+    border:
+        1px solid var(--tm-border);
+
+    border-radius:
+        var(--tm-radius);
+
+    box-shadow:
+        var(--tm-shadow-sm);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
+}
+
+
+.stat-card:hover {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        var(--tm-border-dark);
+
+    box-shadow:
+        var(--tm-shadow);
+}
+
+
+.stat-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 12px;
+
+    background:
+        var(--tm-primary-light);
+
+    color:
+        var(--tm-primary);
+
+    font-size: 18px;
+
+    border:
+        1px solid #dcece2;
+}
+
+
+.stat-icon.published {
+
+    background:
+        var(--tm-success-bg);
+
+    color:
+        var(--tm-success);
+
+    border-color:
+        #d7ecdf;
+}
+
+
+.stat-icon.draft {
+
+    background:
+        var(--tm-warning-bg);
+
+    color:
+        var(--tm-warning);
+
+    border-color:
+        #f0e5bd;
+}
+
+
+.stat-content {
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.stat-content span {
+
+    color:
+        var(--tm-muted);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+.stat-content strong {
+
+    color:
+        var(--tm-text);
+
+    font-size: 29px;
+
+    font-weight: 850;
+
+    line-height: 1;
+}
+
+
+
+/* =========================================================
+   11. MESSAGE SYSTEM
+========================================================= */
+
+.message {
+
+    min-height: 0;
+
+    margin-bottom: 20px;
+
+    padding: 0;
+
+    color:
+        var(--tm-text-2);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+.message:empty {
+
+    display: none;
+}
+
+
+.message.success {
+
+    padding:
+        12px 15px;
+
+    border:
+        1px solid #cce5d5;
+
+    border-radius:
+        9px;
+
+    background:
+        var(--tm-success-bg);
+
+    color:
+        var(--tm-success);
+}
+
+
+.message.error {
+
+    padding:
+        12px 15px;
+
+    border:
+        1px solid #eccaca;
+
+    border-radius:
+        9px;
+
+    background:
+        var(--tm-danger-bg);
+
+    color:
+        var(--tm-danger);
+}
+
+
+
+/* =========================================================
+   12. TEST LIBRARY
+========================================================= */
+
+.tests-section {
+
+    overflow: hidden;
+
+    background:
+        var(--tm-surface);
+
+    border:
+        1px solid var(--tm-border);
+
+    border-radius:
+        var(--tm-radius-lg);
+
+    box-shadow:
+        var(--tm-shadow);
+}
+
+
+.section-title {
+
+    padding:
+        27px 30px 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+.section-title .eyebrow {
+
+    margin-bottom: 7px;
+}
+
+
+.section-title h2 {
+
+    margin: 0;
+
+    color:
+        var(--tm-text);
+
+    font-size: 22px;
+
+    font-weight: 850;
+
+    letter-spacing:
+        -.025em;
+}
+
+
+.section-title p {
+
+    margin:
+        7px 0 0;
+
+    color:
+        var(--tm-muted);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+.section-divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    background:
+        var(--tm-border);
+}
+
+
+
+/* =========================================================
+   13. TEST CONTAINER
+========================================================= */
+
+.tests-container-list {
+
+    padding:
+        26px 30px 32px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+
+/* =========================================================
+   14. LOADING
+========================================================= */
+
+.loading {
+
+    min-height: 220px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    color:
+        var(--tm-muted);
+
+    font-size: 13px;
+}
+
+
+.loading-spinner {
+
+    width: 35px;
+
+    height: 35px;
+
+    border:
+        3px solid #e1e9e4;
+
+    border-top-color:
+        var(--tm-primary);
+
+    border-radius: 50%;
+
+    animation:
+        tmSpin .75s linear infinite;
+}
+
+
+@keyframes tmSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* =========================================================
+   15. EMPTY STATES
+========================================================= */
+
+.tests-container-list
+.empty-state,
+
+.tests-container-list
+.no-tests,
+
+.tests-container-list
+.empty {
+
+    min-height: 220px;
+
+    padding:
+        35px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color:
+        var(--tm-muted);
+
+    border:
+        1px dashed var(--tm-border-dark);
+
+    border-radius:
+        var(--tm-radius);
+
+    background:
+        var(--tm-surface-2);
+}
+
+
+.tests-container-list
+.empty-state h3,
+
+.tests-container-list
+.no-tests h3,
+
+.tests-container-list
+.empty h3 {
+
+    margin:
+        0 0 7px;
+
+    color:
+        var(--tm-text);
+
+    font-size: 17px;
+}
+
+
+.tests-container-list
+.empty-state p,
+
+.tests-container-list
+.no-tests p,
+
+.tests-container-list
+.empty p {
+
+    margin: 0;
+
+    max-width: 460px;
+
+    color:
+        var(--tm-muted);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+
+/* =========================================================
+   16. DYNAMIC TEST CARDS
+   Covers common structures generated by JS
+========================================================= */
+
+.tests-container-list
+.test-card,
+
+.tests-container-list
+.test-item,
+
+.tests-container-list
+.test-row,
+
+.tests-container-list
+.test-box,
+
+.tests-container-list
+.assessment-card {
+
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        21px 22px;
+
+    background:
+        var(--tm-surface-2);
+
+    border:
+        1px solid var(--tm-border);
+
+    border-radius:
+        var(--tm-radius);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+
+    transition:
+        border-color .2s ease,
+        background .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease;
+}
+
+
+.tests-container-list
+.test-card:hover,
+
+.tests-container-list
+.test-item:hover,
+
+.tests-container-list
+.test-row:hover,
+
+.tests-container-list
+.test-box:hover,
+
+.tests-container-list
+.assessment-card:hover {
+
+    background:
+        #ffffff;
+
+    border-color:
+        #c8d8ce;
+
+    box-shadow:
+        0 8px 22px rgba(15,81,50,.065);
+
+    transform:
+        translateY(-1px);
+}
+
+
+
+/* =========================================================
+   17. DYNAMIC TEST TITLES
+========================================================= */
+
+.tests-container-list
+.test-card h3,
+
+.tests-container-list
+.test-item h3,
+
+.tests-container-list
+.test-row h3,
+
+.tests-container-list
+.test-box h3,
+
+.tests-container-list
+.assessment-card h3 {
+
+    margin: 0;
+
+    color:
+        var(--tm-text);
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    line-height: 1.35;
+}
+
+
+.tests-container-list
+.test-card h4,
+
+.tests-container-list
+.test-item h4,
+
+.tests-container-list
+.test-row h4 {
+
+    margin: 0;
+
+    color:
+        var(--tm-text);
+
+    font-size: 14px;
+
+    font-weight: 750;
+}
+
+
+
+/* =========================================================
+   18. DYNAMIC TEXT
+========================================================= */
+
+.tests-container-list
+.test-card p,
+
+.tests-container-list
+.test-item p,
+
+.tests-container-list
+.test-row p,
+
+.tests-container-list
+.test-box p,
+
+.tests-container-list
+.assessment-card p {
+
+    margin:
+        0;
+
+    color:
+        var(--tm-muted);
+
+    font-size: 12px;
+
+    line-height: 1.65;
+}
+
+
+.tests-container-list
+.test-card span,
+
+.tests-container-list
+.test-item span,
+
+.tests-container-list
+.test-row span {
+
+    color:
+        var(--tm-muted);
+}
+
+
+
+/* =========================================================
+   19. COMMON TEST INFORMATION
+========================================================= */
+
+.tests-container-list
+.test-meta,
+
+.tests-container-list
+.test-details,
+
+.tests-container-list
+.test-info,
+
+.tests-container-list
+.meta,
+
+.tests-container-list
+.details {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 7px 16px;
+
+    padding-top: 4px;
+}
+
+
+.tests-container-list
+.test-meta span,
+
+.tests-container-list
+.test-details span,
+
+.tests-container-list
+.test-info span,
+
+.tests-container-list
+.meta span,
+
+.tests-container-list
+.details span {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    color:
+        var(--tm-muted);
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+
+/* =========================================================
+   20. STATUS BADGES
+========================================================= */
+
+.tests-container-list
+.badge,
+
+.tests-container-list
+.status,
+
+.tests-container-list
+.status-badge,
+
+.tests-container-list
+.published-badge,
+
+.tests-container-list
+.draft-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: fit-content;
+
+    min-height: 26px;
+
+    padding:
+        0 9px;
+
+    border-radius:
+        999px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: .02em;
+}
+
+
+.tests-container-list
+.published,
+
+.tests-container-list
+.published-badge {
+
+    background:
+        var(--tm-success-bg);
+
+    color:
+        var(--tm-success);
+}
+
+
+.tests-container-list
+.draft,
+
+.tests-container-list
+.draft-badge {
+
+    background:
+        var(--tm-warning-bg);
+
+    color:
+        var(--tm-warning);
+}
+
+
+
+/* =========================================================
+   21. TEST ACTION AREA
+========================================================= */
+
+.tests-container-list
+.test-actions,
+
+.tests-container-list
+.actions,
+
+.tests-container-list
+.card-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding-top: 4px;
+}
+
+
+.tests-container-list
+.test-actions a,
+
+.tests-container-list
+.actions a,
+
+.tests-container-list
+.card-actions a {
+
+    min-height: 35px;
+
+    padding:
+        0 12px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid var(--tm-border);
+
+    border-radius:
+        8px;
+
+    background:
+        #ffffff;
+
+    color:
+        var(--tm-primary);
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 750;
+
+    transition:
+        all .2s ease;
+}
+
+
+.tests-container-list
+.test-actions a:hover,
+
+.tests-container-list
+.actions a:hover,
+
+.tests-container-list
+.card-actions a:hover {
+
+    border-color:
+        var(--tm-primary);
+
+    background:
+        var(--tm-primary-light);
+}
+
+
+
+/* =========================================================
+   22. ALL DYNAMIC BUTTONS
+========================================================= */
+
+.tests-container-list button {
+
+    min-height: 35px;
+
+    padding:
+        0 12px;
+
+    border-radius:
+        8px;
+
+    border:
+        1px solid var(--tm-border);
+
+    background:
+        #ffffff;
+
+    color:
+        var(--tm-primary);
+
+    font-size: 11px;
+
+    font-weight: 750;
+
+    transition:
+        all .2s ease;
+}
+
+
+.tests-container-list button:hover {
+
+    border-color:
+        var(--tm-primary);
+
+    background:
+        var(--tm-primary-light);
+
+    color:
+        var(--tm-primary-dark);
+}
+
+
+.tests-container-list
+button[class*="delete"],
+
+.tests-container-list
+button[class*="Delete"],
+
+.tests-container-list
+button[class*="remove"],
+
+.tests-container-list
+button[class*="Remove"] {
+
+    color:
+        var(--tm-danger);
+
+    background:
+        #ffffff;
+}
+
+
+.tests-container-list
+button[class*="delete"]:hover,
+
+.tests-container-list
+button[class*="Delete"]:hover,
+
+.tests-container-list
+button[class*="remove"]:hover,
+
+.tests-container-list
+button[class*="Remove"]:hover {
+
+    border-color:
+        #dcaeae;
+
+    background:
+        var(--tm-danger-bg);
+}
+
+
+
+/* =========================================================
+   23. COMMON EDIT / MANAGE BUTTONS
+========================================================= */
+
+.tests-container-list
+.edit-btn,
+
+.tests-container-list
+.edit-button,
+
+.tests-container-list
+.manage-btn,
+
+.tests-container-list
+.manage-button {
+
+    background:
+        var(--tm-primary);
+
+    border-color:
+        var(--tm-primary);
+
+    color:
+        #ffffff;
+}
+
+
+.tests-container-list
+.edit-btn:hover,
+
+.tests-container-list
+.edit-button:hover,
+
+.tests-container-list
+.manage-btn:hover,
+
+.tests-container-list
+.manage-button:hover {
+
+    background:
+        var(--tm-primary-dark);
+
+    border-color:
+        var(--tm-primary-dark);
+
+    color:
+        #ffffff;
+}
+
+
+
+/* =========================================================
+   24. LINKS INSIDE TEST CARDS
+========================================================= */
+
+.tests-container-list
+a {
+
+    transition:
+        color .2s ease;
+}
+
+
+.tests-container-list
+a:hover {
+
+    color:
+        var(--tm-primary-dark);
+}
+
+
+
+/* =========================================================
+   25. FOOTER
+========================================================= */
+
+.teacher-footer {
+
+    width: 100%;
+
+    background:
+        #ffffff;
+
+    border-top:
+        1px solid var(--tm-border);
+}
+
+
+.teacher-footer-inner {
+
+    width: min(1240px, 100%);
+
+    min-height: 68px;
+
+    margin: 0 auto;
+
+    padding:
+        0 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+.teacher-footer p {
+
+    margin: 0;
+
+    color:
+        var(--tm-muted);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+.teacher-footer span {
+
+    color:
+        var(--tm-primary);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: .03em;
+}
+
+
+
+/* =========================================================
+   26. DARK MODE — FOUNDATION
+========================================================= */
+
+html.teacher-dark,
+html.teacher-dark body {
+
+    background:
+        #06110b !important;
+
+    color:
+        #edf5ef !important;
+}
+
+
+html.teacher-dark .tests-main {
+
+    background:
+        linear-gradient(
+            180deg,
+            #08150e 0%,
+            #06110b 100%
+        ) !important;
+}
+
+
+
+/* =========================================================
+   27. DARK HEADER
+========================================================= */
+
+html.teacher-dark .teacher-header {
+
+    background:
+        rgba(8, 22, 14, .98) !important;
+
+    border-bottom-color:
+        #1d3327 !important;
+
+    box-shadow:
+        0 5px 22px rgba(0,0,0,.28) !important;
+}
+
+
+html.teacher-dark .teacher-brand-main {
+
+    color:
+        #f0f6f2 !important;
+}
+
+
+html.teacher-dark .teacher-brand-sub {
+
+    color:
+        #879a8e !important;
+}
+
+
+html.teacher-dark .teacher-nav a {
+
+    color:
+        #91a39a !important;
+}
+
+
+html.teacher-dark .teacher-nav a:hover {
+
+    color:
+        #d4af37 !important;
+}
+
+
+html.teacher-dark .teacher-nav a.active {
+
+    color:
+        #d4af37 !important;
+}
+
+
+html.teacher-dark .teacher-nav a.active::before {
+
+    background:
+        #d4af37 !important;
+}
+
+
+html.teacher-dark .teacher-theme-toggle {
+
+    background:
+        #102119 !important;
+
+    border-color:
+        #294438 !important;
+
+    color:
+        #e8f0eb !important;
+}
+
+
+html.teacher-dark .teacher-theme-toggle:hover {
+
+    background:
+        #162b20 !important;
+
+    border-color:
+        #d4af37 !important;
+
+    color:
+        #d4af37 !important;
+}
+
+
+
+/* =========================================================
+   28. DARK PAGE HEADER
+========================================================= */
+
+html.teacher-dark .page-header {
+
+    background:
+        #0c1c14 !important;
+
+    border-color:
+        #20392b !important;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.20) !important;
+}
+
+
+html.teacher-dark .page-header::after {
+
+    background:
+        #d4af37 !important;
+}
+
+
+html.teacher-dark .page-header h1 {
+
+    color:
+        #f1f6f3 !important;
+}
+
+
+html.teacher-dark .page-header p {
+
+    color:
+        #8fa39a !important;
+}
+
+
+html.teacher-dark .eyebrow {
+
+    color:
+        #d4af37 !important;
+}
+
+
+
+/* =========================================================
+   29. DARK CREATE BUTTON
+========================================================= */
+
+html.teacher-dark .create-btn {
+
+    background:
+        #16603c !important;
+
+    border-color:
+        #16603c !important;
+
+    color:
+        #ffffff !important;
+
+    box-shadow:
+        0 8px 22px rgba(0,0,0,.24) !important;
+}
+
+
+html.teacher-dark .create-btn:hover {
+
+    background:
+        #1d7549 !important;
+
+    border-color:
+        #1d7549 !important;
+}
+
+
+
+/* =========================================================
+   30. DARK STATISTICS
+========================================================= */
+
+html.teacher-dark .stat-card {
+
+    background:
+        #0c1c14 !important;
+
+    border-color:
+        #20392b !important;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.18) !important;
+}
+
+
+html.teacher-dark .stat-card:hover {
+
+    border-color:
+        #315340 !important;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.24) !important;
+}
+
+
+html.teacher-dark .stat-icon {
+
+    background:
+        #143526 !important;
+
+    border-color:
+        #28523b !important;
+
+    color:
+        #8bc9a1 !important;
+}
+
+
+html.teacher-dark .stat-icon.published {
+
+    background:
+        #143526 !important;
+
+    border-color:
+        #28523b !important;
+
+    color:
+        #86c79c !important;
+}
+
+
+html.teacher-dark .stat-icon.draft {
+
+    background:
+        #352d12 !important;
+
+    border-color:
+        #554817 !important;
+
+    color:
+        #dfc461 !important;
+}
+
+
+html.teacher-dark .stat-content span {
+
+    color:
+        #8fa39a !important;
+}
+
+
+html.teacher-dark .stat-content strong {
+
+    color:
+        #f0f6f2 !important;
+}
+
+
+
+/* =========================================================
+   31. DARK MESSAGE
+========================================================= */
+
+html.teacher-dark .message {
+
+    color:
+        #d8e4dc !important;
+}
+
+
+html.teacher-dark .message.success {
+
+    background:
+        #102b1d !important;
+
+    border-color:
+        #245239 !important;
+
+    color:
+        #91d1a7 !important;
+}
+
+
+html.teacher-dark .message.error {
+
+    background:
+        #321818 !important;
+
+    border-color:
+        #5b2929 !important;
+
+    color:
+        #e79b9b !important;
+}
+
+
+
+/* =========================================================
+   32. DARK TEST SECTION
+========================================================= */
+
+html.teacher-dark .tests-section {
+
+    background:
+        #0c1c14 !important;
+
+    border-color:
+        #20392b !important;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.20) !important;
+}
+
+
+html.teacher-dark .section-title h2 {
+
+    color:
+        #f0f6f2 !important;
+}
+
+
+html.teacher-dark .section-title p {
+
+    color:
+        #8fa39a !important;
+}
+
+
+html.teacher-dark .section-divider {
+
+    background:
+        #20392b !important;
+}
+
+
+
+/* =========================================================
+   33. DARK LOADING
+========================================================= */
+
+html.teacher-dark .loading {
+
+    color:
+        #8fa39a !important;
+}
+
+
+html.teacher-dark .loading-spinner {
+
+    border-color:
+        #263d30 !important;
+
+    border-top-color:
+        #d4af37 !important;
+}
+
+
+
+/* =========================================================
+   34. DARK EMPTY STATE
+========================================================= */
+
+html.teacher-dark .tests-container-list
+.empty-state,
+
+html.teacher-dark .tests-container-list
+.no-tests,
+
+html.teacher-dark .tests-container-list
+.empty {
+
+    background:
+        #0a1911 !important;
+
+    border-color:
+        #30483a !important;
+
+    color:
+        #8fa39a !important;
+}
+
+
+html.teacher-dark .tests-container-list
+.empty-state h3,
+
+html.teacher-dark .tests-container-list
+.no-tests h3,
+
+html.teacher-dark .tests-container-list
+.empty h3 {
+
+    color:
+        #edf5ef !important;
+}
+
+
+html.teacher-dark .tests-container-list
+.empty-state p,
+
+html.teacher-dark .tests-container-list
+.no-tests p,
+
+html.teacher-dark .tests-container-list
+.empty p {
+
+    color:
+        #899c92 !important;
+}
+
+
+
+/* =========================================================
+   35. DARK DYNAMIC TEST CARDS
+========================================================= */
+
+html.teacher-dark .tests-container-list
+.test-card,
+
+html.teacher-dark .tests-container-list
+.test-item,
+
+html.teacher-dark .tests-container-list
+.test-row,
+
+html.teacher-dark .tests-container-list
+.test-box,
+
+html.teacher-dark .tests-container-list
+.assessment-card {
+
+    background:
+        #101f17 !important;
+
+    border-color:
+        #294438 !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+html.teacher-dark .tests-container-list
+.test-card:hover,
+
+html.teacher-dark .tests-container-list
+.test-item:hover,
+
+html.teacher-dark .tests-container-list
+.test-row:hover,
+
+html.teacher-dark .tests-container-list
+.test-box:hover,
+
+html.teacher-dark .tests-container-list
+.assessment-card:hover {
+
+    background:
+        #12251b !important;
+
+    border-color:
+        #3b5a49 !important;
+
+    box-shadow:
+        0 10px 28px rgba(0,0,0,.22) !important;
+}
+
+
+html.teacher-dark .tests-container-list
+.test-card h3,
+
+html.teacher-dark .tests-container-list
+.test-item h3,
+
+html.teacher-dark .tests-container-list
+.test-row h3,
+
+html.teacher-dark .tests-container-list
+.test-box h3,
+
+html.teacher-dark .tests-container-list
+.assessment-card h3 {
+
+    color:
+        #eef5f0 !important;
+}
+
+
+html.teacher-dark .tests-container-list
+.test-card h4,
+
+html.teacher-dark .tests-container-list
+.test-item h4,
+
+html.teacher-dark .tests-container-list
+.test-row h4 {
+
+    color:
+        #e4eee7 !important;
+}
+
+
+html.teacher-dark .tests-container-list
+.test-card p,
+
+html.teacher-dark .tests-container-list
+.test-item p,
+
+html.teacher-dark .tests-container-list
+.test-row p,
+
+html.teacher-dark .tests-container-list
+.test-box p,
+
+html.teacher-dark .tests-container-list
+.assessment-card p {
+
+    color:
+        #8fa39a !important;
+}
+
+
+
+/* =========================================================
+   36. DARK TEST METADATA
+========================================================= */
+
+html.teacher-dark .tests-container-list
+.test-meta span,
+
+html.teacher-dark .tests-container-list
+.test-details span,
+
+html.teacher-dark .tests-container-list
+.test-info span,
+
+html.teacher-dark .tests-container-list
+.meta span,
+
+html.teacher-dark .tests-container-list
+.details span {
+
+    color:
+        #8fa39a !important;
+}
+
+
+
+/* =========================================================
+   37. DARK BADGES
+========================================================= */
+
+html.teacher-dark .tests-container-list
+.published,
+
+html.teacher-dark .tests-container-list
+.published-badge {
+
+    background:
+        #123522 !important;
+
+    color:
+        #8bd0a3 !important;
+}
+
+
+html.teacher-dark .tests-container-list
+.draft,
+
+html.teacher-dark .tests-container-list
+.draft-badge {
+
+    background:
+        #352d12 !important;
+
+    color:
+        #dfc461 !important;
+}
+
+
+
+/* =========================================================
+   38. DARK CARD BUTTONS
+========================================================= */
+
+html.teacher-dark .tests-container-list
+.test-actions a,
+
+html.teacher-dark .tests-container-list
+.actions a,
+
+html.teacher-dark .tests-container-list
+.card-actions a,
+
+html.teacher-dark .tests-container-list button {
+
+    background:
+        #14271d !important;
+
+    border-color:
+        #2d493a !important;
+
+    color:
+        #b9d8c4 !important;
+}
+
+
+html.teacher-dark .tests-container-list
+.test-actions a:hover,
+
+html.teacher-dark .tests-container-list
+.actions a:hover,
+
+html.teacher-dark .tests-container-list
+.card-actions a:hover,
+
+html.teacher-dark .tests-container-list button:hover {
+
+    background:
+        #183326 !important;
+
+    border-color:
+        #4a6b58 !important;
+
+    color:
+        #e2f0e7 !important;
+}
+
+
+html.teacher-dark .tests-container-list
+.edit-btn,
+
+html.teacher-dark .tests-container-list
+.edit-button,
+
+html.teacher-dark .tests-container-list
+.manage-btn,
+
+html.teacher-dark .tests-container-list
+.manage-button {
+
+    background:
+        #16603c !important;
+
+    border-color:
+        #16603c !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+html.teacher-dark .tests-container-list
+.edit-btn:hover,
+
+html.teacher-dark .tests-container-list
+.edit-button:hover,
+
+html.teacher-dark .tests-container-list
+.manage-btn:hover,
+
+html.teacher-dark .tests-container-list
+.manage-button:hover {
+
+    background:
+        #1d7549 !important;
+
+    border-color:
+        #1d7549 !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+html.teacher-dark .tests-container-list
+button[class*="delete"],
+
+html.teacher-dark .tests-container-list
+button[class*="Delete"],
+
+html.teacher-dark .tests-container-list
+button[class*="remove"],
+
+html.teacher-dark .tests-container-list
+button[class*="Remove"] {
+
+    background:
+        #291616 !important;
+
+    border-color:
+        #512727 !important;
+
+    color:
+        #e49a9a !important;
+}
+
+
+
+/* =========================================================
+   39. DARK FOOTER
+========================================================= */
+
+html.teacher-dark .teacher-footer {
+
+    background:
+        #08150e !important;
+
+    border-top-color:
+        #20392b !important;
+}
+
+
+html.teacher-dark .teacher-footer p {
+
+    color:
+        #788d80 !important;
+}
+
+
+html.teacher-dark .teacher-footer span {
+
+    color:
+        #d4af37 !important;
+}
+
+
+
+/* =========================================================
+   40. RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .teacher-header-inner {
+
+        gap: 20px;
+
+        padding-left: 20px;
+
+        padding-right: 20px;
+    }
+
+
+    .teacher-brand {
+
+        min-width: 155px;
+    }
+
+
+    .teacher-nav a {
+
+        padding-left: 9px;
+
+        padding-right: 9px;
+
+        font-size: 11px;
+    }
+
+
+    .teacher-theme-toggle {
+
+        padding-left: 10px;
+
+        padding-right: 10px;
+    }
+
+}
+
+
+
+/* =========================================================
+   41. RESPONSIVE — SMALL TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .teacher-header-inner {
+
+        min-height: auto;
+
+        padding-top: 14px;
+
+        padding-bottom: 0;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 12px;
+    }
+
+
+    .teacher-brand {
+
+        min-width: 0;
+    }
+
+
+    .teacher-nav {
+
+        width: 100%;
+
+        padding-bottom: 0;
+    }
+
+
+    .teacher-nav a {
+
+        height: 45px;
+
+        padding-left: 11px;
+
+        padding-right: 11px;
+    }
+
+
+    .teacher-nav a::before {
+
+        bottom: 0;
+    }
+
+
+    .teacher-theme-toggle {
+
+        position: absolute;
+
+        right: 20px;
+
+        top: 15px;
+    }
+
+
+    .page-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .create-btn {
+
+        width: 100%;
+    }
+
+}
+
+
+
+/* =========================================================
+   42. RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .tests-main {
+
+        padding:
+            25px 14px 50px;
+    }
+
+
+    .teacher-header-inner {
+
+        padding-left: 15px;
+
+        padding-right: 15px;
+    }
+
+
+    .teacher-brand-main {
+
+        font-size: 17px;
+    }
+
+
+    .teacher-brand-sub {
+
+        font-size: 9px;
+    }
+
+
+    .teacher-theme-toggle {
+
+        right: 15px;
+
+        top: 13px;
+
+        min-height: 34px;
+
+        font-size: 10px;
+    }
+
+
+    .page-header {
+
+        padding:
+            23px 20px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .page-header h1 {
+
+        font-size: 29px;
+    }
+
+
+    .page-header p {
+
+        font-size: 13px;
+    }
+
+
+    .stats-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 12px;
+    }
+
+
+    .stat-card {
+
+        min-height: 100px;
+
+        padding:
+            18px;
+    }
+
+
+    .tests-section {
+
+        border-radius:
+            13px;
+    }
+
+
+    .section-title {
+
+        padding:
+            22px 19px 18px;
+    }
+
+
+    .section-title h2 {
+
+        font-size: 19px;
+    }
+
+
+    .tests-container-list {
+
+        padding:
+            19px 15px 23px;
+    }
+
+
+    .tests-container-list
+    .test-card,
+
+    .tests-container-list
+    .test-item,
+
+    .tests-container-list
+    .test-row,
+
+    .tests-container-list
+    .test-box,
+
+    .tests-container-list
+    .assessment-card {
+
+        padding:
+            18px;
+    }
+
+
+    .teacher-footer-inner {
+
+        min-height: auto;
+
+        padding:
+            17px 15px;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        text-align: center;
+    }
+
+}
+
+
+
+/* =========================================================
+   43. RESPONSIVE — VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .teacher-nav a {
+
+        padding:
+            0 9px;
+
+        font-size: 10px;
+    }
+
+
+    .teacher-theme-toggle {
+
+        font-size: 9px;
+
+        padding:
+            0 8px;
+    }
+
+
+    .page-header h1 {
+
+        font-size: 26px;
+    }
+
+
+    .create-btn {
+
+        min-height: 44px;
+
+        font-size: 11px;
+    }
+
+
+    .stat-content strong {
+
+        font-size: 25px;
+    }
+
+
+    .tests-container-list
+    .test-actions,
+
+    .tests-container-list
+    .actions,
+
+    .tests-container-list
+    .card-actions {
+
+        width: 100%;
+    }
+
+
+    .tests-container-list
+    .test-actions a,
+
+    .tests-container-list
+    .actions a,
+
+    .tests-container-list
+    .card-actions a,
+
+    .tests-container-list button {
+
+        flex: 1;
+
+        min-width: 90px;
+    }
+
+}

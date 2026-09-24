@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Admin Lessons | As-Siyānah Institute
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin-portal.css"
+    >
+
+</head>
+
+<body>
+
+
+<!-- =========================
+     ADMIN HEADER
+========================= -->
+
+<header class="admin-header">
+
+    <div class="admin-header-inner">
+
+
+        <a
+            href="admin-dashboard.html"
+            class="admin-brand"
+        >
+
+            <div class="admin-brand-mark">
+                AS
+            </div>
+
+            <div class="admin-brand-text">
+
+                <strong>
+                    AS-SIYĀNAH
+                </strong>
+
+                <span>
+                    Admin Portal
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <nav class="admin-nav">
+
+            <a href="admin-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="admin-students.html">
+                Students
+            </a>
+
+            <a href="admin-teachers.html">
+                Teachers
+            </a>
+
+            <a
+                href="admin-lessons.html"
+                class="active"
+            >
+                Lessons
+            </a>
+
+            <a href="admin-results.html">
+                Results
+            </a>
+
+            <a href="admin-announcements.html">
+                Announcements
+            </a>
+
+            <a href="admin-registrations.html">
+                Registrations
+            </a>
+
+            <a href="admin-profile.html">
+                Profile
+            </a>
+
+        </nav>
+
+
+        <button
+            type="button"
+            id="adminThemeToggle"
+            class="admin-theme-toggle"
+            aria-label="Switch to dark mode"
+        >
+
+            <span class="admin-theme-icon">
+                ☾
+            </span>
+
+            <span class="admin-theme-text">
+                Dark
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
+<main class="admin-dashboard">
+
+
+    <section class="admin-welcome">
+
+        <p class="dashboard-label">
+            ADMIN MANAGEMENT
+        </p>
+
+        <h1>
+            Lessons
+        </h1>
+
+        <p>
+            View and manage lessons created by teachers.
+        </p>
+
+    </section>
+
+
+
+    <section class="dashboard-section">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="dashboard-label">
+                    LESSON LIBRARY
+                </p>
+
+                <h2>
+                    All Lessons
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SEARCH -->
+
+        <div class="admin-search-box">
+
+            <input
+                type="search"
+                id="lessonSearch"
+                placeholder="Search by title, subject or level..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+
+        <!-- MESSAGE -->
+
+        <div
+            id="lessonsMessage"
+            class="dashboard-loading"
+        >
+            Loading lessons...
+        </div>
+
+
+
+        <!-- TABLE -->
+
+        <div class="admin-table-wrapper">
+
+            <table class="admin-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            ID
+                        </th>
+
+                        <th>
+                            Lesson
+                        </th>
+
+                        <th>
+                            Subject
+                        </th>
+
+                        <th>
+                            Level
+                        </th>
+
+                        <th>
+                            Published
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="lessonsTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- BOTTOM ACTIONS -->
+
+    <section class="admin-account-bar">
+
+        <a
+            href="admin-dashboard.html"
+            class="secondary-button"
+        >
+            ← Dashboard
+        </a>
+
+
+        <button
+            id="adminLogoutButton"
+            class="logout-button"
+        >
+            🚪 Logout
+        </button>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer class="admin-footer">
+
+    <p>
+        © 2026 As-Siyānah Institute for Arabic & Islamic Studies
+    </p>
+
+</footer>
+
+
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+    const SUPABASE_URL =
+        "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+    const SUPABASE_ANON_KEY =
+        "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+    const supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_ANON_KEY
+        );
+
+</script>
+
+
+
+<script src="js/admin-lessons.js"></script>
+
+<script src="js/admin-theme.js"></script>
+
+
+</body>
+
+</html>

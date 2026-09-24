@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Attendance History | As-Siyānah Institute
+    </title>
+
+
+    <!-- GLOBAL TEACHER PORTAL -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal.css"
+    >
+
+
+    <!-- ATTENDANCE PAGE DESIGN -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-mark.css"
+    >
+
+
+    <!-- GLOBAL DARK MODE -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal-dark.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<header class="teacher-header">
+
+    <div class="teacher-header-inner">
+
+
+        <!-- BRAND -->
+
+        <div class="teacher-brand">
+
+            <div class="brand-mark">
+                AS
+            </div>
+
+            <div>
+
+                <h1>
+                    AS-SIYĀNAH INSTITUTE
+                </h1>
+
+                <span>
+                    Teacher Portal
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="teacher-nav">
+
+            <a href="teacher-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="teacher-students.html">
+                Students
+            </a>
+
+            <a href="teacher-lessons.html">
+                Lessons
+            </a>
+
+            <a href="teacher-results.html">
+                Results
+            </a>
+
+            <a href="teacher-assignments.html">
+                Assignments
+            </a>
+
+            <a
+                href="teacher-attendance.html"
+                class="attendance-main-link"
+            >
+                Attendance
+            </a>
+
+            <a
+                href="teacher-attendance-history.html"
+                class="active"
+            >
+                History
+            </a>
+
+            <a href="teacher-announcements.html">
+                Announcements
+            </a>
+
+        </nav>
+
+
+        <!-- THEME -->
+
+        <button
+            type="button"
+            class="teacher-theme-toggle"
+            aria-label="Switch to dark mode"
+        >
+            🌙 Dark Mode
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+====================================================== -->
+
+<main class="teacher-main">
+
+
+    <!-- =================================================
+         HERO
+    ================================================== -->
+
+    <section class="attendance-hero">
+
+        <div class="attendance-hero-content">
+
+            <span class="page-eyebrow">
+                ATTENDANCE MANAGEMENT
+            </span>
+
+            <h2>
+                Attendance History
+            </h2>
+
+            <p>
+                Review, filter and manage attendance records
+                for your classes from one central workspace.
+            </p>
+
+        </div>
+
+
+        <div class="attendance-hero-icon">
+            ✓
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         FILTERS
+    ================================================== -->
+
+    <section class="attendance-controls">
+
+        <div class="controls-heading">
+
+            <div>
+
+                <span>
+                    RECORD FILTERS
+                </span>
+
+                <h2>
+                    Find Attendance Records
+                </h2>
+
+            </div>
+
+            <p>
+                Choose a class or date to narrow your results.
+            </p>
+
+        </div>
+
+
+        <div class="controls-grid">
+
+
+            <!-- CLASS -->
+
+            <div class="form-group">
+
+                <label for="classSelect">
+                    Class
+                </label>
+
+                <select id="classSelect">
+
+                    <option value="">
+                        All Classes
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- DATE -->
+
+            <div class="form-group">
+
+                <label for="dateSelect">
+                    Date
+                </label>
+
+                <input
+                    type="date"
+                    id="dateSelect"
+                >
+
+            </div>
+
+
+
+            <!-- ACTIONS -->
+
+            <div class="filter-actions">
+
+                <button
+                    type="button"
+                    id="loadHistoryBtn"
+                    class="btn btn-primary"
+                >
+                    Load History
+                </button>
+
+
+                <button
+                    type="button"
+                    id="clearFiltersBtn"
+                    class="btn btn-secondary"
+                >
+                    Clear Filters
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         MESSAGE
+    ================================================== -->
+
+    <div
+        id="historyMessage"
+        class="message"
+        style="display:none;"
+    ></div>
+
+
+
+    <!-- =================================================
+         STATISTICS
+    ================================================== -->
+
+    <section class="attendance-stats">
+
+
+        <!-- TOTAL -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon total-icon">
+                #
+            </div>
+
+            <div>
+
+                <div class="stat-label">
+                    Total Records
+                </div>
+
+                <div
+                    class="stat-value"
+                    id="totalCount"
+                >
+                    0
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRESENT -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon present-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <div class="stat-label">
+                    Present
+                </div>
+
+                <div
+                    class="stat-value"
+                    id="presentCount"
+                >
+                    0
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LATE -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon late-icon">
+                ◷
+            </div>
+
+            <div>
+
+                <div class="stat-label">
+                    Late
+                </div>
+
+                <div
+                    class="stat-value"
+                    id="lateCount"
+                >
+                    0
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ABSENT -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon absent-icon">
+                ×
+            </div>
+
+            <div>
+
+                <div class="stat-label">
+                    Absent
+                </div>
+
+                <div
+                    class="stat-value"
+                    id="absentCount"
+                >
+                    0
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         RECORDS
+    ================================================== -->
+
+    <section
+        id="historySection"
+        class="attendance-records"
+    >
+
+
+        <div class="section-header">
+
+            <div>
+
+                <span class="section-eyebrow">
+                    ATTENDANCE LOG
+                </span>
+
+                <h2>
+                    Attendance Records
+                </h2>
+
+                <p id="historyInfo">
+                    Attendance records
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TABLE -->
+
+        <div class="table-container">
+
+            <table class="attendance-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            #
+                        </th>
+
+                        <th>
+                            Date
+                        </th>
+
+                        <th>
+                            Class
+                        </th>
+
+                        <th>
+                            Student
+                        </th>
+
+                        <th>
+                            Student ID
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Note
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="historyTableBody">
+
+                    <tr>
+
+                        <td
+                            colspan="8"
+                            class="table-empty"
+                        >
+                            Load attendance records to begin.
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     EDIT ATTENDANCE MODAL
+====================================================== -->
+
+<div
+    id="editAttendanceModal"
+    class="attendance-modal"
+    style="display:none;"
+>
+
+    <div class="attendance-modal-content">
+
+
+        <!-- MODAL HEADER -->
+
+        <div class="attendance-modal-header">
+
+            <div>
+
+                <span class="modal-eyebrow">
+                    ATTENDANCE RECORD
+                </span>
+
+                <h2>
+                    Edit Attendance
+                </h2>
+
+                <p id="editStudentInfo">
+                    Attendance record
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="closeEditModalBtn"
+                class="modal-close"
+                aria-label="Close modal"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+
+        <!-- MODAL BODY -->
+
+        <div class="attendance-modal-body">
+
+
+            <!-- STATUS -->
+
+            <div class="form-group">
+
+                <label for="editStatus">
+                    Status
+                </label>
+
+                <select id="editStatus">
+
+                    <option value="Present">
+                        Present
+                    </option>
+
+                    <option value="Late">
+                        Late
+                    </option>
+
+                    <option value="Absent">
+                        Absent
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- NOTE -->
+
+            <div class="form-group">
+
+                <label for="editNote">
+                    Note
+                </label>
+
+                <input
+                    type="text"
+                    id="editNote"
+                    placeholder="Optional note"
+                >
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- MODAL FOOTER -->
+
+        <div class="attendance-modal-footer">
+
+            <button
+                type="button"
+                id="cancelEditBtn"
+                class="btn btn-secondary"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                type="button"
+                id="saveEditBtn"
+                class="btn btn-primary"
+            >
+                Save Changes
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     SUPABASE
+====================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script src="js/teacher-attendance-history.js"></script>
+
+
+<!-- GLOBAL TEACHER THEME -->
+
+<script src="js/teacher-theme.js"></script>
+
+
+</body>
+
+</html>

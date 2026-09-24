@@ -1,0 +1,378 @@
+/* =========================================================
+   AS-SIYĀNAH INSTITUTE
+   TEACHER — ASSIGNMENT SUBMISSIONS
+   DARK MODE ONLY
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+html.teacher-dark body.assignment-submissions-page {
+    background: #081c14;
+    color: #e7f0eb;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+html.teacher-dark .teacher-header {
+    background: rgba(8, 28, 20, 0.96);
+
+    border-bottom-color: #19382b;
+
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.18);
+}
+
+
+html.teacher-dark .teacher-brand h1 {
+    color: #f0f6f3;
+}
+
+
+html.teacher-dark .teacher-brand span {
+    color: #82988d;
+}
+
+
+html.teacher-dark .teacher-brand-mark {
+    background:
+        linear-gradient(
+            135deg,
+            #1d6844,
+            #0b3524
+        );
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+html.teacher-dark .teacher-nav a {
+    color: #8ca198;
+}
+
+
+html.teacher-dark .teacher-nav a:hover {
+    background: #112d21;
+
+    color: #e6f0eb;
+}
+
+
+html.teacher-dark .teacher-nav a.active {
+    background: #153728;
+
+    color: #dcebe3;
+}
+
+
+html.teacher-dark .teacher-nav a.active::after {
+    background: #d4af37;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+html.teacher-dark .teacher-theme-toggle {
+    background: #10291f;
+
+    border-color: #29473a;
+
+    color: #d9e7e0;
+}
+
+
+html.teacher-dark .teacher-theme-toggle:hover {
+    background: #16372a;
+
+    border-color: #3a5c4d;
+}
+
+
+html.teacher-dark .teacher-logout-button {
+    background: #c49b2e;
+
+    color: #102016;
+}
+
+
+html.teacher-dark .teacher-logout-button:hover {
+    background: #d4af37;
+
+    box-shadow:
+        0 7px 18px rgba(212, 175, 55, 0.16);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+html.teacher-dark .submissions-hero {
+    background:
+        linear-gradient(
+            135deg,
+            #071f15 0%,
+            #0d3926 55%,
+            #12482f 100%
+        );
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.28);
+}
+
+
+html.teacher-dark .submissions-hero::before {
+    border-color:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+html.teacher-dark .submissions-hero::after {
+    border-color:
+        rgba(212, 175, 55, 0.18);
+}
+
+
+html.teacher-dark .submissions-hero .eyebrow {
+    color: #d4af37;
+}
+
+
+html.teacher-dark .submissions-hero h2 {
+    color: #f4f8f6;
+}
+
+
+html.teacher-dark .submissions-hero p {
+    color: rgba(235, 245, 240, 0.70);
+}
+
+
+html.teacher-dark .hero-icon {
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    border-color:
+        rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================================
+   SUBMISSIONS SECTION
+========================================================= */
+
+html.teacher-dark .submissions-section {
+    background: #0d241a;
+
+    border-color: #1d3a2d;
+
+    box-shadow:
+        0 10px 32px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+html.teacher-dark .section-heading {
+    border-bottom-color: #203d30;
+}
+
+
+html.teacher-dark .section-label {
+    color: #d4af37;
+}
+
+
+html.teacher-dark .section-heading h3 {
+    color: #e8f1ec;
+}
+
+
+html.teacher-dark .section-heading p {
+    color: #83978d;
+}
+
+
+/* =========================================================
+   LOADING / EMPTY STATE
+========================================================= */
+
+html.teacher-dark .submissions-empty {
+    background: #0a2017;
+
+    border-color: #29483a;
+}
+
+
+html.teacher-dark .empty-icon {
+    background: #143629;
+
+    color: #d4af37;
+}
+
+
+html.teacher-dark .submissions-empty h3 {
+    color: #dce9e2;
+}
+
+
+html.teacher-dark .submissions-empty p {
+    color: #81968b;
+}
+
+
+/* =========================================================
+   SUBMISSION CARDS
+========================================================= */
+
+html.teacher-dark .submission-card {
+    background: #102a1f;
+
+    border-color: #254537;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.14);
+}
+
+
+html.teacher-dark .submission-card:hover {
+    background: #123023;
+
+    border-color: #355747;
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+
+html.teacher-dark .submission-card h3 {
+    color: #e5efe9;
+}
+
+
+html.teacher-dark .submission-card p {
+    color: #8ba096;
+}
+
+
+html.teacher-dark .submission-card strong {
+    color: #cfe0d7;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+========================================================= */
+
+html.teacher-dark .status-badge.submitted {
+    background: #172f46;
+
+    color: #9fc4ec;
+}
+
+
+html.teacher-dark .status-badge.reviewed {
+    background: #143b29;
+
+    color: #91d1aa;
+}
+
+
+html.teacher-dark .status-badge.pending {
+    background: #3a3118;
+
+    color: #e1c56b;
+}
+
+
+/* =========================================================
+   REVIEW BUTTON
+========================================================= */
+
+html.teacher-dark .review-btn {
+    background: #c9a227;
+
+    color: #102016;
+}
+
+
+html.teacher-dark .review-btn:hover {
+    background: #d4af37;
+
+    box-shadow:
+        0 6px 15px rgba(212, 175, 55, 0.14);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+html.teacher-dark .teacher-footer {
+    background: #081c14;
+
+    border-top-color: #19382b;
+}
+
+
+html.teacher-dark .teacher-footer strong {
+    color: #e3eee8;
+}
+
+
+html.teacher-dark .teacher-footer p {
+    color: #748980;
+}
+
+
+/* =========================================================
+   MOBILE DARK MODE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    html.teacher-dark .teacher-nav {
+        scrollbar-color: #315444 #0b2118;
+    }
+
+
+    html.teacher-dark .submissions-hero {
+        box-shadow:
+            0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    html.teacher-dark .teacher-theme-toggle {
+        background: #10291f;
+
+        border-color: #29473a;
+    }
+
+
+    html.teacher-dark .teacher-theme-toggle::before {
+        content: "☀️";
+    }
+
+
+    html.teacher-dark .teacher-logout-button {
+        background: #c9a227;
+
+        color: #102016;
+    }
+
+}

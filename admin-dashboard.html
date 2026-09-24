@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard | As-Siyānah Institute</title>
+
+    <link rel="stylesheet" href="admin-style.css">
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     ADMIN HEADER
+===================================================== -->
+
+<header class="admin-header">
+
+    <div class="admin-header-inner">
+
+        <a
+            href="admin-dashboard.html"
+            class="admin-brand"
+        >
+
+            <div class="admin-brand-mark">
+                AS
+            </div>
+
+            <div class="admin-brand-text">
+
+                <strong>
+                    AS-SIYĀNAH
+                </strong>
+
+                <span>
+                    Administration Portal
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <nav class="admin-nav">
+
+            <a
+                href="admin-dashboard.html"
+                class="active"
+            >
+                Dashboard
+            </a>
+
+            <a href="admin-students.html">
+                Students
+            </a>
+
+            <a href="admin-teachers.html">
+                Teachers
+            </a>
+
+            <a href="admin-classes.html">
+                Classes
+            </a>
+
+            <a href="admin-lessons.html">
+                Lessons
+            </a>
+
+            <a href="admin-results.html">
+                Results
+            </a>
+
+            <a href="admin-tests.html">
+                Tests & Exams
+            </a>
+
+            <a href="admin-announcements.html">
+                Announcements
+            </a>
+
+            <a href="admin-registrations.html">
+                Registrations
+            </a>
+
+            <a href="admin-profile.html">
+                Profile
+            </a>
+
+        </nav>
+
+
+        <!-- THEME TOGGLE -->
+
+        <button
+            type="button"
+            id="adminThemeToggle"
+            class="admin-theme-toggle"
+            aria-label="Switch to dark mode"
+        >
+
+            <span class="admin-theme-icon">
+                ☾
+            </span>
+
+            <span class="admin-theme-text">
+                Dark
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MAIN DASHBOARD
+===================================================== -->
+
+<main class="admin-dashboard">
+
+
+    <!-- =================================================
+         WELCOME SECTION
+    ================================================== -->
+
+    <section class="admin-welcome">
+
+        <div class="admin-welcome-copy">
+
+            <span class="admin-overline">
+                ADMINISTRATION
+            </span>
+
+            <h1>
+                Welcome,
+                <span id="adminName">
+                    Admin
+                </span>
+            </h1>
+
+            <p>
+                Everything you need to manage
+                As-Siyānah Institute, in one place.
+            </p>
+
+        </div>
+
+
+        <div class="admin-welcome-status">
+
+            <span class="status-dot"></span>
+
+            <span>
+                System operational
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PRIMARY STATISTICS
+    ================================================== -->
+
+    <section class="admin-stats-grid">
+
+
+        <!-- STUDENTS -->
+
+        <article class="admin-stat-card">
+
+            <div class="stat-card-top">
+
+                <div class="stat-icon students-icon">
+                    👨‍🎓
+                </div>
+
+                <span class="stat-label">
+                    STUDENTS
+                </span>
+
+            </div>
+
+            <strong
+                id="totalStudents"
+                class="stat-number"
+            >
+                —
+            </strong>
+
+            <span class="stat-description">
+                Registered students
+            </span>
+
+        </article>
+
+
+
+        <!-- TEACHERS -->
+
+        <article class="admin-stat-card">
+
+            <div class="stat-card-top">
+
+                <div class="stat-icon teachers-icon">
+                    👨‍🏫
+                </div>
+
+                <span class="stat-label">
+                    TEACHERS
+                </span>
+
+            </div>
+
+            <strong
+                id="totalTeachers"
+                class="stat-number"
+            >
+                —
+            </strong>
+
+            <span class="stat-description">
+                Teaching staff
+            </span>
+
+        </article>
+
+
+
+        <!-- LESSONS -->
+
+        <article class="admin-stat-card">
+
+            <div class="stat-card-top">
+
+                <div class="stat-icon lessons-icon">
+                    📚
+                </div>
+
+                <span class="stat-label">
+                    LESSONS
+                </span>
+
+            </div>
+
+            <strong
+                id="totalLessons"
+                class="stat-number"
+            >
+                —
+            </strong>
+
+            <span class="stat-description">
+                Total lessons
+            </span>
+
+        </article>
+
+
+
+        <!-- RESULTS -->
+
+        <article class="admin-stat-card">
+
+            <div class="stat-card-top">
+
+                <div class="stat-icon results-icon">
+                    📊
+                </div>
+
+                <span class="stat-label">
+                    RESULTS
+                </span>
+
+            </div>
+
+            <strong
+                id="totalResults"
+                class="stat-number"
+            >
+                —
+            </strong>
+
+            <span class="stat-description">
+                Academic results
+            </span>
+
+        </article>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SECONDARY STATISTICS
+    ================================================== -->
+
+    <section class="admin-secondary-grid">
+
+
+        <!-- ANNOUNCEMENTS -->
+
+        <div class="admin-mini-stat">
+
+            <div class="mini-stat-icon">
+                📢
+            </div>
+
+            <div>
+
+                <span>
+                    Announcements
+                </span>
+
+                <strong id="totalAnnouncements">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- REGISTRATIONS -->
+
+        <div class="admin-mini-stat">
+
+            <div class="mini-stat-icon">
+                📝
+            </div>
+
+            <div>
+
+                <span>
+                    Registrations
+                </span>
+
+                <strong id="totalRegistrations">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PUBLISHED LESSONS -->
+
+        <div class="admin-mini-stat">
+
+            <div class="mini-stat-icon">
+                🎥
+            </div>
+
+            <div>
+
+                <span>
+                    Published Lessons
+                </span>
+
+                <strong id="publishedLessons">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PUBLISHED ANNOUNCEMENTS -->
+
+        <div class="admin-mini-stat">
+
+            <div class="mini-stat-icon">
+                📣
+            </div>
+
+            <div>
+
+                <span>
+                    Published Announcements
+                </span>
+
+                <strong id="publishedAnnouncements">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         QUICK ACTIONS
+    ================================================== -->
+
+    <section class="admin-section">
+
+        <div class="admin-section-heading">
+
+            <div>
+
+                <span class="admin-overline">
+                    MANAGEMENT
+                </span>
+
+                <h2>
+                    Quick Actions
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-action-grid">
+
+
+            <!-- =================================================
+                 MANAGE STUDENTS
+            ================================================== -->
+
+            <a
+                href="admin-students.html"
+                class="admin-action-card"
+            >
+
+                <div class="action-icon">
+                    👨‍🎓
+                </div>
+
+                <div class="action-content">
+
+                    <strong>
+                        Manage Students
+                    </strong>
+
+                    <span>
+                        View and manage student records
+                    </span>
+
+                </div>
+
+                <span class="action-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 MANAGE TEACHERS
+            ================================================== -->
+
+            <a
+                href="admin-teachers.html"
+                class="admin-action-card"
+            >
+
+                <div class="action-icon">
+                    👨‍🏫
+                </div>
+
+                <div class="action-content">
+
+                    <strong>
+                        Manage Teachers
+                    </strong>
+
+                    <span>
+                        Manage teaching staff
+                    </span>
+
+                </div>
+
+                <span class="action-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 ADD NEW TEACHER
+            ================================================== -->
+
+            <a
+                href="admin-create-teacher.html"
+                class="admin-action-card"
+            >
+
+                <div class="action-icon">
+                    ➕
+                </div>
+
+                <div class="action-content">
+
+                    <strong>
+                        Add New Teacher
+                    </strong>
+
+                    <span>
+                        Create a teacher account
+                    </span>
+
+                </div>
+
+                <span class="action-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 MANAGE LESSONS
+            ================================================== -->
+
+            <a
+                href="admin-lessons.html"
+                class="admin-action-card"
+            >
+
+                <div class="action-icon">
+                    📚
+                </div>
+
+                <div class="action-content">
+
+                    <strong>
+                        Manage Lessons
+                    </strong>
+
+                    <span>
+                        Create and manage lessons
+                    </span>
+
+                </div>
+
+                <span class="action-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 MANAGE RESULTS
+            ================================================== -->
+
+            <a
+                href="admin-results.html"
+                class="admin-action-card"
+            >
+
+                <div class="action-icon">
+                    📊
+                </div>
+
+                <div class="action-content">
+
+                    <strong>
+                        Manage Results
+                    </strong>
+
+                    <span>
+                        Review academic results
+                    </span>
+
+                </div>
+
+                <span class="action-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 TESTS & EXAMS
+            ================================================== -->
+
+            <a
+                href="admin-tests.html"
+                class="admin-action-card"
+            >
+
+                <div class="action-icon">
+                    📝
+                </div>
+
+                <div class="action-content">
+
+                    <strong>
+                        Tests & Exams
+                    </strong>
+
+                    <span>
+                        Manage assessments and submissions
+                    </span>
+
+                </div>
+
+                <span class="action-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 ANNOUNCEMENTS
+            ================================================== -->
+
+            <a
+                href="admin-announcements.html"
+                class="admin-action-card"
+            >
+
+                <div class="action-icon">
+                    📢
+                </div>
+
+                <div class="action-content">
+
+                    <strong>
+                        Announcements
+                    </strong>
+
+                    <span>
+                        Create and manage announcements
+                    </span>
+
+                </div>
+
+                <span class="action-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 REGISTRATIONS
+            ================================================== -->
+
+            <a
+                href="admin-registrations.html"
+                class="admin-action-card"
+            >
+
+                <div class="action-icon">
+                    📝
+                </div>
+
+                <div class="action-content">
+
+                    <strong>
+                        Registrations
+                    </strong>
+
+                    <span>
+                        Review new registrations
+                    </span>
+
+                </div>
+
+                <span class="action-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         RECENT ANNOUNCEMENTS
+    ================================================== -->
+
+    <section class="admin-section">
+
+        <div class="admin-section-heading">
+
+            <div>
+
+                <span class="admin-overline">
+                    RECENT ACTIVITY
+                </span>
+
+                <h2>
+                    Recent Announcements
+                </h2>
+
+            </div>
+
+
+            <a
+                href="admin-announcements.html"
+                class="admin-view-all"
+            >
+
+                View all
+
+                <span>
+                    →
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <div id="recentAnnouncements">
+
+            <div class="admin-loading">
+
+                <span class="loading-spinner"></span>
+
+                Loading recent activity...
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ACCOUNT ACTIONS
+    ================================================== -->
+
+    <section class="admin-account-bar">
+
+        <div>
+
+            <span class="admin-overline">
+                ACCOUNT
+            </span>
+
+            <strong>
+                Administration controls
+            </strong>
+
+        </div>
+
+
+        <div class="admin-account-actions">
+
+
+            <a
+                href="admin-profile.html"
+                class="admin-secondary-button"
+            >
+
+                👤
+
+                <span>
+                    My Profile
+                </span>
+
+            </a>
+
+
+            <button
+                id="adminLogoutButton"
+                class="admin-logout-button"
+            >
+
+                🚪
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="admin-footer">
+
+    <div>
+
+        <strong>
+            AS-SIYĀNAH
+        </strong>
+
+        <span>
+            Institute for Arabic & Islamic Studies
+        </span>
+
+    </div>
+
+
+    <p>
+        © 2026 As-Siyānah Institute
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     SCRIPTS
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/admin-dashboard.js"></script>
+
+<script src="js/admin-theme.js"></script>
+
+
+</body>
+</html>

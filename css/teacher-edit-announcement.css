@@ -1,0 +1,994 @@
+/* ========================================
+   AS-SIYĀNAH INSTITUTE
+   TEACHER PORTAL — EDIT ANNOUNCEMENT
+   PREMIUM PAGE UI
+======================================== */
+
+:root {
+    --edit-green: #0b3524;
+    --edit-green-2: #164f36;
+    --edit-gold: #c9a227;
+    --edit-gold-soft: #f5edcf;
+    --edit-text: #17231d;
+    --edit-muted: #6b756f;
+    --edit-border: #e6e9e6;
+    --edit-bg: #f5f7f5;
+    --edit-white: #ffffff;
+    --edit-shadow: 0 18px 45px rgba(11, 53, 36, 0.08);
+}
+
+
+/* ========================================
+   PAGE
+======================================== */
+
+.edit-announcement-main {
+    min-height: calc(100vh - 150px);
+    background:
+        linear-gradient(
+            180deg,
+            #f7f9f7 0%,
+            #f3f6f3 100%
+        );
+    padding: 42px 24px 70px;
+}
+
+
+.edit-announcement-container {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.teacher-header {
+    position: relative;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #e7ebe8;
+    box-shadow: 0 8px 30px rgba(11, 53, 36, 0.06);
+    backdrop-filter: blur(16px);
+}
+
+
+.teacher-header-inner {
+    width: min(1180px, calc(100% - 40px));
+    min-height: 76px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+
+/* ========================================
+   BRAND
+======================================== */
+
+.teacher-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+
+    min-width: 155px;
+
+    text-decoration: none;
+    line-height: 1;
+}
+
+
+.teacher-brand-main {
+    color: var(--edit-green);
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+}
+
+
+.teacher-brand-sub {
+    color: var(--edit-muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.teacher-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    flex: 1;
+}
+
+
+.teacher-nav a {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+    padding: 0 14px;
+
+    color: #59645e;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    border-radius: 10px;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.teacher-nav a:hover {
+    color: var(--edit-green);
+    background: #f1f5f2;
+}
+
+
+.teacher-nav a.active {
+    color: var(--edit-green);
+    background: #edf4ef;
+    font-weight: 750;
+}
+
+
+.teacher-nav a.active::after {
+    content: "";
+
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 5px;
+
+    height: 2px;
+
+    background: var(--edit-gold);
+    border-radius: 999px;
+}
+
+
+/* ========================================
+   THEME BUTTON
+======================================== */
+
+.teacher-theme-toggle {
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+    padding: 0 14px;
+
+    border: 1px solid #dfe5e1;
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #45524b;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.teacher-theme-toggle:hover {
+    border-color: var(--edit-gold);
+    background: #fffdf7;
+    color: var(--edit-green);
+    transform: translateY(-1px);
+}
+
+
+/* ========================================
+   PAGE HEADING
+======================================== */
+
+.edit-announcement-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+
+    margin-bottom: 30px;
+}
+
+
+.page-eyebrow {
+    margin: 0 0 9px;
+
+    color: var(--edit-gold);
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+
+.edit-announcement-heading h1 {
+    margin: 0;
+
+    color: var(--edit-green);
+
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 800;
+    letter-spacing: -1.2px;
+}
+
+
+.page-description {
+    max-width: 620px;
+    margin: 10px 0 0;
+
+    color: var(--edit-muted);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   BACK LINK
+======================================== */
+
+.edit-back-link {
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 42px;
+    padding: 0 16px;
+
+    border: 1px solid var(--edit-border);
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: var(--edit-green);
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 750;
+
+    box-shadow: 0 5px 18px rgba(11, 53, 36, 0.04);
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.edit-back-link:hover {
+    border-color: var(--edit-gold);
+    background: #fffdf7;
+    transform: translateY(-1px);
+}
+
+
+/* ========================================
+   FORM CARD
+======================================== */
+
+.edit-announcement-card {
+    background: var(--edit-white);
+
+    border: 1px solid var(--edit-border);
+    border-radius: 18px;
+
+    box-shadow: var(--edit-shadow);
+
+    overflow: hidden;
+}
+
+
+.edit-card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 26px 30px;
+}
+
+
+.edit-card-icon {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 13px;
+
+    background: var(--edit-gold-soft);
+
+    font-size: 20px;
+}
+
+
+.edit-card-header h2 {
+    margin: 0;
+
+    color: var(--edit-text);
+
+    font-size: 19px;
+    font-weight: 800;
+}
+
+
+.edit-card-header p {
+    margin: 5px 0 0;
+
+    color: var(--edit-muted);
+
+    font-size: 13px;
+}
+
+
+.edit-card-divider {
+    height: 1px;
+    background: var(--edit-border);
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+
+#editAnnouncementForm {
+    padding: 30px;
+}
+
+
+.form-group {
+    margin-bottom: 23px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #26342d;
+
+    font-size: 12px;
+    font-weight: 750;
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    border: 1px solid #dfe5e1;
+    border-radius: 11px;
+
+    background: #fbfcfb;
+    color: var(--edit-text);
+
+    padding: 13px 14px;
+
+    font: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--edit-gold);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px rgba(201, 162, 39, 0.12);
+}
+
+
+.form-group textarea {
+    min-height: 180px;
+    resize: vertical;
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   PUBLISH BOX
+======================================== */
+
+.publish-box {
+    margin-top: 4px;
+    margin-bottom: 28px;
+
+    padding: 17px 18px;
+
+    border: 1px solid #e7ebe8;
+    border-radius: 13px;
+
+    background: #f7f9f7;
+}
+
+
+.publish-label {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    cursor: pointer;
+}
+
+
+.publish-checkbox-wrap {
+    display: flex;
+    align-items: center;
+}
+
+
+.publish-checkbox-wrap input {
+    width: 18px;
+    height: 18px;
+
+    accent-color: var(--edit-green);
+
+    cursor: pointer;
+}
+
+
+.publish-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+
+.publish-content strong {
+    color: var(--edit-text);
+    font-size: 13px;
+}
+
+
+.publish-content small {
+    color: var(--edit-muted);
+    font-size: 12px;
+}
+
+
+/* ========================================
+   ACTIONS
+======================================== */
+
+.edit-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+
+    padding-top: 5px;
+}
+
+
+.cancel-announcement-btn,
+.update-announcement-btn {
+    min-height: 44px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 0 18px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 750;
+
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.cancel-announcement-btn {
+    border: 1px solid #dfe5e1;
+    background: #ffffff;
+    color: #536059;
+}
+
+
+.cancel-announcement-btn:hover {
+    background: #f5f7f5;
+}
+
+
+.update-announcement-btn {
+    border: 1px solid var(--edit-green);
+    background: var(--edit-green);
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 18px rgba(11, 53, 36, 0.16);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.update-announcement-btn:hover {
+    background: var(--edit-green-2);
+    transform: translateY(-1px);
+    box-shadow:
+        0 11px 24px rgba(11, 53, 36, 0.2);
+}
+
+
+.update-announcement-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* ========================================
+   FORM MESSAGE
+======================================== */
+
+.form-message {
+    display: none;
+
+    margin: 0 30px 20px;
+    padding: 12px 14px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+.form-message.show {
+    display: block;
+}
+
+
+.form-message.error {
+    border: 1px solid #efcaca;
+    background: #fff5f5;
+    color: #a33a3a;
+}
+
+
+.form-message.success {
+    border: 1px solid #c8dfce;
+    background: #f1f9f3;
+    color: #27663b;
+}
+
+
+.form-message.loading {
+    border: 1px solid #e5e9e6;
+    background: #f7f9f7;
+    color: #5e6962;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.teacher-footer {
+    padding: 22px 20px;
+
+    border-top: 1px solid #e7ebe8;
+
+    background: #ffffff;
+
+    text-align: center;
+}
+
+
+.teacher-footer p {
+    margin: 0;
+
+    color: #7b847e;
+
+    font-size: 11px;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+
+    .teacher-header-inner {
+        width: min(100% - 28px, 760px);
+
+        flex-wrap: wrap;
+
+        padding: 14px 0;
+        gap: 14px;
+    }
+
+
+    .teacher-nav {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        padding-bottom: 3px;
+    }
+
+
+    .teacher-nav a {
+        flex-shrink: 0;
+    }
+
+
+    .edit-announcement-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .edit-announcement-main {
+        padding: 28px 15px 50px;
+    }
+
+
+    .teacher-header-inner {
+        width: calc(100% - 24px);
+    }
+
+
+    .teacher-brand-main {
+        font-size: 19px;
+    }
+
+
+    .teacher-theme-toggle {
+        min-height: 38px;
+        padding: 0 11px;
+        font-size: 11px;
+    }
+
+
+    .teacher-nav {
+        gap: 2px;
+    }
+
+
+    .teacher-nav a {
+        min-height: 38px;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+
+
+    .edit-announcement-heading h1 {
+        font-size: 30px;
+    }
+
+
+    .edit-back-link {
+        width: 100%;
+    }
+
+
+    .edit-card-header {
+        padding: 22px 20px;
+    }
+
+
+    #editAnnouncementForm {
+        padding: 22px 20px;
+    }
+
+
+    .form-message {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+
+    .edit-form-actions {
+        flex-direction: column-reverse;
+    }
+
+
+    .cancel-announcement-btn,
+    .update-announcement-btn {
+        width: 100%;
+    }
+
+}
+
+/* ========================================
+   EDIT ANNOUNCEMENT — DARK MODE
+======================================== */
+
+html.teacher-dark .edit-announcement-main {
+    background:
+        linear-gradient(
+            180deg,
+            #08140e 0%,
+            #0b1d14 100%
+        );
+}
+
+
+html.teacher-dark .teacher-header {
+    background: rgba(8, 20, 14, 0.97);
+    border-bottom-color: #1d3328;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+html.teacher-dark .teacher-brand-main {
+    color: #e8d28a;
+}
+
+
+html.teacher-dark .teacher-brand-sub {
+    color: #8f9c95;
+}
+
+
+html.teacher-dark .teacher-nav a {
+    color: #aeb9b2;
+}
+
+
+html.teacher-dark .teacher-nav a:hover {
+    color: #f0d77f;
+    background: #12281d;
+}
+
+
+html.teacher-dark .teacher-nav a.active {
+    color: #f0d77f;
+    background: #153021;
+}
+
+
+html.teacher-dark .teacher-theme-toggle {
+    border-color: #30463b;
+    background: #102219;
+    color: #d5ddd8;
+}
+
+
+html.teacher-dark .teacher-theme-toggle:hover {
+    border-color: #c9a227;
+    background: #172d21;
+    color: #f0d77f;
+}
+
+
+html.teacher-dark .edit-announcement-heading h1 {
+    color: #f1f5f2;
+}
+
+
+html.teacher-dark .page-eyebrow {
+    color: #d4af37;
+}
+
+
+html.teacher-dark .page-description {
+    color: #98a59e;
+}
+
+
+html.teacher-dark .edit-back-link {
+    border-color: #30463b;
+    background: #102219;
+    color: #e5d17e;
+}
+
+
+html.teacher-dark .edit-back-link:hover {
+    border-color: #c9a227;
+    background: #172d21;
+}
+
+
+html.teacher-dark .edit-announcement-card {
+    background: #0f2118;
+    border-color: #294236;
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+
+html.teacher-dark .edit-card-header h2 {
+    color: #f0f4f1;
+}
+
+
+html.teacher-dark .edit-card-header p {
+    color: #96a39c;
+}
+
+
+html.teacher-dark .edit-card-icon {
+    background: #203d2c;
+}
+
+
+html.teacher-dark .edit-card-divider {
+    background: #294236;
+}
+
+
+html.teacher-dark .form-group label {
+    color: #dce4df;
+}
+
+
+html.teacher-dark .form-group input,
+html.teacher-dark .form-group select,
+html.teacher-dark .form-group textarea {
+    border-color: #30483b;
+    background: #0b1912;
+    color: #edf2ee;
+}
+
+
+html.teacher-dark .form-group input::placeholder,
+html.teacher-dark .form-group textarea::placeholder {
+    color: #68776f;
+}
+
+
+html.teacher-dark .form-group input:focus,
+html.teacher-dark .form-group select:focus,
+html.teacher-dark .form-group textarea:focus {
+    border-color: #c9a227;
+    background: #0d1e15;
+    box-shadow:
+        0 0 0 3px rgba(201, 162, 39, 0.14);
+}
+
+
+html.teacher-dark .form-group select option {
+    background: #0f2118;
+    color: #edf2ee;
+}
+
+
+html.teacher-dark .publish-box {
+    border-color: #294236;
+    background: #0b1912;
+}
+
+
+html.teacher-dark .publish-content strong {
+    color: #e7eee9;
+}
+
+
+html.teacher-dark .publish-content small {
+    color: #8f9d95;
+}
+
+
+html.teacher-dark .cancel-announcement-btn {
+    border-color: #30463b;
+    background: #102219;
+    color: #c4cec8;
+}
+
+
+html.teacher-dark .cancel-announcement-btn:hover {
+    background: #172d21;
+    color: #f0d77f;
+}
+
+
+html.teacher-dark .update-announcement-btn {
+    background: #c9a227;
+    border-color: #c9a227;
+    color: #102117;
+}
+
+
+html.teacher-dark .update-announcement-btn:hover {
+    background: #d9b63c;
+    border-color: #d9b63c;
+}
+
+
+html.teacher-dark .form-message.error {
+    border-color: #633b3b;
+    background: #2b1717;
+    color: #f0a8a8;
+}
+
+
+html.teacher-dark .form-message.success {
+    border-color: #31563d;
+    background: #14291b;
+    color: #a8d6b2;
+}
+
+
+html.teacher-dark .form-message.loading {
+    border-color: #294236;
+    background: #102219;
+    color: #9eaaa3;
+}
+
+
+html.teacher-dark .teacher-footer {
+    background: #08140e;
+    border-top-color: #1d3328;
+}
+
+
+html.teacher-dark .teacher-footer p {
+    color: #75837b;
+}
+
+
+/* ========================================
+   DARK MODE — MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    html.teacher-dark .edit-announcement-main {
+        background: #08140e;
+    }
+
+}

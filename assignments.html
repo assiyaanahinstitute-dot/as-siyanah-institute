@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Assignments | As-Siyānah Institute
+    </title>
+
+    <link rel="stylesheet"
+        href="css/style.css">
+
+    <style>
+
+        /* =====================================================
+           ASSIGNMENTS PAGE
+        ===================================================== */
+
+        :root {
+            --asi-green: #0B3524;
+            --asi-green-2: #124B31;
+            --asi-green-3: #1D5E3C;
+            --asi-gold: #C9A227;
+
+            --asi-bg: #F5F7F5;
+            --asi-white: #FFFFFF;
+
+            --asi-text: #17251F;
+            --asi-muted: #718078;
+
+            --asi-border: #E4EAE6;
+
+            --asi-gold-light: #FBF6E6;
+            --asi-green-light: #EAF4EE;
+        }
+
+
+        /* =====================================================
+           PAGE
+        ===================================================== */
+
+        body {
+            background: var(--asi-bg);
+            color: var(--asi-text);
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .site-header {
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid var(--asi-border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+        }
+
+
+        .site-header .container {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+
+        .logo {
+            color: var(--asi-green);
+            font-size: 22px;
+            font-weight: 800;
+            text-decoration: none;
+            letter-spacing: -0.4px;
+        }
+
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--asi-muted);
+            font-size: 14px;
+            font-weight: 600;
+            padding: 9px 12px;
+            border-radius: 9px;
+            transition: 0.25s ease;
+        }
+
+
+        .main-nav a:hover {
+            color: var(--asi-green);
+            background: var(--asi-green-light);
+        }
+
+
+        .main-nav a.active {
+            color: var(--asi-green);
+            background: var(--asi-green-light);
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .page-hero {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(201, 162, 39, 0.18),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--asi-green),
+                    var(--asi-green-2)
+                );
+
+            color: white;
+            padding: 72px 0 78px;
+        }
+
+
+        .page-hero::before {
+            content: "";
+            position: absolute;
+
+            width: 260px;
+            height: 260px;
+
+            border: 1px solid rgba(201, 162, 39, 0.22);
+            border-radius: 50%;
+
+            right: -90px;
+            top: -100px;
+        }
+
+
+        .page-hero::after {
+            content: "";
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 50%;
+
+            left: -90px;
+            bottom: -100px;
+        }
+
+
+        .page-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .eyebrow {
+            color: #E7CB69;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+        }
+
+
+        .page-hero h1 {
+            font-size: clamp(34px, 6vw, 54px);
+            line-height: 1.05;
+            margin: 0 0 18px;
+            letter-spacing: -1.5px;
+        }
+
+
+        .page-hero > .container > p:last-child {
+            max-width: 650px;
+            margin: 0;
+            color: rgba(255,255,255,0.78);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           SECTION
+        ===================================================== */
+
+        .section {
+            padding: 65px 0 80px;
+        }
+
+
+        /* =====================================================
+           ASSIGNMENTS CONTAINER
+        ===================================================== */
+
+        #assignmentsContainer {
+            width: 100%;
+        }
+
+
+        /* =====================================================
+           GENERATED ASSIGNMENT CARDS
+           
+           These styles are designed to work with cards
+           created by assignments.js.
+        ===================================================== */
+
+        #assignmentsContainer > div {
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+
+        #assignmentsContainer > div:hover {
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           COMMON CARD STYLING
+        ===================================================== */
+
+        #assignmentsContainer .assignment-card,
+        #assignmentsContainer .card {
+            background: var(--asi-white);
+            border: 1px solid var(--asi-border);
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(11, 53, 36, 0.06);
+            overflow: hidden;
+        }
+
+
+        /* =====================================================
+           EMPTY / LOADING STATE
+        ===================================================== */
+
+        #assignmentsContainer h3 {
+            color: var(--asi-green);
+        }
+
+
+        #assignmentsContainer p {
+            color: var(--asi-muted);
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           LINKS / BUTTONS INSIDE ASSIGNMENTS
+        ===================================================== */
+
+        #assignmentsContainer a {
+            transition: all 0.25s ease;
+        }
+
+
+        #assignmentsContainer button {
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+
+        #assignmentsContainer button:hover {
+            transform: translateY(-1px);
+        }
+
+
+        /* =====================================================
+           LEARNING TIP
+        ===================================================== */
+
+        .assignment-tip {
+            margin-top: 35px;
+
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+
+            padding: 22px 24px;
+
+            background: var(--asi-gold-light);
+            border: 1px solid rgba(201, 162, 39, 0.25);
+
+            border-radius: 16px;
+        }
+
+
+        .assignment-tip-icon {
+            width: 42px;
+            height: 42px;
+
+            flex: 0 0 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: var(--asi-gold);
+            color: white;
+
+            border-radius: 12px;
+
+            font-size: 20px;
+        }
+
+
+        .assignment-tip strong {
+            display: block;
+            margin-bottom: 4px;
+            color: var(--asi-green);
+        }
+
+
+        .assignment-tip span {
+            color: var(--asi-muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .site-footer {
+            background: var(--asi-green);
+            color: rgba(255,255,255,0.7);
+            padding: 32px 0;
+        }
+
+
+        .site-footer p {
+            margin: 5px 0;
+            font-size: 13px;
+        }
+
+
+        .site-footer p:last-child {
+            color: #D7C26A;
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .site-header .container {
+                align-items: flex-start;
+                flex-direction: column;
+                padding-top: 16px;
+                padding-bottom: 16px;
+            }
+
+
+            .main-nav {
+                width: 100%;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding-bottom: 3px;
+            }
+
+
+            .main-nav a {
+                white-space: nowrap;
+            }
+
+
+            .page-hero {
+                padding: 55px 0 60px;
+            }
+
+
+            .section {
+                padding: 48px 0 60px;
+            }
+
+        }
+
+
+        @media (max-width: 520px) {
+
+            .logo {
+                font-size: 20px;
+            }
+
+
+            .page-hero h1 {
+                font-size: 36px;
+            }
+
+
+            .page-hero > .container > p:last-child {
+                font-size: 14px;
+                line-height: 1.7;
+            }
+
+
+            .assignment-tip {
+                padding: 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header class="site-header">
+
+        <div class="container">
+
+            <a href="dashboard.html"
+                class="logo">
+
+                As-Siyānah
+
+            </a>
+
+
+            <nav class="main-nav">
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="profile.html">
+                    My Profile
+                </a>
+
+                <a href="classes.html">
+                    My Classes
+                </a>
+
+                <a href="assignments.html"
+                    class="active">
+                    Assignments
+                </a>
+
+                <a href="results.html">
+                    My Results
+                </a>
+
+                <a href="announcements.html">
+                    Announcements
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section class="page-hero">
+
+        <div class="container">
+
+            <p class="eyebrow">
+                STUDENT PORTAL
+            </p>
+
+
+            <h1>
+                Assignments
+            </h1>
+
+
+            <p>
+                Stay on top of your learning.
+                View your assignments, submit your work,
+                and receive valuable feedback from your teacher.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ASSIGNMENTS
+    ===================================================== -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div id="assignmentsContainer">
+
+                <div style="
+                    text-align:center;
+                    padding:65px 20px;
+                    background:#ffffff;
+                    border:1px solid #E4EAE6;
+                    border-radius:20px;
+                    box-shadow:0 8px 25px rgba(11,53,36,0.05);
+                ">
+
+                    <div style="
+                        width:56px;
+                        height:56px;
+                        margin:0 auto 20px;
+                        border-radius:16px;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        background:#EAF4EE;
+                        color:#1D5E3C;
+                        font-size:25px;
+                    ">
+                        ✦
+                    </div>
+
+
+                    <h3 style="
+                        margin:0 0 8px;
+                        color:#0B3524;
+                    ">
+                        Loading assignments...
+                    </h3>
+
+
+                    <p style="
+                        margin:0;
+                        color:#718078;
+                    ">
+                        Your assignments are being prepared.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- LEARNING TIP -->
+
+            <div class="assignment-tip">
+
+                <div class="assignment-tip-icon">
+                    ✓
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        A little consistency goes a long way.
+                    </strong>
+
+                    <span>
+                        Complete your assignments on time,
+                        review your teacher's feedback,
+                        and keep improving one lesson at a time.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 As-Siyānah Institute for Arabic
+                and Islamic Studies
+            </p>
+
+            <p>
+                Knowledge • Character • Excellence
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         SUPABASE
+    ===================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+    </script>
+
+
+    <script>
+
+        const SUPABASE_URL =
+            "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+
+        const SUPABASE_ANON_KEY =
+            "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+
+        const supabaseClient =
+            window.supabase.createClient(
+
+                SUPABASE_URL,
+
+                SUPABASE_ANON_KEY
+
+            );
+
+    </script>
+
+
+    <script src="js/assignments.js"></script>
+
+<script src="js/theme.js"></script>
+</body>
+
+</html>

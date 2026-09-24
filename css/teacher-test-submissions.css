@@ -1,0 +1,1243 @@
+/* =========================================================
+   AS-SIYĀNAH TEACHER PORTAL
+   TEST SUBMISSIONS
+   PREMIUM LMS STYLE
+========================================================= */
+
+:root {
+    --ts-bg: #f5f7f6;
+    --ts-surface: #ffffff;
+    --ts-surface-soft: #f8faf9;
+
+    --ts-green: #0f5132;
+    --ts-green-dark: #0b3524;
+    --ts-green-light: #eaf4ee;
+
+    --ts-gold: #c9a227;
+    --ts-gold-light: #fbf5df;
+
+    --ts-text: #17211c;
+    --ts-muted: #718078;
+
+    --ts-border: #e1e8e3;
+
+    --ts-shadow:
+        0 8px 28px rgba(15, 81, 50, 0.07);
+
+    --ts-radius: 16px;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.test-submissions-main {
+    min-height: calc(100vh - 140px);
+    padding: 48px 24px 70px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8faf9 0%,
+            #f4f7f5 100%
+        );
+}
+
+.test-submissions-container {
+    width: min(1240px, 100%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.teacher-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: #ffffff;
+
+    border-bottom:
+        1px solid var(--ts-border);
+
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.teacher-header-inner {
+    width: min(1400px, 100%);
+    min-height: 76px;
+
+    margin: 0 auto;
+    padding: 0 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 28px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.teacher-brand {
+    flex-shrink: 0;
+
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.teacher-brand-main {
+    color: var(--ts-green-dark);
+
+    font-size: 20px;
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+    line-height: 1.1;
+}
+
+.teacher-brand-sub {
+    color: var(--ts-muted);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.teacher-nav {
+    display: flex;
+    align-items: center;
+
+    gap: 3px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+.teacher-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.teacher-nav a {
+    position: relative;
+
+    min-height: 76px;
+
+    padding: 0 12px;
+
+    display: inline-flex;
+    align-items: center;
+
+    color: #59665f;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.2s ease;
+}
+
+.teacher-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 12px;
+    right: 12px;
+    bottom: 0;
+
+    height: 3px;
+
+    background: var(--ts-gold);
+
+    border-radius:
+        3px 3px 0 0;
+
+    transform: scaleX(0);
+
+    transition:
+        transform 0.2s ease;
+}
+
+.teacher-nav a:hover {
+    color: var(--ts-green);
+}
+
+.teacher-nav a.active {
+    color: var(--ts-green);
+    font-weight: 700;
+}
+
+.teacher-nav a.active::after {
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   THEME BUTTON
+========================================================= */
+
+.teacher-theme-toggle {
+    flex-shrink: 0;
+
+    padding: 9px 13px;
+
+    border:
+        1px solid var(--ts-border);
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: var(--ts-text);
+
+    font-family: inherit;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        all 0.2s ease;
+}
+
+.teacher-theme-toggle:hover {
+    border-color: var(--ts-green);
+    color: var(--ts-green);
+}
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.page-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 34px;
+}
+
+.page-heading-content {
+    max-width: 720px;
+}
+
+.page-eyebrow {
+    margin: 0 0 9px;
+
+    color: var(--ts-green);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+}
+
+.page-heading h1 {
+    margin: 0;
+
+    color: var(--ts-text);
+
+    font-size:
+        clamp(30px, 4vw, 42px);
+
+    line-height: 1.1;
+
+    letter-spacing: -0.035em;
+
+    font-weight: 800;
+}
+
+.page-description {
+    margin: 12px 0 0;
+
+    color: var(--ts-muted);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-button {
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 11px 16px;
+
+    border:
+        1px solid var(--ts-border);
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: var(--ts-green);
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        all 0.2s ease;
+}
+
+.back-button:hover {
+    border-color: var(--ts-green);
+
+    box-shadow:
+        0 5px 15px rgba(15, 81, 50, 0.08);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 28px;
+}
+
+.stat-card {
+    min-height: 120px;
+
+    padding: 22px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 17px;
+
+    background: var(--ts-surface);
+
+    border:
+        1px solid var(--ts-border);
+
+    border-radius:
+        var(--ts-radius);
+
+    box-shadow:
+        var(--ts-shadow);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 32px rgba(15, 81, 50, 0.09);
+}
+
+.stat-icon {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+
+    background:
+        var(--ts-green-light);
+
+    color:
+        var(--ts-green);
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.stat-icon.pending {
+    background:
+        var(--ts-gold-light);
+
+    color:
+        #9a7610;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.stat-label {
+    color: var(--ts-muted);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.stat-card strong {
+    color: var(--ts-text);
+
+    font-size: 28px;
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.submission-message {
+    margin-bottom: 22px;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.submission-message:empty {
+    display: none;
+}
+
+
+/* =========================================================
+   SUBMISSIONS SECTION
+========================================================= */
+
+.submissions-section {
+    overflow: hidden;
+
+    background:
+        var(--ts-surface);
+
+    border:
+        1px solid var(--ts-border);
+
+    border-radius:
+        var(--ts-radius);
+
+    box-shadow:
+        var(--ts-shadow);
+}
+
+.section-header {
+    padding: 28px 30px 22px;
+}
+
+.section-eyebrow {
+    margin: 0 0 7px;
+
+    color: var(--ts-green);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+}
+
+.section-header h2 {
+    margin: 0;
+
+    color: var(--ts-text);
+
+    font-size: 22px;
+    font-weight: 800;
+
+    letter-spacing: -0.02em;
+}
+
+.section-header p {
+    margin: 7px 0 0;
+
+    color: var(--ts-muted);
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.section-divider {
+    height: 1px;
+
+    background:
+        var(--ts-border);
+}
+
+
+/* =========================================================
+   SUBMISSIONS CONTAINER
+========================================================= */
+
+.submissions-container {
+    padding: 28px 30px 32px;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading-card {
+    min-height: 220px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    color: var(--ts-muted);
+
+    text-align: center;
+}
+
+.loading-card p {
+    margin: 0;
+
+    font-size: 13px;
+}
+
+.spinner {
+    width: 34px;
+    height: 34px;
+
+    border:
+        3px solid #e2e9e5;
+
+    border-top-color:
+        var(--ts-green);
+
+    border-radius: 50%;
+
+    animation:
+        tsSpin 0.8s linear infinite;
+}
+
+@keyframes tsSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   JAVASCRIPT GENERATED SUBMISSION CARDS
+========================================================= */
+
+.submissions-container .submission-card,
+.submissions-container .submission-item,
+.submissions-container .submission-row {
+    position: relative;
+
+    margin-bottom: 14px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background:
+        var(--ts-surface-soft);
+
+    border:
+        1px solid var(--ts-border);
+
+    border-radius: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.submissions-container .submission-card:last-child,
+.submissions-container .submission-item:last-child,
+.submissions-container .submission-row:last-child {
+    margin-bottom: 0;
+}
+
+.submissions-container .submission-card:hover,
+.submissions-container .submission-item:hover,
+.submissions-container .submission-row:hover {
+    border-color:
+        #c5d5cc;
+
+    box-shadow:
+        0 8px 22px rgba(15, 81, 50, 0.07);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   COMMON CONTENT INSIDE GENERATED CARDS
+========================================================= */
+
+.submissions-container h3 {
+    margin: 0 0 5px;
+
+    color: var(--ts-text);
+
+    font-size: 15px;
+    font-weight: 750;
+}
+
+.submissions-container p {
+    color: var(--ts-muted);
+
+    font-size: 13px;
+}
+
+.submissions-container strong {
+    color: var(--ts-text);
+}
+
+.submissions-container span {
+    color: var(--ts-muted);
+}
+
+
+/* =========================================================
+   REVIEW BUTTON
+   MAIN FIX
+========================================================= */
+
+.submissions-container .review-button,
+.submissions-container .review-btn,
+.submissions-container .review-submission,
+.submissions-container .view-submission,
+.submissions-container .view-button,
+.submissions-container button[class*="review"],
+.submissions-container a[class*="review"],
+.submissions-container a[class*="Review"] {
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 8px !important;
+
+    min-width: 125px !important;
+
+    min-height: 42px !important;
+
+    padding: 10px 17px !important;
+
+    border:
+        1px solid var(--ts-green) !important;
+
+    border-radius: 9px !important;
+
+    background:
+        var(--ts-green) !important;
+
+    color:
+        #ffffff !important;
+
+    font-family: inherit !important;
+
+    font-size: 12px !important;
+
+    font-weight: 750 !important;
+
+    line-height: 1 !important;
+
+    text-decoration: none !important;
+
+    cursor: pointer !important;
+
+    white-space: nowrap !important;
+
+    box-shadow:
+        0 4px 10px rgba(15, 81, 50, 0.12) !important;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease !important;
+}
+
+.submissions-container .review-button:hover,
+.submissions-container .review-btn:hover,
+.submissions-container .review-submission:hover,
+.submissions-container .view-submission:hover,
+.submissions-container .view-button:hover,
+.submissions-container button[class*="review"]:hover,
+.submissions-container a[class*="review"]:hover,
+.submissions-container a[class*="Review"]:hover {
+    background:
+        var(--ts-green-dark) !important;
+
+    border-color:
+        var(--ts-green-dark) !important;
+
+    color:
+        #ffffff !important;
+
+    box-shadow:
+        0 7px 18px rgba(15, 81, 50, 0.18) !important;
+
+    transform:
+        translateY(-1px) !important;
+}
+
+.submissions-container .review-button:active,
+.submissions-container .review-btn:active,
+.submissions-container .review-submission:active,
+.submissions-container .view-submission:active,
+.submissions-container .view-button:active,
+.submissions-container button[class*="review"]:active,
+.submissions-container a[class*="review"]:active,
+.submissions-container a[class*="Review"]:active {
+    transform:
+        translateY(0) !important;
+
+    box-shadow:
+        0 3px 8px rgba(15, 81, 50, 0.12) !important;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.submissions-container .empty-state,
+.submissions-container .no-submissions {
+    padding: 55px 25px;
+
+    text-align: center;
+
+    color: var(--ts-muted);
+}
+
+.submissions-container .empty-state h3,
+.submissions-container .no-submissions h3 {
+    margin-bottom: 8px;
+
+    color: var(--ts-text);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.teacher-footer {
+    background:
+        #ffffff;
+
+    border-top:
+        1px solid var(--ts-border);
+}
+
+.teacher-footer-inner {
+    width: min(1240px, 100%);
+
+    min-height: 64px;
+
+    margin: 0 auto;
+
+    padding: 0 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.teacher-footer p {
+    margin: 0;
+
+    color: var(--ts-muted);
+
+    font-size: 11px;
+}
+
+.teacher-footer span {
+    color: var(--ts-green);
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html.teacher-dark,
+html.teacher-dark body {
+    background:
+        #07120d !important;
+
+    color:
+        #edf4ef !important;
+}
+
+
+/* Header */
+
+html.teacher-dark .teacher-header {
+    background:
+        #0b1913 !important;
+
+    border-bottom-color:
+        #20362a !important;
+
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+html.teacher-dark .teacher-brand-main {
+    color:
+        #eef5f1 !important;
+}
+
+html.teacher-dark .teacher-brand-sub {
+    color:
+        #8fa198 !important;
+}
+
+html.teacher-dark .teacher-nav a {
+    color:
+        #9aaea2 !important;
+}
+
+html.teacher-dark .teacher-nav a:hover,
+html.teacher-dark .teacher-nav a.active {
+    color:
+        #d4af37 !important;
+}
+
+html.teacher-dark .teacher-nav a.active::after {
+    background:
+        #d4af37 !important;
+}
+
+html.teacher-dark .teacher-theme-toggle {
+    background:
+        #101f17 !important;
+
+    border-color:
+        #294438 !important;
+
+    color:
+        #e9f0ec !important;
+}
+
+html.teacher-dark .teacher-theme-toggle:hover {
+    border-color:
+        #d4af37 !important;
+
+    color:
+        #d4af37 !important;
+}
+
+
+/* Page */
+
+html.teacher-dark .test-submissions-main {
+    background:
+        #07120d !important;
+}
+
+html.teacher-dark .page-heading h1 {
+    color:
+        #f1f6f3 !important;
+}
+
+html.teacher-dark .page-description {
+    color:
+        #91a49a !important;
+}
+
+html.teacher-dark .page-eyebrow,
+html.teacher-dark .section-eyebrow {
+    color:
+        #d4af37 !important;
+}
+
+html.teacher-dark .back-button {
+    background:
+        #0e1e16 !important;
+
+    border-color:
+        #294438 !important;
+
+    color:
+        #d4af37 !important;
+}
+
+
+/* Stats */
+
+html.teacher-dark .stat-card {
+    background:
+        #0d1c15 !important;
+
+    border-color:
+        #20362a !important;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+html.teacher-dark .stat-icon {
+    background:
+        #143326 !important;
+
+    color:
+        #82c59d !important;
+}
+
+html.teacher-dark .stat-icon.pending {
+    background:
+        #352d12 !important;
+
+    color:
+        #e0c35e !important;
+}
+
+html.teacher-dark .stat-label {
+    color:
+        #8fa298 !important;
+}
+
+html.teacher-dark .stat-card strong {
+    color:
+        #f0f5f2 !important;
+}
+
+
+/* Submission section */
+
+html.teacher-dark .submissions-section {
+    background:
+        #0d1c15 !important;
+
+    border-color:
+        #20362a !important;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+html.teacher-dark .section-header h2 {
+    color:
+        #f0f5f2 !important;
+}
+
+html.teacher-dark .section-header p {
+    color:
+        #8fa298 !important;
+}
+
+html.teacher-dark .section-divider {
+    background:
+        #20362a !important;
+}
+
+
+/* Dynamic cards */
+
+html.teacher-dark .submissions-container .submission-card,
+html.teacher-dark .submissions-container .submission-item,
+html.teacher-dark .submissions-container .submission-row {
+    background:
+        #101f17 !important;
+
+    border-color:
+        #294438 !important;
+}
+
+html.teacher-dark .submissions-container .submission-card:hover,
+html.teacher-dark .submissions-container .submission-item:hover,
+html.teacher-dark .submissions-container .submission-row:hover {
+    border-color:
+        #3b5a49 !important;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.25) !important;
+}
+
+html.teacher-dark .submissions-container h3,
+html.teacher-dark .submissions-container strong {
+    color:
+        #edf5f0 !important;
+}
+
+html.teacher-dark .submissions-container p,
+html.teacher-dark .submissions-container span {
+    color:
+        #91a49a !important;
+}
+
+
+/* Review button dark mode */
+
+html.teacher-dark .submissions-container .review-button,
+html.teacher-dark .submissions-container .review-btn,
+html.teacher-dark .submissions-container .review-submission,
+html.teacher-dark .submissions-container .view-submission,
+html.teacher-dark .submissions-container .view-button,
+html.teacher-dark .submissions-container button[class*="review"],
+html.teacher-dark .submissions-container a[class*="review"],
+html.teacher-dark .submissions-container a[class*="Review"] {
+    background:
+        #17633e !important;
+
+    border-color:
+        #17633e !important;
+
+    color:
+        #ffffff !important;
+
+    box-shadow:
+        0 5px 14px rgba(0, 0, 0, 0.2) !important;
+}
+
+html.teacher-dark .submissions-container .review-button:hover,
+html.teacher-dark .submissions-container .review-btn:hover,
+html.teacher-dark .submissions-container .review-submission:hover,
+html.teacher-dark .submissions-container .view-submission:hover,
+html.teacher-dark .submissions-container .view-button:hover,
+html.teacher-dark .submissions-container button[class*="review"]:hover,
+html.teacher-dark .submissions-container a[class*="review"]:hover,
+html.teacher-dark .submissions-container a[class*="Review"]:hover {
+    background:
+        #1e7b4d !important;
+
+    border-color:
+        #1e7b4d !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+/* Loading */
+
+html.teacher-dark .loading-card {
+    color:
+        #8fa298 !important;
+}
+
+html.teacher-dark .spinner {
+    border-color:
+        #263d31 !important;
+
+    border-top-color:
+        #d4af37 !important;
+}
+
+
+/* Footer */
+
+html.teacher-dark .teacher-footer {
+    background:
+        #08150f !important;
+
+    border-top-color:
+        #20362a !important;
+}
+
+html.teacher-dark .teacher-footer p {
+    color:
+        #7f9287 !important;
+}
+
+html.teacher-dark .teacher-footer span {
+    color:
+        #d4af37 !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1150px) {
+
+    .teacher-header-inner {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        gap: 14px;
+    }
+
+    .teacher-nav {
+        width: 100%;
+    }
+
+    .teacher-nav a {
+        min-height: 42px;
+    }
+
+    .teacher-nav a::after {
+        bottom: -15px;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .test-submissions-main {
+        padding:
+            36px 18px 55px;
+    }
+
+    .page-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .stats-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .submissions-container {
+        padding:
+            22px 18px 28px;
+    }
+
+    .section-header {
+        padding:
+            23px 20px 19px;
+    }
+
+    .submissions-container .submission-card,
+    .submissions-container .submission-item,
+    .submissions-container .submission-row {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .submissions-container .review-button,
+    .submissions-container .review-btn,
+    .submissions-container .review-submission,
+    .submissions-container .view-submission,
+    .submissions-container .view-button,
+    .submissions-container button[class*="review"],
+    .submissions-container a[class*="review"],
+    .submissions-container a[class*="Review"] {
+        width: 100% !important;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .teacher-header-inner {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    .teacher-brand-main {
+        font-size: 18px;
+    }
+
+    .teacher-nav {
+        gap: 0;
+    }
+
+    .teacher-nav a {
+        padding:
+            0 10px;
+
+        font-size: 12px;
+    }
+
+    .teacher-theme-toggle {
+        padding:
+            8px 10px;
+
+        font-size: 11px;
+    }
+
+    .page-heading h1 {
+        font-size: 30px;
+    }
+
+    .stat-card {
+        padding: 19px;
+    }
+
+    .teacher-footer-inner {
+        min-height: auto;
+
+        padding:
+            17px;
+
+        flex-direction: column;
+
+        justify-content: center;
+    }
+}

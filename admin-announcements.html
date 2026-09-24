@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Admin Announcements | As-Siyānah Institute
+    </title>
+
+    <!-- GLOBAL ADMIN PORTAL CSS -->
+    <link
+        rel="stylesheet"
+        href="css/admin-portal.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         ADMIN HEADER
+    ========================================= -->
+
+    <header class="admin-header">
+
+        <div class="admin-header-inner">
+
+
+            <a
+                href="admin-dashboard.html"
+                class="admin-brand"
+            >
+
+                <div class="admin-brand-mark">
+                    AS
+                </div>
+
+                <div class="admin-brand-text">
+
+                    <strong>
+                        AS-SIYĀNAH
+                    </strong>
+
+                    <span>
+                        Admin Portal
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <button
+                type="button"
+                id="adminThemeToggle"
+                class="admin-theme-toggle"
+                aria-label="Switch to dark mode"
+            >
+
+                <span class="admin-theme-icon">
+                    ☾
+                </span>
+
+                <span class="admin-theme-text">
+                    Dark
+                </span>
+
+            </button>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ========================================
+         ADMIN NAVIGATION
+    ========================================= -->
+
+    <nav class="admin-nav">
+
+        <a href="admin-dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="admin-students.html">
+            Students
+        </a>
+
+        <a href="admin-teachers.html">
+            Teachers
+        </a>
+
+        <a href="admin-lessons.html">
+            Lessons
+        </a>
+
+        <a href="admin-results.html">
+            Results
+        </a>
+
+        <a
+            href="admin-announcements.html"
+            class="active"
+        >
+            Announcements
+        </a>
+
+        <a href="admin-registrations.html">
+            Registrations
+        </a>
+
+        <a href="admin-profile.html">
+            Profile
+        </a>
+
+    </nav>
+
+
+
+    <!-- ========================================
+         MAIN CONTENT
+    ========================================= -->
+
+    <main class="admin-main">
+
+
+        <!-- PAGE HEADER -->
+
+        <section class="admin-page-header">
+
+            <div>
+
+                <p class="dashboard-label">
+                    COMMUNICATION
+                </p>
+
+                <h2>
+                    Announcements
+                </h2>
+
+                <p>
+                    Create and manage announcements for your institute.
+                </p>
+
+            </div>
+
+
+            <a
+                href="admin-create-announcement.html"
+                class="admin-primary-button"
+            >
+                + Create Announcement
+            </a>
+
+        </section>
+
+
+
+        <!-- ====================================
+             SEARCH
+        ==================================== -->
+
+        <section class="admin-search-box">
+
+            <div class="admin-search-label">
+                Search announcements
+            </div>
+
+            <input
+                type="text"
+                id="announcementSearch"
+                placeholder="Search by title, category or audience..."
+                autocomplete="off"
+            >
+
+        </section>
+
+
+
+        <!-- ====================================
+             STATUS
+        ==================================== -->
+
+        <p
+            id="announcementsMessage"
+            class="admin-message"
+        >
+            Loading announcements...
+        </p>
+
+
+
+        <!-- ====================================
+             ANNOUNCEMENTS TABLE
+        ==================================== -->
+
+        <section class="admin-table-card">
+
+            <div class="admin-table-header">
+
+                <div>
+
+                    <p class="dashboard-label">
+                        ALL ANNOUNCEMENTS
+                    </p>
+
+                    <h3>
+                        Announcement Management
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-table-wrapper">
+
+                <table class="admin-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                ID
+                            </th>
+
+                            <th>
+                                Title
+                            </th>
+
+                            <th>
+                                Category
+                            </th>
+
+                            <th>
+                                Audience
+                            </th>
+
+                            <th>
+                                Published
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="announcementsTableBody">
+
+                        <tr>
+
+                            <td colspan="7">
+                                Loading announcements...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ========================================
+         FOOTER
+    ========================================= -->
+
+    <footer class="admin-footer">
+
+        <p>
+            © 2026 As-Siyānah Institute for Arabic & Islamic Studies
+        </p>
+
+    </footer>
+
+
+
+    <!-- ========================================
+         SUPABASE
+    ========================================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <script>
+
+        const SUPABASE_URL =
+            "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+        const SUPABASE_ANON_KEY =
+            "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+        const supabaseClient =
+            supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_ANON_KEY
+            );
+
+    </script>
+
+
+
+    <!-- ADMIN ANNOUNCEMENTS JS -->
+
+    <script src="js/admin-announcements.js"></script>
+
+
+    <!-- GLOBAL ADMIN THEME -->
+
+    <script src="js/admin-theme.js"></script>
+
+
+</body>
+
+</html>

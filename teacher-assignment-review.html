@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Review Submission | As-Siyānah Institute
+    </title>
+
+
+    <!-- GLOBAL TEACHER PORTAL -->
+    <link
+        rel="stylesheet"
+        href="css/teacher-assignment-review.css"
+    >
+    <link rel="stylesheet" href="css/teacher-assignment-review-dark.css">
+
+
+    <!-- PAGE DESIGN -->
+    <link
+        rel="stylesheet"
+        href="css/teacher-assignment-review.css"
+    >
+
+
+    <!-- DARK MODE -->
+    <link
+        rel="stylesheet"
+        href="css/teacher-assignment-review-dark.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="assignment-review-page">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="teacher-header">
+
+        <div class="teacher-header-inner">
+
+
+            <!-- BRAND -->
+
+            <a
+                href="teacher-dashboard.html"
+                class="teacher-brand"
+            >
+
+                <div class="teacher-brand-mark">
+                    AS
+                </div>
+
+
+                <div class="teacher-brand-text">
+
+                    <strong>
+                        AS-SIYĀNAH
+                    </strong>
+
+                    <span>
+                        Teacher Portal
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="teacher-nav">
+
+                <a href="teacher-dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="teacher-students.html">
+                    Students
+                </a>
+
+                <a href="teacher-lessons.html">
+                    Lessons
+                </a>
+
+                <a href="teacher-results.html">
+                    Results
+                </a>
+
+                <a
+                    href="teacher-assignment-submissions.html"
+                    class="active"
+                >
+                    Submissions
+                </a>
+
+            </nav>
+
+
+            <!-- ACTIONS -->
+
+            <div class="review-header-actions">
+
+                <button
+                    type="button"
+                    class="teacher-theme-toggle"
+                >
+                    🌙 Dark Mode
+                </button>
+
+                <button
+                    type="button"
+                    class="review-logout"
+                    id="logoutBtn"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="review-main">
+
+
+        <div class="review-container">
+
+
+            <!-- =================================================
+                 PAGE HERO
+            ================================================== -->
+
+            <section class="review-hero">
+
+
+                <div class="review-hero-content">
+
+                    <span class="review-eyebrow">
+                        TEACHER PORTAL • ASSIGNMENT REVIEW
+                    </span>
+
+
+                    <h1>
+                        Review Submission
+                    </h1>
+
+
+                    <p>
+                        Review the student's assignment,
+                        assess their work, and provide meaningful feedback.
+                    </p>
+
+                </div>
+
+
+                <div class="review-hero-icon">
+                    📝
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 BACK NAVIGATION
+            ================================================== -->
+
+            <div class="review-navigation">
+
+                <a
+                    href="teacher-assignment-submissions.html"
+                    class="back-btn"
+                >
+                    <span>←</span>
+                    Back to Submissions
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SUBMISSION CONTENT
+            ================================================== -->
+
+            <section class="review-content-card">
+
+                <div
+                    id="reviewContainer"
+                    class="review-container-content"
+                >
+
+                    <div class="loading-state">
+
+                        <div class="loading-spinner"></div>
+
+                        <p>
+                            Loading submission...
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FOOTER
+            ================================================== -->
+
+            <footer class="review-footer">
+
+                <p>
+                    © 2026 AS-SIYĀNAH INSTITUTE FOR ARABIC &amp; ISLAMIC STUDIES
+                </p>
+
+                <span>
+                    Teacher Portal
+                </span>
+
+            </footer>
+
+
+        </div>
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================================================
+     SUPABASE
+========================================================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script>
+
+    const SUPABASE_URL =
+        "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+
+    const SUPABASE_ANON_KEY =
+        "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+
+    const supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_ANON_KEY
+        );
+
+</script>
+
+
+
+<!-- GLOBAL TEACHER THEME -->
+
+<script src="js/teacher-theme.js"></script>
+
+
+<!-- EXISTING PAGE FUNCTIONALITY -->
+
+<script src="js/teacher-assignment-review.js"></script>
+
+
+</body>
+
+</html>

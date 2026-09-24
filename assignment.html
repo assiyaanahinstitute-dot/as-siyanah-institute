@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Assignment | As-Siyānah Institute
+    </title>
+
+    <link rel="stylesheet"
+        href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <div class="container">
+
+            <a href="dashboard.html"
+                class="logo">
+
+                As-Siyānah
+
+            </a>
+
+            <nav class="main-nav">
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="classes.html">
+                    My Classes
+                </a>
+
+                <a href="assignments.html">
+                    Assignments
+                </a>
+
+                <a href="results.html">
+                    My Results
+                </a>
+
+                <a href="announcements.html">
+                    Announcements
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="page-hero">
+
+        <div class="container">
+
+            <p class="eyebrow">
+                STUDENT PORTAL
+            </p>
+
+            <h1 id="assignmentTitle">
+                Loading Assignment...
+            </h1>
+
+            <p id="assignmentSubject">
+                Please wait.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ASSIGNMENT -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div id="assignmentContainer">
+
+                <div style="
+                    text-align:center;
+                    padding:50px 20px;
+                ">
+
+                    <h3>
+                        Loading assignment...
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SUPABASE -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+    </script>
+
+
+    <script>
+
+        const SUPABASE_URL =
+            "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+
+        const SUPABASE_ANON_KEY =
+            "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+
+        const supabaseClient =
+            window.supabase.createClient(
+
+                SUPABASE_URL,
+
+                SUPABASE_ANON_KEY
+
+            );
+
+    </script>
+    <script src="js/assignment.js"></script>
+<script src="js/theme.js"></script>
+
+</body>
+
+</html>

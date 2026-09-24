@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Subject | As-Siyānah Institute
+    </title>
+
+    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/subject.css">
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         SUBJECT PAGE
+    ========================== -->
+
+    <main class="subject-page">
+
+
+        <!-- BACK BUTTON -->
+
+        <div class="subject-topbar">
+
+            <a
+                href="classes.html"
+                class="subject-back-button"
+            >
+                ← Back to My Classes
+            </a>
+
+        </div>
+
+
+
+        <!-- SUBJECT HEADER -->
+
+        <section class="subject-hero">
+
+            <div class="subject-hero-content">
+
+                <span class="subject-label">
+                    MY SUBJECT
+                </span>
+
+
+                <h1 id="subjectTitle">
+                    Loading...
+                </h1>
+
+
+                <p
+                    id="subjectArabic"
+                    class="subject-arabic"
+                >
+                    ...
+                </p>
+
+
+                <p class="subject-intro">
+                    Your lessons and learning materials
+                    for this subject will appear here.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- LESSONS -->
+
+        <section class="subject-lessons-section">
+
+            <div class="subject-section-header">
+
+                <div>
+
+                    <span class="subject-section-label">
+                        LEARNING MATERIALS
+                    </span>
+
+                    <h2>
+                        Your Lessons
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div id="lessonsContainer">
+
+                <div class="subject-loading">
+
+                    <div class="loading-spinner">
+                        ◌
+                    </div>
+
+                    <p>
+                        Loading lessons...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <!-- =========================
+         SUPABASE
+    ========================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <script>
+
+        const SUPABASE_URL =
+            "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+
+        const SUPABASE_ANON_KEY =
+            "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+
+        const supabaseClient =
+            window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_ANON_KEY
+            );
+
+    </script>
+
+
+
+    <!-- SUBJECT JAVASCRIPT -->
+
+    <script src="js/subject.js"></script>
+    
+<script src="js/theme.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Manage Results | As-Siyānah Institute
+    </title>
+
+
+    <!-- GLOBAL TEACHER STYLES -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal-dark.css"
+    >
+
+
+    <!-- PAGE STYLES -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-results-list.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="teacher-header">
+
+    <div class="teacher-header-inner">
+
+
+        <!-- BRAND -->
+
+        <a
+            href="teacher-dashboard.html"
+            class="teacher-brand"
+        >
+
+            <span class="teacher-brand-main">
+                As-Siyānah
+            </span>
+
+            <span class="teacher-brand-sub">
+                Teacher Portal
+            </span>
+
+        </a>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="teacher-nav">
+
+            <a href="teacher-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="teacher-students.html">
+                Students
+            </a>
+
+            <a href="teacher-lessons.html">
+                Lessons
+            </a>
+
+            <a
+                href="teacher-results-list.html"
+                class="active"
+            >
+                Results
+            </a>
+
+            <a href="teacher-announcements.html">
+                Announcements
+            </a>
+
+            <a href="teacher-profile.html">
+                Profile
+            </a>
+
+
+            <button
+                type="button"
+                class="teacher-theme-toggle"
+            >
+                🌙 Dark Mode
+            </button>
+
+        </nav>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="results-main">
+
+
+    <div class="results-container">
+
+
+        <!-- PAGE HEADING -->
+
+        <section class="results-heading">
+
+            <div>
+
+                <span class="results-eyebrow">
+                    TEACHER PORTAL
+                </span>
+
+                <h1>
+                    Manage Results
+                </h1>
+
+                <p>
+                    View, review and manage student academic results.
+                </p>
+
+            </div>
+
+
+            <a
+                href="teacher-results.html"
+                class="add-result-button"
+            >
+                <span>+</span>
+                Add New Result
+            </a>
+
+        </section>
+
+
+
+        <!-- =================================================
+             STATISTICS
+        ================================================== -->
+
+        <section class="results-stats">
+
+
+            <div class="result-stat-card">
+
+                <div class="stat-icon">
+                    ▣
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        TOTAL RESULTS
+                    </span>
+
+                    <strong id="totalResults">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="result-stat-card">
+
+                <div class="stat-icon">
+                    👥
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        STUDENTS
+                    </span>
+
+                    <strong id="resultStudentCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             RESULTS LIBRARY
+        ================================================== -->
+
+        <section class="results-library">
+
+
+            <div class="library-header">
+
+                <div>
+
+                    <span class="library-eyebrow">
+                        ACADEMIC RECORDS
+                    </span>
+
+                    <h2>
+                        Student Results
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="library-divider"></div>
+
+
+            <!-- JS WILL LOAD RESULTS HERE -->
+
+            <div
+                id="teacherResultsList"
+                class="results-list"
+            >
+
+                <div class="results-loading">
+
+                    <div class="loading-spinner"></div>
+
+                    <p>
+                        Loading results...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="teacher-footer">
+
+    <div class="teacher-footer-inner">
+
+        <p>
+            © 2026 As-Siyānah Institute for Arabic and Islamic Studies.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     SCRIPTS
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/teacher-theme.js"></script>
+
+<script src="js/teacher-results-list.js"></script>
+
+
+</body>
+
+</html>

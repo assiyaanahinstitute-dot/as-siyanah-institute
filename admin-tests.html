@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tests & Exams | Admin Portal | As-Siyānah Institute</title>
+
+    <link rel="stylesheet" href="css/admin-portal.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         ADMIN HEADER
+    ========================= -->
+
+    <header class="admin-header">
+
+        <div class="admin-header-inner">
+
+            <a href="admin-dashboard.html" class="admin-brand">
+
+                <div class="admin-brand-mark">
+                    AS
+                </div>
+
+                <div class="admin-brand-text">
+                    <strong>AS-SIYĀNAH</strong>
+                    <span>Admin Portal</span>
+                </div>
+
+            </a>
+
+
+            <nav class="admin-nav">
+
+                <a href="admin-dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="admin-students.html">
+                    Students
+                </a>
+
+                <a href="admin-teachers.html">
+                    Teachers
+                </a>
+
+                <a href="admin-classes.html">
+                    Classes
+                </a>
+
+                <a href="admin-lessons.html">
+                    Lessons
+                </a>
+
+                <a href="admin-results.html">
+                    Results
+                </a>
+
+                <a href="admin-tests.html" class="active">
+                    Tests & Exams
+                </a>
+
+                <a href="admin-announcements.html">
+                    Announcements
+                </a>
+
+                <a href="admin-registrations.html">
+                    Registrations
+                </a>
+
+                <a href="admin-profile.html">
+                    Profile
+                </a>
+
+            </nav>
+
+
+            <button
+                type="button"
+                class="admin-theme-toggle"
+                id="adminThemeToggle"
+                aria-label="Toggle dark mode"
+            >
+                <span class="admin-theme-icon">☾</span>
+                <span class="admin-theme-text">Dark</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN
+    ========================= -->
+
+    <main class="admin-tests-main">
+
+        <!-- HERO -->
+
+        <section class="admin-tests-hero">
+
+            <div>
+
+                <p class="admin-tests-eyebrow">
+                    ASSESSMENT CENTRE
+                </p>
+
+                <h1>
+                    Tests & Exams
+                </h1>
+
+                <p>
+                    View and monitor all tests, examinations and student submissions.
+                </p>
+
+            </div>
+
+
+            <div class="admin-tests-hero-badge">
+
+                <span class="admin-tests-hero-icon">
+                    📝
+                </span>
+
+                <div>
+                    <strong>Assessment Management</strong>
+                    <span>Tests, exams & submissions</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STATISTICS
+        ========================= -->
+
+        <section class="assessment-stats">
+
+            <div class="assessment-stat">
+
+                <div class="assessment-stat-icon">
+                    ◫
+                </div>
+
+                <div>
+                    <span>Total Assessments</span>
+
+                    <strong id="totalAssessments">
+                        —
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="assessment-stat">
+
+                <div class="assessment-stat-icon">
+                    ✓
+                </div>
+
+                <div>
+                    <span>Tests</span>
+
+                    <strong id="totalTests">
+                        —
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="assessment-stat">
+
+                <div class="assessment-stat-icon">
+                    ◆
+                </div>
+
+                <div>
+                    <span>Exams</span>
+
+                    <strong id="totalExams">
+                        —
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="assessment-stat">
+
+                <div class="assessment-stat-icon">
+                    ↑
+                </div>
+
+                <div>
+                    <span>Submissions</span>
+
+                    <strong id="totalSubmissions">
+                        —
+                    </strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SEARCH & FILTER
+        ========================= -->
+
+        <section class="admin-tests-filter-card">
+
+            <div class="admin-tests-filter-heading">
+
+                <div>
+                    <span>ASSESSMENT DIRECTORY</span>
+
+                    <h2>
+                        Find an assessment
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="assessment-toolbar">
+
+                <div class="assessment-search">
+
+                    <span class="assessment-search-icon">
+                        ⌕
+                    </span>
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search tests or exams..."
+                    >
+
+                </div>
+
+
+                <div class="assessment-filter">
+
+                    <select id="typeFilter">
+
+                        <option value="All">
+                            All Types
+                        </option>
+
+                        <option value="Test">
+                            Tests
+                        </option>
+
+                        <option value="Exam">
+                            Exams
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="assessment-filter">
+
+                    <select id="statusFilter">
+
+                        <option value="All">
+                            All Status
+                        </option>
+
+                        <option value="Published">
+                            Published
+                        </option>
+
+                        <option value="Draft">
+                            Drafts
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ASSESSMENT LIST
+        ========================= -->
+
+        <section class="admin-tests-list-section">
+
+            <div class="admin-tests-section-heading">
+
+                <div>
+
+                    <p class="dashboard-label">
+                        ALL ASSESSMENTS
+                    </p>
+
+                    <h2>
+                        Tests & Exams
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="assessmentList"
+                class="assessment-list"
+            >
+
+                <div class="assessment-loading">
+                    <div class="assessment-loading-icon">
+                        ◌
+                    </div>
+
+                    <strong>
+                        Loading assessments
+                    </strong>
+
+                    <span>
+                        Please wait while the assessments are loaded.
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ACTION
+        ========================= -->
+
+        <section class="admin-tests-actions">
+
+            <a
+                href="admin-dashboard.html"
+                class="admin-tests-dashboard-button"
+            >
+                <span>←</span>
+                Back to Dashboard
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="admin-footer">
+
+        <p>
+            © 2026 As-Siyānah Institute for Arabic & Islamic Studies
+        </p>
+
+    </footer>
+
+
+    <!-- SUPABASE -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- ADMIN TESTS -->
+
+    <script src="js/admin-tests.js"></script>
+
+    <!-- GLOBAL ADMIN THEME -->
+
+    <script src="js/admin-theme.js"></script>
+
+</body>
+</html>

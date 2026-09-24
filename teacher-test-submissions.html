@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Test Submissions | As-Siyānah Institute
+    </title>
+
+
+    <!-- GLOBAL TEACHER PORTAL STYLES -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-portal-dark.css"
+    >
+
+
+    <!-- PAGE STYLES -->
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-test-submissions.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="teacher-header">
+
+    <div class="teacher-header-inner">
+
+
+        <!-- BRAND -->
+
+        <a
+            href="teacher-dashboard.html"
+            class="teacher-brand"
+        >
+
+            <div class="teacher-brand-main">
+                AS-SIYĀNAH
+            </div>
+
+            <div class="teacher-brand-sub">
+                Teacher Portal
+            </div>
+
+        </a>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="teacher-nav">
+
+            <a href="teacher-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="teacher-students.html">
+                Students
+            </a>
+
+            <a href="teacher-lessons.html">
+                Lessons
+            </a>
+
+            <a href="teacher-results.html">
+                Results
+            </a>
+
+            <a href="teacher-assignments.html">
+                Assignments
+            </a>
+
+            <a
+                href="teacher-tests.html"
+                class="active"
+            >
+                Tests
+            </a>
+
+            <a href="teacher-attendance.html">
+                Attendance
+            </a>
+
+            <a href="teacher-announcements.html">
+                Announcements
+            </a>
+
+            <a href="teacher-profile.html">
+                Profile
+            </a>
+
+            <button
+                type="button"
+                class="teacher-theme-toggle"
+                aria-label="Switch to dark mode"
+            >
+                🌙 Dark Mode
+            </button>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="test-submissions-main">
+
+    <div class="test-submissions-container">
+
+
+        <!-- PAGE HEADING -->
+
+        <section class="page-heading">
+
+            <div class="page-heading-content">
+
+                <p class="page-eyebrow">
+                    ASSESSMENT MANAGEMENT
+                </p>
+
+                <h1>
+                    Test Submissions
+                </h1>
+
+                <p class="page-description">
+                    Review student test attempts, scores,
+                    answers and feedback.
+                </p>
+
+            </div>
+
+
+            <a
+                href="teacher-tests.html"
+                class="back-button"
+            >
+                <span>←</span>
+                Back to Tests
+            </a>
+
+        </section>
+
+
+
+        <!-- =================================================
+             STATISTICS
+        ================================================== -->
+
+        <section class="stats-grid">
+
+
+            <!-- TOTAL -->
+
+            <article class="stat-card">
+
+                <div class="stat-icon">
+                    ✓
+                </div>
+
+                <div class="stat-content">
+
+                    <span class="stat-label">
+                        Total Submissions
+                    </span>
+
+                    <strong id="totalSubmissions">
+                        0
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- SUBMITTED -->
+
+            <article class="stat-card">
+
+                <div class="stat-icon">
+                    ✓
+                </div>
+
+                <div class="stat-content">
+
+                    <span class="stat-label">
+                        Submitted
+                    </span>
+
+                    <strong id="submittedCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PENDING -->
+
+            <article class="stat-card">
+
+                <div class="stat-icon pending">
+                    !
+                </div>
+
+                <div class="stat-content">
+
+                    <span class="stat-label">
+                        Pending Review
+                    </span>
+
+                    <strong id="pendingCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+
+        <!-- MESSAGE -->
+
+        <div
+            id="message"
+            class="submission-message"
+        ></div>
+
+
+
+        <!-- =================================================
+             SUBMISSIONS
+        ================================================== -->
+
+        <section class="submissions-section">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <p class="section-eyebrow">
+                        SUBMISSION RECORDS
+                    </p>
+
+                    <h2>
+                        Student Submissions
+                    </h2>
+
+                    <p>
+                        Select a submission to review
+                        the student's answers.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="section-divider"></div>
+
+
+            <div
+                id="submissionsContainer"
+                class="submissions-container"
+            >
+
+                <div class="loading-card">
+
+                    <div class="spinner"></div>
+
+                    <p>
+                        Loading submissions...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="teacher-footer">
+
+    <div class="teacher-footer-inner">
+
+        <p>
+            © 2026 AS-SIYĀNAH INSTITUTE FOR ARABIC &amp;
+            ISLAMIC STUDIES
+        </p>
+
+        <span>
+            Teacher Portal
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     SCRIPTS
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/teacher-theme.js"></script>
+
+<script src="js/teacher-test-submissions.js"></script>
+
+
+</body>
+
+</html>

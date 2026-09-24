@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Result Details | As-Siyānah Institute</title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin-portal.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- ADMIN HEADER -->
+
+    <header class="admin-header">
+
+        <div class="admin-header-inner">
+
+            <a
+                href="admin-dashboard.html"
+                class="admin-brand"
+            >
+
+                <div class="admin-brand-mark">
+                    AS
+                </div>
+
+                <div class="admin-brand-text">
+
+                    <strong>
+                        AS-SIYĀNAH
+                    </strong>
+
+                    <span>
+                        Admin Portal
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <nav class="admin-nav">
+
+                <a href="admin-dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="admin-students.html">
+                    Students
+                </a>
+
+                <a href="admin-teachers.html">
+                    Teachers
+                </a>
+
+                <a href="admin-lessons.html">
+                    Lessons
+                </a>
+
+                <a
+                    href="admin-results.html"
+                    class="active"
+                >
+                    Results
+                </a>
+
+                <a href="admin-announcements.html">
+                    Announcements
+                </a>
+
+                <a href="admin-registrations.html">
+                    Registrations
+                </a>
+
+                <a href="admin-profile.html">
+                    Profile
+                </a>
+
+            </nav>
+
+
+            <button
+                type="button"
+                id="adminThemeToggle"
+                class="admin-theme-toggle"
+                aria-label="Toggle theme"
+            >
+
+                <span class="admin-theme-icon">
+                    ☾
+                </span>
+
+                <span class="admin-theme-text">
+                    Dark
+                </span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="admin-result-main">
+
+        <div class="admin-result-header">
+
+            <div>
+
+                <p class="admin-result-eyebrow">
+                    RESULT MANAGEMENT
+                </p>
+
+                <h1 id="resultStudentName">
+                    Result Details
+                </h1>
+
+                <p id="resultStudentId">
+                    Student result information
+                </p>
+
+            </div>
+
+
+            <a
+                href="admin-results.html"
+                class="admin-result-back"
+            >
+                <span>←</span>
+                Back to Results
+            </a>
+
+        </div>
+
+
+        <!-- MESSAGE -->
+
+        <p
+            id="resultMessage"
+            class="admin-result-message"
+        >
+            Loading result details...
+        </p>
+
+
+        <!-- RESULT CARD -->
+
+        <section
+            id="resultDetails"
+            class="admin-result-card"
+            style="display: none;"
+        >
+
+            <div class="admin-result-card-header">
+
+                <div>
+
+                    <span>
+                        ACADEMIC RECORD
+                    </span>
+
+                    <h2>
+                        Result Information
+                    </h2>
+
+                </div>
+
+                <div class="admin-result-card-icon">
+                    ✓
+                </div>
+
+            </div>
+
+
+            <div class="admin-result-grid">
+
+                <!-- STUDENT ID -->
+
+                <div class="admin-result-field">
+
+                    <span>
+                        Student ID
+                    </span>
+
+                    <strong id="studentId">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <!-- SUBJECT -->
+
+                <div class="admin-result-field">
+
+                    <span>
+                        Subject
+                    </span>
+
+                    <strong id="resultSubject">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <!-- TEST -->
+
+                <div class="admin-result-field">
+
+                    <span>
+                        Test Score
+                    </span>
+
+                    <strong id="resultTest">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <!-- EXAM -->
+
+                <div class="admin-result-field">
+
+                    <span>
+                        Exam Score
+                    </span>
+
+                    <strong id="resultExam">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <!-- TOTAL -->
+
+                <div class="admin-result-field admin-result-total">
+
+                    <span>
+                        Total Score
+                    </span>
+
+                    <strong id="resultTotal">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <!-- GRADE -->
+
+                <div class="admin-result-field admin-result-grade">
+
+                    <span>
+                        Grade
+                    </span>
+
+                    <strong id="resultGrade">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <!-- TERM -->
+
+                <div class="admin-result-field">
+
+                    <span>
+                        Term
+                    </span>
+
+                    <strong id="resultTerm">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <!-- SESSION -->
+
+                <div class="admin-result-field">
+
+                    <span>
+                        Session
+                    </span>
+
+                    <strong id="resultSession">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="admin-footer">
+
+        <p>
+            © 2026 As-Siyānah Institute for Arabic & Islamic Studies
+        </p>
+
+    </footer>
+
+
+    <!-- SUPABASE -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script>
+
+        const SUPABASE_URL =
+            "https://ridyfpaqoyegdvqmkiyl.supabase.co";
+
+        const SUPABASE_ANON_KEY =
+            "sb_publishable_dH1z6RuBIqxN88pyG9YfVA_1niXEWIh";
+
+        const supabaseClient =
+            supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_ANON_KEY
+            );
+
+    </script>
+
+
+    <!-- EXISTING RESULT LOGIC -->
+
+    <script src="js/admin-result-view.js"></script>
+
+    <!-- GLOBAL ADMIN THEME -->
+
+    <script src="js/admin-theme.js"></script>
+
+</body>
+
+</html>

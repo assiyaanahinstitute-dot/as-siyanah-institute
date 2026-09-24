@@ -1,0 +1,1644 @@
+/* =========================================================
+   AS-SIYĀNAH INSTITUTE
+   PREMIUM REGISTRATION PAGE
+========================================================= */
+
+
+/* -------------------------
+   ROOT
+------------------------- */
+
+:root {
+    --green-dark: #041c13;
+    --green: #073b27;
+    --green-light: #12613f;
+    --gold: #d4af37;
+    --gold-light: #f4e7b0;
+
+    --white: #ffffff;
+    --cream: #f7f8f5;
+    --text: #17231d;
+    --muted: #6f7973;
+    --border: #e2e7e3;
+
+    --shadow:
+        0 20px 60px rgba(4, 28, 19, 0.12);
+
+    --soft-shadow:
+        0 8px 30px rgba(4, 28, 19, 0.08);
+}
+
+
+/* -------------------------
+   RESET
+------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: var(--cream);
+
+    color: var(--text);
+
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+    width: 92%;
+    max-width: 1180px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+
+    z-index: 9999;
+
+    background:
+        rgba(4, 28, 19, 0.97);
+
+    border-bottom:
+        1px solid rgba(212, 175, 55, 0.18);
+
+    backdrop-filter: blur(15px);
+}
+
+.nav-container {
+    min-height: 76px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+
+    flex-direction: column;
+
+    color: white;
+
+    line-height: 1;
+}
+
+.logo span {
+    font-family: Georgia, serif;
+
+    font-size: 1.55rem;
+
+    font-weight: 700;
+}
+
+.logo small {
+    margin-top: 6px;
+
+    color: var(--gold);
+
+    font-size: 0.62rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+}
+
+
+/* Navigation */
+
+.navigation {
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+}
+
+.navigation a {
+    color: rgba(255, 255, 255, 0.8);
+
+    font-size: 0.82rem;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.navigation a:hover {
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   REGISTRATION HERO
+========================================================= */
+
+.registration-hero {
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        85px 0 120px;
+
+    background:
+        radial-gradient(
+            circle at 15% 30%,
+            rgba(212, 175, 55, 0.16),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255, 255, 255, 0.05),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            135deg,
+            #041c13,
+            #073b27 55%,
+            #0c4a31
+        );
+
+    color: white;
+}
+
+
+/* Decorative rings */
+
+.registration-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    right: -180px;
+    top: -210px;
+
+    border:
+        1px solid
+        rgba(212, 175, 55, 0.18);
+
+    border-radius: 50%;
+}
+
+.registration-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    left: -150px;
+    bottom: -180px;
+
+    border:
+        1px solid
+        rgba(212, 175, 55, 0.12);
+
+    border-radius: 50%;
+}
+
+
+/* Intro */
+
+.registration-intro {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 760px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.registration-badge {
+    display: inline-block;
+
+    padding:
+        8px 18px;
+
+    margin-bottom: 24px;
+
+    border:
+        1px solid
+        rgba(212, 175, 55, 0.55);
+
+    border-radius: 50px;
+
+    color: var(--gold);
+
+    font-size: 0.68rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.registration-intro h1 {
+    margin-bottom: 22px;
+
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(2.5rem, 5vw, 4.5rem);
+
+    line-height: 1.08;
+
+    letter-spacing: -1px;
+}
+
+.registration-intro h1 span {
+    display: block;
+
+    color: var(--gold);
+}
+
+.registration-intro p {
+    max-width: 650px;
+
+    margin: auto;
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.registration-progress {
+    position: absolute;
+
+    z-index: 20;
+
+    left: 50%;
+    bottom: -40px;
+
+    transform: translateX(-50%);
+
+    width: min(850px, 90%);
+
+    min-height: 88px;
+
+    padding:
+        16px 28px;
+
+    background: white;
+
+    border:
+        1px solid #e4e8e5;
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.progress-step {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #66716b;
+
+    opacity: 0.45;
+}
+
+.progress-step.active {
+    opacity: 1;
+
+    color: var(--green);
+}
+
+.progress-step > span {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #edf3ef;
+
+    color: var(--green);
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+}
+
+.progress-step.active > span {
+    background: var(--green);
+
+    color: var(--gold);
+}
+
+.progress-step strong {
+    display: block;
+
+    font-size: 0.8rem;
+}
+
+.progress-step small {
+    display: block;
+
+    color: #929b95;
+
+    font-size: 0.65rem;
+}
+
+.progress-line {
+    flex: 1;
+
+    height: 1px;
+
+    margin:
+        0 20px;
+
+    background: #dfe5e1;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.registration-main {
+    padding:
+        115px 0 80px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f4f7f4 0%,
+            #ffffff 45%
+        );
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.registration-form {
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    background: white;
+
+    border:
+        1px solid #e1e7e2;
+
+    border-radius: 25px;
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   FORM SECTIONS
+========================================================= */
+
+.form-section {
+    padding:
+        48px 50px;
+
+    border-bottom:
+        1px solid #e8ece9;
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+}
+
+
+/* Heading */
+
+.form-section-heading {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 17px;
+
+    margin-bottom: 32px;
+}
+
+.section-icon {
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf5ef,
+            #f8f3dc
+        );
+
+    border:
+        1px solid
+        rgba(212, 175, 55, 0.35);
+
+    border-radius: 14px;
+
+    color: var(--green);
+
+    font-size: 0.72rem;
+
+    font-weight: 900;
+}
+
+.form-section-heading > div:last-child > span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #a4831c;
+
+    font-size: 0.66rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.form-section-heading h2 {
+    margin-bottom: 4px;
+
+    font-family: Georgia, serif;
+
+    font-size: 1.65rem;
+
+    line-height: 1.25;
+
+    color: var(--green-dark);
+}
+
+.form-section-heading p {
+    color: var(--muted);
+
+    font-size: 0.82rem;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 23px;
+}
+
+.full-width {
+    grid-column:
+        1 / -1;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.form-group label {
+    color: #28342d;
+
+    font-size: 0.76rem;
+
+    font-weight: 750;
+}
+
+.form-group label span {
+    color: #b38a15;
+
+    margin-left: 2px;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.input-wrapper {
+    position: relative;
+
+    width: 100%;
+}
+
+
+/* ICON */
+
+.input-icon {
+    position: absolute;
+
+    left: 17px;
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    z-index: 2;
+
+    color: #a4831c;
+
+    font-size: 0.9rem;
+
+    pointer-events: none;
+}
+
+
+/* All actual form controls */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    display: block;
+
+    border:
+        1px solid #dce3de;
+
+    outline: none;
+
+    background:
+        #f9fbfa;
+
+    color: #1b2921;
+
+    border-radius: 12px;
+
+    transition:
+        all 0.25s ease;
+}
+
+
+/* Inputs */
+
+.form-group input,
+.form-group select {
+    height: 54px;
+
+    padding:
+        0 17px 0 47px;
+}
+
+
+/* Textarea */
+
+.form-group textarea {
+    min-height: 125px;
+
+    padding:
+        15px 17px 15px 47px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+
+/* Placeholder */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #a4aca7;
+}
+
+
+/* Select */
+
+.form-group select {
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    cursor: pointer;
+}
+
+
+/* Focus */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--gold);
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(212, 175, 55, 0.10);
+}
+
+
+/* Date input */
+
+.form-group input[type="date"] {
+    color: #53605a;
+}
+
+
+/* Hint */
+
+.field-hint {
+    color: #929a95;
+
+    font-size: 0.65rem;
+}
+
+
+/* =========================================================
+   PROGRAMME CARDS
+========================================================= */
+
+.programme-selection {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+
+    margin-bottom: 28px;
+}
+
+
+.programme-option {
+    position: relative;
+
+    display: block;
+
+    cursor: pointer;
+}
+
+
+/* Hide radio */
+
+.programme-option > input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+}
+
+
+/* Card */
+
+.programme-option-content {
+    position: relative;
+
+    min-height: 90px;
+
+    padding:
+        15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    background:
+        #fafcfb;
+
+    border:
+        1px solid #dfe6e1;
+
+    border-radius: 15px;
+
+    transition:
+        all 0.25s ease;
+}
+
+
+/* Hover */
+
+.programme-option:hover
+.programme-option-content {
+    border-color:
+        rgba(212, 175, 55, 0.65);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(4, 28, 19, 0.07);
+}
+
+
+/* Selected */
+
+.programme-option > input:checked
++ .programme-option-content {
+    border:
+        2px solid var(--gold);
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf5,
+            #f8f2dc
+        );
+
+    box-shadow:
+        0 8px 30px
+        rgba(212, 175, 55, 0.13);
+}
+
+
+/* Programme icon */
+
+.programme-option-icon {
+    flex-shrink: 0;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background:
+        var(--green);
+
+    color: var(--gold);
+
+    font-size: 1.2rem;
+}
+
+.programme-option-icon.arabic {
+    font-family: Georgia, serif;
+
+    font-size: 1.5rem;
+}
+
+
+/* Programme text */
+
+.programme-option-content strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: var(--green-dark);
+
+    font-family: Georgia, serif;
+
+    font-size: 0.96rem;
+}
+
+.programme-option-content span {
+    display: block;
+
+    color: #7c8580;
+
+    font-size: 0.68rem;
+}
+
+
+/* Check circle */
+
+.selection-check {
+    width: 25px;
+    height: 25px;
+
+    margin-left: auto;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid #d7dfd9;
+
+    border-radius: 50%;
+
+    color: transparent;
+
+    font-size: 0.7rem;
+
+    font-weight: 900;
+}
+
+.programme-option > input:checked
++ .programme-option-content
+.selection-check {
+    background: var(--gold);
+
+    border-color: var(--gold);
+
+    color: white;
+}
+
+
+/* =========================================================
+   PROGRAMME DETAILS
+========================================================= */
+
+.programme-details {
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   PREFERENCE BOXES
+========================================================= */
+
+.preference-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.preference-box {
+    padding: 24px;
+
+    background:
+        #f7faf8;
+
+    border:
+        1px solid #e0e7e2;
+
+    border-radius: 18px;
+}
+
+.preference-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 19px;
+}
+
+.preference-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: var(--green);
+
+    color: var(--gold);
+
+    border-radius: 11px;
+}
+
+.preference-title strong {
+    display: block;
+
+    color: var(--green-dark);
+
+    font-size: 0.78rem;
+}
+
+.preference-title small {
+    display: block;
+
+    color: #89938d;
+
+    font-size: 0.64rem;
+}
+
+
+/* =========================================================
+   CHOICE CARDS
+========================================================= */
+
+.choice-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+}
+
+.choice-card {
+    position: relative;
+
+    min-height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 8px;
+
+    border:
+        1px solid #dce4de;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #59645e;
+
+    font-size: 0.68rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+/* Hide choice radio */
+
+.choice-card input {
+    position: absolute;
+
+    opacity: 0;
+
+    width: 1px;
+    height: 1px;
+}
+
+
+/* Hover */
+
+.choice-card:hover {
+    border-color: var(--gold);
+
+    color: var(--green);
+}
+
+
+/* Selected */
+
+.choice-card:focus-within {
+    border-color: var(--gold);
+
+    background: #fffaf0;
+}
+
+.choice-card input:checked + span {
+    color: var(--gold-dark);
+}
+
+.choice-card:has(input:checked) {
+    border-color: var(--gold);
+
+    background: #fffaf0;
+
+    color: var(--green-dark);
+}
+
+.choice-card span {
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   AGREEMENT
+========================================================= */
+
+.registration-agreement {
+    margin:
+        30px 50px 0;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7faf8,
+            #fbfaf4
+        );
+
+    border:
+        1px solid #e0e6e1;
+
+    border-radius: 14px;
+}
+
+.agreement-label {
+    position: relative;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    color: #5d6861;
+
+    font-size: 0.74rem;
+
+    cursor: pointer;
+}
+
+
+/* Hide actual checkbox */
+
+.agreement-label input {
+    position: absolute;
+
+    opacity: 0;
+
+    width: 1px;
+    height: 1px;
+}
+
+
+/* Custom checkbox */
+
+.custom-checkbox {
+    width: 23px;
+    height: 23px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 1px;
+
+    background: white;
+
+    border:
+        1px solid #cbd5ce;
+
+    border-radius: 6px;
+
+    color: transparent;
+
+    font-size: 0.7rem;
+
+    font-weight: 900;
+
+    transition: 0.25s;
+}
+
+.agreement-label input:checked
++ .custom-checkbox {
+    background: var(--green);
+
+    border-color: var(--green);
+
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   SUBMIT AREA
+========================================================= */
+
+.form-submit {
+    padding:
+        30px 50px 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+/* Secure note */
+
+.secure-note {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+.secure-note > span {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #edf5ef;
+
+    font-size: 0.85rem;
+}
+
+.secure-note strong {
+    display: block;
+
+    color: var(--green-dark);
+
+    font-size: 0.73rem;
+}
+
+.secure-note small {
+    display: block;
+
+    max-width: 280px;
+
+    color: #8b948f;
+
+    font-size: 0.63rem;
+}
+
+
+/* Submit button */
+
+.submit-button {
+    min-height: 56px;
+
+    padding:
+        0 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #b9911f
+        );
+
+    color: #06281a;
+
+    font-size: 0.78rem;
+
+    font-weight: 850;
+
+    box-shadow:
+        0 10px 25px
+        rgba(167, 131, 22, 0.2);
+
+    transition:
+        all 0.3s ease;
+}
+
+.submit-button strong {
+    font-size: 1.15rem;
+}
+
+.submit-button:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(167, 131, 22, 0.3);
+}
+
+.submit-button:active {
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+.already-registered {
+    padding:
+        25px 0 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    color: #7d8781;
+
+    font-size: 0.76rem;
+}
+
+.already-registered a {
+    color: var(--green);
+
+    font-weight: 800;
+
+    transition: 0.25s;
+}
+
+.already-registered a:hover {
+    color: var(--gold-dark);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    margin-top: 0;
+
+    padding-top: 60px;
+
+    background:
+        #041c13;
+
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    padding-bottom: 45px;
+}
+
+.footer-brand h3 {
+    margin-bottom: 5px;
+
+    font-family: Georgia, serif;
+
+    font-size: 1.3rem;
+}
+
+.footer-brand p {
+    color:
+        rgba(255, 255, 255, 0.55);
+
+    font-size: 0.75rem;
+}
+
+.footer-motto {
+    margin-top: 12px;
+
+    color: var(--gold) !important;
+}
+
+.footer-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.footer-links h4 {
+    margin-bottom: 5px;
+
+    color: var(--gold);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.footer-links a {
+    color:
+        rgba(255, 255, 255, 0.55);
+
+    font-size: 0.72rem;
+
+    transition: 0.25s;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    padding:
+        18px 5%;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    color:
+        rgba(255, 255, 255, 0.4);
+
+    font-size: 0.62rem;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .navigation {
+        gap: 15px;
+    }
+
+    .form-section {
+        padding:
+            38px 30px;
+    }
+
+    .registration-agreement {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .form-submit {
+        padding:
+            28px 30px 38px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .registration-hero {
+        padding:
+            65px 0 105px;
+    }
+
+    .registration-intro h1 {
+        font-size: 2.45rem;
+
+        letter-spacing: -0.5px;
+    }
+
+    .registration-intro p {
+        font-size: 0.82rem;
+    }
+
+    .registration-progress {
+        width: 92%;
+
+        bottom: -62px;
+
+        padding:
+            14px 12px;
+    }
+
+    .progress-step {
+        flex-direction: column;
+
+        gap: 5px;
+
+        text-align: center;
+    }
+
+    .progress-step > span {
+        width: 37px;
+        height: 37px;
+    }
+
+    .progress-step strong {
+        font-size: 0.62rem;
+    }
+
+    .progress-step small {
+        display: none;
+    }
+
+    .progress-line {
+        margin:
+            0 7px;
+    }
+
+    .registration-main {
+        padding-top: 105px;
+    }
+
+    .registration-form {
+        border-radius: 18px;
+    }
+
+    .form-section {
+        padding:
+            30px 20px;
+    }
+
+    .form-section-heading {
+        gap: 11px;
+    }
+
+    .section-icon {
+        width: 40px;
+        height: 40px;
+
+        border-radius: 11px;
+    }
+
+    .form-section-heading h2 {
+        font-size: 1.25rem;
+    }
+
+    .form-section-heading p {
+        font-size: 0.72rem;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .programme-selection {
+        grid-template-columns: 1fr;
+    }
+
+    .preference-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .registration-agreement {
+        margin:
+            20px 20px 0;
+
+        padding: 16px;
+    }
+
+    .form-submit {
+        padding:
+            25px 20px 30px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .submit-button {
+        width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .registration-intro h1 {
+        font-size: 2.1rem;
+    }
+
+    .form-section {
+        padding:
+            25px 15px;
+    }
+
+    .registration-agreement {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .form-submit {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+}

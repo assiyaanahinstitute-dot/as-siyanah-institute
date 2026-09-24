@@ -1,0 +1,186 @@
+/* =========================================================
+   AS-SIYĀNAH
+   TEACHER ANNOUNCEMENTS
+   DARK MODE ONLY
+========================================================= */
+
+html.teacher-dark .announcement-page {
+    background: #081a12;
+    color: #edf5f0;
+}
+
+
+/* HEADER */
+
+html.teacher-dark .announcement-header {
+    background: rgba(8, 26, 18, .96);
+    border-color: #1d3b2b;
+}
+
+html.teacher-dark .announcement-brand-text strong {
+    color: #f1f6f3;
+}
+
+html.teacher-dark .announcement-brand-text span {
+    color: #8fa79a;
+}
+
+html.teacher-dark .announcement-nav a {
+    color: #9eb2a7;
+}
+
+html.teacher-dark .announcement-nav a:hover {
+    background: #142f21;
+    color: #ffffff;
+}
+
+html.teacher-dark .announcement-nav a.active {
+    background: #183d2a;
+    color: #d4af37;
+}
+
+
+/* HEADER BUTTONS */
+
+html.teacher-dark .announcement-theme-btn {
+    background: #102a1d;
+    border-color: #2b4b3a;
+    color: #d8e8df;
+}
+
+html.teacher-dark .announcement-theme-btn:hover {
+    background: #183d2a;
+}
+
+html.teacher-dark .announcement-logout {
+    background: transparent;
+    border-color: #4d3030;
+    color: #e4aaaa;
+}
+
+html.teacher-dark .announcement-logout:hover {
+    background: #301d1d;
+}
+
+
+/* HERO */
+
+html.teacher-dark .announcement-hero {
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, .22);
+}
+
+
+/* CARDS */
+
+html.teacher-dark .announcement-card {
+    background: #0d2419;
+    border-color: #1f3d2d;
+
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, .18);
+}
+
+html.teacher-dark .announcement-heading-icon {
+    background: #183525;
+    color: #79c69b;
+}
+
+html.teacher-dark .announcement-card-heading h2 {
+    color: #f0f5f2;
+}
+
+html.teacher-dark .announcement-card-heading p {
+    color: #8fa79a;
+}
+
+
+/* FORM */
+
+html.teacher-dark .announcement-form-group label {
+    color: #dfeae4;
+}
+
+html.teacher-dark .announcement-form-group input,
+html.teacher-dark .announcement-form-group select,
+html.teacher-dark .announcement-form-group textarea {
+    background: #091c13;
+    border-color: #294638;
+    color: #edf5f0;
+}
+
+html.teacher-dark .announcement-form-group input::placeholder,
+html.teacher-dark .announcement-form-group textarea::placeholder {
+    color: #62796d;
+}
+
+html.teacher-dark .announcement-form-group input:focus,
+html.teacher-dark .announcement-form-group select:focus,
+html.teacher-dark .announcement-form-group textarea:focus {
+    background: #0c2117;
+    border-color: #4d8a68;
+
+    box-shadow:
+        0 0 0 3px rgba(77, 138, 104, .12);
+}
+
+html.teacher-dark .announcement-form-group small {
+    color: #789084;
+}
+
+
+/* PUBLISH */
+
+html.teacher-dark .announcement-publish-box {
+    background: #102a1d;
+    border-color: #294638;
+}
+
+html.teacher-dark .publish-icon {
+    background: #183525;
+    color: #79c69b;
+}
+
+html.teacher-dark .publish-content strong {
+    color: #edf5f0;
+}
+
+html.teacher-dark .publish-content span {
+    color: #8fa79a;
+}
+
+html.teacher-dark .switch-slider {
+    background: #3a4b42;
+}
+
+
+/* LOADING */
+
+html.teacher-dark .announcement-loading {
+    background: #091c13;
+    border-color: #294638;
+}
+
+html.teacher-dark .announcement-loading p {
+    color: #8fa79a;
+}
+
+html.teacher-dark .announcement-loader {
+    border-color: #294638;
+    border-top-color: #d4af37;
+}
+
+
+/* FOOTER */
+
+html.teacher-dark .announcement-footer {
+    border-color: #1d3b2b;
+}
+
+html.teacher-dark .announcement-footer p {
+    color: #71887c;
+}
+
+html.teacher-dark .announcement-footer span {
+    color: #d4af37;
+}
