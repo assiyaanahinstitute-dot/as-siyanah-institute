@@ -1394,8 +1394,8 @@
 
                             <div class="login-form-group">
 
-                                <label for="studentId">
-                                    Student ID
+                                <label for="email">
+                                    Email Address
                                 </label>
 
 
@@ -1405,16 +1405,16 @@
                                         class="login-input-icon"
                                         aria-hidden="true"
                                     >
-                                        ◉
+                                        ✉
                                     </span>
 
 
                                     <input
-                                        type="text"
-                                        id="studentId"
-                                        name="studentId"
-                                        placeholder="e.g. ASI-2026-0001"
-                                        autocomplete="username"
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="Enter your email address"
+                                        autocomplete="email"
                                         required
                                     >
 
@@ -1630,9 +1630,7 @@
 
 
                     passwordToggle.textContent =
-                        isPassword
-                            ? "◉"
-                            : "◉";
+                        "◉";
 
 
                     passwordToggle.setAttribute(
