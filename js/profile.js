@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     const profileGender =
         document.getElementById("profileGender");
 
-    const profileDateOfBirth =
-        document.getElementById("profileDateOfBirth");
+    const profileDob =
+        document.getElementById("profileDob");
 
     const profileCountry =
         document.getElementById("profileCountry");
@@ -45,9 +45,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     try {
 
-        // ================================
+        // ==========================================
         // CHECK LOGIN
-        // ================================
+        // ==========================================
 
         const {
             data: { user },
@@ -57,16 +57,16 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         if (authError || !user) {
 
-            window.location.href =
-                "login.html";
+            window.location.href = "login.html";
 
             return;
         }
 
 
-        // ================================
+        // ==========================================
         // LOAD STUDENT PROFILE
-        // ================================
+        // USE EMAIL
+        // ==========================================
 
         const {
             data: student,
@@ -89,9 +89,13 @@ document.addEventListener("DOMContentLoaded", async function () {
                 device,
                 source
             `)
-            .eq("auth_id", user.id)
+            .eq("email", user.email)
             .maybeSingle();
 
+
+        // ==========================================
+        // CHECK FOR DATABASE ERROR
+        // ==========================================
 
         if (studentError) {
 
@@ -109,7 +113,16 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
 
 
+        // ==========================================
+        // CHECK STUDENT RECORD
+        // ==========================================
+
         if (!student) {
+
+            console.error(
+                "No student record found for:",
+                user.email
+            );
 
             if (profileName) {
                 profileName.textContent =
@@ -120,93 +133,167 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
 
 
-        // ================================
-        // DISPLAY STUDENT INFORMATION
-        // ================================
+        // ==========================================
+        // DISPLAY PERSONAL INFORMATION
+        // ==========================================
 
         if (profileName) {
+
             profileName.textContent =
                 student.full_name || "—";
-        }
 
-
-        if (profileStudentId) {
-            profileStudentId.textContent =
-                student.student_id || "—";
         }
 
 
         if (profileGender) {
+
             profileGender.textContent =
                 student.gender || "—";
+
         }
 
 
-        if (profileDateOfBirth) {
-            profileDateOfBirth.textContent =
-                student.date_of_birth || "—";
+        // ==========================================
+        // DISPLAY DATE OF BIRTH
+        // ==========================================
+
+        if (profileDob) {
+
+            if (student.date_of_birth) {
+
+                const date = new Date(
+                    student.date_of_birth + "T00:00:00"
+                );
+
+
+                if (!isNaN(date.getTime())) {
+
+                    profileDob.textContent =
+                        date.toLocaleDateString(
+                            "en-GB",
+                            {
+                                day: "2-digit",
+                                month: "long",
+                                year: "numeric"
+                            }
+                        );
+
+                } else {
+
+                    profileDob.textContent =
+                        student.date_of_birth;
+
+                }
+
+            } else {
+
+                profileDob.textContent =
+                    "—";
+
+            }
+
         }
 
 
         if (profileCountry) {
+
             profileCountry.textContent =
                 student.country || "—";
+
         }
 
 
         if (profileCity) {
+
             profileCity.textContent =
                 student.city || "—";
+
         }
 
 
+        // ==========================================
+        // CONTACT INFORMATION
+        // ==========================================
+
         if (profileWhatsapp) {
+
             profileWhatsapp.textContent =
                 student.whatsapp || "—";
+
         }
 
 
         if (profileEmail) {
+
             profileEmail.textContent =
                 student.email ||
                 user.email ||
                 "—";
+
+        }
+
+
+        // ==========================================
+        // ACADEMIC INFORMATION
+        // ==========================================
+
+        if (profileStudentId) {
+
+            profileStudentId.textContent =
+                student.student_id || "—";
+
         }
 
 
         if (profileProgramme) {
+
             profileProgramme.textContent =
                 student.programme || "—";
+
         }
 
 
         if (profileLevel) {
+
             profileLevel.textContent =
                 student.level || "—";
-        }
 
-
-        if (profileEducation) {
-            profileEducation.textContent =
-                student.education || "—";
         }
 
 
         if (profileClassTime) {
+
             profileClassTime.textContent =
                 student.class_time || "—";
+
         }
 
 
         if (profileDevice) {
+
             profileDevice.textContent =
                 student.device || "—";
+
+        }
+
+
+        // ==========================================
+        // ADDITIONAL INFORMATION
+        // ==========================================
+
+        if (profileEducation) {
+
+            profileEducation.textContent =
+                student.education || "—";
+
         }
 
 
         if (profileSource) {
+
             profileSource.textContent =
                 student.source || "—";
+
         }
 
 
@@ -217,10 +304,38 @@ document.addEventListener("DOMContentLoaded", async function () {
             error
         );
 
+
         if (profileName) {
+
             profileName.textContent =
                 "Unable to load";
+
         }
+
+    }
+
+
+    // ==========================================
+    // LOGOUT
+    // ==========================================
+
+    const logoutButton =
+        document.getElementById("logoutButton");
+
+
+    if (logoutButton) {
+
+        logoutButton.addEventListener(
+            "click",
+            async function () {
+
+                await supabaseClient.auth.signOut();
+
+                window.location.href =
+                    "login.html";
+
+            }
+        );
 
     }
 
