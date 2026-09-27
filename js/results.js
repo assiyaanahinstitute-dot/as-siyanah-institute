@@ -130,11 +130,16 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         // ========================================
         // GET STUDENT
+        // FIRST: AUTH ID
+        // FALLBACK: EMAIL
         // ========================================
 
+        let student = null;
+
+
         const {
-            data: student,
-            error: studentError
+            data: authStudent,
+            error: authStudentError
         } =
             await supabaseClient
                 .from("Student")
@@ -143,47 +148,109 @@ document.addEventListener("DOMContentLoaded", async function () {
                     full_name,
                     student_id,
                     programme,
-                    level
+                    level,
+                    email
                 `)
-                .eq(
-                    "auth_id",
-                    user.id
-                )
+                .eq("auth_id", user.id)
                 .maybeSingle();
 
 
-        if (studentError) {
+        if (authStudentError) {
 
             console.error(
-                "Student error:",
-                studentError
+                "Auth ID student lookup error:",
+                authStudentError
             );
 
-            if (studentName)
-                studentName.textContent =
-                    "Unable to load";
+        } else {
 
-            if (studentId)
-                studentId.textContent =
-                    "Unable to load";
+            student = authStudent;
 
-            if (studentProgramme)
-                studentProgramme.textContent =
-                    "Unable to load";
-
-            if (studentLevel)
-                studentLevel.textContent =
-                    "Unable to load";
-
-            return;
         }
 
+
+        // ========================================
+        // FALLBACK TO EMAIL
+        // ========================================
+
+        if (!student && user.email) {
+
+            const {
+                data: emailStudent,
+                error: emailStudentError
+            } =
+                await supabaseClient
+                    .from("Student")
+                    .select(`
+                        id,
+                        full_name,
+                        student_id,
+                        programme,
+                        level,
+                        email
+                    `)
+                    .eq("email", user.email)
+                    .maybeSingle();
+
+
+            if (emailStudentError) {
+
+                console.error(
+                    "Email student lookup error:",
+                    emailStudentError
+                );
+
+                throw emailStudentError;
+
+            }
+
+
+            student = emailStudent;
+
+        }
+
+
+        // ========================================
+        // STUDENT NOT FOUND
+        // ========================================
 
         if (!student) {
 
             if (studentName)
                 studentName.textContent =
                     "Student not found";
+
+            if (studentId)
+                studentId.textContent =
+                    "—";
+
+            if (studentProgramme)
+                studentProgramme.textContent =
+                    "—";
+
+            if (studentLevel)
+                studentLevel.textContent =
+                    "—";
+
+            resultsContainer.innerHTML = `
+
+                <div style="
+                    text-align:center;
+                    padding:45px 20px;
+                ">
+
+                    <h3>
+                        Student record not found
+                    </h3>
+
+                    <p>
+                        We could not find your student
+                        information.
+                    </p>
+
+                </div>
+
+            `;
 
             return;
         }
@@ -197,6 +264,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             studentName.textContent =
                 student.full_name || "—";
+
         }
 
 
@@ -204,6 +272,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             studentId.textContent =
                 student.student_id || "—";
+
         }
 
 
@@ -211,6 +280,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             studentProgramme.textContent =
                 student.programme || "—";
+
         }
 
 
@@ -218,6 +288,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             studentLevel.textContent =
                 student.level || "—";
+
         }
 
 
@@ -346,16 +417,23 @@ document.addEventListener("DOMContentLoaded", async function () {
 
                 <div style="
                     text-align:center;
-                    padding:40px;
+                    padding:50px 20px;
                 ">
 
+                    <div style="
+                        font-size:45px;
+                        margin-bottom:15px;
+                    ">
+                        📊
+                    </div>
+
                     <h3>
-                        No Results Available
+                        No Results Available Yet
                     </h3>
 
                     <p>
                         Your results will appear here
-                        when they are published.
+                        when they are published by your teacher.
                     </p>
 
                 </div>
@@ -501,6 +579,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                             </thead>
 
                             <tbody>
+
             `;
 
 
@@ -526,21 +605,17 @@ document.addEventListener("DOMContentLoaded", async function () {
                             </td>
 
                             <td>
-
                                 <strong>
                                     ${result.total_score ?? 0}
                                 </strong>
-
                             </td>
 
                             <td>
-
                                 <strong>
                                     ${escapeHtml(
                                         result.grade || "—"
                                     )}
                                 </strong>
-
                             </td>
 
                             <td>
@@ -588,9 +663,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
                 <section
                     class="online-test-results-section"
-                    style="
-                        margin-top:40px;
-                    "
+                    style="margin-top:40px;"
                 >
 
                     <div class="section-heading">
@@ -606,9 +679,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                     </div>
 
 
-                    <div
-                        class="online-test-results"
-                    >
+                    <div class="online-test-results">
+
             `;
 
 
@@ -620,9 +692,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 
                     const assessmentName =
-                        getAssessmentName(
-                            test
-                        );
+                        getAssessmentName(test);
 
 
                     const subject =
@@ -636,9 +706,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 
                     const statusClass =
-                        getStatusClass(
-                            status
-                        );
+                        getStatusClass(status);
 
 
                     const score =
@@ -671,10 +739,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                             <div
                                 style="
                                     display:flex;
-                                    justify-content:
-                                        space-between;
-                                    align-items:
-                                        flex-start;
+                                    justify-content:space-between;
+                                    align-items:flex-start;
                                     gap:20px;
                                     flex-wrap:wrap;
                                 "
@@ -717,9 +783,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                         ${escapeHtml(
                                             subject
                                         )}
-
                                         •
-
                                         ${escapeHtml(
                                             test?.level ||
                                             "—"
@@ -870,8 +934,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                                 border-radius:14px;
                                                 background:#f0fdf4;
                                                 border-left:
-                                                    4px solid
-                                                    #16a34a;
+                                                    4px solid #16a34a;
                                             "
                                         >
 
@@ -898,8 +961,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                                 style="
                                                     margin:0;
                                                     line-height:1.8;
-                                                    white-space:
-                                                        pre-wrap;
+                                                    white-space:pre-wrap;
                                                     color:#334155;
                                                 "
                                             >

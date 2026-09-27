@@ -34,7 +34,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         if (authError || !user) {
 
-            window.location.href = "login.html";
+            window.location.href =
+                "login.html";
 
             return;
         }
@@ -47,7 +48,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 
         // ========================================
-        // FIND STUDENT
+        // FIND STUDENT BY EMAIL
         // ========================================
 
         const {
@@ -88,7 +89,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             if (studentName) {
                 studentName.textContent =
-                    "Student not found";
+                    "Student record not found";
             }
 
             return;
@@ -108,35 +109,40 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (studentName) {
 
             studentName.textContent =
-                student.full_name || "Student";
+                student.full_name ||
+                "Student";
         }
 
 
         if (studentId) {
 
             studentId.textContent =
-                student.student_id || "Not provided";
+                student.student_id ||
+                "Not provided";
         }
 
 
         if (studentProgramme) {
 
             studentProgramme.textContent =
-                student.programme || "Not provided";
+                student.programme ||
+                "Not provided";
         }
 
 
         if (studentLevel) {
 
             studentLevel.textContent =
-                student.level || "Not provided";
+                student.level ||
+                "Not provided";
         }
 
 
         if (studentClassTime) {
 
             studentClassTime.textContent =
-                student.class_time || "Not provided";
+                student.class_time ||
+                "Not provided";
         }
 
 
