@@ -1,7 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+
+    /* =========================================
+       LOGIN FORM
+    ========================================== */
+
     const loginForm =
         document.getElementById("loginForm");
+
 
     if (!loginForm) {
         return;
@@ -20,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     .getElementById("email")
                     .value
                     .trim();
+
 
             const password =
                 document
@@ -51,9 +58,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             try {
 
+
                 /* =========================================
                    SIGN IN WITH SUPABASE AUTH
-                ========================================= */
+                ========================================== */
 
                 const {
                     data,
@@ -95,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 /* =========================================
                    STUDENT DASHBOARD
-                ========================================= */
+                ========================================== */
 
                 window.location.href =
                     "dashboard.html";
@@ -127,5 +135,137 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
     );
+
+
+
+    /* =========================================
+       FORGOT PASSWORD
+    ========================================== */
+
+    const forgotPasswordLink =
+        document.getElementById(
+            "forgotPasswordLink"
+        );
+
+
+    if (forgotPasswordLink) {
+
+        forgotPasswordLink.addEventListener(
+            "click",
+            async function () {
+
+
+                const email =
+                    document
+                        .getElementById("email")
+                        .value
+                        .trim();
+
+
+                /* =========================================
+                   CHECK EMAIL
+                ========================================== */
+
+                if (!email) {
+
+                    alert(
+                        "Please enter your email address first."
+                    );
+
+
+                    document
+                        .getElementById("email")
+                        .focus();
+
+
+                    return;
+                }
+
+
+                /* =========================================
+                   SEND PASSWORD RESET EMAIL
+                ========================================== */
+
+                forgotPasswordLink.disabled =
+                    true;
+
+
+                forgotPasswordLink.textContent =
+                    "Sending...";
+
+
+                try {
+
+
+                    const {
+                        error
+                    } =
+                        await supabaseClient
+                            .auth
+                            .resetPasswordForEmail(
+                                email,
+                                {
+
+                                    redirectTo:
+                                        window.location.origin +
+                                        "/reset-password.html"
+
+                                }
+                            );
+
+
+                    if (error) {
+
+                        console.error(
+                            "Password reset error:",
+                            error
+                        );
+
+
+                        alert(
+                            "Unable to send password reset link.\n\n" +
+                            error.message
+                        );
+
+
+                        return;
+                    }
+
+
+                    alert(
+                        "Password reset link sent!\n\n" +
+                        "Please check your email."
+                    );
+
+
+                } catch (error) {
+
+                    console.error(
+                        "Unexpected password reset error:",
+                        error
+                    );
+
+
+                    alert(
+                        "Something went wrong.\n\n" +
+                        error.message
+                    );
+
+
+                } finally {
+
+                    forgotPasswordLink.disabled =
+                        false;
+
+
+                    forgotPasswordLink.textContent =
+                        "Forgot password?";
+
+                }
+
+            }
+        );
+
+    }
 
 });

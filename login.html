@@ -1468,11 +1468,9 @@
 
                             <div class="login-options">
 
-                                <a
-                                    href="forgot-password.html"
-                                >
-                                    Forgot Password?
-                                </a>
+                               <a href="#" id="forgotPasswordLink">
+    Forgot password?
+                   </a>
 
                             </div>
 
@@ -1646,6 +1644,69 @@
         }
 
     </script>
+
+
+       <script>
+document
+    .getElementById("forgotPasswordLink")
+    .addEventListener("click", async function (event) {
+
+        event.preventDefault();
+
+        const email =
+            document.getElementById("email").value.trim();
+
+        if (!email) {
+
+            alert(
+                "Please enter your email address first."
+            );
+
+            document
+                .getElementById("email")
+                .focus();
+
+            return;
+        }
+
+        try {
+
+            const { error } =
+                await supabaseClient.auth
+                    .resetPasswordForEmail(
+                        email,
+                        {
+                            redirectTo:
+                                window.location.origin +
+                                "/reset-password.html"
+                        }
+                    );
+
+            if (error) {
+                throw error;
+            }
+
+            alert(
+                "Password recovery link sent!\n\n" +
+                "Please check your email."
+            );
+
+        } catch (error) {
+
+            console.error(
+                "Password recovery error:",
+                error
+            );
+
+            alert(
+                "Unable to send recovery link.\n\n" +
+                error.message
+            );
+
+        }
+
+    });
+</script>
 
 
 </body>
